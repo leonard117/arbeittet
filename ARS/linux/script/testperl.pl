@@ -6,6 +6,6 @@
 #print "$c\n";
 $sourcepath = "..//data//source";
 $targetpath = "..//data//target";
-system("./unpack.pl $sourcepath $targetpath");
 
+system("./unpack.pl $sourcepath $targetpath");
 system("./convertfile.pl $targetpath $targetpath");
