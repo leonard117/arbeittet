@@ -1,4 +1,6 @@
 #!/usr/bin/perl -w
+#unpack .z file in sourcepath and copy into targetpath 
+
 $sourcepath = $ARGV[0];
 $targetpath = $ARGV[1];
 print ("source = $sourcepath \n");
