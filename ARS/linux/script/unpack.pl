@@ -1,14 +1,18 @@
 #!/usr/bin/perl -w
-#unpack .z file in sourcepath and copy into targetpath 
+use strict;
 
-$sourcepath = $ARGV[0];
-$targetpath = $ARGV[1];
+my $sourcepath = $ARGV[0];
+my $targetpath = $ARGV[1];
+$sourcepath || die "sp empty!";
+$targetpath || die "tp empty!";
 print ("source = $sourcepath \n");
 print ("target = $targetpath \n");
+
 #$sourcepath = "..//data//source//*.z";
 #$targetpath = "..//data//target";
 system("cp $sourcepath//*.z $targetpath");
 unpack_file("$targetpath//*.z");
+
 sub unpack_file {
 	my($filesource,$isarg); # define local variables
 	#$filesource = ();

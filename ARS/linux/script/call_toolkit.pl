@@ -1,31 +1,61 @@
 #!/usr/bin/perl -w
+use File::Basename;
+my $programsource = "..//data/SLM/CMU/bin";
+my $filepath = "..//data/target//output/";
+my $filename =  "..//data/target//output/output.text";
 
-$filepath = "..//data/SLM/CMU/bin";
+my($fp,$fn,$fe) = getFileInfo($filename);
+print("fp = $fp \n") || die " fp not found";
+print("fn = $fn \n") || die " fn not found";
+print("fe = $fe \n") || die " fe not found";
+
+
 #$pattern = ".text";
 #read_dir($filepath,$pattern);
-read_dir($filepath);
+#read_dir($filepath);
 sub call_toolkit{
 
-	my($isarg,$filepath,$inputfile,$fileText,$filewfreq,$fileVocab,$fileIdNgram,$fileLMode,$filePerplexity,$fileTestText)
+	my($isarg,$filepath,$inputfile,$fileext,$fileText,$filewfreq,$fileVocab,$fileIdNgram,$fileLModel,$fileCcs,$filePerplexity,$fileTestText);
+	my($ngram);
 	#init all local vaiales
+	$fileext="";
+	$ngram = 3;
 	$isarg = @_;
 	if($isarg >= 2){
 		$filepath = $_[0];
 		$inputfile = $_[1];
 		
+	}elsif($isarg == 1){
+		($filepath,$inputfile,$fileext)=getFileInfo($_[0]);	
 	}
+	if($isarg>=3){
+		$ngram = $_[3];
+	}
+	
 #text2wfreq [ -hash 1000000 ]
 #           [ -verbosity 2 ]
 #           < .text > .wfreq
-	$input = "$filepath/$input";
-	$output = "$filepath/$output";
-	system("text2wfreq <$input> $output");
+	if(length($fileext)>0){
+		$fileText = "$inputfile.$fileext";	
+	}else{
+		$fileText = $inputfile;		
+	}
+	$filewfreq = "$inputfile.wfreq";
+	$fileText = "$filepath/$fileText";
+	$filewfreq = "$filepath/$filewfreq";
+	$input = $fileText;
+	$output = $filewfreq;
+	system("$programsource/text2wfreq <$input> $output");
 #wfreq2vocab [ -top 20000 | -gt 10]
 #            [ -records 1000000 ]
 #            [ -verbosity 2]
 #            < .wfreq > .vocab
 
-
+	$fileVocab = "$inputfile.vocab";
+	$fileVocab = "$filepath/$fileVocab";
+	$input = $filewfreq;
+	$output = $fileVocab;	
+	system("$programsource/wfreq2vocab <$input> $output");
 #text2wngram [ -n 3 ]
 #            [ -temp /usr/tmp/ ]
 #            [ -chars n ]
@@ -45,7 +75,11 @@ sub call_toolkit{
 #           [ -fof_size 10 ]
 #           [ -verbosity 2 ]
 #           < .text > .idngram 
-
+	$fileIdNgram = "$inputfile.idngram";
+	$fileIdNgram = "$filepath/$fileIdNgram";
+	$input = $fileVocab;
+	$output = $fileIdNgram;	
+	system("$programsource/text2idngram -n $ngram <$input> $output");
 #ngram2mgram -n N -m M
 #          [ -binary | -ascii | -words ]
 #          < .ngram > .mgram
@@ -92,6 +126,14 @@ sub call_toolkit{
 #         [ -two_byte_bo_weights
 #            [ -min_bo_weight -3.2 ] [ -max_bo_weight 2.5 ] 
 #            [ -out_of_range_bo_weights 10000 ] ]
+	$fileCcs = = "$inputfile.ccs";
+	$fileLModel = "$inputfile.arpa";
+	$fileLModel = "$filepath/$fileLModel";
+	#$input = $fileIdNgram;
+	$output = $fileLModel;	
+	system("$programsource/text2idngram  -idngram $fileIdNgram -vocab $fileVocab -arpa $output .context $fileCcs -n $ngram ");
+
+
 
 #binlm2arpa -binary .binlm
 #           -arpa .arpa 
@@ -125,6 +167,10 @@ sub call_toolkit{
 #        [ -max_probs 6000000 ]
 
 
+# system("cat $fileText | text2wfreq | wfreq2vocab -top 20000 > $fileVocab");
+# system("cat $fileText | text2idngram -vocab $fileVocab|idngram2lm -vocab $fileVocab -idngram -arpa  fileLModel -context $fileCcs");
+# system("echo "perplexity -text $fileTestText"|evallm -arpa $fileLModel -context $fileCcs");
+
 
 }
 
@@ -133,10 +179,13 @@ sub getFileInfo{
 	@fileinfo = ();
 	$isarg = @_;
 	if($isarg>0){
+		$fpath = $_[0];
 		($filename, $directories) = fileparse($fpath);	
+		$exteninfo = ($filename =~ m/([^.]+)$/)[0];
+		$filename = substr($filename,0,length($filename)-length($exteninfo)-1);
 		push(@fileinfo,$directories);
 		push(@fileinfo,$filename);
-		#push(@fileinfo,$exteninfo);		
+		push(@fileinfo,$exteninfo);
 	}
 
 	return @fileinfo;
