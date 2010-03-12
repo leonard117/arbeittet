@@ -16,12 +16,14 @@ sub convertfile{
 		@sourcelist = read_dir($sourcepath);
 		$sourcesize = @sourcelist;
 		if ($sourcesize>=1){
+			system("mkdir $targetpath/new");
+			system("mkdir $targetpath/output");
 			foreach $file(@sourcelist){
-				$sfile = "$sourcepath/$file";
-				system("mkdir $targetpath/new");
+				$sfile = "$sourcepath/$file";				
 				$tfile = "$targetpath/new/$file";
 				changefile($sfile,$tfile);
 			}
+			system("cat $targetpath/new/* >$targetpath/output/output.text");
 		}
 		
 	}else{
@@ -55,8 +57,13 @@ sub changefile{
 				}elsif($str =~ m/\/p>/){
 					#print ("inlude /p>\n");	
 				}else{
-					print OUT $str;	
+					if($str =~ m/<s/){
+						print OUT "<s>\n";	
 					#print ("good line!\n");
+					}else {
+						$str !~ tr/A-Z/a-z/;
+						print OUT $str;
+					}
 				}
 	
 			}#while
@@ -74,15 +81,22 @@ sub read_dir{
 	$isarg = @_;
 	if ($isarg > 0){
 		
-		$dirname = $_[0];
+		$dirname = $_[0];#dir name;
 		print ("dirname = ");
 		print ("$dirname\n");
+		if($isarg > 1){
+			$filepattern = $_[1];
+		}else{
+			$filepattern = ".*";
+		}
 		opendir(DIR,$dirname)||die "can not open dir $dirname!";
 		while (defined($file = readdir(DIR))){
 			next if $file =~ /^\.\.?$/; # skip . and ..
-			print $file;
-			print "\n";
-			push(@filelist,$file);
+			if ($file =~ /$filepattern/){
+				print $file;
+				print "\n";
+				push(@filelist,$file);
+			}
 			
 		}
 		closedir(DIR)||die "can not close dir";
@@ -90,5 +104,3 @@ sub read_dir{
 	}
 	return @filelist;
 }
-
-
