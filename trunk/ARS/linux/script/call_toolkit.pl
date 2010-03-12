@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use File::Basename;
-my $programsource = "..//data/SLM/CMU/bin";
+my $programsource = "..//CMU/bin";
 my $filepath = "..//data/target//output/";
 my $filename =  "..//data/target//output/output.text";
 
@@ -9,7 +9,7 @@ print("fp = $fp \n") || die " fp not found";
 print("fn = $fn \n") || die " fn not found";
 print("fe = $fe \n") || die " fe not found";
 
-
+call_toolkit($filename);
 #$pattern = ".text";
 #read_dir($filepath,$pattern);
 #read_dir($filepath);
@@ -18,8 +18,10 @@ sub call_toolkit{
 	my($isarg,$filepath,$inputfile,$fileext,$fileText,$filewfreq,$fileVocab,$fileIdNgram,$fileLModel,$fileCcs,$filePerplexity,$fileTestText);
 	my($ngram);
 	#init all local vaiales
+	$fileTestText = "..//data//test//pp_et_05.nvp";
+	$fileCcs="..//data//other//lm.ccs";
 	$fileext="";
-	$ngram = 3;
+	$ngram = 2;
 	$isarg = @_;
 	if($isarg >= 2){
 		$filepath = $_[0];
@@ -79,7 +81,9 @@ sub call_toolkit{
 	$fileIdNgram = "$filepath/$fileIdNgram";
 	$input = $fileVocab;
 	$output = $fileIdNgram;	
-	system("$programsource/text2idngram -n $ngram <$input> $output");
+	#system("$programsource/text2idngram -vocab $fileVocab -buffer 100 -temp $filepath -files 20 -n $ngram -write_ascii <$fileText> $output");
+	system("$programsource/text2idngram -vocab $fileVocab -buffer 100 -temp $filepath -files 20 -n $ngram  <$fileText> $output");
+
 #ngram2mgram -n N -m M
 #          [ -binary | -ascii | -words ]
 #          < .ngram > .mgram
@@ -126,13 +130,15 @@ sub call_toolkit{
 #         [ -two_byte_bo_weights
 #            [ -min_bo_weight -3.2 ] [ -max_bo_weight 2.5 ] 
 #            [ -out_of_range_bo_weights 10000 ] ]
-	$fileCcs = = "$inputfile.ccs";
+	
+	$fileLModel = "$inputfile.binlm"; 
 	$fileLModel = "$inputfile.arpa";
 	$fileLModel = "$filepath/$fileLModel";
 	#$input = $fileIdNgram;
 	$output = $fileLModel;	
-	system("$programsource/text2idngram  -idngram $fileIdNgram -vocab $fileVocab -arpa $output .context $fileCcs -n $ngram ");
-
+	system("$programsource/idngram2lm  -idngram $fileIdNgram -vocab $fileVocab -arpa $output -context $fileCcs -n $ngram ");
+	#system("$programsource/idngram2lm  -idngram $fileIdNgram -vocab $fileVocab -binary $output  -n $ngram ");
+	#system("$programsource/idngram2lm  -idngram $fileIdNgram -vocab $fileVocab -arpa $output  -n $ngram ");
 
 
 #binlm2arpa -binary .binlm
@@ -156,6 +162,9 @@ sub call_toolkit{
 #         [ -backoff_from_list .fblist ]
 #           word1 word2 ... word_(n-1)
 
+#system("echo "perplexity -text oupt.text"");
+
+
 #interpolate +[-] model1.fprobs +[-] model2.fprobs ... 
 #        [ -test_all | -test_first n | -test_last n | -cv ]
 #        [ -tag .tags ]
@@ -169,7 +178,9 @@ sub call_toolkit{
 
 # system("cat $fileText | text2wfreq | wfreq2vocab -top 20000 > $fileVocab");
 # system("cat $fileText | text2idngram -vocab $fileVocab|idngram2lm -vocab $fileVocab -idngram -arpa  fileLModel -context $fileCcs");
-# system("echo "perplexity -text $fileTestText"|evallm -arpa $fileLModel -context $fileCcs");
+
+system("echo perplexity -text $fileTestText | $programsource/evallm -arpa $fileLModel -context $fileCcs");	
+#system("echo perplexity -text $fileTestText | $programsource/evallm -binary $fileLModel ");
 
 
 }
