@@ -1,0 +1,219 @@
+\documentclass[dvips, a4paper, listsleft, 12pt, openany, oneside]{scrbook}
+% new koma package
+\usepackage{scrpage2}
+
+\usepackage{ae}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{verbatim}
+% \usepackage[small]{caption2}
+\usepackage{graphicx,psfrag}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[dvips]{color}
+\usepackage{xspace}
+\usepackage{bm}
+% \usepackage{bbm}
+% \usepackage{slashbox}
+\usepackage{booktabs} % extends the tables property by: \toprule, \midrule and \bottomrule
+\usepackage{longtable}
+\usepackage{array}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% if hyperrefs are desired, uncomment the appropriate lines in the following block;
+
+% define your own link color(including: \cite, \ref, \eqref, \footnote, ...)
+% \definecolor{darkblue}{rgb}{0,0,.62} 
+% or:
+% \definecolor{darkblue}{rgb}{0,.19,.40}
+
+% \usepackage[breaklinks, colorlinks, urlcolor=darkblue]{hyperref}
+% \usepackage{hypcap}
+% NOTE: sometimes problems arise when using hyperref;
+%       especially the dvi/ps file might look different from what you expected;
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for koma headers
+\pagestyle{scrheadings}
+% define head and foot marks
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{-~#1}{}}
+\ihead{\leftmark}
+\chead{}
+\ohead{\pagemark}
+\cfoot{}
+\setheadsepline{.4pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% chapter head change
+% adding lines above the chapter head
+% 1st get a new command
+\newcommand*{\ORIGchapterheadstartvskip}{}%
+% 2nd save the original definition to the new command
+\let\ORIGchapterheadstartvskip=\chapterheadstartvskip
+% 3rd redefine the command using the saved original command
+\renewcommand*{\chapterheadstartvskip}{%
+  \ORIGchapterheadstartvskip
+  {%
+    \setlength{\parskip}{0pt}%
+    \noindent\rule[0.3\baselineskip]{\linewidth}{0.8pt}\par
+  }%
+}
+% and below the chapter head
+\newcommand*{\ORIGchapterheadendvskip}{}%
+\let\ORIGchapterheadendvskip=\chapterheadendvskip
+\renewcommand*{\chapterheadendvskip}{%
+  {%
+    \setlength{\parskip}{0pt}%
+    \noindent\rule[0.3\baselineskip]{\linewidth}{0.8pt}\par
+  }%
+  \ORIGchapterheadendvskip
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % list of abbreviations
+% \usepackage{nomencl}
+% % rename command to 'abk'
+% \let\abk\nomenclature
+% % title in german
+% \renewcommand{\nomname}{Abkürzungsverzeichnis}
+% % define space between abbreviation and declaration
+% \setlength{\nomlabelwidth}{.25\hsize}
+% \renewcommand{\nomlabel}[1]{#1 \dotfill}
+% % decrease row spacing
+% \setlength{\nomitemsep}{-\parsep}
+% \makeglossary
+% % new command: highlighting abbrevation letters in declaration part
+% \usepackage[normalem]{ulem}
+% \newcommand{\markup}[1]{\textbf{#1}}
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % define german names
+%   \def\prefacename{Vorwort}%
+%   \def\refname{Literatur}%
+%   \def\abstractname{Zusammenfassung}%
+%   \def\bibname{Literaturverzeichnis}%
+%   \def\chaptername{Kapitel}%
+%   \def\appendixname{Anhang}%
+%   \def\contentsname{Inhaltsverzeichnis}% % oder nur: Inhalt
+%   \def\listfigurename{Abbildungsverzeichnis}%
+%   \def\listtablename{Tabellenverzeichnis}%
+%   \def\indexname{Index}%
+%   \def\figurename{Abbildung}%
+%   \def\tablename{Tabelle}%  % or: Tafel
+%   \def\partname{Teil}%
+%   \def\enclname{Anlage(n)}% % or: Beilage(n)
+%   \def\ccname{Verteiler}%   % or: Kopien an
+%   \def\headtoname{An}%
+%   \def\pagename{Seite}%
+%   \def\seename{siehe}%
+%   \def\alsoname{siehe auch}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define pagesize
+\setlength{\oddsidemargin}{5mm}
+\setlength{\evensidemargin}{5mm}
+\setlength{\textwidth}{155mm}
+\setlength{\topmargin}{-5mm}
+\setlength{\textheight}{235mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% special formatted strings
+\newcommand{\matlab}{\emph{MATLAB}\xspace}
+\newcommand{\intel}{\emph{INTEL}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% changing some fonts 
+% \renewcommand{\captionlabelfont}{\small\sffamily\bfseries}
+% \setcaphanging
+
+\setkomafont{pagehead}{%
+\normalfont\sffamily\bfseries
+}
+\setkomafont{pagenumber}{%
+\normalfont\rmfamily\slshape
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% command for the list of symbols
+\newcommand{\listsymbol}[2]{#1$\;\;$\dotfill$\;\;$&#2\\}
+
+% define graficspath
+
+\graphicspath{{bilder/}{bilder/Kapitel_1/}{bilder/Kapitel_2/}}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%
+% the customized title page
+\include{title}
+% 
+% %%%%%%%%%%%%%%%%%%%%
+% % frontmatter
+% \frontmatter
+% \tableofcontents
+% \clearpage
+% % list of figures
+% \addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+% \listoffigures
+% \clearpage
+% % list of tables
+% \addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+% \listoftables
+% \clearpage
+% %list of equation symbols 
+% \include{symbols}
+% \clearpage
+% % list of abbreviations
+% \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+% % \printglossary
+% \clearpage
+% \newpage
+% \mbox{} \thispagestyle{empty} \newpage
+
+%%%%%%%%%%%%%%%%%%%%
+% mainmatter
+\mainmatter
+% make the header to include the chapter numbering
+% from now on
+\ihead{\thechapter~\leftmark} %~\rightmark}
+% the chapters
+\include{chapter_1}
+% the chapters
+\include{chapter_2}
+
+% ... more to come, hopefully!
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%
+% this is where the backmatter starts
+% \backmatter % toggling this comment results in chapter names with or without capital numbering
+% the bibliography
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+% the bibliography shouldn't have a consecutive numbering
+\ihead{\leftmark}
+\bibliographystyle{bibs/IEEEtran}
+\bibliography{bibs/IEEEfull,bibs/RefA,bibs/RefB}
+\clearpage
+% but the appendix could
+\ihead{\thechapter~\leftmark}
+% the appendix is part of the backmatter, but uses capital numbering by default
+\appendix
+\include{appendix_a}
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% this is how to configure kile to take advantage
+% of the nomenclature package
+
+% configure kile --> quick build:
+% LATEX
+% BIBTEX
+% LATEX
+% LATEX
+% VIEWDVI
+
+% use iso 8859-1 or iso 8859-15 to write your text!

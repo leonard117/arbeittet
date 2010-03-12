@@ -1,0 +1,30 @@
+\chapter{Grafiken die 2.}
+\label{chapter:grafiken2}
+
+Der Ort, an dem die Grafiken sich befinden, kann bei der Verwendung des \textit{graphicx} Pakets mit Hilfe des Befehls 
+\begin{verbatim}
+\graphicspath{{bilder/} {bilder/chapter1/} {bilder/chapter2/}}} 
+\end{verbatim}
+dem LaTeX-Interpreter vor Begin des Dokuments aber auch an jeder beliebigen Stelle im Dokument neu mitgeteilt werden. Dabei ist darauf zu achten, dass die erneute Verwendung des Befehls die vorherigen Werte überschreibt. Der Pafd kann alternativ dazu aber auch direkt (relativ oder absolut) dem Befehl \slash includegraphics mitgeteilt werden.
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{0.6\textwidth}{!}{
+    \includegraphics{word_phones_states_mixdens.eps}
+    }
+  \end{center}
+  \caption{Verwendung des Pfades der durch \slash graphicspath gegeben ist}
+  \label{fig:figure_2}
+\end{figure} 
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{0.6\textwidth}{!}{
+    \includegraphics{bilder/Kapitel_2/word_phones_states_mixdens.eps}
+    }
+  \end{center}
+  \caption{Verwendung des relativen Pfades}
+  \label{fig:figure_3}
+\end{figure} 
+
+
+
+

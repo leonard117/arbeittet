@@ -1,0 +1,10 @@
+#!/bin/sh
+
+latex NT_Seminararbeit
+bibtex NT_Seminararbeit
+latex NT_Seminararbeit
+latex NT_Seminararbeit
+dvips -q NT_Seminararbeit.dvi
+ps2pdf NT_Seminararbeit.ps
+
+rm -f *.aux *.bbl *.blg *.glo *.lof *.log *.lot *.toc *.backup
