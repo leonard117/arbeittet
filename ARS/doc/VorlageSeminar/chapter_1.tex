@@ -1,0 +1,100 @@
+\chapter{Kurze Einführung}
+\label{chapter:introduction}
+
+In diesem Kapitel werden die wichtigsten LaTeX-Konstrukte kurz vorgestellt.\\
+Das PDF-Dokument PDF \textit{short-math-guide.pdf} in dem ZIP-Ordner stellt eine gute Anlaufstelle bei Fragen und Problemen (siehe Ordner: \textsc{lesenswertes}).
+
+\section{Formeln}
+\label{section:equations}
+
+Dieser Abschnitt befaßt sich mit der Verwendung von Formeln.
+
+\subsection{Inline-Formeln}
+\label{subsection:inlineEquation}
+
+Inline-Formeln beginnen und enden mit dem \$-Zeichen: $e^x = \sum\limits_{n=0}^{\infty}\frac{x^n}{n!}$
+
+\subsection{Die equation-Umgebung}
+\label{subsection:defaultEquation}
+
+Die im vorherigen Abschnitt \ref{subsection:inlineEquation} eingeführte Formel schreibt sich mit Hilfe der \textit{equation}-Umgebung wie folgt:
+\begin{equation}
+\label{equation:expFunktion}
+ e^x = \sum\limits_{n=0}^{\infty}\frac{x^n}{n!}
+\end{equation}
+Die Exponential-Funktion aus Gleichung \eqref{equation:expFunktion} wird in der Mustererkennung häufig verwendet.
+ACHTUNG: \textit{eqref} faßt die Nummer der Gleichung automatisch in runde Klammern.
+
+\section{Literaturquellen referenzieren}
+\label{section:literaturref}
+
+Die Literaturquellen werden mit Hilfe von \textsc{bibtex} referenziert. Die Quellen können in unterschiedlichen  ''.bib'' Dateien beschrieben sein (siehe z.B. \url{bibs/RefA}). Der Aufruf im Dokument erfolgt dann gemäß:\\
+\textbackslash bibliographystyle\{IEEEtran\}\\
+\textbackslash bibliography\{IEEEfull,bibs/RefA, bibs/RefB\}\\
+Eine Auflistung aller bibliographystyles findet man z.B. unter \url{http://www.cs.stir.ac.uk/~kjt/software/latex/showbst.html}. Hier wurde der \textit{IEEEtrans} style verwendet, der in der \url{bibs/IEEEtran.bst} definiert wurde. Die Abkürzungen stehen in \url{bibs/IEEEfull.bib}, welche vor allen Bibliotheken eingebunden wurde. Alle referenzierten  Quellen werden automatisch in das Literaturverzeichnis eingfügt, ein Fehler erscheint, wenn der \\cite\{\}-Befehl nicht verwendet wurde.\\
+Eine Quelle aus einer Datenbank wird so referenziert: \textbackslash cite\{bibtexkey\}.\\
+So ist \cite{Digalakis1993} z.B. aus Datenbank RefA und \cite{Lee2007} z.B. aus Datenbank RefB.
+
+\section{Tabellen}
+\label{section:tabular}
+
+Dieser Abschnitt befaßt sich mit der Verwendung von Tabellen und den neuen Befehlen des \textit{booktabs}-Packets.
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{clr}
+      \toprule
+      \bf laufende & \bf Wert 1 & \bf Wert 2\\
+      \bf Nummer  & [Einheit]  & [Einheit] \\
+      \midrule
+      $1$ &  $1\,000$ & $20$  \\
+      $2$ &  $1\,500$ & $40$  \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\caption{Eine einfache Tabelle}
+\label{tab:table_1}
+\end{table}
+
+\section{Grafiken}
+\label{section:figures}
+
+Dieser Abschnitt stellt kurz das Einfügen von Grafiken und das Ersetzen von Text innerhalb einer eps-Datei durch LaTeX-eigene Schriften und insbesonder auch Formeln vor. 
+
+Die Verwendung des \textit{lesenswertes}-Packets wird in der \textit{psfrag-guide.pdf} Datei näher erklärt (siehe Ordner: \textsc{usefullreadings}).\\
+\\
+ACHTUNG: Die Ersetzungen sind erst in der PS/PDF-Datei an der gewünschten Stelle. In der DVI-Datei sind die Ersetzungen nur aufgelistet.
+\begin{figure}[h]
+  \begin{center}
+    \resizebox{\textwidth}{!}
+    {
+    \psfrag{Hintergrund}[][c]{Hintergrund}
+    \psfrag{Gesicht}[][c]{Gesicht}
+    \psfrag{Detektionskaskade}[][ct]{Detektionskaskade}
+    \psfrag{Analyse-}[][ct]{Analyse-}
+    \psfrag{fenster}[][c]{fenster}
+    \psfrag{W}[][cb]{$\mathcal{W}$}
+    \psfrag{Stufe1:}[][ct]{Stufe 1:}
+    \psfrag{Stufe 2:}[][ct]{Stufe 2:}
+    \psfrag{Stufe 3:}[][ct]{Stufe 3:}
+    \psfrag{Stufe 4:}[][ct]{Stufe 4:}
+    \psfrag{20 Pixel}[][c]{$|\mathcal{W}_1'|$=$20$ Pixel} 
+    \psfrag{40 Pixel}[][c]{$|\mathcal{W}_2'|$=$40$ Pixel} 
+    \psfrag{160 Pixel}[][c]{$|\mathcal{W}_3'|$=$160$ Pixel} 
+    \psfrag{244 Pixel}[][c]{$|\mathcal{W}_4'|$=$244$ Pixel} 
+    \psfrag{T1=}[][c]{$T_1=$}
+    \psfrag{T2=}[][c]{$T_2=$}
+    \psfrag{T3=}[][c]{$T_3=$}
+    \psfrag{0.345}[][c]{$0.345$}
+    \psfrag{0.375}[][c]{$0.375$}
+    \psfrag{0.385}[][c]{$0.385$}
+    \psfrag{T4}[][c]{$T_4$}
+    \includegraphics{beispiel.eps}
+    }
+  \end{center}
+  \caption{Eine Grafik mit ersetzten Schriften}
+  \label{fig:figure_1}
+\end{figure} 
+
+
+
+

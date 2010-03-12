@@ -1,0 +1,603 @@
+This file was created with JabRef 2.2b.
+Encoding: ISO8859_1
+
+@ARTICLE{heisele-componentbased,
+  author = {B. Heisele, Th. Serre, M. Pontil, T. Poggio},
+  title = {Component-based Face Detection},
+  journal = {Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings
+	of the 2001 IEEE Computer Society Conference on},
+  year = {2001},
+  volume = {1},
+  pages = {I-657- I-662 vol.1},
+  abstract = {We describe a component based face detection system trained only on
+	positive examples. On the first layer, SVM classifiers detect predetermined
+	rectangular portions of faces in gray scale images. On the second
+	level, histogram based classifiers judge the pattern using only the
+	positions of maximization of the first level classifiers. Novel aspects
+	of our approach are: a) using selected parts of the positive pattern
+	as negative training for component classifiers, b) The use of pair
+	wise correlation between facial component positions to bias classifier
+	outputs and achieve superior component localization.},
+  citeseerurl = {http://citeseer.ist.psu.edu/heisele01componentbased.html},
+  doi = {10.1109/CVPR.2001.990537},
+  owner = {leutnant},
+  pdf = {Component-based Face Detection.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Bileschi2003,
+  author = {Bileschi, S.M. and Heisele, B.},
+  title = {Advances in component based face detection},
+  booktitle = {Analysis and Modeling of Faces and Gestures, 2003. AMFG 2003. IEEE
+	International Workshop on},
+  year = {2003},
+  pages = {149--156},
+  month = {17 Oct.},
+  abstract = {We describe the design of a component based face detector for gray
+	scale images. We show that including pans of the face into the negative
+	training sets of the component classifiers leads to improved system
+	performance. We also introduce a method of using pairwise position
+	statistics between component locations to more accurately locate
+	the parts of a face. Finally, we illustrate an application of this
+	technology in the creation of an accurate eye detection system.},
+  owner = {leutnant},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Crowley1997,
+  author = {Crowley, J.L. and Berard, F.},
+  title = {Multi-modal tracking of faces for video communications},
+  booktitle = {Computer Vision and Pattern Recognition, 1997. Proceedings., 1997
+	IEEE Computer Society Conference on},
+  year = {1997},
+  pages = {640--645},
+  month = {17-19 June},
+  abstract = {Visual processes to detect and track faces for video compression and
+	transmission. The system is based on an architecture in which a supervisor
+	selects and activates visual processes in cyclic manner. Control
+	of visual processes is made possible by a confidence factor which
+	accompanies each observation. Fusion of results into a unified estimation
+	for tracking is made possible by estimating a covariance matrix with
+	each observation. Visual processes for face tracking are described
+	using blink detection, normalised color histogram matching, and cross
+	correlation (SSD and NCC). Ensembles of visual processes are organised
+	into processing states so as to provide robust tracking. Transition
+	between states is determined by events detected by processes. The
+	result of face detection is fed into recursive estimator (Kalman
+	filter). The output from the estimator drives a PD controller for
+	a pan/tilt/zoom camera. The resulting system provides robust and
+	precise tracking which operates continuously at approximately 20
+	images per second on a 150 megahertz computer workstation},
+  citeseerurl = {http://citeseer.ist.psu.edu/crowley97multimodal.html},
+  doi = {10.1109/CVPR.1997.609393},
+  owner = {leutnant},
+  pdf = {Multi-Modal Tracking of Faces for Video Communications.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Feris2001,
+  author = {Feris, R.S. and Cesar, R.M., Jr. and Kruger, V.},
+  title = {Efficient real-time face tracking in wavelet subspace},
+  booktitle = {Recognition, Analysis, and Tracking of Faces and Gestures in Real-Time
+	Systems, 2001. Proceedings. IEEE ICCV Workshop on},
+  year = {2001},
+  pages = {113--118},
+  month = {13 July},
+  abstract = {We present a new method for visual face tracking that is carried out
+	in wavelet subspace. First, a wavelet representation for the face
+	template is created, which spans a low-dimensional subspace of the
+	image space. The video sequence frames where the face is tracked
+	are then orthogonally projected into this low-dimensional subspace.
+	This can be done efficiently through a small number of applications
+	of the wavelet filters. All further computations are performed in
+	wavelet subspace, which is isomorphic to the image subspace spanned
+	by the sets of wavelets in the representation. Robustness with respect
+	to facial expression and affine deformations, as well as the efficiency
+	of our method, are demonstrated in various experiments},
+  citeseerurl = {http://citeseer.ist.psu.edu/456136.html},
+  doi = {10.1109/RATFG.2001.938919},
+  owner = {leutnant},
+  pdf = {Efficient Real-Time Face Tracking in Wavelet Subspace.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Froba2004,
+  author = {Froba, B. and Kublbeck, C.},
+  title = {Face Tracking by Means of Continuous Detection},
+  booktitle = {Computer Vision and Pattern Recognition Workshop, 2004 Conference
+	on},
+  year = {2004},
+  pages = {65--65},
+  month = {27-02 June},
+  abstract = {The main contribution of this work is a new view to face-tracking
+	namely to associate the independent detection results obtained by
+	applying a real-time detector to each frame of a sequence. This differs
+	fundamentally from traditional tracking which is mostly understood
+	as finding the location of a target object given its previous position
+	and a correspondence finding algorithm either with or without a prior
+	object model. This traditional notion has two major problems namely
+	the initialization problem and the lost-track problem. We show that
+	the advent of new rapid detection algorithms may change the need
+	for traditional tracking. Furthermore the mentioned problems have
+	a natural solution within the presented tracking by continuous detection
+	approach. The only assumption on the object to track is it's maximal
+	speed in the image plane, which can be set very generously. From
+	this assumption we derive three conditions for a valid state sequence
+	in time. To estimate the optimal state of a tracked face from the
+	detection results a Kalman filter is used. This leads to an instant
+	smoothing of the face trajectory. It can be shown experimentally
+	that smoothing the face trajectories leads to a significant reduction
+	of false detections compared to the static detector without the presented
+	tracking extension. We further show how to exploit the highly redundant
+	information in a natural video sequence to speed-up the execution
+	of the static detector by a temporal scanning procedure which we
+	call "slicing". A demo program showing the outcomes of our work can
+	be found in the internet under http://www.iis.fraunhofer.de/bv/biometrie/
+	for download.},
+  citeseerurl = {http://citeseer.ist.psu.edu/froba04face.html},
+  doi = {10.1109/CVPR.2004.70},
+  owner = {leutnant},
+  pdf = {Face Tracking by Means of Continuous Detection.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Kabakli2004,
+  author = {Kabakli, T. and Celik, T. and Demirel, H. and Ozkaramanli, H. and
+	Uyguroglu, M. and Kondoz, A.M.},
+  title = {Robust face tracking using color segmentation aided with connected
+	components labeling and morphology},
+  booktitle = {Signal Processing and Communications Applications Conference, 2004.
+	Proceedings of the IEEE 12th},
+  year = {2004},
+  pages = {442--445},
+  month = {28-30 April},
+  abstract = {Based on a combination of color segmentation, connected components
+	labeling and morphology, an algorithm for human face tracking and
+	facial feature based head tilt angle extraction is developed. The
+	method uses the HSI space for color segmentation, since, in this
+	space, the dynamic range of skin color is quite narrow, thus enabling
+	the differentiation of the face from other objects in the scene.
+	The connected components labeling and morphology aid the segmentation
+	process by removing noise artifacts in the scene and making the proposed
+	algorithm robust to environmental conditions. The performance of
+	the proposed system is evaluated for a large set of video sequences.
+	It is found that errors in horizontal and vertical (x, y) translations
+	and in tilt angle are negligibly small for both studio and real environments.},
+  doi = {10.1109/SIU.2004.1338558},
+  owner = {leutnant},
+  timestamp = {26.10.2006}
+}
+
+@ARTICLE{kyongpil-nonparametric,
+  author = {Kyongpil Min, Junchul Chun, Goorack Prak},
+  title = {A Nonparametric Skin Color Model for Face Detection from Color Images},
+  journal = {Lecture Notes in Computer Science},
+  year = {2004},
+  volume = {3320/2004},
+  pages = {116-120},
+  abstract = {This paper presents a novel approach to extract face and facial feature
+	points from color image automatically based on a nonparametric skin
+	color model. Most of introduced skin color models for face detection
+	have lack of robustness for varying lighting conditions and need
+	extra work to reduce such problem. To resolve the limitation of current
+	skin color model, we utilize the Hue-Tint chrominance model and represent
+	the skin chrominance distribution as a linear equation. Thus, the
+	facial color distribution is simply described as a combination of
+	the maximum and minimum values of Hue and Tint components. The decision
+	rule to detect skin region is simplified by measuring the distance
+	between the skin chrominance distribution function and measured input
+	chrominance. In order to extract facial feature points defined by
+	MPEG-4, the minimal facial feature positions detected by the skin
+	color model are subsequently adjusted by using edge information from
+	the detected facial region along with the proportions of the face.
+	The experiments show that the proposed method guarantees fast and
+	exact processing for face and facial feature point generation and
+	is robust to various lighting conditions and input images.},
+  doi = {10.1007/b103538},
+  owner = {leutnant},
+  pdf = {A Nonparametric Skin Color Model for Face Detection from Color Images.pdf},
+  timestamp = {26.10.2006}
+}
+
+@ARTICLE{Liu2003,
+  author = {Chengjun Liu},
+  title = {A Bayesian discriminating features method for face detection},
+  journal = {Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  year = {2003},
+  volume = {25},
+  pages = {725--740},
+  number = {6},
+  month = {June},
+  abstract = {This paper presents a novel Bayesian discriminating features (BDF)
+	method for multiple frontal face detection. The BDF method, which
+	is trained on images from only one database, yet works on test images
+	from diverse sources, displays robust generalization performance.
+	The novelty of this paper comes from the integration of the discriminating
+	feature analysis of the input image, the statistical modeling of
+	face and nonface classes, and the Bayes classifier for multiple frontal
+	face detection. First, feature analysis derives a discriminating
+	feature vector by combining the input image, its 1D Harr wavelet
+	representation, and its amplitude projections. While the Harr wavelets
+	produce an effective representation for object detection, the amplitude
+	projections capture the vertical symmetric distributions and the
+	horizontal characteristics of human face images. Second, statistical
+	modeling estimates the conditional probability density functions,
+	or PDFs, of the face and nonface classes, respectively. While the
+	face class is usually modeled as a multivariate normal distribution,
+	the nonface class is much more difficult to model due to the fact
+	that it includes "the rest of the world." The estimation of such
+	a broad category is, in practice, intractable. However, one can still
+	derive a subset of the nonfaces that lie closest to the face class,
+	and then model this particular subset as a multivariate normal distribution.},
+  citeseerurl = {http://citeseer.ist.psu.edu/liu03bayesian.html},
+  doi = {10.1109/TPAMI.2003.1201822},
+  keywords = {Bayes classifier, Bayesian Discriminating Features (BDF), discriminating
+	feature analysis, face detection, statistical modeling, support nonfaces},
+  owner = {leutnant},
+  pdf = {A Bayesian Discriminating Features Method for Face Detection.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Omer2004,
+  author = {Omer, I. and Werman, M.},
+  title = {Color lines: image specific color representation},
+  booktitle = {Computer Vision and Pattern Recognition, 2004. CVPR 2004. Proceedings
+	of the 2004 IEEE Computer Society Conference on},
+  year = {2004},
+  volume = {2},
+  pages = {II--946--II--953Vol.2},
+  month = {27 June-2 July},
+  abstract = {The problem of deciding whether two pixels in an image have the same
+	real world color is a fundamental problem in computer vision. Many
+	color spaces are used in different applications for discriminating
+	color from intensity to create an informative representation of color.
+	The major drawback of all of these representations is that they assume
+	no color distortion. In practice the colors of real world images
+	are distorted both in the scene itself and in the image capturing
+	process. In this work we introduce color lines, an image specific
+	color representation that is robust to color distortion and provides
+	a compact and useful representation of the colors in a scene.},
+  citeseerurl = {http://citeseer.ist.psu.edu/658446.html},
+  doi = {10.1109/CVPR.2004.1315267},
+  owner = {leutnant},
+  pdf = {Color Lines: Image Specific Color Representation.pdf},
+  timestamp = {26.10.2006}
+}
+
+@ARTICLE{viola-rapidobject,
+  author = {P. Viola, M. Jones},
+  title = {Rapid Object Detection using a Boosted Cascade of Simple Features},
+  journal = {In Proceedings of the IEEE Computer Society Conference on Computer
+	Vision and Pattern Recognition},
+  year = {2001},
+  volume = {1},
+  pages = {I-511- I-518 vol.1},
+  abstract = {This paper describes a machine learning approach for visual object
+	detection which is capable of processing images extremely rapidly
+	and achieving high detection rates. This work is distinguished by
+	three key contributions. The first is the introduction of a new image
+	representation called the "integral image" which allows the features
+	used by our detector to be computed very quickly. The second is a
+	learning algorithm, based on AdaBoost, which selects a small number
+	of critical visual features from a larger set and yields extremely
+	efficient classifiers. The third contribution is a method for combining
+	increasingly more complex classifiers in a "cascade" which allows
+	background regions of the image to be quickly discarded while spending
+	more computation on promising object-like regions. The cascade can
+	be viewed as an object specific focus-of-attention mechanism which
+	unlike previous approaches provides statistical guarantees that discarded
+	regions are unlikely to contain the object of interest. In the domain
+	of face detection the system yields detection rates comparable to
+	the best previous systems. Used in real-time applications, the detector
+	runs at 15 frames per second without resorting to image differencing
+	or skin color detection.},
+  citeseerurl = {http://citeseer.ist.psu.edu/viola04rapid.html},
+  comment = {favoured by Joerg!!},
+  doi = {10.1109/CVPR.2001.990517},
+  owner = {leutnant},
+  pdf = {Rapid Object Detection using a Boosted Cascade of Simple Features.pdf},
+  timestamp = {26.10.2006}
+}
+
+@ARTICLE{perez-colorbased,
+  author = {Patrick Pérez, Carine Hue, Jaco Vermaak, Michel Gangnet},
+  title = {Color-Based Probabilistic Tracking},
+  journal = {Lecture Notes In Computer Science},
+  year = {2002},
+  volume = {2350},
+  pages = {661 - 675},
+  abstract = {Color-based trackers recently proposed in [3,4,5] have been proved
+	robust and versatile for a modest computational cost. They are especially
+	appealing for tracking tasks where the spatial structure of the tracked
+	objects exhibits such a dramatic variability that trackers based
+	on a space-dependent appearance reference would break down very fast.
+	Trackers in [3,4,5] rely on the deterministic search of a window
+	whose color content matches a reference histogram color model. Relying
+	on the same principle of color histogram distance, but within a probabilistic
+	framework, we introduce a new Monte Carlo tracking technique. The
+	use of a particle filter allows us to better handle color clutter
+	in the background, as well as complete occlusion of the tracked entities
+	over a few frames. This probabilistic approach is very flexible and
+	can be extended in a number of useful ways. In particular, we introduce
+	the following ingredients: multi-part color modeling to capture a
+	rough spatial layout ignored by global histograms, incorporation
+	of a background color model when relevant, and extension to multiple
+	objects.},
+  owner = {leutnant},
+  pdf = {Color-Based Probabilistic Tracking.pdf},
+  timestamp = {26.10.2006}
+}
+
+@ARTICLE{gejgus-facetracking,
+  author = {Peter Gejgus, Martin Sperka},
+  title = {Face tracking in color video sequences},
+  journal = {Spring Conference on Computer Graphics, Proceedings of the 19th spring
+	conference on Computer graphics},
+  year = {2003},
+  pages = {245 - 249},
+  abstract = {This paper presents a new extension of the KLT (Kanade--Lucas--Tomasi)
+	face tracker, which is robust against loss of tracked points. Stochastic
+	skin-color model is used for face segmentation in the frames contained
+	in a video sequence. Ellipse-fitting is used for selection of the
+	face candidates because of the elliptical face shape. The proposed
+	method achieved real-time performance. The results seem very promising.},
+  doi = {10.1145/984952.984992},
+  owner = {leutnant},
+  pdf = {Face tracking in color video sequences.pdf},
+  timestamp = {26.10.2006}
+}
+
+@ARTICLE{gross-facerecognition,
+  author = {Ralph Gross, Simon Baker, Iain Matthews, Takeo Kanade},
+  title = {Face Recognition Across Pose and Illumination},
+  year = {2004},
+  abstract = {The last decade has seen automatic face recognition evolve from small
+	scale research systems to a wide range of commercial products. Driven
+	by the FERET face database and evaluation protocol, the currently
+	best commercial systems achieve verification accuracies comparable
+	to those of fingerprint recognizers. In these experiments, only frontal
+	face images taken under controlled lighting conditions were used.
+	As the use of face recognition systems expands towards less restricted
+	environments, the development of algorithms for view and illumination
+	invariant face recognition becomes important. However, the performance
+	of current algorithms degrades significantly when tested across pose
+	and illumination as documented in a number of evaluations. In this
+	chapter we review previously proposed algorithms for pose and illumination
+	invariant face recognition. We then describe in detail two successful
+	appearance-based algorithms for face recognition across pose, eigen
+	
+	light-elds and Bayesian face subregions. We furthermore show how
+	both of these algorithms can be extended towards face recognition
+	across pose and illumination.},
+  citeseerurl = {citeseer.ist.psu.edu/665455.html},
+  owner = {leutnant},
+  pdf = {Face Recognition Across Pose and Illumination.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Satoh2004,
+  author = {Satoh, Y. and Okatani, T. and Deguchi, K.},
+  title = {A color-based probabilistic tracking by using graphical models},
+  booktitle = {Intelligent Robots and Systems, 2004. (IROS 2004). Proceedings. 2004
+	IEEE/RSJ International Conference on},
+  year = {2004},
+  volume = {1},
+  pages = {631--636vol.1},
+  month = {28 Sept.-2 Oct.},
+  abstract = {In this paper, a method for real-time tracking of moving objects or
+	pedestrians is proposed. Especially, we tackled to track an object
+	whose part was temporally occluded or which traversed in front of
+	the cluttered background. Furthermore, we tried to obtain the accurate
+	trajectory of the center of it stably even then. For the problems,
+	we present a probabilistic color-based tracking. In our proposed
+	method, we incorporated particle filtering into graphical models
+	and applied it to the color-based tracking. When the color histogram
+	of the tracked object was made, we used not one region of the whole
+	of the object but the multi-part region of it if it was divided in
+	some parts (e.g. the head and the body of a pedestrian). We treated
+	the multi-part region as a graphical model. In the graphical model,
+	messages about the state of the parts are sent to other parts. As
+	the result., even when the tracked object has occluded part, our
+	proposed method can track it stably and infer the state (e.g. position)
+	of the occluded part. We made experiments to confirm effectiveness
+	of this proposed method.},
+  doi = {10.1109/IROS.2004.1389423},
+  owner = {leutnant},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Schwerdt2000,
+  author = {Schwerdt, K. and Crowley, J.L.},
+  title = {Robust face tracking using color},
+  booktitle = {Automatic Face and Gesture Recognition, 2000. Proceedings. Fourth
+	IEEE International Conference on},
+  year = {2000},
+  pages = {90--95},
+  month = {28-30 March},
+  abstract = {We discuss a new robust tracking technique applied to histograms of
+	intensity-normalized color. This technique supports a video codec
+	based on orthonormal basis coding. Orthonormal basis coding can be
+	very efficient when the images to be coded have been normalized in
+	size and position. However an imprecise tracking procedure can have
+	a negative impact on the efficiency and the quality of reconstruction
+	of this technique, since it may increase the size of the required
+	basis space. The face tracking procedure described in this paper
+	has certain advantages, such as greater stability, higher precision,
+	and less jitter, over conventional tracking techniques using color
+	histograms. In addition to those advantages, the features of the
+	tracked object such as mean and variance are mathematically describable},
+  citeseerurl = {http://citeseer.ist.psu.edu/schwerdt00robust.html},
+  doi = {10.1109/AFGR.2000.840617},
+  owner = {leutnant},
+  pdf = {Robust Face Tracking using Color.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Yang2000,
+  author = {Ming-Hsuan Yang and Abuja, N. and Kriegman, D.},
+  title = {Face detection using mixtures of linear subspaces},
+  booktitle = {Automatic Face and Gesture Recognition, 2000. Proceedings. Fourth
+	IEEE International Conference on},
+  year = {2000},
+  pages = {70--76},
+  month = {28-30 March},
+  abstract = {We present two methods using mixtures of linear sub-spaces for face
+	detection in gray level images. One method uses a mixture of factor
+	analyzers to concurrently perform clustering and, within each cluster,
+	perform local dimensionality reduction. The parameters of the mixture
+	model are estimated using an EM algorithm. A face is detected if
+	the probability of an input sample is above a predefined threshold.
+	The other mixture of subspaces method uses Kohonen's self-organizing
+	map for clustering and Fisher linear discriminant to find the optimal
+	projection for pattern classification, and a Gaussian distribution
+	to model the class-conditioned density function of the projected
+	samples for each class. The parameters of the class-conditioned density
+	functions are maximum likelihood estimates and the decision rule
+	is also based on maximum likelihood. A wide range of face images
+	including ones in different poses, with different expressions and
+	under different lighting conditions are used as the training set
+	to capture the variations of human faces. Our methods have been tested
+	on three sets of 225 images which contain 871 faces. Experimental
+	results on the first two datasets show that our methods perform as
+	well as the best methods in the literature, yet have fewer false
+	detects},
+  citeseerurl = {http://citeseer.ist.psu.edu/ming00face.html},
+  doi = {10.1109/AFGR.2000.840614},
+  owner = {leutnant},
+  pdf = {Face Detection Using Mixtures of Linear Subspaces.pdf},
+  timestamp = {26.10.2006}
+}
+
+@ARTICLE{Yang2002,
+  author = {Ming-Hsuan Yang and Kriegman, D.J. and Ahuja, N.},
+  title = {Detecting faces in images: a survey},
+  journal = {Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  year = {2002},
+  volume = {24},
+  pages = {34--58},
+  number = {1},
+  month = {Jan.},
+  abstract = {Images containing faces are essential to intelligent vision-based
+	human-computer interaction, and research efforts in face processing
+	include face recognition, face tracking, pose estimation and expression
+	recognition. However, many reported methods assume that the faces
+	in an image or an image sequence have been identified and localized.
+	To build fully automated systems that analyze the information contained
+	in face images, robust and efficient face detection algorithms are
+	required. Given a single image, the goal of face detection is to
+	identify all image regions which contain a face, regardless of its
+	3D position, orientation and lighting conditions. Such a problem
+	is challenging because faces are non-rigid and have a high degree
+	of variability in size, shape, color and texture. Numerous techniques
+	have been developed to detect faces in a single image, and the purpose
+	of this paper is to categorize and evaluate these algorithms. We
+	also discuss relevant issues such as data collection, evaluation
+	metrics and benchmarking. After analyzing these algorithms and identifying
+	their limitations, we conclude with several promising directions
+	for future research},
+  doi = {10.1109/34.982883},
+  owner = {leutnant},
+  pdf = {Detecting Faces in Images - a Survey.pdf},
+  timestamp = {13.11.2006}
+}
+
+@ARTICLE{ying-optimaltransform,
+  author = {Ying Chen, Pengwei Hao, Anrong Dang},
+  title = {Optimal Transform in Perceptually Uniform Color Space and Its Application
+	in Image Coding},
+  journal = {Lecture Notes in Computer Science},
+  year = {2004},
+  volume = {3211/2004},
+  pages = {269-276},
+  abstract = {To find an appropriate color transform is necessary and helpful for
+	the applications of color images. In this paper, we proposed a new
+	scheme to find color transforms close to the optimal transform and
+	agree with human vision system for comparison. We first apply the
+	perceptually uniform color space transform to convert RGB components
+	into uniform CIE LAB components, and then use principal components
+	analysis (PCA) in the uniform space to find the image-dependent optimal
+	color transforms (KLT) for each test image group and for all the
+	images in all the groups. With the KLTs, an approximate but image-independent
+	transform in CIE LAB space is presented, namely LAR, which is just
+	the LAB space rotated and has an elegant and simple form. Finally,
+	we apply it to image compression, and our experiment shows that LAR
+	performs better (PSNR about 4dB higher) than the default color transform
+	in JPEG 2000.},
+  doi = {10.1007/b100437},
+  owner = {leutnant},
+  pdf = {Optimal Transform in Perceptually Uniform Color Space and Its Application in Image Coding.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Zhou2002,
+  author = {Shaohua Zhou and Krueger, V. and Chellappa, R.},
+  title = {Face recognition from video: a CONDENSATION approach},
+  booktitle = {Automatic Face and Gesture Recognition, 2002. Proceedings. Fifth
+	IEEE International Conference on},
+  year = {2002},
+  pages = {212--217},
+  month = {20-21 May},
+  abstract = {The aim of this work is to investigate how to exploit the temporal
+	information in a video sequence for the task of face recognition.
+	Following the approach in (Li and Chellappa, 2000), we propose a
+	probabilistic model parameterized by a tracking state vector and
+	a recognizing identity variable, simultaneously characterizing the
+	kinematics and identity of humans. We then invoke a CONDENSATION
+	(Isard and Blake, 1996) approach to provide a numerical solution
+	to the model. Once the joint posterior distribution of the state
+	vector and the identity variable is estimated, we marginalize it
+	over the state vector to yield a robust estimate of the posterior
+	distribution of the identity variable. Due to the propagation of
+	identity and dynamics, a degeneracy in the posterior distribution
+	of the identity variable is achieved to give improved recognition.
+	This evolving behavior is characterized using changes in entropy.
+	The effectiveness of this approach is illustrated using experimental
+	results on low-resolution video data},
+  citeseerurl = {http://citeseer.ist.psu.edu/663722.html},
+  doi = {10.1109/AFGR.2002.1004158},
+  owner = {leutnant},
+  pdf = {Face Recognition from Video: A CONDENSATION Approach.pdf},
+  timestamp = {26.10.2006}
+}
+
+@INPROCEEDINGS{Zhu2004,
+  author = {Qiang Zhu and Kwang-Ting Cheng and Ching-Tung Wu and Yi-Leh Wu},
+  title = {Adaptive learning of an accurate skin-color model},
+  booktitle = {Automatic Face and Gesture Recognition, 2004. Proceedings. Sixth
+	IEEE International Conference on},
+  year = {2004},
+  pages = {37--42},
+  month = {17-19 May},
+  abstract = {Due to variations of lighting conditions, camera hardware settings,
+	and the range of skin coloration among human beings, a pre-defined
+	skin-color model cannot accurately capture the wide distribution
+	of skin colors in individual images. In this paper, we propose an
+	adaptive skin-detection method, which allows modeling true skin-color
+	distribution with significantly higher accuracy and flexibility than
+	other methods attain. In principle, the proposed method follows a
+	two-step process. For a given image, we first perform a rough skin
+	classification using a generic skin model, which defines the skin-similar
+	space. In the second step, a Gaussian mixture model (GMM), specific
+	to the image under consideration and refined from the skin-similar
+	space, is derived using the standard expectation-maximization (EM)
+	algorithm. Then, we use an SVM (support vector machine) classifier
+	to identify the skin Gaussian from the trained GMM (which contains
+	two Gaussian components) by incorporating spatial and shape information
+	of the skin pixels. This adaptive method can be applied to both still
+	images and video applications. Results of extensive experiments performed
+	on live video sequences and large image databases have demonstrated
+	the effectiveness and benefits of the proposed model.},
+  doi = {10.1109/AFGR.2004.1301506},
+  owner = {leutnant},
+  pdf = {Adaptive Learning of an Accurate Skin-Color Model.pdf},
+  timestamp = {26.10.2006}
+}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_keywords:}
+
+@comment{jabref-meta: selector_publisher:}
+

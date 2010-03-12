@@ -1,0 +1,22 @@
+# --------------------------------- #
+# ---- Vorlage Seminararbeiten ---- #
+# -- Volker Leutnant, Jan. 2010 --- #
+# --------------------------------- #
+
+# so geht's mit dem Kompilieren
+
+latex NT_Seminararbeit
+bibtex NT_Seminararbeit
+latex NT_Seminararbeit
+latex NT_Seminararbeit
+dvips -q NT_Seminararbeit.dvi
+ps2pdf NT_Seminararbeit.ps
+
+oder einfach 
+
+sh run.sh
+
+in der Commandozeile eingeben!
+
+Viel Spass!
+
