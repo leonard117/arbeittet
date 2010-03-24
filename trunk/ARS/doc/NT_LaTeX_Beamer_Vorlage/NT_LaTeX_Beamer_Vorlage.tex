@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Folienvorlage fuer Latex Beamer / PDF Praesentation
+% Vorlage erstellt durch
+% Alexander Krüger 
+% 3.4.2008
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[8pt]{beamer}
+%%%%%% Choose theme of frames. %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Note that there are many more of them than those given here. %%%%
+
+% Navigation panel 
+%\usetheme{Warsaw}
+% Miniframe navigation panel
+\usetheme{Darmstadt}
+% no navigation panel
+%\usetheme{Madrid}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Choose size of frames
+% \geometry{papersize={12.8cm,15.5cm}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% suppress navigation panel for navigation through frames
+\setbeamertemplate{navigation symbols}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{pgf}
+
+\usepackage{xcolor}
+
+\itemindent 0cm
+
+% Insert of logo on all frames
+% placement is determined by chosen frame
+\pgfdeclareimage[width = 1.15\textwidth]{logo}{Images/logo_fgnt_und_upb2}
+\logo{\pgfuseimage{logo}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set position of logo manually. %%%%%%%
+% Logo has to be inserted on each frame by the command \MyLogo manually. %%%%%%%%%%%%%%%%%%
+%\usepackage[absolute,overlay]{textpos}
+%\setlength{\TPHorizModule}{1.0\textwidth}
+%\setlength{\TPVertModule}{1.0\textheight}
+%\newcommand{\MyLogo}{%
+%\begin{textblock}{1}(0.0,0.92)
+%  %\pgfuseimage{logo}
+%  \includegraphics[width = 1.15\textwidth]{Images/logo_fgnt_und_upb.eps}
+% \end{textblock}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Insert a logo on title page. %%%%%%%%%%%%%%%%%%%%%
+% Position depends on chosen theme. %%%%%%%%%%%%%%%
+%\pgfdeclareimage[width = 0.6\textwidth]{titellogo}{Images/logo_fgnt_fak_englisch}
+%\titlegraphic{\pgfuseimage{titellogo}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mathematic command declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newcommand{\grad}{\ensuremath{^\circ}}
+	%define argmax function
+	\DeclareMathOperator*{\argmax}{argmax}
+	\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}	
+	\newcommand{\FFT}{\hspace{0.3cm}{\circ}\hspace{-.4mm}{\text{---}}{\hspace{-1mm}}{\bullet}\hspace{0.3cm}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modify footline to show page numbers in Warsaw theme
+\setbeamertemplate{footline}
+{%
+\begin{beamercolorbox}[wd=0.5\textwidth,ht=3ex,dp=1.5ex,leftskip=.5em,rightskip=.5em]{author in head/foot}%
+\usebeamerfont{author in head/foot}%
+\hfill\insertshortauthor\enspace%
+\end{beamercolorbox}%
+\vspace*{-4.5ex}\hspace*{0.5\textwidth}%
+\begin{beamercolorbox}[wd=0.6\textwidth,ht=3ex,dp=1.5ex,left,leftskip=.5em]{title in head/foot}%
+\usebeamerfont{title in head/foot}%
+\enspace\insertshorttitle\hfill\insertframenumber{}/\inserttotalframenumber
+\end{beamercolorbox}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Short title] 
+{Statische Sprachmodellierung }
+
+\subtitle{Training Sprachmodellen in SLM-Toolkit}
+
+\institute{
+%\includegraphics[width=0.4 \textwidth]{Images/logo_fgnt_fak_englisch} \\ ~ \\ 
+%University of Paderborn
+}
+
+\author[Author (short)] 
+{Buyu Xiao}
+
+\date{Date}
+
+\subject{Subject}
+
+
+
+\begin{document}
+
+% title frame
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+% outline frame
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Section}
+
+\subsection{Subsection}
+
+
+% outline frame
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Sprach Modell}
+\subsection{Uebersicht und Anwendungsbereich eines Sprach-Modells}
+\subsection{M-Gram}
+\subsection{Discount}
+\subsection{Back-off}
+\section{Example beim SLM-Toolkit}
+\subsection{Subsection}
+\section{Zussammenfassung}
+
+
+
+\include{sprach_modell}
+
+
+% frames of talk
+\begin{frame}
+  \frametitle{Example}
+
+  \begin{block}{Block}
+    This is a block.
+  \end{block}
+
+  \begin{exampleblock}{Example block}
+    This is an example block.
+  \end{exampleblock}
+
+  \begin{alertblock}{Alert block}
+    This is an alert block.
+  \end{alertblock}
+\end{frame}
+
+\end{document}
