@@ -1,18 +1,12 @@
 #!/usr/bin/perl -w
 use File::Basename;
-my $programsource = "..//CMU/bin";
-my $filepath = "..//data/target//output/";
-my $filename =  "..//data/target//output/output.text";
+use PFileOperation;
 
-my($fp,$fn,$fe) = getFileInfo($filename);
-print("fp = $fp \n") || die " fp not found";
-print("fn = $fn \n") || die " fn not found";
-print("fe = $fe \n") || die " fe not found";
+my $cfgfile =  "./call_toolkit.ini";
 
-call_toolkit($filename);
-#$pattern = ".text";
-#read_dir($filepath,$pattern);
-#read_dir($filepath);
+
+call_toolkit($cfgfile);
+
 sub call_toolkit{
 
 	my($isarg,$filepath,$inputfile,$fileext,$fileText,$filewfreq,$fileVocab,$fileIdNgram,$fileLModel,$fileCcs,$filePerplexity,$fileTestText);
@@ -25,17 +19,24 @@ sub call_toolkit{
 	$isarg = @_;
 	$discounting = "absolute";
 	#$discounting = "good_turing";
-	if($isarg >= 2){
-		$filepath = $_[0];
-		$inputfile = $_[1];
-		
-	}elsif($isarg == 1){
-		($filepath,$inputfile,$fileext)=getFileInfo($_[0]);	
+
+	if($isarg == 1){
+
+		$cfgfile = $_[0];
+		$fileCcs=getparameter($cfgfile,"fileCcs");
+		$fileTestText =getparameter($cfgfile,"fileTestText");
+		$ngram = getparameter($cfgfile,"ngram");
+		$discounting = getparameter($cfgfile,"discounting");
+		($filepath,$inputfile,$fileext)=getFileInfo(getparameter($cfgfile,"filename"));	
+		$programsource = getparameter($cfgfile,"programsource");
+
+		print "filinfo",$programsource,"\n";
+			
+	}else{
+		print "please give config file name!\n";
+		return;
 	}
-	if($isarg>=3){
-		$ngram = $_[3];
-	}
-	
+
 #text2wfreq [ -hash 1000000 ]
 #           [ -verbosity 2 ]
 #           < .text > .wfreq
@@ -49,7 +50,11 @@ sub call_toolkit{
 	$filewfreq = "$filepath/$filewfreq";
 	$input = $fileText;
 	$output = $filewfreq;
+	print "$programsource/text2wfreq <$input> $output ";
+	print " \n end \n ";
 	system("$programsource/text2wfreq <$input> $output");
+
+
 #wfreq2vocab [ -top 20000 | -gt 10]
 #            [ -records 1000000 ]
 #            [ -verbosity 2]

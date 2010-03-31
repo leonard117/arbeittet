@@ -1,0 +1,13 @@
+fp = ..//data/target//output/ 
+fn = output 
+fe = text 
+Reading in a 1-gram language model.
+Number of 1-grams = 12977.
+Reading unigrams...
+evallm : Computing perplexity of the language model with respect
+   to the text ..//data//test//pp_et_05.nvp
+Perplexity = 672.92, Entropy = 9.39 bits
+Computation based on 6033 words.
+Number of 1-grams hit = 6033  (100.00%)
+3147 OOVs (34.28%) and 524 context cues were removed from the calculation.
+evallm : 
