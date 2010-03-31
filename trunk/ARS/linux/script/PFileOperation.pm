@@ -28,7 +28,7 @@ sub  getparameter{
 	while(<CFGIN>){
 		$str = $_;
 		if($str =~ m/#/){
-			print "not valid line\n";
+			#print "not valid line\n";
 		}else{
 			if(($str =~ m/=/)&&($str =~ m/$parameter_name/) ){	
 			@word=split(/[= \n]/,$str);

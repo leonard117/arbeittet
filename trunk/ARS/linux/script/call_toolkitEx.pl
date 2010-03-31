@@ -5,7 +5,7 @@ use PFileOperation;
 my $cfgfile =  "./call_toolkit.ini";
 
 
-call_toolkit($cfgfile);
+call_toolkit($cfgfile,"refresh");
 
 sub call_toolkit{
 
@@ -20,7 +20,7 @@ sub call_toolkit{
 	$discounting = "absolute";
 	#$discounting = "good_turing";
 
-	if($isarg == 1){
+	if($isarg >= 1){
 
 		$cfgfile = $_[0];
 		$fileCcs=getparameter($cfgfile,"fileCcs");
@@ -31,12 +31,28 @@ sub call_toolkit{
 		$programsource = getparameter($cfgfile,"programsource");
 
 		print "filinfo",$programsource,"\n";
-			
+		if($isarg >=2){
+			@filelist = read_dir($filepath);
+			print "refresh dir \n";
+			foreach $file(@filelist){
+				if(!($file =~ m/.text/)){
+					
+					$dfile = "$filepath/$file";
+					#print "$file file invalid \n";
+					system("rm $dfile");
+
+				}
+								
+				
+			}
+		  		
+		}	
 	}else{
 		print "please give config file name!\n";
 		return;
 	}
 
+	
 #text2wfreq [ -hash 1000000 ]
 #           [ -verbosity 2 ]
 #           < .text > .wfreq
