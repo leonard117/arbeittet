@@ -1,0 +1,17 @@
+fp = ..//data/target//output/ 
+fn = output 
+fe = text 
+Reading in a 2-gram language model.
+Number of 1-grams = 12977.
+Number of 2-grams = 81766.
+Reading unigrams...
+
+Reading 2-grams...
+evallm : Computing perplexity of the language model with respect
+   to the text ..//data//test//pp_et_05.nvp
+Perplexity = 270.18, Entropy = 8.08 bits
+Computation based on 6033 words.
+Number of 2-grams hit = 3322  (55.06%)
+Number of 1-grams hit = 2711  (44.94%)
+3147 OOVs (34.28%) and 524 context cues were removed from the calculation.
+evallm : 
