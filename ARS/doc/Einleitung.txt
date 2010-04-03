@@ -1,4 +1,5 @@
-bei einem Spracherkkenner sind Sprachmodellierung sehr schwer. Um eine bestimmte Sprache zu kennen muss 
+bei einem Spracherkkenner sind Sprachmodellierung sehr schwer. Um ein Sprachmodell fuer eine bestimmte Sprache zu entwerfen
+, muss man 
 
 
 Die vorliegende Hausarbeit versucht zu erkaeren,
