@@ -1,9 +1,12 @@
-bei einem Spracherkkenner sind Sprachmodellierung sehr schwer. Um ein Sprachmodell fuer eine bestimmte Sprache zu entwerfen
-, muss man 
+bei einem Spracherkkenner sind Sprachmodellierung sehr schwer. Um ein Sprachmodell fuer eine bestimmte Sprache 
+zu entwerfen, muss man aus Trainingkurps die bedingung Wahrscheilichkeit p(w1|w1..wn) von Sprachemodell p(w) 
+bestimmen. 
 
 
-Die vorliegende Hausarbeit versucht zu erkaeren,
+Die vorliegende Hausarbeit versucht zu erkaeren,wie ein realisierbares Modell durch Training erzeugt wird und die 
+Loesung des Problems bei den eingeschrankten Traingdatenbasen abgeben. 
 
 
 
-Um diese zu erreichen, werden
+Um diese zu erreichen, werden in diesem Artikel zuerst eine approximative Modell,M-Gramm, und unterschiedliche Discounting
+Algorithmus fuer 0-Wahrscheilichkeitproblem vorgestellt. Am Ende werden unsere Ergebniss durch SLM-Toolkit angezeigen.
