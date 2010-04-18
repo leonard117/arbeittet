@@ -1,0 +1,23 @@
+%M_Gramm
+Eine wahre Darstellung des statischen Sprachmodells ist wie Gleichung (2.1), die die Wahrscheinlichkeit einer Wortkette bezeichnet. Um die Wahrscheinlichkeit $p(w_{1}^n)$ zu bestimmt m\"ussen auftretet Wahrscheinlichkeit des Wortes $w_{1}$ und bedingte Wahrscheinlichkeit f\"ur $w_{2}...w_{n}$ bekannt sein.
+
+\begin{multline}
+p(w_{1}^n) = p(w_{1},w_{2}...w_{n}) = \prod_{i=1}^n p(w_{i}|w_{1},..w_{i-1}) \\
+= p(w_{1})p(w_{2}|w_{1})...p(w_{n}|w_{1},..w_{n-1})
+\end{multline}
+
+\cite{book_speech} erkl\"art , dass die Wortkettl?nge n theoretisch infinit gro? sein kann und die Wahrscheinlichkeit $p(w_{n}|w_{1}^n)$nicht berechenbar wird. Man eingeht auf eine Approximation der bedingten Wahrscheinlichkeit durch Beschr\"anken der "History" in Bedingung. Die genaue Idee ist, dass man alle bedingten Wahrscheinlichkeiten $p(w_{n}|w_{1}...w_{n})$, f\"ur die letzten m-1 Vorg\"angerw\"orter von $w_{n}$ identisch sind, zu einer \"Aquivalenzklasse zusammenfasst. d.h. das Rechnen $p(w_{n}|w_{1}...w_{n})$ im Trigramm wird aus $p(w_{n-2})p(w_{n-1}|w_{n-2})p(w_{n}|w_{n-2},w_{n-1})$ anstatt alle bedingter Wahrscheinlichkeit bestimmt. 
+Die Gleichung (2.2) ist die mathematische Darstellung f\"ur Trigramm(m=3), (2.3) f\"ur Bigramm(m=2), (2.4) f\"ur Unigramm(m=1) und (2.5) f\"ur M-Gramm.
+
+\begin{gather}
+p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-2},w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-2},w_{n-1}) \\
+p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{2})...p(w_{n}|w_{n-1}) \\
+p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i})=p(w_{1})p(w_{2})p(w_{3})...p(w_{n})
+\end{gather}
+
+Und vorliegende bedingten Wahrscheinlichkeit k\"onnen mathematisch wie folgende Gleichung (2.6) und (2.7)  aus unbedingten Wahrscheinlichkeit definieren
+
+\cite{ars_script}
+\cite{int_MLE}
+\cite{folie_script}
+\cite{int_entropie}
