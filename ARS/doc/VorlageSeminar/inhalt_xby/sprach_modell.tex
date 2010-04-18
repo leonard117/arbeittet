@@ -1,8 +1,12 @@
-%\Sprach_Modell
+%Statische Sprach_Modell
 
-Was is denn ein Sprachmodell? Das Sprchmodell $p$($w$) stellt das a priori Wissen ueber die Erkennungsaufgabe dar.
-Es gibt an, mit welcher Wahrscheinlichkeit Woeter oder Wortfolgen auftreten koennen, bzw. 
-ob bestimmte Wortfolgen ueberhaupt erlaubt sind. 
-
-Mit der Vorhersagekraft befinden sich die Zielsetzungen der Sprachmodellierung  in vielen Bereiche, wie um einen Spracherkenner zu vereinfachen, Texte-Komprimierung und Extraktion von Schluessewoertern aus Texten.
-wie wird es bestimmt
+Was ist eine statische Sprachmodell? Ein statische Sprachmodell wird durch die Wahrscheinlichkeit W\"orterfolgen $p(w_{1}^n)$ dargestellt.
+In folgenden Anwendungsbereich[1] spielt das Sprachmodell eine grosse Rolle.
+\begin{itemize}
+	\item Vereinfachen eines Spracherkenner
+	\item Text-Komprimierung
+	\item Extraktion von Schl\"usselw\"ortern aus Texten
+	\item etc...
+\end{itemize}
+In Detail ist, dass eine Sprachmodell extrahiert die Eigenschaft, Schlusswort oder Syntax aus der Sprache.\footnote{Eine Sprache hat riesiggro\ss er Anzahl der Wortschatz und unendliche M\"oglichkeit der Wortfolge. d.h. Ein Spracherkenner soll unendliche Worterfolge kennen. Aber ein Sprache ist immer regul\"ar. Durch Sprachmodell muss ein Spracherkenner  nur  limitierte Regel speichert.}
+Bei der Text-Komprimierung speichert man nur ein mal die in Texte wieder auftretet W\"orter. Ein bekanntes Beispiel bei Extraktion von Schl\"usselw\"orter ist Tippenprogramm. Man gibt erst Buchstabe ein und das Programm zeigt die m\"oglichen \"Ubrigeteile.

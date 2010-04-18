@@ -21,6 +21,21 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{book_speech}
+J.~Daniel and H.~M. James, \emph{Speech and language processing}, 2000.
+
+\bibitem{ars_script}
+U.~P. Prof.Dr.Reinhold Haeb-Umbach, \emph{Algorithmen der Spracherkennung}.
+
+\bibitem{int_MLE}
+\emph{Maximum-Likelihood-Methode}.
+
+\bibitem{folie_script}
+V.~Leutnant, \emph{Algotihmen der Spracherkennung:Sprachemodellierung}.
+
+\bibitem{int_entropie}
+\emph{Entropie (Informationstheorie)}.
+
 \bibitem{Digalakis1993}
 V.~Digalakis, J.~Rohlicek, and M.~Ostendorf, ``Ml estimation of a stochastic
   linear system with the em algorithm and its application to speech
