@@ -1,0 +1,3 @@
+%Discounting
+Es gibt ein sehr h\"aufiges Problem bei M-Gramm-Modelle, die aus Trainingskorpora trainiert werden. Aber die Trainingskorpora sind immer endlich, d.h. Manche m\"ogliche Wortfolge der L\"ange m werden im Training nicht beobachtet. Counts sind null und entsprechende M-Gramm-Wahrscheinlichkeite werden zu null gesch\"atzt Langer Kontext findet keine Ber\"ucksichtigung Wahrscheinlichkeit f\"ur W\"orter, die im Trainingskorpus nicht nahe beieinander liegen, wird in der Regel untersch\"atzt.
+Um das Problem zu l\"osen setzt man ein sog. Gl\"attungsverfahren ein, die ungesehen W\"orterfolge eine nicht-verschwindende Wahrscheinlichkeit zuordnen. Diese zu ungesehen Ereignissen zugeordnet Wahrscheinlichkeit wird aus der h\"aufig gesehenen Ereignissen abgezogen.
