@@ -1,0 +1,36 @@
+$p(w_{1}^n)$
+$w_{2}...w_{n}$
+
+(2.1)
+\begin{multline}
+p(w_{1}^n) = p(w_{1},w_{2}...w_{n}) = \prod_{i=1}^n p(w_{i}|w_{1},..w_{i-1}) \\
+= p(w_{1})p(w_{2}|w_{1})...p(w_{n}|w_{1},..w_{n-1})
+\end{multline}
+
+2.2-2.5
+\begin{gather}
+p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-2},w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-2},w_{n-1}) \\
+p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{2})...p(w_{n}|w_{n-1}) \\
+p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i})=p(w_{1})p(w_{2})p(w_{3})...p(w_{n})
+\end{gather}
+
+
+2.6-2.7
+\begin{gather}
+p(w|v)=\frac{p(v,w)}{p(v)} \\
+p(w_{n}|w_{n-m+1}^{n-1})=\frac{p(w_{n},w_{n-m+1}^{n-1} )}{p(w_{n-m+1}^{n-1} )} 
+\end{gather}
+
+2.8
+\begin{equation}
+\hat{p}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n-m+1}^{n-1},w_{n} )}{ \sum_{i=1}^L c(w_{n-m+1}^{n-1},w_{i})}=\frac{c(w_{n-m+1}^{n-1},w_{n} )}{c(w_{n-m+1}^{n-1})}
+\end{equation}
+
+
+2.9
+\begin{equation}
+P^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
+\frac{c(w_{n-m+1}^{n-1},w_{n})-d}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})\beta (w_{n}|w_{n-m+1}^{n-1}) & c(w_{n-m+1}^{n-1},w_{n})>0 \\
+\alpha (w_{n-m+1}^{n-1})\beta (w_{n}|w_{n-m+1}^{n-1}) & c(w_{n-m+1}^{n-1},w_{n})=0 
+\end{cases}
+\end{equation}
