@@ -34,3 +34,68 @@ P^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
 \alpha (w_{n-m+1}^{n-1})\beta (w_{n}|w_{n-m+1}^{n-1}) & c(w_{n-m+1}^{n-1},w_{n})=0 
 \end{cases}
 \end{equation}
+
+2.10
+\begin{multline}
+1=\sum_{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}\frac{c(w_{n-m+1}^{n-1},w_{n})-d}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})\sum_{w_{n}}\beta (w_{n}|w_{n-m+1}^{n-1})\\
+=\frac{1}{c(w_{n-m+1}^{n-1})}(\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}c(w_{n-m+1}^{n-1},w_{n})-\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}d)+\alpha (w_{n-m+1}^{n-1})\\
+=\frac{c(w_{n-m+1}^{n-1})}{c(w_{n-m+1}^{n-1})}-\frac{d\cdot c_{+}(w_{n-m+1}^{n-1})}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})
+\end{multline}
+
+%2.11-2.12
+\begin{gather}
+\alpha (w_{n-m+1}^{n-1})=\frac{d\cdot c_{+}(w_{n-m+1}^{n-1})}{c(w_{n-m+1}^{n-1})}\\
+c_{+}(w_{n-m+1}^{n-1})=\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})>0}1
+\end{gather}
+
+2.13
+\begin{equation}
+\beta (w_{n}|w_{n-2}^{n-1})=\begin{cases}
+p(w_{n}|w_{n-1}) & c(w_{n},w_{n-1},w_{n-2})=0 and c(w_{n},w_{n-1})>0 \\
+p(w_{n}) & c(w_{n},w_{n-1})=0 
+\end{cases}
+\end{equation}
+
+
+%2.14
+\begin{equation}
+\label{equation:add_one_01}
+p^{*}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n},w_{n-m+1}^{n-1})+1}{c(w_{n-m+1}^{n-1})+V}=\frac{c_{k}^{*}}{N+V}
+\end{equation}
+
+%2.15
+\begin{equation}
+p^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
+\frac{c(w_{n},w_{n-m+1}^{n-1})+1}{N+V} & c(w_{n},w_{n-m+1}^{n-1})>0 \\
+\frac{1}{N+V} & c(w_{n},w_{n-m+1}^{n-1})=0 
+\end{cases}
+\end{equation}
+
+
+%2.16
+\begin{equation}
+\label{equation:witten_bell_01}
+\sum_{i:c_{i}=0}p_{i}^{*}(w_{i}|w_{n-m+1}^{n-1})=\frac{T(w_{n-m+1}^{n-1})}{N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1})}
+\end{equation}
+
+
+%2.17
+\begin{equation}
+\label{equation:witten_bell_02}
+p_{i}^{*}(w_{i}|w_{n-m+1}^{n-1})=\frac{T(w_{n-m+1}^{n-1})}{Z(w_{n-m+1}^{n-1})(N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1}))}
+\end{equation}
+
+%2.18
+\begin{equation}
+\label{equation:witten_bell_03}
+p^{*}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n}|w_{n-m+1}^{n-1})}{N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1})}
+\end{equation}
+
+%2.19
+\begin{equation}
+\label{equationo:witten_bell_04}
+p^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
+\frac{c(w_{n},w_{n-m+1}^{n-1})}{N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1})} & c(w_{n},w_{n-m+1}^{n-1})>0 \\
+\frac{T(w_{n-m+1}^{n-1})}{Z(w_{n-m+1}^{n-1})(N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1}))} & c(w_{n},w_{n-m+1}^{n-1})=0 
+\end{cases}
+\end{equation}
