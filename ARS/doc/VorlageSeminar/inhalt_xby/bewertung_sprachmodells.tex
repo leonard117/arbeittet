@@ -1,0 +1,51 @@
+%bewertung_sprachmodells
+Vorher haben wir die Modellierung vorgestellt. Aber wie gut ist das entworfene Sprachmodell? Ist das aus unserer Trainingdatenbase trainierte Modell auch g\"ultig bei einem unabh\"angigen Textkopurs? In der Informationstheorie wird Entropie dazu h\"aufig eingef\"uhrt.
+Entropie ist ein Ma\ss f\"ur den mittleren Informationsgehalt oder auch Informationsdichte eines Zeichensystems \cite{int_entropie}. Man kann durch die Entropietheorie die Informationsgehalten messen und bewerten, ob ein m-Gramm an eine Sprache anpassen. Man kann auch die Vorhersagkraft eines Sprachmodells messen,usw.\cite{book_speech}
+Die Entropie wird zun\"achst durch folgende Gleichung definiert:
+
+%2.26
+\begin{equation}
+\label{equation:bewertung_01}
+H(x)=-\sum_{x\in\chi}P(x)log_{b}(P(x))
+\end{equation}
+
+$x$ ist ein zuf\"alliges Ereignis.$\chi$ ist gesamte Satz. $-log_{b}(P(x))$ bedeute die Informationsgehalt des Ereignisses $x$ , Basis $b$ ist h\"aufig gleich 2. Die Einheit der Entropie $H(x)$ ist bits, wenn $b=2$.
+Der Begriff \"Perlexit\"at\" ist auch in vielen Fall gebraucht. Perlexit\"at hat genau ein Zusammenhang (2.27) mit der Entropie. Perlexit\"at bedeutet Ma\ss f\"ur die St\"arke der Einschr\"ankung durch das Sprachmodell; mittlere Zahl der Wahlm\"oglichkeiten f\"ur das n\"achste Wort.
+%2.27
+\begin{equation}
+\label{equation:bewertung_02}
+PP(x)=2^{H(x)}=2^{-\sum_{x\in\chi}P(x)log_{b}(P(x))}
+\end{equation}
+Folgende ist eine Beispiele \"uber die Anwendung der Entropie, die die Bandbreit zwei Systems X und Y vergleichen. System $X$ enthalt Ereignisse $x1~x2$, System $Y$ enthalt Ereignisse $y1~y2$. In folgender Tablle stellen die 64 Samples aus jeder Systems. Und die Ereignisse sind auch wie in Tabelle gezeigt kodierrt.
+%table 2.2
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{lccrlccr}
+      \toprule
+      \bf $X$ & \bf H\"aufig & \bf Wahrscheinlich & \bf Kode 
+   	& \bf $Y$ & \bf H\"aufig & \bf Wahrscheinlich & \bf Kode\\    
+      \midrule     
+      $x1$ 		&  $32$ 		 	& $1/2$  							& $0$	
+    & $y1$		&  $8$ 		 		& $1/8$  							& $001$	\\
+      $x2$ 		&  $16$ 			& $1/4$  							& $10$
+    & $y2$		&  $8$ 		 		& $1/8$  							& $010$	\\
+     	$x3$ 		&  $8$ 		 		& $1/8$  							& $110$	
+    & $y3$		&  $8$ 		 		& $1/8$  							& $011$	\\
+      $x4$ 		&  $4$ 				& $1/16$  						& $1110$
+    & $y4$		&  $8$ 		 		& $1/8$  							& $100$	\\
+     	$x5$ 		&  $1$ 		 		& $1/64$   						& $111100$	
+    & $y5$		&  $8$ 		 		& $1/8$  							& $101$	\\
+      $x6$ 		&  $1$ 				& $1/64$  						& $111101$
+   	& $y6$		&  $8$ 		 		& $1/8$  							& $110$	\\
+     	$x7$ 		&  $1$ 		 		& $1/64$  						& $111110$	
+    & $y7$		&  $8$ 		 		& $1/8$  							& $111$	\\
+      $x8$ 		&  $1$ 				& $1/64$  						& $111111$
+    & $y8$		&  $8$ 		 		& $1/8$  							& $000$	\\     
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\caption{Samples aus System X und Y}
+\label{tab:table_2}
+\end{table}
+
+Man kann genau berechenen, wie viele Bits bei der \"Ubertragung der alle 64 Samples gebraucht wird. F\"ur Sample X wird 1*32+2*16+8*3+4*4+6*1*4 = 128 bits be\"otigt. \"ur Sample Y wird 3*64 = 192 bits ben\"otigt. d.h. System Y braucht meher Bandbreit als System X. Weiterhin berechen wir auch die Entropie f\"ur beide Systems.
