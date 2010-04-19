@@ -1,1 +1,50 @@
 %good_turing_discounting
+Good-Turing ist ein noch komplexer Discounting-Algorithmus und liefert uns andere M\"oglichkeit  das Zero-Wahrscheinlichkeits-Problem zu l\"osen. In Witten-Bell, muss man zun\"achst die Wahrscheinlichkeitsma\ss f\"ur ungesehenen M-Gramme sparen. Aber in diesem Algorithmus werden die gesuchte Wahrscheinlichkeitsma\ss aus Gleichung (2.8) direkt ausrechnet und die zu ungesehenen m-Gramme geh\"orte Parameter $c(w_{n},w_{n-m+1}^{n-1})$ durch die Anzahl $N_{c}$ der  $c$ mal in Training auftretet m-Gramme berechnet. Um die Bedeutung $N_{c}$ zu erkl\"aren, nimmt man Unigramm als Beispiel. $N_{0}$ ist der Anzahl der ungesehenen m-Gramme, $N_{1}$ist der Anzahl der nur ein mal gesehenen m-Gramme, $N_{2}$ bedeutet, es   m-Gramme gibt, die nur 2 mal auftreten usw. . Die mathematische Darstellung f\"ur $N_{c}$ seht wie Gleichung (2.20).
+%2.20
+\begin{equation}
+N_{c}=\sum_{c(w_{n})=c}1
+\end{equation}
+
+Wie sch\"atzt man eine neue H\"aufigkeit eines m-Gramms inklusiv ungesehen m-Gramm? Mann muss zuerst f\"ur alle $c$(MLE) $N_{c}$ zahlen. Dann man muss auch wissen, m-Gramm $(w_{n},w_{n-m+1}^{n-1})$ zu welche $c$(MLE) geh\"ort. Weiterhin werden bekannt $c(w_{n},w_{n-m+1}^{n-1})$, $N_{c+1}$ und $N_{c}$ eingesetzt. Und bekommt man neue H\"aufigkeit von einem m-Gramm. Diese H\"aufigkeit wird in (2.8) verwendet.
+
+%2.21
+\begin{equation}
+c^{*}(w_{n},w_{n-m+1}^{n-1})=(c(w_{n},w_{n-m+1}^{n-1})+1)\frac{N_{c+1}}{N_{c}}
+\end{equation}
+
+Die Folgende Tabelle(2.1)  aus [2] zeigt eine Anwendung des Good-Turing Dsicounting f\"ur Bigramm.
+
+%table 2.1
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{clr}
+      \toprule
+      \bf $c$(MLE) & \bf $N_{c}$ & \bf $c^{*}$(GT)\\      
+      \midrule
+      $0$ &  $74,671,100,000$ & $0.0000270$  \\
+      $1$ &  $2,018,046$ 			& $0.446$  \\
+      $2$ &  $449,721$ 				& $1.26$  \\
+      $3$ &  $188,933$ 				& $2.24$  \\
+      $4$ &  $105,668$ 				& $3.24$  \\
+      $5$ &  $68,379$ 				& $4.22$  \\
+      $6$ &  $48,190$ 				& $5.19$  \\
+      $7$ &  $35,709$ 				& $6.21$  \\
+      $8$ &  $27,710$ 				& $7.24$  \\
+      $9$ &  $22,280$ 				& $8.25$  \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\caption{Die H\"aufigkeit der H\"aufigkeit beim Bigramm und Good-Turing Discounting von >Church und Galemit aus 22 millionen Worten berechnet.}
+\label{tab:table_1}
+\end{table}
+
+In tatsachlich Anwendung muss man nicht bei jeder H\"aufigkeit den m-Gramm in Good-Turing einsetzen. Man gibt ein H\"aufigkeits-Schwellenwert $k$ an, wann ein m-Gramm nicht h\"aufig auftritt, weiniger als K, f\"uhrt man diese Gl\"attungsverfahren aus, sonst verwendet man die originale H\"aufigkeit $c(w_{n},w_{n-m+1}^{n-1})$. Das f\"uhrt die Gleichung (2.22) herbei.
+
+%2.22
+\begin{equation}
+\label{equationo:witten_bell_04}
+c^{*}(w_{n},w_{n-m+1}^{n-1})=\begin{cases}
+c(w_{n},w_{n-m+1}^{n-1}) & c(w_{n},w_{n-m+1}^{n-1})>k \\
+\frac{(c(w_{n},w_{n-m+1}^{n-1})+1)\frac{(k+1)N_{k+1}}{N{1}}}{1-\frac{(k+1)N_{k+1}}{N{1}}} & 0 \leq c(w_{n},w_{n-m+1}^{n-1})<k 
+\end{cases}
+\end{equation}
