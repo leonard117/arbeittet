@@ -49,3 +49,37 @@ Folgende ist eine Beispiele \"uber die Anwendung der Entropie, die die Bandbreit
 \end{table}
 
 Man kann genau berechenen, wie viele Bits bei der \"Ubertragung der alle 64 Samples gebraucht wird. F\"ur Sample X wird 1*32+2*16+8*3+4*4+6*1*4 = 128 bits be\"otigt. \"ur Sample Y wird 3*64 = 192 bits ben\"otigt. d.h. System Y braucht meher Bandbreit als System X. Weiterhin berechen wir auch die Entropie f\"ur beide Systems.
+
+%2.28
+\begin{multline}
+H(X)=-\sum_{x\in\chi}P(x)log_{2}(P(x))=-(1/2*log_{2}(1/2))+1/4*log_{2}(1/4)+1/8*log_{2}(1/8)\\
++1/16*log_{2}(1/16)+4*1/64*log_{2}(1/64))=2
+\end{multline}
+
+%2.29
+\begin{multline}
+H(Y)=-\sum_{y\in\chi}P(y)log_{2}(P(y))=-(8*1/8*log_{2}(1/8)=3
+\end{multline}
+
+Es ist man aufgef\"allt, dass $H(Y)/H(X)=3/2=192/128$. Aus diesem Beispiel kann man sofort kennen, dass die Entropie als die Metrik der Bandbreitanfordrung eines Systems bezeichnet wird.
+   
+Vorher haben wir nur f\"ur eine Variableentropie gesprochen. Man braucht tats\"achlich die Entropie f\"ur Variablefolge.
+
+%2.30
+\begin{equation}
+H(w_{1},w_{2}...w_{n})=H(w_{1}^{n})=-\sum{P(w_{1}^{n})log_{2}P(w_{1}^{n})}
+\end{equation}
+
+Entropierate
+
+%2.31
+\begin{equation}
+H(L)=\frac{1}{n}H(w_{1}^{n})=-\frac{1}{n}\sum_{w\in L}P(w_{1}^{n})log_{2}P(w_{1}^{n})
+\end{equation}
+
+Wie das tats\"achliche Sprachmodell in der Gleichung(2.1) kann n infinit gro\ss sein.
+
+%2.32
+\begin{equation}
+H(L)=\lim_{n\to\infty}\frac{1}{n}H(w_{1}^{n})=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}P(w_{1}^{n})log_{2}P(w_{1}^{n})
+\end{equation}
