@@ -83,3 +83,34 @@ Wie das tats\"achliche Sprachmodell in der Gleichung(2.1) kann n infinit gro\ss 
 \begin{equation}
 H(L)=\lim_{n\to\infty}\frac{1}{n}H(w_{1}^{n})=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}P(w_{1}^{n})log_{2}P(w_{1}^{n})
 \end{equation}
+
+Nach "Shannon-McMilan-Breiman theorem" wird die Gleichung vereinfacht.
+%2.33
+\begin{equation}
+H(L)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}log_{2}P(w_{1}^{n})
+\end{equation}
+
+Kreuzentropie
+$p(w_{1}^{n})$ in Gleichung (2.31) ist die wahr Wahrscheinlichkeitsverteilung des Sprachmodells. Aber $p(w_{1}^{n})$ ist bei dem tats\"achlichen Berechnen nicht realisierbar. Man kann aus den Trainingdatenbasen die $m(w_{1}^{n})$ sch\"atzen. Aus diesem Grund  wird hier Kreuzentropie diskutiert.
+
+%2.34
+\begin{equation}
+H(p,m)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}p(w_{1}^{n})log_{2}m(w_{1}^{n})
+\end{equation}
+
+$p(w_{1}^{n})$ ist zwar nicht bekannt, nach "Shannon-McMilan-Breiman theorem" wird die Gleichung vereinfacht. 
+
+%2.35
+\begin{equation}
+H(p,m)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}log_{2}m(w_{1}^{n})
+\end{equation}
+
+F\"ur jedes Modell $m$ gilt \\
+%2.36
+\begin{equation}
+H(p)\leq H(p,m)
+\end{equation}
+
+Und nur wenn $m=p$, gilt $H(p)=H(p,m)$. Mit ander W\"orter, je kleiner $H(p,m)$ ist, desto genauer die Wahrscheinlichkeit $m$ an die wahr Wahrscheinlichkeit $p$ anggepassen wird.
+In unserer folgenden Experimente wird Entropie sowie Perlexit\"at dazu zu messen verwendet, wie gut die trainierte M-Gramm das eingegebene Testkorpus anpassen kann.
+
