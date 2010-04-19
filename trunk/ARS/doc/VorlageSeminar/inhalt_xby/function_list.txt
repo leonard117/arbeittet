@@ -135,9 +135,21 @@ p(w_{i}|w_{i-2},w_{i-1}) & c(w_{i-2},w_{i-1},w_{i})>0 \\
 \begin{equation}
 \label{equation:backing_off_02}
 \hat{P}(w_{n}|w_{n-m+1}^{n-1})=P^{*}(w_{n}|w_{n-m+1}^{n-1})+\theta(P(w_{n}|w_{n-m+1}^{n-1}))\alpha(w_{n-m+1}^{n-1})P^{*}(w_{n}|w_{n-m+2}^{n-1})
-\eng{equation}
+\end{equation}
 
 
+
+%2.26
+\begin{equation}
+\label{equation:bewertung_01}
+H(x)=-\sum_{x\in\chi}P(x)log_{b}(P(x))
+\end{equation}
+
+%2.27
+\begin{equation}
+\label{equation:bewertung_02}
+PP(x)=2^{H(x)}=2^{-\sum_{x\in\chi}P(x)log_{b}(P(x))}
+\end{equation}
 
 %table 2.1
 \begin{table}[h]
