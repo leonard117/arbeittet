@@ -1,0 +1,37 @@
+%experiment
+SLM-Toolkit ist ein Werkzeug von Roni Rosenfeld,das angegebene Text bearbeit und folgende Ausgabe erzeugt:
+\begin{itemize}
+	\item word frequency lists and vocabularies
+	\item word bigram and trigram counts
+	\item vocabulary-specific word bigram and trigram counts
+	\item bigram- and trigram-related statistics
+	\item various Backoff bigram and trigram language models
+	\item perplexity - Out-Of-Vocabulary (OOV) rate 
+	\item bigram- and trigram-hit ratios
+	\item distribution of Backoff cases 
+	\item annotation of test data with language scores 
+\end{itemize}
+
+Das Software gibt beim Sprachmodell auch "absolute", good\_turing and witten\_bell- Discounting an.
+F\"ur bestimmt Ziel muss man nicht alle Software ausf\"uhren. Abbildung (3.1) ist eine typische Anwendung, die Datenfluss und Operationfluss zeigt.
+Ein Training-kurps ist am Anfang eingegeben und nach Modellierungsverfahren wird ein Sprachmodell ausgegeben
+
+
+\begin{figure}[htbp]
+	\includegraphics[scale=0.3]{bilder/toolkit.png}
+	 \caption{Flussdiagramm der typische Anwendung}
+  \label{fig:figure_2}
+\end{figure}
+
+Bei Auswahl der Trainingkorpus und Testkorpus muss man sorgf\"altig entwerfen. \cite{book_speech} deutet uns einige Regele an, dass Trainingkorpra nicht zu spezifisch f\"ur die Aufgabe und auch nicht zu allgemein sein sollen.  
+
+In unserer Experimente verwenden wir WSJ(Wall Street Journal) Sprachdatenbank, erhalten wir die Testergebniss von unterschiedlich Discounting und M-Gramm-Modell. In der Experimente werden am Ende die Parameter backoff\_from\_unk\_inc und backoff\_from\_unk\_exc beim Entropieberechen eingesetzt.  
+ Aber wir haben auch eine Problem gefunden, dass bei Absolute-Discounting man nur NAN bekommen kann, wenn man mit komplette wsj-Databasis arbeiten, weil die Vokabulargr\"o\ss e von 65535 beschr\"anket werden. In Tabelle 3.1 gebe ich nur verringerte Trainingbasis (Trainingdaten aus Verzeichnis 88 und Testdaten pp\_et\_05.nvp). Die Testdatei pp\_et\_05.nvp ist von der Trainingbasis unabh"angig.
+ 
+ 
+ %table
+ %
+ 
+ 
+Aus obiger Testergebnisse kann man als Fazit festhalten, dass Trigramme besser als Bigramme sowie Unigramme sind, backoff\_from\_unk\_exc auch besser als backoff\_from\_unk\_inc .
+ 

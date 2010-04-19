@@ -166,7 +166,41 @@ H(X)=-\sum_{x\in\chi}P(x)log_{2}(P(x))=-(1/2*log_{2}(1/2))+1/4*log_{2}(1/4)+1/8*
 H(Y)=-\sum_{y\in\chi}P(y)log_{2}(P(y))=-(8*1/8*log_{2}(1/8)=3
 \end{multline}
 
+%2.30
+\begin{equation}
+H(w_{1},w_{2}...w_{n})=H(w_{1}^{n})=-\sum{P(w_{1}^{n})log_{2}P(w_{1}^{n})}
+\end{equation}
 
+%2.31
+\begin{equation}
+H(L)=\frac{1}{n}H(w_{1}^{n})=-\frac{1}{n}\sum_{w\in L}P(w_{1}^{n})log_{2}P(w_{1}^{n})
+\end{equation}
+
+%2.32
+\begin{equation}
+H(L)=\lim_{n\to\infty}\frac{1}{n}H(w_{1}^{n})=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}P(w_{1}^{n})log_{2}P(w_{1}^{n})
+\end{equation}
+
+%2.33
+\begin{equation}
+H(L)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}log_{2}P(w_{1}^{n})
+\end{equation}
+
+
+%2.34
+\begin{equation}
+H(p,m)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}p(w_{1}^{n})log_{2}m(w_{1}^{n})
+\end{equation}
+
+%2.35
+\begin{equation}
+H(p,m)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}log_{2}m(w_{1}^{n})
+\end{equation}
+
+%2.36
+\begin{equation}
+H(p)\leq H(p,m)
+\end{equation}
 
 
 
