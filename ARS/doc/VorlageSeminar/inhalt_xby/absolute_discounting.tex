@@ -11,7 +11,28 @@ $d\approx \frac{c_{1}}{c_{1}+c_{2}}$ \\
 $c_{1}$:Anzahl der erstmal gesehenen W\"orter.\\
 $c_{2}$:Anzahl der zweimal gesehenen W\"orter.\\
 $\alpha (w_{n-m+1}^{n-1})$:Normierungskonstante, damit die Gleichung $\sum_{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=1$ immer gilt. Die Normierungskonstante ergibt sich aus folgende Rechnung.
+%2.10
+\begin{multline}
+1=\sum_{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}\frac{c(w_{n-m+1}^{n-1},w_{n})-d}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})\sum_{w_{n}}\beta (w_{n}|w_{n-m+1}^{n-1})\\
+=\frac{1}{c(w_{n-m+1}^{n-1})}(\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}c(w_{n-m+1}^{n-1},w_{n})-\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}d)+\alpha (w_{n-m+1}^{n-1})\\
+=\frac{c(w_{n-m+1}^{n-1})}{c(w_{n-m+1}^{n-1})}-\frac{d\cdot c_{+}(w_{n-m+1}^{n-1})}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})
+\end{multline}
 
+%2.11-2.12
+\begin{gather}
+\alpha (w_{n-m+1}^{n-1})=\frac{d\cdot c_{+}(w_{n-m+1}^{n-1})}{c(w_{n-m+1}^{n-1})}\\
+c_{+}(w_{n-m+1}^{n-1})=\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})>0}1
+\end{gather}
+
+
+$\beta (w_{n}|w_{n-m+1}^{n-1})$:Backing-off Verteilung. Wenn $c(w_{n}|w_{n-m+1}^{n-1})=0$, dann f\"allt man auf die Verteilung zur\"uck
+z.B. Bei Trigramm,\\
+
+%2.13
 \begin{equation}
-1=\sum_{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}\frac{c(w_{n-m+1}^{n-1},w_{n})-d}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})\sum_{w_{n}}\beta (w_{n}|w_{n-m+1}^{n-1})
+\beta (w_{n}|w_{n-2}^{n-1})=\begin{cases}
+p(w_{n}|w_{n-1}) & c(w_{n},w_{n-1},w_{n-2})=0 and c(w_{n},w_{n-1})>0 \\
+p(w_{n}) & c(w_{n},w_{n-1})=0 
+\end{cases}
 \end{equation}
+

@@ -1,0 +1,41 @@
+%witten_bell_discounting
+Ein besserer und komplexerer Algorithmus lautet Witen-Bell-Discounting.
+Dieser Algorithmus basiert auf die Begriff "Things see once". Man Sch\"atzt die Wahrscheinlichkeit des ungesehenen m-Gramms mit der Anzahl der erst mal gesehenen M-Gramms. Zun\"achst sorgt man f\"ur die Wahrscheinlichkeitsma\ss , die zu ungesehenen m-Gramm zuordnen sollen. Die Gleichung (2.16) berechnet die  gesamte Wahrscheinlichkeit f\"ur  die M-Gramme mit Zero-Wahrscheinlichkeit.
+%2.16
+\begin{equation}
+\label{equation:witten_bell_01}
+\sum_{i:c_{i}=0}p_{i}^{*}(w_{i}|w_{n-m+1}^{n-1})=\frac{T(w_{n-m+1}^{n-1})}{N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1})}
+\end{equation}
+
+$N(w_{n-m+1}^{n-1})$: Anzahl der Tokens
+$T(w_{n-m+1}^{n-1})$:Anzahl der erst mal gesehenen m-Gramms oder Typen
+
+Um die genau Wahrscheinlichkeit $p_{i}^{*}(w_{i}|w_{n-m+1}^{n-1})$ eines ungesehenen M-Gramm zu bestimmen, muss die Gleichung(2.16) in beide Seit durch Anzahl der ungesehenen m-Gramms wie Gleichung (2.17).
+
+%2.17
+\begin{equation}
+\label{equation:witten_bell_02}
+p_{i}^{*}(w_{i}|w_{n-m+1}^{n-1})=\frac{T(w_{n-m+1}^{n-1})}{Z(w_{n-m+1}^{n-1})(N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1}))}
+\end{equation}
+
+$Z(w_{n-m+1}^{n-1})=\sum_{i:c_{i}=0}1$:: Anzahl aller nie gesehenen m-Gramme mit Vergangenheit $(w_{n-m+1}^{n-1})$
+
+Jedes Null-Wahrscheinlichkeit m-Gramm erh\"alt gleichen Anteil an der Wahrscheinlichkeitsma\ss (Division der Wahrscheinlichkeitsma\ss durch $Z(w_{n-m+1}^{n-1})$.
+Die Wahrscheinlichkeit f\"ur ein gesehenen m-Gramme \"andert sich entsprechend; dabei muss gelten:$\sum_{w_{n}}p(w_{n}|w_{n-m+1}^{n-1})=1$. Dann wird die ML-Sch\"atzwert  f\"ur ein gesehenen m-Gramme von (2.8) zu eine neue Form (2.18). 
+
+%2.18
+\begin{equation}
+\label{equation:witten_bell_03}
+p^{*}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n}|w_{n-m+1}^{n-1})}{N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1})}
+\end{equation}
+
+Bei Zusammenfassung ist die Darstellung der Witten-Bell-Discounting f\"ur m-Gramm wie folgende Gleichung (2.19).
+
+%2.19
+\begin{equation}
+\label{equationo:witten_bell_04}
+p^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
+\frac{c(w_{n},w_{n-m+1}^{n-1})}{N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1})} & c(w_{n},w_{n-m+1}^{n-1})>0 \\
+\frac{T(w_{n-m+1}^{n-1})}{Z(w_{n-m+1}^{n-1})(N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1}))} & c(w_{n},w_{n-m+1}^{n-1})=0 
+\end{cases}
+\end{equation}
