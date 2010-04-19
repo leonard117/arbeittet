@@ -99,3 +99,66 @@ p^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
 \frac{T(w_{n-m+1}^{n-1})}{Z(w_{n-m+1}^{n-1})(N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1}))} & c(w_{n},w_{n-m+1}^{n-1})=0 
 \end{cases}
 \end{equation}
+
+%2.20
+\begin{equation}
+N_{c}=\sum_{c(w_{n})=c}1
+\end{equation}
+
+%2.21
+\begin{equation}
+c^{*}(w_{n},w_{n-m+1}^{n-1})=(c(w_{n},w_{n-m+1}^{n-1})+1)\frac{N_{c+1}}{N_{c}}
+\end{equation}
+
+
+%2.22
+\begin{equation}
+\label{equationo:witten_bell_04}
+c^{*}(w_{n},w_{n-m+1}^{n-1})=\begin{cases}
+c(w_{n},w_{n-m+1}^{n-1}) & c(w_{n},w_{n-m+1}^{n-1})>k \\
+\frac{(c(w_{n},w_{n-m+1}^{n-1})+1)\frac{(k+1)N_{k+1}}{N{1}}}{1-\frac{(k+1)N_{k+1}}{N{1}}} & 0 \leq c(w_{n},w_{n-m+1}^{n-1})<k 
+\end{cases}
+\end{equation}
+
+
+%2.23
+\begin{equation}
+\label{equation:backing_off_01}
+\hat{p}(w_{i}|w_{i-2},w_{i-1})=\begin{cases}
+p(w_{i}|w_{i-2},w_{i-1}) & c(w_{i-2},w_{i-1},w_{i})>0 \\
+\alpha_{1}p(w_{i}|w_{i-1})& c(w_{i-2},w_{i-1},w_{i})=0 and c(w_{i-2},w_{i-1})>0 \\
+\alpha_{1}p(w_{i}) & sonst 
+\end{equation}
+
+
+%2.24
+\begin{equation}
+\label{equation:backing_off_02}
+\hat{P}(w_{n}|w_{n-m+1}^{n-1})=P^{*}(w_{n}|w_{n-m+1}^{n-1})+\theta(P(w_{n}|w_{n-m+1}^{n-1}))\alpha(w_{n-m+1}^{n-1})P^{*}(w_{n}|w_{n-m+2}^{n-1})
+\eng{equation}
+
+
+
+%table 2.1
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{clr}
+      \toprule
+      \bf $c$(MLE) & \bf $N_{c}$ & \bf $c^{*}$(GT)\\      
+      \midrule
+      $0$ &  $74,671,100,000$ & $0.0000270$  \\
+      $1$ &  $2,018,046$ 			& $0.446$  \\
+      $2$ &  $449,721$ 				& $1.26$  \\
+      $3$ &  $188,933$ 				& $2.24$  \\
+      $4$ &  $105,668$ 				& $3.24$  \\
+      $5$ &  $68,379$ 				& $4.22$  \\
+      $6$ &  $48,190$ 				& $5.19$  \\
+      $7$ &  $35,709$ 				& $6.21$  \\
+      $8$ &  $27,710$ 				& $7.24$  \\
+      $9$ &  $22,280$ 				& $8.25$  \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\caption{Die H\"aufigkeit der H\"aufigkeit beim Bigramm und Good-Turing Discounting von >Church und Galemit aus 22 millionen Worten berechnet.}
+\label{tab:table_1}
+\end{table}
