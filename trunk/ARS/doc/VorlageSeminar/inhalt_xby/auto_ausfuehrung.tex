@@ -1,27 +1,28 @@
 %auto_ausfuehrung
 
 Um den Toolkit automatisch ausfuhren, habe ich ein Satz von Perl-Script entwickelt. 
-Die gesamten Programme enthalten f\"unf Dateien "unpack.pl, convertfile.pl, Pfileoperation.pm, call\_toolkitEx.pl, call\_toolkit.ini".
-"unpack.pl" hat die Aufgabe, die originale in Format .z komprimierte  wsj Dateien zu extrahieren.
-"convertfile.pl": tauscht die ung\"ultige Kuse (<pxxx></p><sxxx></s>) mit g\"ultige Kuse (<s></s>) aus und ver\"andert alle Buchstaben in Kleine. 
-"call\_toolkitEx.pl" ist das Hauptprogramm, das SLM-Toolkit aufzurufen. 
-"Pfileoperation.pm" ist gemeinsam Operationsbibliothek
-"call\_toolkit.ini" ist Parameterkonfiguration, darin enthalt Toolkits Verzeichnis, Trainingkorpus, Testkorpus, M-Grammtype und Discuntingtype. Au\ss erdem wird  "\# "  als Kommentzeichen verwendet. \"Anderung diese Datei werden unterschiedliche Versuche ausgef\"uhrt.\\
+Die gesamten Programme enthalten f\"unf Dateien "`unpack.pl, convertfile.pl, Pfileoperation.pm, call\_toolkitEx.pl, call\_toolkit.ini"'.
+"`unpack.pl"' hat die Aufgabe, die originale in Format "`.z"' komprimierte  wsj Dateien zu extrahieren.
+"`convertfile.pl"': tauscht die ung\"ultige Kuse (<pxxx></p><sxxx></s>) mit g\"ultige Kuse (<s></s>) aus und ver\"andert alle Buchstaben in Kleine. 
+"`call\_toolkitEx.pl"' ist das Hauptprogramm, das SLM-Toolkit aufzurufen. 
+"`Pfileoperation.pm"' ist gemeinsam Operationsbibliothek
+"`call\_toolkit.ini"' ist Parameterkonfiguration, darin enthalt Toolkits Verzeichnis, Trainingkorpus, Testkorpus, M-Grammtype und Discuntingtype. Au\ss erdem wird  "`\# "`  als Kommentzeichen verwendet. \"Anderung diese Datei werden unterschiedliche Versuche ausgef\"uhrt.\\
+
 \begin{lstlisting}
-\#SLM pfad \\
-programsource=..//CMU/bin \\
-\#trainingcurps \\
-filename=..//data/target//output/output.text \\
-filepath=..//data/target//output/ \\
-fileCcs=..//data//other//lm.ccs \\
-\#testcurps \\
-fileTestText=..//data//test//pp\_et\_05.nvp \\
-\#running  parameter \\
-ngram=1 \\
-\#ngram=2 \\
-\#ngram=3 \\
-\#discounting=absolute \\
-\#discounting=good\_turing \\
-discounting=witten\_bell \\
+#SLM pfad 
+programsource=..//CMU/bin 
+#trainingcurps 
+filename=..//data/target//output/output.text 
+filepath=..//data/target//output/ 
+fileCcs=..//data//other//lm.ccs 
+#testcurps 
+fileTestText=..//data//test//pp\_et\_05.nvp 
+#running  parameter 
+ngram=1 
+#ngram=2 
+#ngram=3 
+#discounting=absolute 
+#discounting=good\_turing 
+discounting=witten\_bell 
 
 \end{lstlisting}

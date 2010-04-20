@@ -8,18 +8,19 @@ p(w_{1}^n) = p(w_{1},w_{2}...w_{n}) = \prod_{i=1}^n p(w_{i}|w_{1},..w_{i-1}) \\
 \end{multline}
 
 2.2-2.5
-\begin{gather}
-p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-2},w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-2},w_{n-1}) \\
-p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{2})...p(w_{n}|w_{n-1}) \\
-p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i})=p(w_{1})p(w_{2})p(w_{3})...p(w_{n})
-\end{gather}
+\begin{align}
+p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i}|w_{i-2},w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-2},w_{n-1}) \\
+p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i}|w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{2})...p(w_{n}|w_{n-1}) \\
+p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i})=p(w_{1})p(w_{2})p(w_{3})...p(w_{n})\\
+p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i}|w_{i-m+1}^{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-m+1},...w_{n-1})
+\end{align}
 
 
 2.6-2.7
-\begin{gather}
-p(w|v)=\frac{p(v,w)}{p(v)} \\
-p(w_{n}|w_{n-m+1}^{n-1})=\frac{p(w_{n},w_{n-m+1}^{n-1} )}{p(w_{n-m+1}^{n-1} )} 
-\end{gather}
+\begin{align}
+p(w|v) &=\frac{p(v,w)}{p(v)} \\
+p(w_{n}|w_{n-m+1}^{n-1}) &=\frac{p(w_{n},w_{n-m+1}^{n-1} )}{p(w_{n-m+1}^{n-1})} 
+\end{align}
 
 2.8
 \begin{equation}
@@ -267,4 +268,33 @@ H(p)\leq H(p,m)
   \end{center}
 \caption{Samples aus System X und Y}
 \label{tab:table_2}
+\end{table}
+
+
+
+%table 3.1
+\begin{table}[h]
+  \begin{center}
+  \small\addtolength{\tabcolsep}{-5pt}
+    \begin{tabular}{l|l|r|r|r|r|r|r}
+     \toprule
+     m- &Backoff &\multicolumn{2}{|l|}{Absolute}&\multicolumn{2}{|l|}{Witten-bell}&\multicolumn{2}{l}{Good-Turing}\\
+	  \cline{3-8}
+	  Gram&(inc/exc)&Perplexit\"at&Entropie&Perplexit\"at&Entropie&Perplexit\"at&Entropie\\
+    \hline
+    \hline
+		Trigramm &inc 	& $292.23$ 	& $8.19$ 	& $291.88$ 	& $8.19$ 	& $307.33$ 	& $8.26$\\
+				 		 &exc		& $265.46$ 	& $8.05$ 	& $265.32$ 	& $8.05$ 	& $273.97$ 	& $8.1$\\
+		\hline
+		Bigramm  &inc 	& $354.2$ 	& $8.47$ 	& $353.4$ 	& $8.47$ 	& $359.32$ 	& $8.49$\\
+				 		 &exc		& $330.24$ 	& $8.37$ 	& $329.74$ 	& $8.37$ 	& $334.73$ 	& $8.39$\\
+		\hline
+		Unigramm &inc 	& $1130.39$ & $10.14$ & $1130.39$ & $10.14$ & $1130.39$ & $10.14$\\
+				 		 &exc		& $1130.39$ & $10.14$ & $1130.39$ & $10.14$ & $1130.39$ & $10.14$\\
+     \bottomrule
+
+    \end{tabular}
+  \end{center}
+     \caption{Die Entropie und Perplexit?t jeder Discounting und unterschiedlicher M-Gramme}
+\label{tab:table_3}
 \end{table}

@@ -6,22 +6,22 @@ p(w_{1}^n) = p(w_{1},w_{2}...w_{n}) = \prod_{i=1}^n p(w_{i}|w_{1},..w_{i-1}) \\
 = p(w_{1})p(w_{2}|w_{1})...p(w_{n}|w_{1},..w_{n-1})
 \end{multline}
 
-\cite{book_speech} erkl\"art , dass die Wortkettl\"ange n theoretisch infinit gro? sein kann und die Wahrscheinlichkeit $p(w_{n}|w_{1}^n)$nicht berechenbar wird. Man eingeht auf eine Approximation der bedingten Wahrscheinlichkeit durch Beschr\"anken der "History" in Bedingung. Die genaue Idee ist, dass man alle bedingten Wahrscheinlichkeiten $p(w_{n}|w_{1}...w_{n})$, f\"ur die letzten m-1 Vorg\"angerw\"orter von $w_{n}$ identisch sind, zu einer \"Aquivalenzklasse zusammenfasst. d.h. das Rechnen $p(w_{n}|w_{1}...w_{n})$ im Trigramm wird aus $p(w_{n-2})p(w_{n-1}|w_{n-2})p(w_{n}|w_{n-2},w_{n-1})$ anstatt alle bedingter Wahrscheinlichkeit bestimmt. 
+\cite{book_speech} erkl\"art , dass die Wortkettl\"ange n theoretisch infinit gro\ss sein kann und die Wahrscheinlichkeit $p(w_{n}|w_{1}^n)$nicht berechenbar wird. Man eingeht auf eine Approximation der bedingten Wahrscheinlichkeit durch Beschr\"anken der "History"\quad in Bedingung. Die genaue Idee ist, dass man alle bedingten Wahrscheinlichkeiten $p(w_{n}|w_{1}...w_{n})$, f\"ur die letzten m-1 Vorg\"angerw\"orter von $w_{n}$ identisch sind, zu einer \"Aquivalenzklasse zusammenfasst. d.h. das Rechnen $p(w_{n}|w_{1}...w_{n})$ im Trigramm wird aus $p(w_{n-2})p(w_{n-1}|w_{n-2})p(w_{n}|w_{n-2},w_{n-1})$ anstatt alle bedingter Wahrscheinlichkeit bestimmt. 
 Die Gleichung (2.2) ist die mathematische Darstellung f\"ur Trigramm(m=3), (2.3) f\"ur Bigramm(m=2), (2.4) f\"ur Unigramm(m=1) und (2.5) f\"ur M-Gramm.
 
-\begin{gather}
-p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-2},w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-2},w_{n-1}) \\
-p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{2})...p(w_{n}|w_{n-1}) \\
-p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i})=p(w_{1})p(w_{2})p(w_{3})...p(w_{n})\\
-p(w_{1}^n) \approx \prod_{i=1}^n p(w_{i}|w_{i-m+1}^{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-m+1},...w_{n-1})
-\end{gather}
+\begin{align}
+p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i}|w_{i-2},w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-2},w_{n-1}) \\
+p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i}|w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{2})...p(w_{n}|w_{n-1}) \\
+p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i})=p(w_{1})p(w_{2})p(w_{3})...p(w_{n})\\
+p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i}|w_{i-m+1}^{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-m+1},...w_{n-1})
+\end{align}
 
 Und vorliegende bedingten Wahrscheinlichkeit k\"onnen mathematisch wie folgende Gleichung (2.6) und (2.7)  aus unbedingter Wahrscheinlichkeit definieren.
 
-\begin{gather}
-p(w|v)=\frac{p(v,w)}{p(v)} \\
-p(w_{n}|w_{n-m+1}^{n-1})=\frac{p(w_{n},w_{n-m+1}^{n-1} )}{p(w_{n-m+1}^{n-1})} 
-\end{gather}
+\begin{align}
+p(w|v) &=\frac{p(v,w)}{p(v)} \\
+p(w_{n}|w_{n-m+1}^{n-1}) &=\frac{p(w_{n},w_{n-m+1}^{n-1} )}{p(w_{n-m+1}^{n-1})} 
+\end{align}
 
 $p(w_{n},w_{n-m+1}^{n-1})$: Auftretenswahrscheinlichkeit der Worterfolge $w_{n},w_{n-m+1}^{n-1}$.
 $p(w_{n-m+1}^{n-1})$: Auftretenswahrscheinlichkeit der Worterfolge $w_{n-m+1}^{n-1}$.
@@ -37,7 +37,7 @@ Hier $\hat{p}(w_{n}|w_{n-m+1}^{n-1})$ kann eine Approximation von der bedingte W
 $c(w_{n-m+1}^{n-1},w_{n})$: absolute H\"aufigkeit der Wortfolge $(w_{n-m+1}^{n-1},w_{n})$ in Trainingskorpus\\
 $c(w_{n-m+1}^{n-1})$:absolute H\"aufigkeit der Wortfolge $w_{n-m+1}^{n-1}$ in Trainingskorpus\\
 
-\cite{ars_script}
-\cite{int_MLE}
-\cite{folie_script}
-\cite{int_entropie}
+%\cite{ars_script}
+%\cite{int_MLE}
+%\cite{folie_script}
+%\cite{int_entropie}
