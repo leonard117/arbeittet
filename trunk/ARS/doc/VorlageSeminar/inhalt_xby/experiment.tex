@@ -18,20 +18,38 @@ Ein Training-kurps ist am Anfang eingegeben und nach Modellierungsverfahren wird
 
 
 \begin{figure}[htbp]
-	\includegraphics[scale=0.3]{bilder/toolkit.png}
+	\includegraphics[width=0.1\textwidth]{bilder/toolkit.png}
 	 \caption{Flussdiagramm der typische Anwendung}
   \label{fig:figure_2}
 \end{figure}
 
 Bei Auswahl der Trainingkorpus und Testkorpus muss man sorgf\"altig entwerfen. \cite{book_speech} deutet uns einige Regele an, dass Trainingkorpra nicht zu spezifisch f\"ur die Aufgabe und auch nicht zu allgemein sein sollen.  
 
-In unserer Experimente verwenden wir WSJ(Wall Street Journal) Sprachdatenbank, erhalten wir die Testergebniss von unterschiedlich Discounting und M-Gramm-Modell. In der Experimente werden am Ende die Parameter backoff\_from\_unk\_inc und backoff\_from\_unk\_exc beim Entropieberechen eingesetzt.  
+In unseren Experimenten verwenden wir die WSJ(Wall Street Journal) Sprachdatenbank, erhalten wir die Testergebniss von unterschiedlich Discounting und M-Gramm-Modell. In den Experimenten werden am Ende die Parameter \emph{backoff\_from\_unk\_inc} und \emph{backoff\_from\_unk\_exc} beim Entropieberechen eingesetzt.  
  Aber wir haben auch eine Problem gefunden, dass bei Absolute-Discounting man nur NAN bekommen kann, wenn man mit komplette wsj-Databasis arbeiten, weil die Vokabulargr\"o\ss e von 65535 beschr\"anket werden. In Tabelle 3.1 gebe ich nur verringerte Trainingbasis (Trainingdaten aus Verzeichnis 88 und Testdaten pp\_et\_05.nvp). Die Testdatei pp\_et\_05.nvp ist von der Trainingbasis unabh"angig.
  
  
  %table
- %
- 
- 
-Aus obiger Testergebnisse kann man als Fazit festhalten, dass Trigramme besser als Bigramme sowie Unigramme sind, backoff\_from\_unk\_exc auch besser als backoff\_from\_unk\_inc .
+%table 3.1
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{l|l||r|r|r|r|r|r}
+     
+     m- &Backoff &\multicolumn{2}{|l|}{Absolute}&\multicolumn{2}{|l|}{Witten-bell}&\multicolumn{2}{l}{Good-Turing}\\
+	  
+	  Gram&(inc/exc)&Perplexit\"at&Entropie&Perplexit\"at&Entropie&Perplexit\"at&Entropie\\
+     \hline
+		Trigramm &inc 	& $292.23$ 	& $8.19$ 	& $291.88$ 	& $8.19$ 	& $307.33$ 	& $8.26$\\
+				 		 &exc		& $265.46$ 	& $8.05$ 	& $265.32$ 	& $8.05$ 	& $273.97$ 	& $8.1$\\
+		Bigramm  &inc 	& $354.2$ 	& $8.47$ 	& $353.4$ 	& $8.47$ 	& $359.32$ 	& $8.49$\\
+				 		 &exc		& $330.24$ 	& $8.37$ 	& $329.74$ 	& $8.37$ 	& $334.73$ 	& $8.39$\\
+		Unigramm &inc 	& $1130.39$ & $10.14$ & $1130.39$ & $10.14$ & $1130.39$ & $10.14$\\
+				 		 &exc		& $1130.39$ & $10.14$ & $1130.39$ & $10.14$ & $1130.39$ & $10.14$\\
+     \hline
+    \end{tabular}
+  \end{center}
+\caption{Die H\"aufigkeit der H\"aufigkeit beim Bigramm und Good-Turing Discounting von >Church und Galemit aus 22 millionen Worten berechnet.}
+\label{tab:table_3}
+\end{table} 
+Aus obiger Testergebnisse kann man als Fazit festhalten, dass Trigramme besser als Bigramme sowie Unigramme sind, \emph{backoff\_from\_unk\_exc} auch besser als \emph{backoff\_from\_unk\_inc} .
  

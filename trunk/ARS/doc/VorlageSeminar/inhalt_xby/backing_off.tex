@@ -1,5 +1,5 @@
 %backing_off
-Discounting l\"ost das Problem von Zero-Wahrscheinlichkeit. Backing-off ist auch eine L\"osung. Wenn der ML-Sch\"atzenswert eines m-Gramms aus vorgegebenen Daten noch nicht bekannt ist, wird der durch den Sch\"atzenswert des (m-1)-Gramms repr\"asentiert. Beispielweise wird der Trigramm mit folgender Gleichung (2.23) bezeichnet.
+Discounting l\"ost das Problem von Zero-Wahrscheinlichkeit. Backing-off ist auch eine L\"osung. Wenn der ML-Sch\"atzenswert eines M-Gramms aus vorgegebenen Daten noch nicht bekannt ist, wird der durch den Sch\"atzenswert des (M-1)-Gramms repr\"asentiert. Beispielweise wird der Trigramm mit folgender Gleichung (2.23) bezeichnet.
 %2.23
 \begin{equation}
 \label{equation:backing_off_01}
@@ -11,7 +11,7 @@ Discounting l\"ost das Problem von Zero-Wahrscheinlichkeit. Backing-off ist auch
 	\end{cases}
 \end{equation}
 
-Au\ss erdem liefert die Backing-off-Methode eine optimiert L\"osung f\"ur Zero-Wahrscheinlichkeits-Problem. In vorgelegener Discountings bekommt alle ungesehenen m-Gramme aus Gleichung (2.15) und (2.19) gleich Verteilung, wenn $c(w_{n},w_{n-m+1}^{n-1})=0$. Mann kann den Discounting-Algorithmus mit Backing-off kombinieren. Wie in Discounting muss man zuerst die Wahrscheinlichkeit der beachteten m-Grammen abzinsen, um die Wahrscheinlichkeitsma\ss f\"ur die niedrige m-Gramme zu sparen. Der neue  abgezinste Sch\"atzwert wird $P^{*}(w_{n}|w_{n-m+1}^{n-1})$. Wenn $P(w_{n}|w_{n-m+1}^{n-1})=0$, wird die Backing-off-Phase ausgef\"uhrt.  Die Fertigdarstellung ist die Gleichung (2.24).  Mit die Hilf des Gewicht $\alpha(w_{n-m+1}^{n-1})$ wird versichert, dass die Summierung der Wahrscheinlichkeit $w_{n}$ f\"ur alle m-Gramme.
+Au\ss erdem liefert die Backing-off-Methode eine optimiert L\"osung f\"ur Zero-Wahrscheinlichkeits-Problem. In vorgelegener Discountings bekommt alle ungesehenen M-Gramme aus Gleichung (2.15) und (2.19) gleich Verteilung, wenn $c(w_{n},w_{n-m+1}^{n-1})=0$. Mann kann den Discounting-Algorithmus mit Backing-off kombinieren. Wie in Discounting muss man zuerst die Wahrscheinlichkeit der beachteten m-Gramme abzinsen, um die Wahrscheinlichkeitsma\ss f\"ur die niedrigen M-Gramme zu sparen. Der neue  abgezinste Sch\"atzwert wird $P^{*}(w_{n}|w_{n-m+1}^{n-1})$. Wenn $P(w_{n}|w_{n-m+1}^{n-1})=0$, wird die Backing-off-Phase ausgef\"uhrt.  Die Fertigdarstellung ist die Gleichung (2.24).  Mit die Hilf des Gewicht $\alpha(w_{n-m+1}^{n-1})$ wird versichert, dass die Summierung der Wahrscheinlichkeit $w_{n}$ f\"ur alle m-Gramme.
 
 %2.24
 \begin{equation}
@@ -21,8 +21,8 @@ Au\ss erdem liefert die Backing-off-Methode eine optimiert L\"osung f\"ur Zero-W
 
 $\theta(P(w_{n}|w_{n-m+1}^{n-1}))=\begin{cases} 0 & P(w_{n}|w_{n-m+1}^{n-1})>0 \\ 1 & P(w_{n}|w_{n-m+1}^{n-1})= 0 \end{cases}$:Bin\"aren Indikatorfunktion.\\
 $\alpha(w_{n-m+1}^{n-1})=\frac{1-\sum_{w_{n}:c(w_{n-m+1}^{n-1})>0}P^{*}(w_{n}|w_{n-m+1}^{n-1})}{\sum_{w_{n}:c(w_{n-m+1}^{n-1})=0}P^{*}(w_{n}|w_{n-m+2}^{n-1})}$: Gewicht f\"ur Backing-off.\\
-$P^{*}(w_{n}|w_{n-m+2}^{n-1})$: Wahrscheinlichkeit der gesehen m-Gramme nach Discounting.\\
-In Praktik lass man die einmalige Ereignisse wie ungesehene Ereignisse behandeln. Nach Kombination wird das Gleichung (2.23) gezeigte Trigramm wie Gleichung (2.25).
+$P^{*}(w_{n}|w_{n-m+2}^{n-1})$: Wahrscheinlichkeit der gesehen M-Gramme nach Discounting.\\
+In Praktik lass man die einmalige Ereignisse wie ungesehene Ereignisse behandeln. Nach Kombination wird die Gleichung (2.23) gezeigte Trigramm wie Gleichung (2.25).
 
 %2.25
 \begin{equation}

@@ -6,8 +6,8 @@ Die gesamten Programme enthalten f\"unf Dateien "unpack.pl, convertfile.pl, Pfil
 "convertfile.pl": tauscht die ung\"ultige Kuse (<pxxx></p><sxxx></s>) mit g\"ultige Kuse (<s></s>) aus und ver\"andert alle Buchstaben in Kleine. 
 "call\_toolkitEx.pl" ist das Hauptprogramm, das SLM-Toolkit aufzurufen. 
 "Pfileoperation.pm" ist gemeinsam Operationsbibliothek
-"call\_toolkit.ini" ist Parameterkonfiguration, darin enthalt Toolkits Verzeichnis, Trainingkorpus, Testkorpus, M-Grammtype und Discuntingtype. Au\ss erdem wird  "\#"  als Kommentzeichen verwendet. \"Anderung diese Datei werden unterschiedliche Versuche ausgef\"uhrt.
-
+"call\_toolkit.ini" ist Parameterkonfiguration, darin enthalt Toolkits Verzeichnis, Trainingkorpus, Testkorpus, M-Grammtype und Discuntingtype. Au\ss erdem wird  "\# "  als Kommentzeichen verwendet. \"Anderung diese Datei werden unterschiedliche Versuche ausgef\"uhrt.\\
+\begin{lstlisting}
 \#SLM pfad \\
 programsource=..//CMU/bin \\
 \#trainingcurps \\
@@ -23,3 +23,5 @@ ngram=1 \\
 \#discounting=absolute \\
 \#discounting=good\_turing \\
 discounting=witten\_bell \\
+
+\end{lstlisting}
