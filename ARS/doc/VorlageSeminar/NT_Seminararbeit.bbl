@@ -25,26 +25,24 @@
 J.~Daniel and H.~M. James, \emph{Speech and language processing}, 2000.
 
 \bibitem{int_MLE}
-\emph{Maximum-Likelihood-Methode}.
+\BIBentryALTinterwordspacing
+\emph{Maximum-Likelihood-Methode}. [Online]. Available:
+  \url{http://de.wikipedia.org/wiki/Maximum-Likelihood-Methode}
+\BIBentrySTDinterwordspacing
 
 \bibitem{ars_script}
 U.~P. Prof.Dr.Reinhold Haeb-Umbach, \emph{Algorithmen der Spracherkennung}.
 
-\bibitem{folie_script}
-V.~Leutnant, \emph{Algotihmen der Spracherkennung:Sprachemodellierung}.
-
 \bibitem{int_entropie}
-\emph{Entropie (Informationstheorie)}.
+\BIBentryALTinterwordspacing
+\emph{Entropie (Informationstheorie)}. [Online]. Available:
+  \url{http://de.wikipedia.org/wiki/Entropie_(Informationstheorie)}
+\BIBentrySTDinterwordspacing
 
-\bibitem{Digalakis1993}
-V.~Digalakis, J.~Rohlicek, and M.~Ostendorf, ``Ml estimation of a stochastic
-  linear system with the em algorithm and its application to speech
-  recognition,'' \emph{{IEEE} Transactions on Speech and Audio Processing},
-  vol.~1, no.~4, pp. 431--442, Oct. 1993.
-
-\bibitem{Lee2007}
-S.~Y. Lee and N.~S. Kim, ``A statistical model-based residual echo
-  suppression,'' \emph{{IEEE} Signal Processing Letters}, vol.~14, no.~10, pp.
-  758--761, 2007.
+\bibitem{int_slm_toolkit}
+\BIBentryALTinterwordspacing
+\emph{Statical Language Modeling Toolkit}. [Online]. Available:
+  \url{http://www.speech.cs.cmu.edu /SLM/toolkit.html}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}
