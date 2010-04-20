@@ -1,5 +1,5 @@
 %good_turing_discounting
-Good-Turing ist ein noch komplexer Discounting-Algorithmus und liefert uns andere M\"oglichkeit  das Zero-Wahrscheinlichkeits-Problem zu l\"osen. In Witten-Bell, muss man zun\"achst die Wahrscheinlichkeitsma\ss f\"ur ungesehenen M-Gramme sparen. Aber in diesem Algorithmus werden die gesuchte Wahrscheinlichkeitsma\ss aus Gleichung (2.8) direkt ausrechnet und die zu ungesehenen m-Gramme geh\"orte Parameter $c(w_{n},w_{n-m+1}^{n-1})$ durch die Anzahl $N_{c}$ der  $c$ mal in Training auftretet m-Gramme berechnet. Um die Bedeutung $N_{c}$ zu erkl\"aren, nimmt man Unigramm als Beispiel. $N_{0}$ ist der Anzahl der ungesehenen m-Gramme, $N_{1}$ist der Anzahl der nur ein mal gesehenen m-Gramme, $N_{2}$ bedeutet, es   m-Gramme gibt, die nur 2 mal auftreten usw. . Die mathematische Darstellung f\"ur $N_{c}$ seht wie Gleichung (2.20).
+Good-Turing ist ein noch komplexer Discounting-Algorithmus und liefert uns andere M\"oglichkeit  das Zero-Wahrscheinlichkeits-Problem zu l\"osen. In Witten-Bell, muss man zun\"achst die Wahrscheinlichkeitsma\ss f\"ur ungesehene M-Gramme sparen. Aber in diesem Algorithmus werden die gesuchte Wahrscheinlichkeitsma\ss aus Gleichung (2.8) direkt ausrechnet und die zu ungesehenen m-Gramme geh\"orte Parameter $c(w_{n},w_{n-m+1}^{n-1})$ durch die Anzahl $N_{c}$ der  $c$ mal in Training auftretet m-Gramme berechnet. Um die Bedeutung $N_{c}$ zu erkl\"aren, nimmt man Unigramm als Beispiel. $N_{0}$ ist der Anzahl der ungesehenen m-Gramme, $N_{1}$ist der Anzahl der nur ein mal gesehenen M-Gramme, $N_{2}$ bedeutet, es   m-Gramme gibt, die nur 2 mal auftreten usw. . Die mathematische Darstellung f\"ur $N_{c}$ seht wie Gleichung (2.20).
 %2.20
 \begin{equation}
 N_{c}=\sum_{c(w_{n})=c}1
@@ -34,11 +34,11 @@ Die Folgende Tabelle(2.1)  aus [2] zeigt eine Anwendung des Good-Turing Dsicount
       \bottomrule
     \end{tabular}
   \end{center}
-\caption{Die H\"aufigkeit der H\"aufigkeit beim Bigramm und Good-Turing Discounting von >Church und Galemit aus 22 millionen Worten berechnet.}
+\caption{Die H\"aufigkeit der H\"aufigkeit beim Bigramm und Good-Turing Discounting von >Church und Galemit aus 22 Millionen Worten berechnet.}
 \label{tab:table_1}
 \end{table}
 
-In tatsachlich Anwendung muss man nicht bei jeder H\"aufigkeit den m-Gramm in Good-Turing einsetzen. Man gibt ein H\"aufigkeits-Schwellenwert $k$ an, wann ein m-Gramm nicht h\"aufig auftritt, weiniger als K, f\"uhrt man diese Gl\"attungsverfahren aus, sonst verwendet man die originale H\"aufigkeit $c(w_{n},w_{n-m+1}^{n-1})$. Das f\"uhrt die Gleichung (2.22) herbei.
+In tatsachlicher Anwendung muss man nicht bei jeder H\"aufigkeit den m-Gramm in Good-Turing einsetzen. Man gibt ein H\"aufigkeits-Schwellenwert $k$ an, wann ein m-Gramm nicht h\"aufig auftritt, weiniger als K, f\"uhrt man diese Gl\"attungsverfahren aus, sonst verwendet man die originale H\"aufigkeit $c(w_{n},w_{n-m+1}^{n-1})$. Das f\"uhrt die Gleichung (2.22) herbei.
 
 %2.22
 \begin{equation}

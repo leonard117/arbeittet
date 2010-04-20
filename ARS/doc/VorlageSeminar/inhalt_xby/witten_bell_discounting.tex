@@ -1,6 +1,6 @@
 %witten_bell_discounting
 Ein besserer und komplexerer Algorithmus lautet Witen-Bell-Discounting.
-Dieser Algorithmus basiert auf die Begriff "Things see once". Man Sch\"atzt die Wahrscheinlichkeit des ungesehenen m-Gramms mit der Anzahl der erst mal gesehenen M-Gramms. Zun\"achst sorgt man f\"ur die Wahrscheinlichkeitsma\ss , die zu ungesehenen m-Gramm zuordnen sollen. Die Gleichung (2.16) berechnet die  gesamte Wahrscheinlichkeit f\"ur  die M-Gramme mit Zero-Wahrscheinlichkeit.
+Dieser Algorithmus basiert auf dem Begriff "Things see once". Man Sch\"atzt die Wahrscheinlichkeit des ungesehenen m-Gramms mit der Anzahl des erst mal gesehenen M-Gramms. Zun\"achst sorgt man f\"ur die Wahrscheinlichkeitsma\ss , die zu ungesehenen m-Gramm zuordnen sollen. Die Gleichung (2.16) berechnet die  gesamte Wahrscheinlichkeit f\"ur  die M-Gramme mit Zero-Wahrscheinlichkeit.
 %2.16
 \begin{equation}
 \label{equation:witten_bell_01}
@@ -22,7 +22,7 @@ $Z(w_{n-m+1}^{n-1})=\sum_{i:c_{i}=0}1$:: Anzahl aller nie gesehenen m-Gramme mit
 
 Jedes Null-Wahrscheinlichkeit m-Gramm erh\"alt gleichen Anteil an der Wahrscheinlichkeitsma\ss (Division der Wahrscheinlichkeitsma\ss durch $Z(w_{n-m+1}^{n-1})$.
 Die Wahrscheinlichkeit f\"ur ein gesehenen m-Gramme \"andert sich entsprechend; dabei muss gelten:\\ 
-$\sum_{w_{n}}p(w_{n}|w_{n-m+1}^{n-1})=1$. Dann wird die ML-Sch\"atzwert  f\"ur ein gesehenen m-Gramme von (2.8) zu eine neue Form (2.18). 
+$\sum_{w_{n}}p(w_{n}|w_{n-m+1}^{n-1})=1$. Dann wird die ML-Sch\"atzwert  f\"ur ein gesehenes m-Gramm von (2.8) zu einer neuen Form (2.18). 
 
 %2.18
 \begin{equation}
