@@ -6,7 +6,7 @@ Die gesamten Programme enthalten f\"unf Dateien "`unpack.pl, convertfile.pl, Pfi
 "`convertfile.pl"': tauscht die ung\"ultige Kuse (<pxxx></p><sxxx></s>) mit g\"ultige Kuse (<s></s>) aus und ver\"andert alle Buchstaben in Kleine. 
 "`call\_toolkitEx.pl"' ist das Hauptprogramm, das SLM-Toolkit aufzurufen. 
 "`Pfileoperation.pm"' ist gemeinsam Operationsbibliothek
-"`call\_toolkit.ini"' ist Parameterkonfiguration, darin enthalt Toolkits Verzeichnis, Trainingkorpus, Testkorpus, M-Grammtype und Discuntingtype. Au\ss erdem wird  "`\# "`  als Kommentzeichen verwendet. \"Anderung diese Datei werden unterschiedliche Versuche ausgef\"uhrt.\\
+"`call\_toolkit.ini"' ist Parameterkonfiguration, darin enthalt Toolkits Verzeichnis, Trainingkorpus, Testkorpus, M-Grammtype und Discuntingtype. Au\ss erdem wird  "`\# "`  als Kommentzeichen verwendet. \"Anderung diese Datei werden unterschiedliche Versuche ausgef\"uhrt. Folgende ist das Sample aktueller Datei. Den kompletten findet man unter \url{http://code.google.com/p/arsausarbeit/source/browse/#svn/trunk/arsausarbeit/perl_program/linux/script}\\
 
 \begin{lstlisting}
 #SLM pfad 
@@ -16,13 +16,13 @@ filename=..//data/target//output/output.text
 filepath=..//data/target//output/ 
 fileCcs=..//data//other//lm.ccs 
 #testcurps 
-fileTestText=..//data//test//pp\_et\_05.nvp 
+fileTestText=..//data//test//pp_et_05.nvp 
 #running  parameter 
 ngram=1 
 #ngram=2 
 #ngram=3 
 #discounting=absolute 
-#discounting=good\_turing 
-discounting=witten\_bell 
+#discounting=good_turing 
+discounting=witten_bell 
 
 \end{lstlisting}
