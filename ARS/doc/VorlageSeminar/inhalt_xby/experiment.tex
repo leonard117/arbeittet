@@ -28,7 +28,7 @@ Ein Training-kurps ist am Anfang eingegeben und nach Modellierungsverfahren wird
 Bei Auswahl der Trainingkorpus und Testkorpus muss man sorgf\"altig entwerfen. \cite{book_speech} deutet uns einige Regele an, dass Trainingkorpra nicht zu spezifisch f\"ur die Aufgabe und auch nicht zu allgemein sein sollen.  
 
 In unseren Experimenten verwenden wir die WSJ(Wall Street Journal) Sprachdatenbank, erhalten wir die Testergebniss von unterschiedlich Discounting und M-Gramm-Modell. In den Experimenten werden am Ende die Parameter \emph{backoff\_from\_unk\_inc} und \emph{backoff\_from\_unk\_exc} beim Entropieberechen eingesetzt.  
- Aber wir haben auch eine Problem gefunden, dass bei Absolute-Discounting man nur NAN bekommen kann, wenn man mit komplette wsj-Databasis arbeiten, weil die Vokabulargr\"o\ss e von 65535 beschr\"anket werden. In Tabelle 3.1 gebe ich nur verringerte Trainingbasis (Trainingdaten aus Verzeichnis 88 und Testdaten pp\_et\_05.nvp). Die Testdatei pp\_et\_05.nvp ist von der Trainingbasis unabh"angig.
+ Aber wir haben auch eine Problem gefunden, dass bei Absolute-Discounting man nur NAN bekommen kann, wenn man mit komplette wsj-Databasis arbeiten, weil die Vokabulargr\"o\ss e von 65535 beschr\"anket werden. In Tabelle 3.1 gebe ich nur verringerte Trainingbasis (Trainingdaten aus Verzeichnis 88 und Testdaten "`pp\_et\_05.nvp"'). Die Testdatei "`pp\_et\_05.nvp"' ist von der Trainingbasis unabh"angig.
  
  
  %table
@@ -55,7 +55,7 @@ In unseren Experimenten verwenden wir die WSJ(Wall Street Journal) Sprachdatenba
 
     \end{tabular}
   \end{center}
-     \caption{Die Entropie und Perplexit?t jeder Discounting und unterschiedlicher M-Gramme}
+     \caption{Die Entropie und Perplexit\"at jeder Discounting und unterschiedlicher M-Gramme}
 \label{tab:table_3}
 \end{table}
  

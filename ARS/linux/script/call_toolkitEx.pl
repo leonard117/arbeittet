@@ -80,7 +80,9 @@ sub call_toolkit{
 	$fileVocab = "$filepath/$fileVocab";
 	$input = $filewfreq;
 	$output = $fileVocab;	
-	system("$programsource/wfreq2vocab <$input> $output");
+	system("$programsource/wfreq2vocab -top 65535  <$input> $output");
+	#system("$programsource/wfreq2vocab -gt 10 <$input> $output");
+
 #text2wngram [ -n 3 ]
 #            [ -temp /usr/tmp/ ]
 #            [ -chars n ]
@@ -105,6 +107,8 @@ sub call_toolkit{
 	$input = $fileVocab;
 	$output = $fileIdNgram;	
 	#system("$programsource/text2idngram -vocab $fileVocab -buffer 100 -temp $filepath -files 20 -n $ngram -write_ascii <$fileText> $output");
+
+
 	system("$programsource/text2idngram -vocab $fileVocab -buffer 100 -temp $filepath -files 20 -n $ngram  <$fileText> $output");
 
 #ngram2mgram -n N -m M
@@ -159,9 +163,8 @@ sub call_toolkit{
 	$fileLModel = "$filepath/$fileLModel";
 	#$input = $fileIdNgram;
 	$output = $fileLModel;	
-	system("$programsource/idngram2lm  -idngram $fileIdNgram -vocab $fileVocab -arpa $output -context $fileCcs -$discounting -n $ngram ");
-	#system("$programsource/idngram2lm  -idngram $fileIdNgram -vocab $fileVocab -binary $output  -n $ngram ");
-	#system("$programsource/idngram2lm  -idngram $fileIdNgram -vocab $fileVocab -arpa $output  -n $ngram ");
+	system("$programsource/idngram2lm  -idngram $fileIdNgram -vocab $fileVocab -arpa $output -context $fileCcs -$discounting -n $ngram");
+
 
 
 #binlm2arpa -binary .binlm
@@ -202,8 +205,15 @@ sub call_toolkit{
 # system("cat $fileText | text2wfreq | wfreq2vocab -top 20000 > $fileVocab");
 # system("cat $fileText | text2idngram -vocab $fileVocab|idngram2lm -vocab $fileVocab -idngram -arpa  fileLModel -context $fileCcs");
 
-#system("echo perplexity -text $fileText | $programsource/evallm -arpa $fileLModel -context $fileCcs");
-system("echo perplexity -text $fileTestText | $programsource/evallm -arpa $fileLModel -context $fileCcs");	
+system("echo perplexity -text $fileText | $programsource/evallm -arpa $fileLModel -context $fileCcs");
+
+system("echo perplexity -text $fileTestText  -backoff_from_unk_inc| $programsource/evallm -arpa $fileLModel -context $fileCcs ");	
+
+system("echo perplexity -text $fileTestText -backoff_from_unk_exc | $programsource/evallm -arpa $fileLModel -context $fileCcs ");
+
+
+
+
 #system("echo perplexity -text $fileTestText | $programsource/evallm -binary $fileLModel ");
 
 
