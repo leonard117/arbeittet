@@ -1,22 +1,26 @@
 %bewertung_sprachmodells
-Vorher haben wir die Modellierung vorgestellt. Aber wie gut ist das entworfene Sprachmodell? Ist das aus unserer Trainingdatenbase trainierte Modell auch g\"ultig bei einem unabh\"angigen Textkorpus? In der Informationstheorie wird Entropie dazu h\"aufig eingef\"uhrt.
-Entropie ist ein Ma\ss f\"ur den mittleren Informationsgehalt oder auch Informationsdichte eines Zeichensystems \cite{int_entropie}. Man kann durch die Entropietheorie die Informationsgehalten messen und bewerten, ob ein m-Gramm an eine Sprache anpassen. Man kann auch die Vorhersagkraft eines Sprachmodells messen,usw.\cite{book_speech}
+Vorher haben wir die Modellierung vorgestellt. Aber wie gut ist das entworfene Sprachmodell? Ist das aus unserer Trainingdatenbase trainierte Modell auch g\"ultig bei einem unabh\"angigen Textkorpus? In der Informationstheorie wird dazu h\"aufig \emph{Entropie}  eingef\"uhrt.
+\\
+\\
+\emph{Entropie} ist ein Ma\ss f\"ur den mittleren Informationsgehalt oder auch die Informationsdichte eines Zeichensystems \cite{int_entropie}. Man kann durch die Entropietheorie die Informationsgehalte messen und bewerten, ob ein m-Gramm an eine Sprache angepasst werden kann. Man kann ebenfalls die Vorhersagekraft eines Sprachmodells messen,usw..\cite{book_speech}
 Die Entropie wird zun\"achst durch folgende Gleichung definiert:
-
 %2.26
 \begin{equation}
 \label{equation:bewertung_01}
 H(x)=-\sum_{x\in\chi}P(x)log_{b}(P(x))
 \end{equation}
-
-$x$ ist ein zuf\"alliges Ereignis.$\chi$ sind gesamte Satz. $-log_{b}(P(x))$ bedeute die Informationsgehalt des Ereignisses $x$ , Basis $b$ ist h\"aufig gleich 2. Die Einheit der Entropie $H(x)$ ist \emph{bits}, wenn $b=2$.
-Der Begriff \"Perlexit\"at\" ist auch in vielen Fall gebraucht. Perlexit\"at hat genau ein Zusammenhang (2.27) mit der Entropie. Perlexit\"at bedeutet Ma\ss f\"ur die St\"arke der Einschr\"ankung durch das Sprachmodell; mittlere Zahl der Wahlm\"oglichkeiten f\"ur das n\"achste Wort.
+\\
+\\
+$x$ ist ein zuf\"alliges Ereignis.$\chi$ ist der gesamte Satz. $-log_{b}(P(x))$ bedeute den Informationsgehalt des Ereignisses $x$ , Basis $b$ ist h\"aufig gleich 2. Die Einheit der Entropie $H(x)$ ist \emph{bits}, wenn $b=2$.
+Der Begriff \"Perlexit\"at\" wird auch in vielen F\"allen gebraucht. Perlexit\"at hat genau ein Zusammenhang (2.27) mit der Entropie. Perlexit\"at bedeutet das Ma\ss f\"ur die St\"arke der Einschr\"ankung durch das Sprachmodell; also die mittlere Zahl der Wahlm\"oglichkeiten f\"ur das n\"achste Wort.
 %2.27
 \begin{equation}
 \label{equation:bewertung_02}
 PP(x)=2^{H(x)}=2^{-\sum_{x\in\chi}P(x)log_{b}(P(x))}
 \end{equation}
-Folgende ist ein Beispiel \"uber die Anwendung der Entropie, die die Bandbreit zwei Systems X und Y vergleichen. System $X$ enthalt Ereignisse $x1\thicksim x2$, System $Y$ enthalt Ereignisse $y1\thicksim y2$. In folgender Tablle stellen die 64 Samples aus jeder Systems. Und die Ereignisse sind auch wie in Tabelle gezeigt kodiert.
+\\
+\\
+Es folgt ein Beispiel \"uber die Anwendung der Entropie, die die Bandbreite zweier Systeme X und Y vergleicht. System $X$ enth\"alt Ereignisse $x1\thicksim x8$, System $Y$ enthalt Ereignisse $y1\thicksim y8$. Die folgende Tablle stellt die 64 Samples aus jedem Systeme dar. Und die Ereignisse sind wie in der Tabelle gezeigt kodiert.
 %table 2.2
 \begin{table}[h]
   \begin{center}
@@ -47,70 +51,71 @@ Folgende ist ein Beispiel \"uber die Anwendung der Entropie, die die Bandbreit z
 \caption{Samples aus System X und Y}
 \label{tab:table_2}
 \end{table}
-
-Man kann genau berechnen, wie viele Bits bei der \"Ubertragung der alle 64 Samples gebraucht wird. F\"ur Sample X wird 1*32+2*16+8*3+4*4+6*1*4 = 128 bits ben\"otigt. F\"ur Sample Y wird 3*64 = 192 bits ben\"otigt. d.h. System Y braucht mehrer Bandbreit als System X. Weiterhin berechen wir auch die Entropie f\"ur beide Systems.
-
+\\
+\\
+Man kann genau berechnen, wie viele Bits bei der \"Ubertragung aller 64 Samples gebraucht wird. F\"ur Sample X wird 1*32+2*16+8*3+4*4+6*1*4 = 128 bits ben\"otigt. F\"ur Sample Y wird 3*64 = 192 bits ben\"otigt. D.h. das System Y braucht mehr Bandbreite als das System X. Weiterhin berechen wir auch die Entropie f\"ur beide Systeme.
 %2.28
 \begin{multline}
 H(X)=-\sum_{x\in\chi}P(x)log_{2}(P(x))=-(1/2*log_{2}(1/2))+1/4*log_{2}(1/4)+1/8*log_{2}(1/8)\\
 +1/16*log_{2}(1/16)+4*1/64*log_{2}(1/64))=2
 \end{multline}
-
 %2.29
 \begin{equation}
 H(Y)=-\sum_{y\in\chi}P(y)log_{2}(P(y))=-(8*1/8*log_{2}(1/8)=3
 \end{equation}
-
-Es ist mir aufgefallen, dass $H(Y)/H(X)=3/2=192/128$. Aus diesem Beispiel kann man sofort kennen, dass die Entropie als die Metrik der Bandbreitanfordrung eines Systems bezeichnet wird.
-   
-Vorher haben wir nur f\"ur eine Variableentropie gesprochen. Man braucht tats\"achlich die Entropie f\"ur Variablefolge.
-
+\\
+\\
+Es ist mir aufgefallen, dass $H(Y)/H(X)=3/2=192/128$ ist . In diesem Beispiel kann man sofort erkennen, dass die Entropie als die Metrik der Bandbreitenanfordrung eines Systems bezeichnet wird.
+\\
+\\   
+Vorher haben wir nur \"uber Einvariableentropie gesprochen. Man braucht tats\"achlich die Entropie f\"ur Variablenfolge.
 %2.30
 \begin{equation}
 H(w_{1},w_{2}...w_{n})=H(w_{1}^{n})=-\sum{P(w_{1}^{n})log_{2}P(w_{1}^{n})}
 \end{equation}
-
 \textbf{Entropierate}
-
 %2.31
 \begin{equation}
 H(L)=\frac{1}{n}H(w_{1}^{n})=-\frac{1}{n}\sum_{w\in L}P(w_{1}^{n})log_{2}P(w_{1}^{n})
 \end{equation}
-
-Wie das tats\"achliche Sprachmodell in der Gleichung(2.1) kann n infinit gro\ss sein.
-
+\\
+\\
+Wie das tats\"achliche Sprachmodell in der Gleichung(2.1) zeigt, kann n infinite gro\ss sein.
 %2.32
 \begin{equation}
 H(L)=\lim_{n\to\infty}\frac{1}{n}H(w_{1}^{n})=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}P(w_{1}^{n})log_{2}P(w_{1}^{n})
 \end{equation}
-
+\\
+\\
 Nach "`Shannon-McMilan-Breiman theorem"' wird die Gleichung vereinfacht.
 %2.33
 \begin{equation}
 H(L)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}log_{2}P(w_{1}^{n})
 \end{equation}
-
+\\
+\\
 \textbf{Kreuzentropie}
-$p(w_{1}^{n})$ in Gleichung (2.31) ist die wahr Wahrscheinlichkeitsverteilung des Sprachmodells. Aber $p(w_{1}^{n})$ ist bei dem tats\"achlichen Berechnen nicht realisierbar. Man kann aus den Trainingdatenbasen die $m(w_{1}^{n})$ sch\"atzen. Aus diesem Grund  wird hier Kreuzentropie diskutiert.
-
+$p(w_{1}^{n})$ in der Gleichung (2.31) ist die wahre Wahrscheinlichkeitsverteilung des Sprachmodells. Aber $p(w_{1}^{n})$ ist bei dem tats\"achlichen Berechnen nicht realisierbar. Man kann aus den Trainingsdatenbasen die Wahrscheinlichkeit $m(w_{1}^{n})$ sch\"atzen. Aus diesem Grund  wird hier der Kreuzentropie diskutiert.
 %2.34
 \begin{equation}
 H(p,m)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}p(w_{1}^{n})log_{2}m(w_{1}^{n})
 \end{equation}
-
-$p(w_{1}^{n})$ ist zwar nicht bekannt, nach "`Shannon-McMilan-Breiman Theorem"' wird die Gleichung vereinfacht. 
-
+\\
+\\
+$p(w_{1}^{n})$ ist zwar nicht bekannt, aber nach "`Shannon-McMilan-Breiman Theorem"' wird die Gleichung vereinfacht. 
 %2.35
 \begin{equation}
 H(p,m)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}log_{2}m(w_{1}^{n})
 \end{equation}
-
+\\
+\\
 F\"ur jedes Modell $m$ gilt \\
 %2.36
 \begin{equation}
 H(p)\leq H(p,m)
 \end{equation}
-
-Und nur wenn $m=p$, gilt $H(p)=H(p,m)$. Mit andren W\"ortern, je kleiner $H(p,m)$ ist, desto genauer die Wahrscheinlichkeit $m$ an die wahr Wahrscheinlichkeit $p$ angepasst wird.
-In unserer folgenden Experimente wird Entropie sowie Perlexit\"at dazu zu messen verwendet, wie gut das trainierte M-Gramm das eingegebene Testkorpus anpassen kann.
+\\
+\\
+Und nur wenn $m=p$, gilt $H(p)=H(p,m)$. Mit anderen Worten, je kleiner $H(p,m)$ ist, desto genauer wird die Wahrscheinlichkeit $m$ an die wahr Wahrscheinlichkeit $p$ angepasst.
+In unseren folgenden Experimenten wird die Entropie sowie die Perlexit\"at zum Messen dazu verwendet, wie gut das trainierte M-Gramm den eingegebenen Testkorpus anpassen kann.
 

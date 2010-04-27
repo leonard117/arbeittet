@@ -6,10 +6,12 @@ Das Add-One Discounting liefert eine andere L\"osung des Zero-Wahrscheinlichkeit
 \label{equation:add_one_01}
 p^{*}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n},w_{n-m+1}^{n-1})+1}{c(w_{n-m+1}^{n-1})+V}=\frac{c_{k}^{*}}{N+V}
 \end{equation}
-
+\\
+\\
 Hier ist $V$ die Vokabulargr\"o\ss e (oder die gesamte Anzahl der m-Gramm-Typen) , damit \\ 
 $\sum{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=1$
-
+\\
+\\
 Nach diesem Verfahren wird die Wahrscheinlichkeit aller angesehenen W\"orter relativ geringer. Und die alle W\"orter mit Null-Wahrscheinlichkeit bekommen einen gleichen neuen Sch\"atzwert $\frac{1}{N+V}$. Zusammenfassung ist
 %2.15
 \begin{equation}
@@ -18,5 +20,6 @@ p^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
 \frac{1}{N+V} & c(w_{n},w_{n-m+1}^{n-1})=0 
 \end{cases}
 \end{equation}
-
+\\
+\\
 Add-One-Discounting ist ein sehr einfacher Algorithmus und funktioniert nicht so gut, weil die Wahrscheinlichkeitsmasse der "Nonzero"-M-Gramme nach diesem Verfahren sehr viel ge\"andert wird\cite{book_speech}. Folglich wird Add-One-Discounting  praktisch kaum verwendet.

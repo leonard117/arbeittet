@@ -1,5 +1,5 @@
 %experiment
-SLM-Toolkit ist ein Werkzeug von Roni Rosenfeld,das angegebene Text bearbeit und folgende Ausgabe erzeugt\cite{int_slm_toolkit}:
+Das SLM-Toolkit ist ein Werkzeug von Roni Rosenfeld,das angegebene Texte bearbeitet und folgende Ausgaben erzeugt\cite{int_slm_toolkit}:
 \begin{itemize}
 	\item word frequency lists and vocabularies
 	\item word bigram and trigram counts
@@ -11,12 +11,9 @@ SLM-Toolkit ist ein Werkzeug von Roni Rosenfeld,das angegebene Text bearbeit und
 	\item distribution of Backoff cases 
 	\item annotation of test data with language scores 
 \end{itemize}
-
-Das Software gibt beim Sprachmodell auch "`absolute"', "`good\_turing"' and "`witten\_bell- Discounting"' an.
-F\"ur bestimmt Ziel muss man nicht alle Software ausf\"uhren. Abbildung (3.1) ist eine typische Anwendung, die Datenfluss und Operationfluss zeigt.
-Ein Training-kurps ist am Anfang eingegeben und nach Modellierungsverfahren wird ein Sprachmodell ausgegeben
-
-
+Die Software gibt beim Sprachmodell auch "`absolute"', "`good\_turing"' and "`witten\_bell- Discounting"' an.
+F\"ur ein bestimmtes Ziel muss man nicht alle Software ausf\"uhren. Abbildung (3.1) zeigt eine typische Anwendung, die Datenfluss und Operationfluss darstellt.
+Ein Trainingskorpus wird zu Beginn eingegeben und nach dem Modellierungsverfahren wird ein Sprachmodell ausgegeben
 \begin{figure}[h]
 	%\centering
 	%\centering
@@ -24,14 +21,16 @@ Ein Training-kurps ist am Anfang eingegeben und nach Modellierungsverfahren wird
 	 \caption{Flussdiagramm der typische Anwendung}
   \label{fig:figure_2}
 \end{figure}
-
-Bei Auswahl der Trainingkorpus und Testkorpus muss man sorgf\"altig entwerfen. \cite{book_speech} deutet uns einige Regele an, dass Trainingkorpra nicht zu spezifisch f\"ur die Aufgabe und auch nicht zu allgemein sein sollen.  
-
-In unseren Experimenten verwenden wir die WSJ(Wall Street Journal) Sprachdatenbank, erhalten wir die Testergebniss von unterschiedlich Discounting und M-Gramm-Modell. In den Experimenten werden am Ende die Parameter \emph{backoff\_from\_unk\_inc} und \emph{backoff\_from\_unk\_exc} beim Entropieberechen eingesetzt.  
- Aber wir haben auch eine Problem gefunden, dass bei Absolute-Discounting man nur NAN bekommen kann, wenn man mit komplette wsj-Databasis arbeiten, weil die Vokabulargr\"o\ss e von 65535 beschr\"anket werden. In Tabelle 3.1 gebe ich nur verringerte Trainingbasis (Trainingdaten aus Verzeichnis 88 und Testdaten "`pp\_et\_05.nvp"'). Die Testdatei "`pp\_et\_05.nvp"' ist von der Trainingbasis unabh"angig.
- 
- 
- %table
+\\
+\\
+Der Trainingskorpus und der Testkorpus muss sorgf\"altig entworfen werden. \cite{book_speech} deutet uns einige Regeln an, dass Trainingskorpra nicht zu spezifisch f\"ur die Aufgabe und auch nicht zu allgemein sein sollen.  
+\\
+\\
+In unseren Experimenten verwenden wir die WSJ(Wall Street Journal) Sprachdatenbank und wir erhalten die Testergebnisse von unterschiedlichen Discounting und M-Gramm-Modellen. In den Experimenten werden am Ende die Parameter \emph{backoff\_from\_unk\_inc} und \emph{backoff\_from\_unk\_exc} beim Entropieberechnen eingesetzt.
+\\
+\\  
+Aber es wurde auch eine Problem gefunden, dass beim Absolute-Discounting man nur NAN bekommen kann, wenn man mit komplette wsj-Databasis arbeitet, weil die Vokabulargr\"o\ss e auf 65535 beschr\"anket wird. In der Tabelle 3.1 wird nur die verringerte Trainingbasis (Trainingdaten aus Verzeichnis 88 und Testdaten "`pp\_et\_05.nvp"') angegeben. Die Testdatei "`pp\_et\_05.nvp"' ist von der Trainingbasis unabh"angig.
+%table
 %table 3.1
 \begin{table}[h]
   \begin{center}
@@ -52,12 +51,11 @@ In unseren Experimenten verwenden wir die WSJ(Wall Street Journal) Sprachdatenba
 		Unigramm &inc 	& $1130.39$ & $10.14$ & $1130.39$ & $10.14$ & $1130.39$ & $10.14$\\
 				 		 &exc		& $1130.39$ & $10.14$ & $1130.39$ & $10.14$ & $1130.39$ & $10.14$\\
      \bottomrule
-
     \end{tabular}
   \end{center}
-     \caption{Die Entropie und Perplexit\"at jeder Discounting und unterschiedlicher M-Gramme}
+     \caption{Die Entropie und Perplexit\"at aller Discountings und unterschiedlichen M-Gramme}
 \label{tab:table_3}
 \end{table}
- 
-Aus obiger Testergebnisse kann man als Fazit festhalten, dass Trigramme besser als Bigramme sowie Unigramme sind, \emph{backoff\_from\_unk\_exc} auch besser als \emph{backoff\_from\_unk\_inc} .
- 
+\\
+\\
+Aus obigen Testergebnissen kann man als Fazit festhalten, dass Trigramme besser als Bigramme sowie Unigramme sind, \emph{backoff\_from\_unk\_exc} auch besser als \emph{backoff\_from\_unk\_inc} . 
