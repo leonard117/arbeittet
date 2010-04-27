@@ -1,5 +1,5 @@
 %add_one_smoothing
-Das Add-One Discounting liefert andere L\"osung des Zero-Wahrscheinlichkeits-Problems. Man berechnet den ML-Sch\"atzwert aus Gleichung (2.8). In der Add-One-Methode addiert man Eins zu allen Zahle der W\"orter (oder m-Gramm) vor dem Norminierungsverfahren.  Und die Gleichung (2.8) wird durch (2.14) ersetzt.
+Das Add-One Discounting liefert eine andere L\"osung des Zero-Wahrscheinlichkeits-Problems. Man berechnet den ML-Sch\"atzwert aus der Gleichung (2.8). In der Add-One-Methode addiert man Eins zu allen Zahlen der W\"orter (oder m-Gramm) vor dem Normalisierungsverfahren.  Die Gleichung (2.8) wird durch (2.14) ersetzt.
 
 %2.14
 \begin{equation}
@@ -7,7 +7,7 @@ Das Add-One Discounting liefert andere L\"osung des Zero-Wahrscheinlichkeits-Pro
 p^{*}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n},w_{n-m+1}^{n-1})+1}{c(w_{n-m+1}^{n-1})+V}=\frac{c_{k}^{*}}{N+V}
 \end{equation}
 
-Hier $V$ ist Vokabulargr\"o\ss e (oder gesamt Anzahl der m-Gramm-Typen) , damit \\ 
+Hier ist $V$ die Vokabulargr\"o\ss e (oder die gesamte Anzahl der m-Gramm-Typen) , damit \\ 
 $\sum{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=1$
 
 Nach diesem Verfahren wird die Wahrscheinlichkeit aller angesehenen W\"orter relativ geringer. Und die alle W\"orter mit Null-Wahrscheinlichkeit bekommen einen gleichen neuen Sch\"atzwert $\frac{1}{N+V}$. Zusammenfassung ist
@@ -19,4 +19,4 @@ p^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
 \end{cases}
 \end{equation}
 
-Add-One-Discounting ist ein sehr einfache Algorithmus und funktioniert nicht so gut, weil die Wahrscheinlichkeitsma\ss der "Nonzero"-M-Gramm nach diesem Verfahren sehr viel ge\"andert werden\cite{book_speech}. Folglich ist Add-One-Discounting  praktisch kaum verwendet.
+Add-One-Discounting ist ein sehr einfacher Algorithmus und funktioniert nicht so gut, weil die Wahrscheinlichkeitsmasse der "Nonzero"-M-Gramme nach diesem Verfahren sehr viel ge\"andert wird\cite{book_speech}. Folglich wird Add-One-Discounting  praktisch kaum verwendet.
