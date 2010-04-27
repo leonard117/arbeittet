@@ -1,18 +1,18 @@
 %good_turing_discounting
-Good-Turing ist ein noch komplexer Discounting-Algorithmus und liefert uns andere M\"oglichkeit  das Zero-Wahrscheinlichkeits-Problem zu l\"osen. In Witten-Bell, muss man zun\"achst die Wahrscheinlichkeitsma\ss f\"ur ungesehene M-Gramme sparen. Aber in diesem Algorithmus werden die gesuchte Wahrscheinlichkeitsma\ss aus Gleichung (2.8) direkt ausrechnet und die zu ungesehenen M-Gramme geh\"orte Parameter $c(w_{n},w_{n-m+1}^{n-1})$ durch die Anzahl $N_{c}$ der  $c$ mal in Training auftretet M-Gramme berechnet. Um die Bedeutung $N_{c}$ zu erkl\"aren, nimmt man Unigramm als Beispiel. $N_{0}$ ist der Anzahl der ungesehenen M-Gramme, $N_{1}$ist der Anzahl der nur ein mal gesehenen M-Gramme, $N_{2}$ bedeutet, es   M-Gramme gibt, die nur 2 mal auftreten usw. . Die mathematische Darstellung f\"ur $N_{c}$ seht wie Gleichung (2.20).
+Good-Turing ist ein noch komplexerer Discounting-Algorithmus und liefert uns eine andere M\"oglichkeit  das Zero-Wahrscheinlichkeits-Problem zu l\"osen. In Witten-Bell, muss man zun\"achst die Wahrscheinlichkeitsmasse f\"ur ungesehene M-Gramme sparen. Aber in diesem Algorithmus wird die gesuchte Wahrscheinlichkeitsmasse aus der Gleichung (2.8) direkt berechnet und die zu den ungesehenen M-Grammen geh\"orenden Parameter $c(w_{n},w_{n-m+1}^{n-1})$ durch die Anzahl $N_{c}$ der  $c$ mal im Training auftretenden M-Gramme berechnet. Um die Bedeutung $N_{c}$ zu erkl\"aren, nimmt man das Unigramm als Beispiel. $N_{0}$ ist die Anzahl der ungesehenen M-Gramme, $N_{1}$ist die Anzahl der nur einmalig gesehenen M-Gramme, $N_{2}$ bedeutet, es gibt  M-Gramme, die nur 2 mal auftreten usw. . Die mathematische Darstellung f\"ur $N_{c}$ sieht man in der Gleichung (2.20).
 %2.20
 \begin{equation}
 N_{c}=\sum_{c(w_{n})=c}1
 \end{equation}
 
-Wie sch\"atzt man eine neue H\"aufigkeit eines M-Gramms inklusiv ungesehen M-Gramm? Mann muss zuerst f\"ur alle $c$(MLE) $N_{c}$ zahlen. Dann man muss auch wissen, M-Gramm $(w_{n},w_{n-m+1}^{n-1})$ zu welche $c$(MLE) geh\"ort. Weiterhin werden bekannt $c(w_{n},w_{n-m+1}^{n-1})$, $N_{c+1}$ und $N_{c}$ eingesetzt. Und bekommt man neue H\"aufigkeit von einem M-Gramm. Diese H\"aufigkeit wird in (2.8) verwendet.
+Wie sch\"atzt man eine neue H\"aufigkeit eines M-Gramms inklusiv ungesehenen M-Gramms? Man muss zuerst f\"ur alle $c's$(MLE) die $N_{c}'s$ zahlen. Dann man muss auch wissen, zu welche $c$(MLE) das M-Gramm $(w_{n},w_{n-m+1}^{n-1})$  geh\"ort. Weiterhin werden die bekannten $c(w_{n},w_{n-m+1}^{n-1})$, $N_{c+1}$ und $N_{c}$ eingesetzt. Man bekommt eine neue H\"aufigkeit von einem M-Gramm. Diese H\"aufigkeit wird in (2.8) verwendet.
 
 %2.21
 \begin{equation}
 c^{*}(w_{n},w_{n-m+1}^{n-1})=(c(w_{n},w_{n-m+1}^{n-1})+1)\frac{N_{c+1}}{N_{c}}
 \end{equation}
 
-Die Folgende Tabelle(2.1)  aus [2] zeigt eine Anwendung des Good-Turing Dsicounting f\"ur Bigramm.
+Die folgende Tabelle(2.1)  aus [2] zeigt eine Anwendung des Good-Turing Dsicounting f\"ur das Bigramm.
 
 %table 2.1
 \begin{table}[h]
