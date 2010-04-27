@@ -9,7 +9,8 @@ Dieser Algorithmus basiert auf dem Begriff "Things see once". Man Sch\"atzt die 
 
 $N(w_{n-m+1}^{n-1})$: Anzahl der Tokens
 $T(w_{n-m+1}^{n-1})$:Anzahl der einmalig gesehenen M-Gramms oder Typen
-
+\\
+\\
 Um die genaue Wahrscheinlichkeit $p_{i}^{*}(w_{i}|w_{n-m+1}^{n-1})$ eines ungesehenen M-Gramms zu bestimmen, muss die Gleichung(2.16) auf beiden Seiten durch die Anzahl der ungesehenen M-Gramms dividiert werden wie in der Gleichung (2.17).
 
 %2.17
@@ -19,7 +20,8 @@ p_{i}^{*}(w_{i}|w_{n-m+1}^{n-1})=\frac{T(w_{n-m+1}^{n-1})}{Z(w_{n-m+1}^{n-1})(N(
 \end{equation}
 
 $Z(w_{n-m+1}^{n-1})=\sum_{i:c_{i}=0}1$: Anzahl aller nie gesehenen M-Gramme mit Vergangenheit $(w_{n-m+1}^{n-1})$
-
+\\
+\\
 Jedes Null-Wahrscheinlichkeits M-Gramm erh\"alt einen gleichen Anteil an der Wahrscheinlichkeitsmasse (Division der Wahrscheinlichkeitsma\ss durch $Z(w_{n-m+1}^{n-1})$.
 Die Wahrscheinlichkeit f\"ur gesehene M-Gramme \"andert sich entsprechend; dabei muss gelten:\\ 
 $\sum_{w_{n}}p(w_{n}|w_{n-m+1}^{n-1})=1$. Dann wird der ML-Sch\"atzwert  f\"ur ein gesehenes m-Gramm von (2.8) zu einer neuen Form (2.18). 
@@ -29,7 +31,8 @@ $\sum_{w_{n}}p(w_{n}|w_{n-m+1}^{n-1})=1$. Dann wird der ML-Sch\"atzwert  f\"ur e
 \label{equation:witten_bell_03}
 p^{*}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n}|w_{n-m+1}^{n-1})}{N(w_{n-m+1}^{n-1})+T(w_{n-m+1}^{n-1})}
 \end{equation}
-
+\\
+\\
 Bei der Zusammenfassung ist die Darstellung der Witten-Bell-Discounting f\"ur M-Gramm wie in der folgenden Gleichung (2.19).
 
 %2.19

@@ -1,12 +1,12 @@
 %auto_ausfuehrung
 
-Um den Toolkit automatisch ausfuhren, habe ich ein Satz von Perl-Script entwickelt. 
-Die gesamten Programme enthalten f\"unf Dateien "`unpack.pl, convertfile.pl, Pfileoperation.pm, call\_toolkitEx.pl, call\_toolkit.ini"'.
-"`unpack.pl"' hat die Aufgabe, die originale in Format "`.z"' komprimierte  wsj Dateien zu extrahieren.
-"`convertfile.pl"': tauscht die ung\"ultige Kuse (<pxxx></p><sxxx></s>) mit g\"ultige Kuse (<s></s>) aus und ver\"andert alle Buchstaben in Kleine. 
+Um das Toolkit automatisch auszuf\"uhren, habe ich ein Perl-Script Programm entwickelt. 
+Dieses Programme enth\"alten folgende f\"unf Dateien "`unpack.pl, convertfile.pl, Pfileoperation.pm, call\_toolkitEx.pl, call\_toolkit.ini"'.
+"`unpack.pl"' hat die Aufgabe, die originale, im Format "`.z"' komprimierte  wsj Dateien zu extrahieren.
+"`convertfile.pl"': tauscht die ung\"ultiger Kuse (<pxxx></p><sxxx></s>) mit g\"ultige Kuse (<s></s>) aus und ver\"andert alle Buchstaben in Kleine. 
 "`call\_toolkitEx.pl"' ist das Hauptprogramm, das SLM-Toolkit aufzurufen. 
-"`Pfileoperation.pm"' ist gemeinsam Operationsbibliothek
-"`call\_toolkit.ini"' ist Parameterkonfiguration, darin enthalt Toolkits Verzeichnis, Trainingkorpus, Testkorpus, M-Grammtype und Discuntingtype. Au\ss erdem wird  "`\# "`  als Kommentzeichen verwendet. \"Anderung diese Datei werden unterschiedliche Versuche ausgef\"uhrt. Folgende ist das Sample aktueller Datei. Den kompletten findet man unter \url{http://code.google.com/p/arsausarbeit/source/browse/#svn/trunk/arsausarbeit/perl_program/linux/script}\\
+"`Pfileoperation.pm"' ist eine gemeinsame Operationsbibliothek
+"`call\_toolkit.ini"' ist die Parameterkonfiguration. Darin enthalten Toolkits Verzeichnis, Trainingskorpus, Testkorpus, M-Grammtyp und Discountingtyp. Au\ss erdem wird das "`\# "`  als Kommentarzeichen verwendet. \"Anderungen an dieser Konfigurationsdatei werden als unterschiedliche Versuche ausgef\"uhrt. Folgende ist das Sample aktueller Datei. Den kompletten findet man unter \url{http://code.google.com/p/arsausarbeit/source/browse/#svn/trunk/arsausarbeit/perl_program/linux/script}\\
 
 \begin{lstlisting}
 #SLM pfad 
