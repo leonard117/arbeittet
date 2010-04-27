@@ -1,13 +1,13 @@
 %M_Gramm
-Eine wahre Darstellung des statischen Sprachmodells ist wie Gleichung (2.1), die die Wahrscheinlichkeit einer Wortkette bezeichnet. Um die Wahrscheinlichkeit $p(w_{1}^n)$ zu bestimmt m\"ussen auftretet Wahrscheinlichkeit des Wortes $w_{1}$ und bedingte Wahrscheinlichkeit f\"ur $w_{2}...w_{n}$ bekannt sein.
+Eine ideale Darstellung des statischen Sprachmodells ist wie die Gleichung (2.1), die die Wahrscheinlichkeit einer Wortkette bezeichnet. Um die Wahrscheinlichkeit $p(w_{1}^n)$ zu bestimmt m\"ussen die auftretende Wahrscheinlichkeit des Wortes $w_{1}$ und die bedingte Wahrscheinlichkeit f\"ur $w_{2}...w_{n}$ bekannt sein.
 
 \begin{equation}
 p(w_{1}^n) = p(w_{1},w_{2}...w_{n}) = \prod_{i=1}^n p(w_{i}|w_{1},..w_{i-1}) \\
 = p(w_{1})p(w_{2}|w_{1})...p(w_{n}|w_{1},..w_{n-1})
 \end{equation}
 
-\cite{book_speech} erkl\"art , dass die Wortkettl\"ange n theoretisch infinit gro\ss sein kann und die Wahrscheinlichkeit $p(w_{n}|w_{1}^n)$nicht berechenbar wird. Man eingeht auf eine Approximation der bedingten Wahrscheinlichkeit durch Beschr\"anken der "History"\quad in Bedingung. Die genaue Idee ist, dass man alle bedingten Wahrscheinlichkeiten $p(w_{n}|w_{1}...w_{n})$, f\"ur die letzten m-1 Vorg\"angerw\"orter von $w_{n}$ identisch sind, zu einer \"Aquivalenzklasse zusammenfasst. d.h. das Rechnen $p(w_{n}|w_{1}...w_{n})$ im Trigramm wird aus $p(w_{n-2})p(w_{n-1}|w_{n-2})p(w_{n}|\\w_{n-2},w_{n-1})$ anstatt alle bedingter Wahrscheinlichkeit bestimmt. 
-Die Gleichung (2.2) ist die mathematische Darstellung f\"ur Trigramm(m=3), (2.3) f\"ur Bigramm(m=2), (2.4) f\"ur Unigramm(m=1) und (2.5) f\"ur M-Gramm.
+\cite{book_speech} erkl\"art , dass die Wortkettenl\"ange n theoretisch infinite gro\ss sein kann und die Wahrscheinlichkeit $p(w_{n}|w_{1}^n)$nicht berechenbar wird. Man geht auf eine Approximation der bedingten Wahrscheinlichkeit ein durch Beschr\"ankung der "`History"' in der Bedingung. Die genaue Idee ist, dass man alle bedingten Wahrscheinlichkeiten $p(w_{n}|w_{1}...w_{n})$, f\"ur die die letzten m-1 Vorg\"angerw\"orter von $w_{n}$ identisch sind, zu einer \"Aquivalenzklasse zusammenfasst. Das Rechnen $p(w_{n}|w_{1}...w_{n})$ im Trigramm wird aus $p(w_{n-2})p(w_{n-1}|w_{n-2})p(w_{n}|\\w_{n-2},w_{n-1})$ anstatt von allen bedingten Wahrscheinlichkeiten bestimmt. 
+Die Gleichung (2.2) ist die mathematische Darstellung f\"ur das Trigramm(m=3), (2.3) f\"ur das Bigramm(m=2), (2.4) f\"ur das Unigramm(m=1) und (2.5) f\"ur M-Gramm.
 
 \begin{align}
 p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i}|w_{i-2},w_{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-2},w_{n-1}) \\
@@ -16,24 +16,24 @@ p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i})=p(w_{1})p(w_{2})p(w_{3})...p(w_{n})\
 p(w_{1}^n) & \approx \prod_{i=1}^n p(w_{i}|w_{i-m+1}^{i-1})=p(w_{1})p(w_{2}|w_{1})p(w_{3}|w_{1},w_{2})...p(w_{n}|w_{n-m+1},...w_{n-1})
 \end{align}
 
-Und vorliegende bedingten Wahrscheinlichkeit k\"onnen mathematisch wie folgende Gleichung (2.6) und (2.7)  aus unbedingter Wahrscheinlichkeit definieren.
+Vorliegende bedingten Wahrscheinlichkeit k\"onnen mathematisch wie folgende Gleichung (2.6) und (2.7)  aus unbedingter Wahrscheinlichkeit definiert werden.
 %2.6-2.7
 \begin{align}
 p(w|v) &=\frac{p(v,w)}{p(v)} \\
 p(w_{n}|w_{n-m+1}^{n-1}) &=\frac{p(w_{n},w_{n-m+1}^{n-1} )}{p(w_{n-m+1}^{n-1})} 
 \end{align}
 
-$p(w_{n},w_{n-m+1}^{n-1})$: Auftretenswahrscheinlichkeit der Worterfolge $w_{n},w_{n-m+1}^{n-1}$.
-$p(w_{n-m+1}^{n-1})$: Auftretenswahrscheinlichkeit der Worterfolge $w_{n-m+1}^{n-1}$.
+$p(w_{n},w_{n-m+1}^{n-1})$: Auftretenswahrscheinlichkeit der Wortfolge $w_{n},w_{n-m+1}^{n-1}$.
+$p(w_{n-m+1}^{n-1})$: Auftretenswahrscheinlichkeit der Wortfolge $w_{n-m+1}^{n-1}$.
 
 
-Aber im Praktik sind die tatsachliche Wahrscheinlichkeit $p(w_{n-m+1}^{n-1})$  und $p(w_{n},w_{n-m+1}^{n-1})$ nicht bekannt und werden nicht zu dem Rechnen der bedingte Wahrscheinlichkeit $p(w_{n}|w_{n-m+1}^{n-1})$ verwendet. Man trainiert die M-Gramm-Modelle h\"aufig nach Maximu-Likelihood-Methode \cite{int_MLE} durch Counting und Normalisierung wie Gleichung (2.8). 
+Aber in der Praxis sind die tats\"achlichen Wahrscheinlichkeiten $p(w_{n-m+1}^{n-1})$  und $p(w_{n},w_{n-m+1}^{n-1})$ nicht bekannt und werden nicht zu dem Rechnen der bedingten Wahrscheinlichkeit $p(w_{n}|w_{n-m+1}^{n-1})$ verwendet. Man trainiert die M-Gramm-Modelle h\"aufig nach der Maximu-Likelihood-Methode \cite{int_MLE} durch Counting und Normalisierung wie die Gleichung (2.8). 
 
 \begin{equation}
 \hat{p}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n-m+1}^{n-1},w_{n} )}{ \sum_{i=1}^L c(w_{n-m+1}^{n-1},w_{i})}=\frac{c(w_{n-m+1}^{n-1},w_{n} )}{c(w_{n-m+1}^{n-1})}
 \end{equation}
 
-Hier $\hat{p}(w_{n}|w_{n-m+1}^{n-1})$ kann eine Approximation von der bedingte Wahrscheinlichkeit $p(w_{n}|w_{n-m+1}^{n-1})$ sein und wird auch als ML(Maximu-Likelihood)-Sch\"atzwert bezeichnet.\\
+Hier kann $\hat{p}(w_{n}|w_{n-m+1}^{n-1})$  eine Approximation von der bedingten Wahrscheinlichkeit $p(w_{n}|w_{n-m+1}^{n-1})$ sein und dies wird auch als ML(Maximu-Likelihood)-Sch\"atzwert bezeichnet.\\
 $c(w_{n-m+1}^{n-1},w_{n})$: absolute H\"aufigkeit der Wortfolge $(w_{n-m+1}^{n-1},w_{n})$ in Trainingskorpus\\
 $c(w_{n-m+1}^{n-1})$:absolute H\"aufigkeit der Wortfolge $w_{n-m+1}^{n-1}$ in Trainingskorpus\\
 
