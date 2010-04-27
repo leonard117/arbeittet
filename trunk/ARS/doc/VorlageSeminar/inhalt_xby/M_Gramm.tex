@@ -8,7 +8,7 @@ p(w_{1}^n) = p(w_{1},w_{2}...w_{n}) = \prod_{i=1}^n p(w_{i}|w_{1},..w_{i-1}) \\
 \end{equation}
 \\
 \\
-\cite{book_speech} erkl\"art , dass die Wortkettenl\"ange n theoretisch infinite gro\ss sein kann und die Wahrscheinlichkeit $p(w_{n}|w_{1}^n)$nicht berechenbar wird. Man geht auf eine Approximation der bedingten Wahrscheinlichkeit ein durch Beschr\"ankung der "`History"' in der Bedingung. Die genaue Idee ist, dass man alle bedingten Wahrscheinlichkeiten $p(w_{n}|w_{1}...w_{n})$, f\"ur die die letzten m-1 Vorg\"angerw\"orter von $w_{n}$ identisch sind, zu einer \"Aquivalenzklasse zusammenfasst. Das Rechnen $p(w_{n}|w_{1}...w_{n})$ im Trigramm wird aus $p(w_{n-2})p(w_{n-1}|w_{n-2})p(w_{n}|\\w_{n-2},w_{n-1})$ anstatt von allen bedingten Wahrscheinlichkeiten bestimmt. 
+\cite{book_speech} erkl\"art , dass die Wortkettenl\"ange n theoretisch infinite gro\ss sein kann und die Wahrscheinlichkeit $p(w_{n}|w_{1}^n)$nicht berechenbar wird. Man geht auf eine Approximation der bedingten Wahrscheinlichkeit ein durch Beschr\"ankung der "`History"' in der Bedingung. Die genaue Idee ist, dass man alle bedingten Wahrscheinlichkeiten $p(w_{n}|w_{1}...w_{n})$, f\"ur die die letzten m-1 Vorg\"angerw\"orter von $w_{n}$ identisch sind, zu einer \"Aquivalenzklasse zusammenfasst. Das Rechnen $p(w_{n}|w_{1}...w_{n})$ im Trigramm wird aus $p(w_{n-2})p(w_{n-1}|w_{n-2})-p(w_{n}|w_{n-2},w_{n-1})$ anstatt von allen bedingten Wahrscheinlichkeiten bestimmt. 
 Die Gleichung (2.2) ist die mathematische Darstellung f\"ur das Trigramm(m=3), (2.3) f\"ur das Bigramm(m=2), (2.4) f\"ur das Unigramm(m=1) und (2.5) f\"ur M-Gramm.
 
 \begin{align}
