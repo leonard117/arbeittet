@@ -12,7 +12,7 @@ H(x)=-\sum_{x\in\chi}P(x)log_{b}(P(x))
 \\
 \\
 $x$ ist ein zuf\"alliges Ereignis.$\chi$ ist der gesamte Satz. $-log_{b}(P(x))$ bedeute den Informationsgehalt des Ereignisses $x$ , Basis $b$ ist h\"aufig gleich 2. Die Einheit der Entropie $H(x)$ ist \emph{bits}, wenn $b=2$.
-Der Begriff \"Perlexit\"at\" wird auch in vielen F\"allen gebraucht. Perlexit\"at hat genau ein Zusammenhang (2.27) mit der Entropie. Perlexit\"at bedeutet das Ma\ss f\"ur die St\"arke der Einschr\"ankung durch das Sprachmodell; also die mittlere Zahl der Wahlm\"oglichkeiten f\"ur das n\"achste Wort.
+Der Begriff "`Perlexit\"at"' wird auch in vielen F\"allen gebraucht. Perlexit\"at hat genau ein Zusammenhang (2.27) mit der Entropie. Perlexit\"at bedeutet das Ma\ss f\"ur die St\"arke der Einschr\"ankung durch das Sprachmodell; also die mittlere Zahl der Wahlm\"oglichkeiten f\"ur das n\"achste Wort.
 %2.27
 \begin{equation}
 \label{equation:bewertung_02}
@@ -55,8 +55,9 @@ Es folgt ein Beispiel \"uber die Anwendung der Entropie, die die Bandbreite zwei
 \\
 Man kann genau berechnen, wie viele Bits bei der \"Ubertragung aller 64 Samples gebraucht wird. F\"ur Sample X wird 1*32+2*16+8*3+4*4+6*1*4 = 128 bits ben\"otigt. F\"ur Sample Y wird 3*64 = 192 bits ben\"otigt. D.h. das System Y braucht mehr Bandbreite als das System X. Weiterhin berechen wir auch die Entropie f\"ur beide Systeme.
 %2.28
+
 \begin{multline}
-H(X)=-\sum_{x\in\chi}P(x)log_{2}(P(x))=-(1/2*log_{2}(1/2))+1/4*log_{2}(1/4)+1/8*log_{2}(1/8)\\
+H(X) =-\sum_{x\in\chi}P(x)log_{2}(P(x))=-(1/2*log_{2}(1/2))+1/4*log_{2}(1/4)+1/8*log_{2}(1/8)\\
 +1/16*log_{2}(1/16)+4*1/64*log_{2}(1/64))=2
 \end{multline}
 %2.29
