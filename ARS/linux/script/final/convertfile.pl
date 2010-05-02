@@ -33,6 +33,7 @@ sub convertfile{
 			#system("cat $targetpath/tmp/* >$targetpath/output/output.text");
 			$convertfilename=getparameter($cfgfile,"convertfile_name");
 			system("cat $targetpath/tmp/* >$targetpath/output/$convertfilename");
+			#remove temp file
 			system("rm $targetpath/tmp/*");
 
 		}
