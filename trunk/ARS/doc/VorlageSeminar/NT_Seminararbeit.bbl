@@ -31,7 +31,8 @@ J.~Daniel and H.~M. James, \emph{Speech and language processing}, 2000.
 \BIBentrySTDinterwordspacing
 
 \bibitem{ars_script}
-U.~P. Prof.Dr.Reinhold Haeb-Umbach, \emph{Algorithmen der Spracherkennung}.
+U.~P. Prof.Dr.Reinhold Haeb-Umbach, \emph{Algorithmen der Spracherkennung},
+  ws2009/2010.
 
 \bibitem{int_entropie}
 \BIBentryALTinterwordspacing
@@ -42,7 +43,7 @@ U.~P. Prof.Dr.Reinhold Haeb-Umbach, \emph{Algorithmen der Spracherkennung}.
 \bibitem{int_slm_toolkit}
 \BIBentryALTinterwordspacing
 \emph{Statical Language Modeling Toolkit}. [Online]. Available:
-  \url{http://www.speech.cs.cmu.edu /SLM/toolkit.html}
+  \url{http://www.speech.cs.cmu.edu/SLM/toolkit.html}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
