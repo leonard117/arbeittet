@@ -1,8 +1,13 @@
 #!/usr/bin/perl -w
 use strict;
+use File::Basename;
+use PFileOperation;
+#$sourcepath = $ARGV[0];
+#$targetpath = $ARGV[1];
+my $cfgfile =  "./call_toolkit.ini";
+my $sourcepath = getparameter($cfgfile,"zsource_path");
+my $targetpath = getparameter($cfgfile,"unpack_path");
 
-#my $sourcepath = $ARGV[0];
-#my $targetpath = $ARGV[1];
 $sourcepath || die "sp empty!";
 $targetpath || die "tp empty!";
 print ("source = $sourcepath \n");
@@ -10,11 +15,6 @@ print ("target = $targetpath \n");
 
 #$sourcepath = "..//data//source//*.z";
 #$targetpath = "..//data//target";
-use File::Basename;
-use PFileOperation;
-my $cfgfile =  "./call_toolkit.ini";
-$sourcepath =getparameter($cfgfile,"zsource_path");
-$targetpath =getparameter($cfgfile,"unpack_path");
 system("cp $sourcepath//*.z $targetpath");
 unpack_file("$targetpath//*.z");
 
