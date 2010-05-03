@@ -46,4 +46,7 @@ U.~P. Prof.Dr.Reinhold Haeb-Umbach, \emph{Algorithmen der Spracherkennung},
   \url{http://www.speech.cs.cmu.edu/SLM/toolkit.html}
 \BIBentrySTDinterwordspacing
 
+\bibitem{book_perl}
+C.~Tom and T.~Nathan, \emph{Perl.Cookbook.2nd.Edition}, 2003.
+
 \end{thebibliography}
