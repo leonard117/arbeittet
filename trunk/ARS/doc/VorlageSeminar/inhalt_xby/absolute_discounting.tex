@@ -1,22 +1,24 @@
 %absolute_discounting
-Die Grundidee des Algorithmus ist, dass man eine feste Anzahl von den beachteten Wortfolgen abzieht so dass die Wahrscheinlichkeitsmasse der h\"aufig angesehenen Ereignisse reduziert wird, den angesehenen Ereignissen zugeordnet wird. In \cite{ars_script} wird der ML-Sch\"atzwert durch Absolutes-Discounting wie in der Gleichung (2.9) definiert.
+Die Grundidee des Algorithmus ist, dass man eine feste Anzahl von den beachteten Wortfolgen abzieht so dass die Wahrscheinlichkeitsmasse der h\"aufig gesehenen Ereignisse reduziert wird, den ungesehenen Ereignissen zugeordnet wird. In \cite{ars_script} wird der ML-Sch\"atzwert durch Absolutes-Discounting wie in der Gleichung (2.9) definiert.
 \begin{equation}
 P^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
 \frac{c(w_{n-m+1}^{n-1},w_{n})-d}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})\beta (w_{n}|w_{n-m+1}^{n-1}) & c(w_{n-m+1}^{n-1},w_{n})>0 \\
 \alpha (w_{n-m+1}^{n-1})\beta (w_{n}|w_{n-m+1}^{n-1}) & c(w_{n-m+1}^{n-1},w_{n})=0 
 \end{cases}
 \end{equation}
-$d$: Discounting Parameter, der von $c(w_{n},w_{n-m+1}^{n-1})$ unabh\"angig ist und von dem ML-Sch\"atzwert abgezogen wird.\\
-$d\approx \frac{c_{1}}{c_{1}+c_{2}}$ \\
-$c_{1}$:Anzahl der erstmalig gesehenen W\"orter.\\
-$c_{2}$:Anzahl der zweimalig gesehenen W\"orter.\\
-$\alpha (w_{n-m+1}^{n-1})$:Normierungskonstante, damit die Gleichung $\sum_{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=1$ immer gilt. Die Normierungskonstante ergibt sich aus folgender Rechnung.
+\begin{itemize}
+	\item $d$: Discounting Parameter, der von $c(w_{n},w_{n-m+1}^{n-1})$ unabh\"angig ist und von dem ML-Sch\"atzwert abgezogen wird.\\
+	\item $d\approx \frac{c_{1}}{c_{1}+c_{2}}$ \\
+	\item $c_{1}$:Anzahl der erstmalig gesehenen W\"orter.\\
+	\item $c_{2}$:Anzahl der zweimalig gesehenen W\"orter.\\
+	\item $\alpha (w_{n-m+1}^{n-1})$:Normierungskonstante, damit die Gleichung $\sum_{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=1$ immer gilt.
+\end{itemize}
+Die Normierungskonstante ergibt sich aus folgender Rechnung.
 %2.10
-
 \begin{align}
 1 &=\sum_{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})\nonumber\\
 &=\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}\frac{c(w_{n-m+1}^{n-1},w_{n})-d}{c(w_{n-m+1}^{n-1})}+\alpha(w_{n-m+1}^{n-1})\sum_{w_{n}}\beta (w_{n}|w_{n-m+1}^{n-1}) \nonumber\\
-&=\frac{1}{c(w_{n-m+1}^{n-1})}(\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}c(w_{n-m+1}^{n-1},w_{n})-\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}d)+\alpha (w_{n-m+1}^{n-1}) \nonumber\\
+&=\frac{1}{c(w_{n-m+1}^{n-1})} \left(\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}c(w_{n-m+1}^{n-1},w_{n})-\sum_{w_{n}:c(w_{n-m+1}^{n-1},w_{n})}d \right)+\alpha (w_{n-m+1}^{n-1}) \nonumber\\
 &=\frac{c(w_{n-m+1}^{n-1})}{c(w_{n-m+1}^{n-1})}-\frac{d\cdot c_{+}(w_{n-m+1}^{n-1})}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})
 \end{align}
 
@@ -33,7 +35,7 @@ z.B. bei dem Trigramm,\\
 %2.13
 \begin{equation}
 \beta (w_{n}|w_{n-2}^{n-1})=\begin{cases}
-p(w_{n}|w_{n-1}) & c(w_{n},w_{n-1},w_{n-2})=0 and c(w_{n},w_{n-1})>0 \\
+p(w_{n}|w_{n-1}) & c(w_{n},w_{n-1},w_{n-2})=0 \text{ and } c(w_{n},w_{n-1})>0 \\
 p(w_{n}) & c(w_{n},w_{n-1})=0 
 \end{cases}
 \end{equation}

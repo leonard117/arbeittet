@@ -1,5 +1,5 @@
 %experiment
-Das SLM-Toolkit ist ein Werkzeug von Roni Rosenfeld,das angegebene Texte bearbeitet und folgende Ausgaben erzeugt\cite{int_slm_toolkit}:
+Das SLM-Toolkit ist ein Werkzeug von Roni Rosenfeld, das angegebene Texte bearbeitet und folgende Ausgaben erzeugt\cite{int_slm_toolkit}:
 \begin{itemize}
 	\item word frequency lists and vocabularies
 	\item word bigram and trigram counts
@@ -21,10 +21,10 @@ Ein Trainingskorpus wird zu Beginn eingegeben und nach dem Modellierungsverfahre
 	 \caption{Flussdiagramm der typische Anwendung}
   \label{fig:figure_2}
 \end{figure}
-Der Trainingskorpus und der Testkorpus muss sorgf\"altig entworfen werden. \cite{book_speech} deutet uns einige Regeln an, dass Trainingskorpra nicht zu spezifisch f\"ur die Aufgabe und auch nicht zu allgemein sein sollen.  
+Der Trainingskorpus und der Testkorpus m\"ussen sorgf\"altig entworfen werden. \cite{book_speech} deutet uns einige Regeln an, dass Trainingskorpora nicht zu spezifisch f\"ur die Aufgabe und auch nicht zu allgemein sein sollen.  
 \\
 \\
-In unseren Experimenten verwenden wir die WSJ(Wall Street Journal) Sprachdatenbank und wir erhalten die Testergebnisse von unterschiedlichen Discounting und M-Gramm-Modellen. In den Experimenten werden am Ende die Parameter \emph{backoff\_from\_un-k\_inc} und \emph{backoff\_from\_unk\_exc} beim Entropieberechnen eingesetzt. Den Unterschied zwischen beiden Parametern findet man in \cite{int_slm_toolkit}.
+In unseren Experimenten verwenden wir die WSJ (Wall Street Journal) Sprachdatenbank und wir erhalten die Testergebnisse von unterschiedlichen Discounting und M-Gramm-Modellen. In den Experimenten werden am Ende die Parameter \emph{backoff\_from\_un-k\_inc} und \emph{backoff\_from\_unk\_exc} beim Entropieberechnen eingesetzt. Den Unterschied zwischen beiden Parametern findet man in \cite{int_slm_toolkit}.
 \\
 \\  
 Aber es wurde auch eine Problem gefunden, dass beim Absolute-Discounting man nur NAN bekommen kann, wenn man mit komplette wsj-Databasis arbeitet, weil die Vokabulargr\"o\ss e auf 65535 beschr\"anket wird. In der Tabelle 3.1 wird nur die verringerte Trainingbasis (Trainingdaten aus Verzeichnis 88 und Testdaten "`pp\_et\_05.nvp"') angegeben. Die Testdatei "`pp\_et\_05.nvp"' ist von der Trainingbasis unabh"angig.

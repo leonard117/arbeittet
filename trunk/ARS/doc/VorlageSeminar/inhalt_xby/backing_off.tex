@@ -19,10 +19,11 @@ Zus\"atzlich liefert die Backing-off-Methode eine optimierte L\"osung f\"ur das 
 \label{equation:backing_off_02}
 \hat{P}(w_{n}|w_{n-m+1}^{n-1})=P^{*}(w_{n}|w_{n-m+1}^{n-1})+\theta(P(w_{n}|w_{n-m+1}^{n-1}))\alpha(w_{n-m+1}^{n-1})P^{*}(w_{n}|w_{n-m+2}^{n-1})
 \end{equation}
-
-$\theta(P(w_{n}|w_{n-m+1}^{n-1}))=\begin{cases} 0 & P(w_{n}|w_{n-m+1}^{n-1})>0 \\ 1 & P(w_{n}|w_{n-m+1}^{n-1})= 0 \end{cases}$:bin\"aren Indikatorfunktion.\\
-$\alpha(w_{n-m+1}^{n-1})=\frac{1-\sum_{w_{n}:c(w_{n-m+1}^{n-1})>0}P^{*}(w_{n}|w_{n-m+1}^{n-1})}{\sum_{w_{n}:c(w_{n-m+1}^{n-1})=0}P^{*}(w_{n}|w_{n-m+2}^{n-1})}$: Gewicht f\"ur Backing-off.\\
-$P^{*}(w_{n}|w_{n-m+2}^{n-1})$: Wahrscheinlichkeit der gesehenen M-Gramme nach Discounting.\\
+\begin{itemize}
+	\item $\theta(P(w_{n}|w_{n-m+1}^{n-1}))=\begin{cases} 0 & P(w_{n}|w_{n-m+1}^{n-1})>0 \\ 1 & P(w_{n}|w_{n-m+1}^{n-1})= 0 \end{cases}$:bin\"aren Indikatorfunktion.\\
+	\item $\alpha(w_{n-m+1}^{n-1})=\frac{1-\sum_{w_{n}:c(w_{n-m+1}^{n-1})>0}P^{*}(w_{n}|w_{n-m+1}^{n-1})}{\sum_{w_{n}:c(w_{n-m+1}^{n-1})=0}P^{*}(w_{n}|w_{n-m+2}^{n-1})}$: Gewicht f\"ur Backing-off.\\
+	\item $P^{*}(w_{n}|w_{n-m+2}^{n-1})$: Wahrscheinlichkeit der gesehenen M-Gramme nach Discounting.
+\end{itemize}
 In der Praxis behandelt man die einmaligen Ereignisse wie die ungesehenen . Nach der Kombination wird aus dem in der Gleichung (2.23) gezeigten Trigramm ein neues wie in der Gleichung (2.25).
 
 %2.25
