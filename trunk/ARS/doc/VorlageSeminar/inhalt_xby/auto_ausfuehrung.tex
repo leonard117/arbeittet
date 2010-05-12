@@ -1,6 +1,6 @@
 %auto_ausfuehrung
 
-Um das Toolkit automatisch auszuf\"uhren, wurde ein Perl-Script Programm entwickelt. Die Aufgabe des Trainings kann in die folgenden  3 Schritte eingeteilt werden.
+Um das Toolkit automatisch auszuf\"uhren, wurde ein P%rl-Script Programm entwickelt. Die Aufgabe des Trainings kann in die folgenden  3 Schritte eingeteilt werden.
 \begin{itemize}
 	\item Entpackung der Trainingskorpora
 	\item Umstellung der Trainingskorpora
@@ -11,7 +11,7 @@ Die Datei "`unpack.pl"' hat die Aufgabe, die originale, im Format "`.z"' komprim
 Die Datei "`convertfile.pl"': tauscht die ung\"ultigen Kuse (<pxxx></p><sxxx></s>) durch g\"ultigen Kuse (<s></s>) aus und ver\"andert alle Buchstaben in Kleine. \\
 Die Datei "`call\_toolkitEx.pl"' ist das Hauptprogramm, das SLM-Toolkit aufzurufen.\\ 
 Die Datei "`Pfileoperation.pm"' ist ein Perl-Modul\cite{book_perl} als gemeinsame Operationsbibliothek.\\
-In der Datei "`call\_toolkit.ini"'  wird die Parameterkonfiguration dargestellt. Darin enthalten sind alle ben\"otigten Parameter wie die Pfade des Toolkits, der Trainingskorpoa, Testkorpus. Ebenso sind die Testparameter wie M-Gramm-Typ und Discounting-Typ auch in dieser Datei definiert. Au\ss erdem wird das "`\text{\#}"`  als Kommentarzeichen verwendet. \"Anderungen an dieser Konfigurationsdatei werden als unterschiedliche Versuche ausgef\"uhrt. Folgend ist ein Beispielkonfiguration angegeben:
+In der Datei "`call\_toolkit.ini"'  wird die Parameterkonfiguration dargestellt. Darin enthalten sind alle ben\"otigten Parameter wie die Pfade des Toolkits, der Trainingskorpoa, Testkorpus. Ebenso sind die Testparameter wie M-Gramm-Typ und Discounting-Typ auch in dieser Datei definiert. Au\ss erdem wird das \glqq \# \grqq  als Kommentarzeichen verwendet. \"Anderungen an dieser Konfigurationsdatei werden als unterschiedliche Versuche ausgef\"uhrt. Folgend ist ein Beispielkonfiguration angegeben:
 
 \begin{lstlisting}
 #notice: only the first value valid.
