@@ -12,7 +12,7 @@ Hier ist $V$ die Vokabulargr\"o\ss e (oder die gesamte Anzahl der m-Gramm-Typen)
 $\sum_{w_{n}}p^{*}(w_{n}|w_{n-m+1}^{n-1})=1$
 \\
 \\
-Nach diesem Verfahren wird die Wahrscheinlichkeit aller angesehenen W\"orter relativ geringer. Und die alle W\"orter mit Null-Wahrscheinlichkeit bekommen einen gleichen neuen Sch\"atzwert $\frac{1}{N+V}$. Zusammenfassung ist
+Nach diesem Verfahren wird die Wahrscheinlichkeit aller angesehenen W\"orter relativ geringer. Und die W\"orter mit Null-Wahrscheinlichkeit bekommen einen gleichen neuen Sch\"atzwert $\frac{1}{N+V}$. Es gilt:
 %2.15
 \begin{equation}
 p^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
@@ -22,4 +22,4 @@ p^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
 \end{equation}
 \\
 \\
-Add-One-Discounting ist ein sehr einfacher Algorithmus und funktioniert nicht so gut, weil die Wahrscheinlichkeitsmasse der "Nonzero"-M-Gramme nach diesem Verfahren sehr viel ge\"andert wird\cite{book_speech}. Folglich wird Add-One-Discounting  praktisch kaum verwendet.
+Add-One-Discounting ist ein sehr einfacher Algorithmus und funktioniert nicht so gut, weil die Wahrscheinlichkeitsmasse der "`Non-Zero-M-Gramme"' nach diesem Verfahren sehr viel ge\"andert wird\cite{book_speech}. Folglich wird Add-One-Discounting  praktisch kaum verwendet.
