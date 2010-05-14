@@ -1,8 +1,8 @@
 %bewertung_sprachmodells
-Vorher haben wir die Modellierung vorgestellt. Aber wie gut ist das entworfene Sprachmodell? Ist das aus unserer Trainingdatenbank trainierte Modell auch g\"ultig bei einem unabh\"angigen Textkorpus? In der Informationstheorie wird dazu h\"aufig die \emph{Entropie}  eingef\"uhrt.
+Vorher haben wir die Modellierung vorgestellt. Aber wie gut ist das entworfene Sprachmodell? Ist das aus unseren Trainingskorpora trainierte Modell auch g\"ultig bei einem unabh\"angigen Textkorpus? In der Informationstheorie wird dazu h\"aufig die \emph{Entropie}  eingef\"uhrt.
 \\
 \\
-\emph{Entropie} ist ein Ma\ss f\"ur den mittleren Informationsgehalt oder auch die Informationsdichte eines Zeichensystems \cite{int_entropie}. Man kann durch die Entropietheorie die Informationsgehalte messen und bewerten, ob ein m-Gramm an eine Sprache angepasst werden kann. Man kann ebenfalls die Vorhersagekraft eines Sprachmodells messen,usw..\cite{book_speech}
+\emph{Entropie} ist ein Ma\ss \space f\"ur den mittleren Informationsgehalt oder auch die Informationsdichte eines Zeichensystems \cite{int_entropie}. Man kann durch die Entropietheorie die Informationsgehalte messen und bewerten, ob ein m-Gramm an eine Sprache angepasst werden kann. Man kann ebenfalls die Vorhersagekraft eines Sprachmodells messen,usw..\cite{book_speech}.
 Die Entropie wird zun\"achst durch folgende Gleichung definiert:
 %2.26
 \begin{equation}
@@ -11,8 +11,8 @@ H(x)=-\sum_{x\in\chi}P(x)log_{b}(P(x))
 \end{equation}
 \\
 \\
-$x$ ist ein zuf\"alliges Ereignis.$\chi$ ist die Menge aller m\"oglichen Ereignisse. $-log_{b}(P(x))$ bedeute den Informationsgehalt des Ereignisses $x$ , Basis $b$ ist h\"aufig gleich 2. Die Einheit der Entropie $H(x)$ ist \emph{bits}, wenn $b=2$.
-Der Begriff "`Perplexit\"at"' wird auch in vielen F\"allen gebraucht. Perplexit\"at hat genau ein Zusammenhang (2.27) mit der Entropie. Perplexit\"at bedeutet das Ma\ss f\"ur die St\"arke der Einschr\"ankung durch das Sprachmodell; also die mittlere Zahl der Wahlm\"oglichkeiten f\"ur das n\"achste Wort.
+$x$ ist ein zuf\"alliges Ereignis. $\chi$ ist die Menge aller m\"oglichen Ereignisse. $-log_{b}(P(x))$ bedeute den Informationsgehalt des Ereignisses $x$, Basis $b$ ist h\"aufig gleich 2. Die Einheit der Entropie $H(x)$ ist \emph{bits}, wenn $b=2$.
+Der Begriff "`Perplexit\"at"' wird auch in vielen F\"allen gebraucht. Perplexit\"at hat genau ein Zusammenhang (2.27) mit der Entropie. Perplexit\"at gibt das Ma\ss \space f\"ur die St\"arke der Einschr\"ankung durch das Sprachmodell an; also die mittlere Zahl der Wahlm\"oglichkeiten f\"ur das n\"achste Wort.
 %2.27
 \begin{equation}
 \label{equation:bewertung_02}
@@ -73,7 +73,7 @@ H(Y)&=-\sum_{y\in\chi}P(y)log_{2}(P(y))\\
 Wie man erkannt, dass $H(Y)/H(X)=3/2=192/128$ ist . In diesem Beispiel kann man sofort erkennen, dass die Entropie als die Metrik der Bandbreitenanfordrung eines Systems bezeichnet wird.
 \\
 \\   
-Vorher haben wir nur \"uber die Entropie eines Zufallsprozesses,der nur ein einzelnes Symbol einsch\"atzt, gesprochen. Man braucht tats\"achlich die Entropie f\"ur Sybolfolge.
+Vorher haben wir nur \"uber die Entropie eines Zufallsprozesses,der nur ein einzelnes Symbol einsch\"atzt, gesprochen. Man braucht tats\"achlich die Entropie f\"ur Symbolfolge.
 %2.30
 \begin{align}
 H(w_{1},w_{2}...w_{n})&=H(w_{1}^{n})\nonumber \\
@@ -87,7 +87,7 @@ H(L)&=\frac{1}{n}H(w_{1}^{n})\nonumber \\
 \end{align}
 \\
 \\
-Wie das tats\"achliche Sprachmodell in der Gleichung(2.1) zeigt, kann $n$ unendlich gro\ss  sein.
+Wie das tats\"achliche Sprachmodell in der Gleichung(2.1) zeigt, kann $n$ unendlich gro\ss \space sein.
 %2.32
 \begin{equation}
 H(L)=\lim_{n\to\infty}\frac{1}{n}H(w_{1}^{n})=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}P(w_{1}^{n})log_{2}P(w_{1}^{n})
@@ -116,7 +116,7 @@ H(p,m)=\lim_{n\to\infty}-\frac{1}{n}\sum_{w\in L}log_{2}m(w_{1}^{n})
 \end{equation}
 \\
 \\
-F\"ur jedes Modell $m$ gilt \\
+F\"ur jedes Modell $m$ gilt: \\
 %2.36
 \begin{equation}
 H(p)\leq H(p,m)

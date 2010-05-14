@@ -29,12 +29,10 @@ Vorliegende bedingte Wahrscheinlichkeiten k\"onnen mathematisch wie folgende Gle
 p(w|v) &=\frac{p(v,w)}{p(v)} \\
 p(w_{n}|w_{n-m+1}^{n-1}) &=\frac{p(w_{n},w_{n-m+1}^{n-1} )}{p(w_{n-m+1}^{n-1})} 
 \end{align}
-
 \begin{itemize}
 	\item $p(w_{n},w_{n-m+1}^{n-1})$: Auftrittswahrscheinlichkeit der Wortfolge $w_{n},w_{n-m+1}^{n-1}$.\\
 	\item $p(w_{n-m+1}^{n-1})$: Auftrittswahrscheinlichkeit der Wortfolge $w_{n-m+1}^{n-1}$.
 \end{itemize}
-
 Aber in der Praxis sind die tats\"achlichen Wahrscheinlichkeiten $p(w_{n-m+1}^{n-1})$  und \\ $p(w_{n},w_{n-m+1}^{n-1})$ nicht bekannt und werden nicht zu dem Rechnen der bedingten Wahrscheinlichkeit $p(w_{n}|w_{n-m+1}^{n-1})$ verwendet. Man trainiert die M-Gramm-Modelle h\"aufig nach der Maximum-Likelihood-Methode \cite{int_MLE} durch Z\"ahlen und Normalisierung wie die Gleichung (2.8). 
 \begin{equation}
 \hat{p}(w_{n}|w_{n-m+1}^{n-1})=\frac{c(w_{n-m+1}^{n-1},w_{n} )}{ \sum_{i=1}^L c(w_{n-m+1}^{n-1},w_{i})}=\frac{c(w_{n-m+1}^{n-1},w_{n} )}{c(w_{n-m+1}^{n-1})}

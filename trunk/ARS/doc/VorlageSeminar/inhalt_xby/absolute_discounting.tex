@@ -1,5 +1,5 @@
 %absolute_discounting
-Die Grundidee des Algorithmus ist, dass man eine feste Anzahl von den beachteten Wortfolgen abzieht so dass die Wahrscheinlichkeitsmasse der h\"aufig gesehenen Ereignisse reduziert wird, den ungesehenen Ereignissen zugeordnet wird. In \cite{ars_script} wird der ML-Sch\"atzwert durch Absolutes-Discounting wie in der Gleichung (2.9) definiert.
+Die Grundidee des Algorithmus ist, dass man eine feste Anzahl von den beobachteten Wortfolgen abzieht so dass die Wahrscheinlichkeitsmasse der h\"aufig gesehenen Ereignisse reduziert wird, den ungesehenen Ereignissen zugeordnet wird. In \cite{ars_script} wird der ML-Sch\"atzwert durch Absolutes-Discounting wie in der Gleichung (2.9) definiert.
 \begin{equation}
 P^{*}(w_{n}|w_{n-m+1}^{n-1})=\begin{cases}
 \frac{c(w_{n-m+1}^{n-1},w_{n})-d}{c(w_{n-m+1}^{n-1})}+\alpha (w_{n-m+1}^{n-1})\beta (w_{n}|w_{n-m+1}^{n-1}) & c(w_{n-m+1}^{n-1},w_{n})>0 \\
