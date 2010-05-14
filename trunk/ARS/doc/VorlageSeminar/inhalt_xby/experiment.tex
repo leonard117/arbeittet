@@ -3,13 +3,11 @@ Das SLM-Toolkit ist ein Werkzeug von Roni Rosenfeld, das angegebene Texte bearbe
 \begin{itemize}
 	\item H\"aufigkeitsliste der Worte und Vokabular
 	\item H\"aufigkeit von Bigramen und Trigrammen
-	\item Z\"ahlen des Bigramms und Trigramms
 	\item Statistik des Bigramms und Trigramms
-	\item Bigramm-und Trigramm-Modell mit unterscheidlichen Backingoff
-	\item Perplexit\"atrate  - Out-Of-Vocabulary (OOV) 
-	\item Bigramm- und Trigramm-Hit-Rate
-	\item Verteilung unter Backingoff 
-	\item Annotation bei der Bewertung des Sprachmodells 
+	\item Bigramm-und Trigramm-Modell mit unterscheidlichen Backingoff-Methoden
+	\item Perplexit\"at
+	\item Bigramm- und Trigramm-Hit-Auftrittsrate der Testkorpora
+	\item Verteilung unter Backingoff-Methode 
 \end{itemize}
 Die Software gibt beim Sprachmodell auch "`absolute"', "`good\_turing"' and "`witten\_bell- Discounting"' an.
 F\"ur ein bestimmtes Ziel muss man nicht alle Software ausf\"uhren. Abbildung (3.1) zeigt eine typische Anwendung, die Datenfluss und Operationfluss darstellt.
@@ -24,7 +22,7 @@ Ein Trainingskorpus wird zu Beginn eingegeben und nach dem Modellierungsverfahre
 Der Trainingskorpus und der Testkorpus m\"ussen sorgf\"altig entworfen werden. \cite{book_speech} deutet uns einige Regeln an, dass Trainingskorpora nicht zu spezifisch f\"ur die Aufgabe und auch nicht zu allgemein sein sollen.  
 \\
 \\
-In unseren Experimenten verwenden wir die WSJ (Wall Street Journal) Sprachdatenbank und wir erhalten die Testergebnisse von unterschiedlichen Discounting und M-Gramm-Modellen. In den Experimenten werden am Ende die Parameter \emph{backoff\_from\_un-k\_inc} und \emph{backoff\_from\_unk\_exc} beim Entropieberechnen eingesetzt. Der Unterschied zwischen beiden Parametern wird in \cite{int_slm_toolkit} erkl\"art, dass in den Fall des Null-Wahrscheinlich-keit-Problems nur die Wahrscheinlichkeit vom (M-1)-Gramm unterm Parameter \emph{backoff\_from\_unk\_inc} und auch die Wahrscheinlichkeit vom (M-2)-Gramm unterm Parameter \emph{backoff\_from\_unk\_exc} verwendet werden.
+In unseren Experimenten verwenden wir die WSJ (Wall Street Journal) Sprachdatenbank und wir erhalten die Testergebnisse von unterschiedlichen Discounting und M-Gramm-Modellen. In den Experimenten werden am Ende die Parameter \emph{backoff\_from\_un-k\_inc} und \emph{backoff\_from\_unk\_exc} beim Entropieberechnen eingesetzt. Der Unterschied zwischen beiden Parametern wird in \cite{int_slm_toolkit} erkl\"art, dass in dem Fall des Null-Wahrscheinlich-keit-Problems nur die Wahrscheinlichkeit vom (M-1)-Gramm unter dem Parameter \emph{backoff\_from\_unk\_inc} und auch die Wahrscheinlichkeit vom (M-2)-Gramm unter dem Parameter \emph{backoff\_from\_unk\_exc} verwendet werden.
 \\
 \\  
 Aber es wurde auch eine Problem gefunden, dass beim Absolute-Discounting man nur NAN bekommen kann, wenn man mit komplette wsj-Databasis arbeitet, weil die Vokabulargr\"o\ss e auf 65535 beschr\"anket wird. In der Tabelle 3.1 wird nur die verringerte Trainingbasis (Trainingdaten aus Verzeichnis 88 und Testdaten "`pp\_et\_05.nvp"') angegeben. Die Testdatei "`pp\_et\_05.nvp"' ist von der Trainingbasis unabh"angig.
