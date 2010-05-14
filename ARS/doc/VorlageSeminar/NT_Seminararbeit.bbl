@@ -25,20 +25,16 @@
 J.~Daniel and H.~M. James, \emph{Speech and language processing}, 2000.
 
 \bibitem{int_MLE}
-\BIBentryALTinterwordspacing
-\emph{Die Maximum-Likelihood Methode}. [Online]. Available:
-  \url{www.uibk.ac.at/econometrics/einf/20p.pdf}
-\BIBentrySTDinterwordspacing
+J.~Scharz, \emph{Grundlagen der Statistik ¨C Band 2:
+  Wahrscheinlichkeitsrechnung und induktive Statistik, 6. Auflage, Berlin;
+  Herne}.
 
 \bibitem{ars_script}
 U.~P. Prof.Dr.Reinhold Haeb-Umbach, \emph{Algorithmen der Spracherkennung},
   ws2009/2010.
 
 \bibitem{int_entropie}
-\BIBentryALTinterwordspacing
-\emph{Entropie (Physik)}. [Online]. Available:
-  \url{http://www.uni-protokolle.de/Lexikon/Entropie_(Physik).html}
-\BIBentrySTDinterwordspacing
+J.~Rolf, \emph{Informationstheorie}, 1992.
 
 \bibitem{int_slm_toolkit}
 \BIBentryALTinterwordspacing
