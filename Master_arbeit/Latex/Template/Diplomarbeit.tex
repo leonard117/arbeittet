@@ -1,0 +1,267 @@
+
+\documentclass[
+                                          %
+   12pt,                                % Schriftgroesse 12pt
+   a4paper,                             % Layout fuer Din A4
+   twoside,                             % Layout fuer beidseitigen Druck
+   headinclude,                         % Kopfzeile wird Seiten-Layouts mit beruecksichtigt
+   headsepline,                         % horizontale Linie unter Kolumnentitel
+   plainheadsepline,                    % horizontale Linie auch beim plain-Style
+   BCOR18mm,                            % Korrektur fuer die Bindung
+   DIV14,                               % DIV-Wert fuer die Erstellung des Satzspiegels, siehe scrguide
+   parskip=half,                        % Absatzabstand statt Absatzeinzug
+   bibliography=totoc,                  % Literaturverz. wird ins Inhaltsverzeichnis eingetragen
+   captions=tableheading,               % korrekte Abstaende bei TabellenUEBERschriften
+%   openany,                            % Kapitel kˆnnen auf geraden und ungeraden Seiten beginnen
+   listof=totoc,                         % Abbildungs- und Tabellenverzeichnis in Inhaltsverz.
+%   pointlessnumbers,                   % Kapitelnummern immer ohne Punkt
+%   fleqn,                              % fleqn: Glgen links (statt mittig)
+%  draft                               % Keine Bilder in der Anzeige, overfull hboxes werden angezeigt
+%   chapterprefix,                      % x. Kapitel ¸ber Kapitel¸berschrift schreiben
+     ]{scrbook}[2001/07/30]             % scrbook-Version mind. 2.8j von 2001/07/30
+
+%makeindex Studienarbeit.nlo -s nomencl.ist -o Studienarbeit.nls
+\usepackage{ngerman}                    % neue Rechtschreibung
+%\usepackage[english]{babel}          % falls man in Englisch schreiben will
+\selectlanguage{german}
+%\selectlanguage{english}               % falls man in Englisch schreiben will
+\usepackage{bibgerm}                    % Dt. Bibliothek 
+
+\usepackage[latin1]{inputenc}           % Input-Encodung: latin1 fuer Unix
+\usepackage[T1]{fontenc}                % T1-kodierte Schriften, korrekte Trennmuster fuer Worte mit Umlauten
+\usepackage{ae}                         % F¸r PDF-Erstellung
+%\usepackage[hang]{caption2}             % mehrzeilige Captions ausrichten
+%\usepackage{pifont}                     % f¸r Zahlen im Kreis mit \ding{202} Google: symbols-a4.ps
+\usepackage{graphicx}                   % zum Einbinden von Grafiken
+\usepackage{float}                      % u.a. genaue Plazierung von Gleitobjekten mit H
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{scrhack}
+%  \newshadetheorem{definition}{Definition}
+%  \newshadetheorem{folgerung}{Folgerung}
+%  \newshadetheorem{thm}{Theorem}
+  
+%\usepackage{draftwatermark}
+  
+%\DeclareMathOperator{\grad}{grad}
+
+%------------------Anfang Nummerierung Anhang-----------------
+ \renewcommand\appendix{\par 
+   \setcounter{section}{0}% 
+   \setcounter{subsection}{0}% 
+   \setcounter{figure}{0}%
+   \renewcommand\thesection{\Alph{section}}% 
+   \renewcommand\thefigure{\Alph{section}.\arabic{figure}}
+   \renewcommand\theequation{\Alph{section}.\arabic{equation}}} 
+%------------------Ende Nummerierung Anhang-----------------
+%\usepackage{tocbasic}
+\usepackage{wrapfig}
+\usepackage{longtable}
+%\usepackage{subfigure}
+\usepackage{subfigure}
+%\usepacka{gemes=falsre
+%   colorlinks,linkcolor={black},citecolor={black},urlcolor={red},
+%   pdfstartview={FitV},unicode,breaklinks=false]{hyperref}
+%\usepackage{natbib}
+% fuer Stichwortverzeichnis
+%\usepackage{makeidx}
+%\makeindex
+%\renewcommand{\indexname}{Stichwortverzeichnis}
+                                        % falls der Index nicht "`Index"' heissen soll
+%\addcontentsline{toc}{section}{Stichwortverzeichnis}
+                                        % falls das Stichwortverzeichnis im Inhaltsverzeichnis auftauchen soll
+
+
+%\usepackage[ansinew]{inputenc}
+                                        % Input-Encodung: ansinew fuer Windows
+
+%\usepackage[centertags]{amsmath}
+                                        % AMS-Mathematik, centertags zentriert Nummer bei split
+%\usepackage{latexsym}
+                                        % verschiedene Symbole
+%\usepackage{textcomp}
+                                        % verschiedene Symbole
+\usepackage{pstricks}
+%\usepackage{pst-all}
+%                                        % PostScript Macros
+\usepackage{psfrag}
+\usepackage{pst-node}
+\usepackage{psfrag}
+
+%\usepackage{pstricks-add}  								% Standard PSTricks Paket
+%\usepackage{pst-3dplot}								% 3D Plots mit PSTricks 
+							% zus‰tzliche PSTRicks Funktionalit‰t
+%\usepackage{rotating}	
+\input{./definitions.tex}
+% Integralzeichen f¸r CAUCHY-Hauptwert und finite part nach HADAMARD
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+%\usepackage{lscape}
+                                        % Seite im Querformat bei Erhalt der Kopfzeile
+%\usepackage{verbatim}
+                                        % Quellcode einbinden (\verbatiminput)
+%\usepackage{multicol}
+    \usepackage{colortbl} 
+   % \usepackage{hhline}                                   % Mehrspaltiger Text 
+%\definecolor{gelb}{rgb}{255,255,0}
+%\usepackage{wasysym}
+\clubpenalty = 10000                    % Schusterjungen und Hurenkinder vermeiden
+                                        % Package f¸r Symbole mit \smiley und \frownie 
+\widowpenalty = 10000                   % siehe dazu
+\displaywidowpenalty = 10000            % http://www.cs.uu.nl/wais/html/na-dir/de-tex-faq/part5.html
+  
+\usepackage{setspace}                   % Zeilenabstand einstellbar
+\onehalfspacing                         % eineinhalbzeilig einstellen
+\usepackage{scrpage2}                   % Kopf und Fusszeilen-Layout 
+\renewcommand{\headfont}{\normalfont\sffamily}    
+                                        % Kolumnentitel serifenlos
+\renewcommand{\pnumfont}{\normalfont\sffamily}    
+                                        % Seitennummern serifenlos
+\pagestyle{scrheadings}
+\ihead[]{\headmark}                     % Kolumnentitel immer oben innen
+\ohead[\pagemark]{\pagemark}
+                                        % Seitennummern immer oben aussen
+\ofoot[]{}                              % Seitennummern in der Fusszeile loeschen
+%\renewcommand{\captionlabelfont}{\normalfont\sffamily} % Schriftart von Nummerierung der Tabellen und Bildunterschriften
+
+\renewcommand{\chapterpagestyle}{empty} % keine Kopfzeile bei Kapitelanfang
+\renewcommand{\titlepagestyle}{empty}   % keine Kopfzeile bei Dokumentanfang
+\renewcommand{\indexpagestyle}{empty}   % keine Kopfzeile bei Inhaltsverzeichnis
+
+
+%\renewcommand{\bibname}{Literatur}
+                                        % Literaturverzeichnis wird zu Literatur
+%\renewcommand{\figurename}{Bild}
+                                        % Abbildung wird zu Bild 
+%\renewcommand{\listfigurename}{Abbildungensverzeichnis} 
+                                        % Name des Abbildungsverzeichnis
+
+% Schrift mit Serifen auch fuer Ueberschriften benutzen
+%\renewcommand*{\sectfont}{\bfseries}
+%\renewcommand*{\descfont}{\bfseries}
+
+
+
+%%% Literatur und sonstige Referenzen
+ \usepackage{cite}                       % Sortierte und zusammengefasste Zitatnummern, nicht mit natbib
+% \usepackage[numbers, sort]{natbib}
+% \usepackage{natbib}
+\usepackage{bookmark}                                        % DIN Literaturverzeichnis; nicht zusammen mit cite verwenden!
+\usepackage{varioref}                   % Verbesserte Referenzen
+%\usepackage{url}
+
+%\usepackage[intoc]{nomencl}
+
+\typearea[current]{current}             % Neuberechnung des Satzspiegels mit alten Werten nach ƒnderung von Zeilenabstand,etc
+
+
+%==================================================
+%% PDF-Erzeugung: pdflatex statt latex aufrufen! 
+%%\pdfoutput=1                      % PDF-Ausgabe
+%\usepackage[pdftex, a4paper,  
+ %%   pdftitle={titel},
+   % pdfauthor={Nicola Meise},
+%    pdfsubject={Studienarbeit},
+%    pdfkeywords={wichtige Keywords zur Arbeit},
+%5    plainpages=false,pdfpagelabels,
+%5    colorlinks  = true,
+%5    citecolor   = black,
+%    linkcolor   = black,
+%    anchorcolor = black,
+%    citecolor   = black,
+%    filecolor   = black,
+%    menucolor   = black,
+%    pagecolor   = black,
+%    urlcolor    = black,
+%    pagebackref = false,
+%    ]{hyperref} 
+
+%\usepackage{hyperref}
+                                        % externe Links verwenden -> f¸r pdftex auskommentieren!!!
+%==================================================
+
+\graphicspath{{figs/}{bilder/}}
+                                        % Falls texinput nicht gesetzt -> Bildverzeichnisse
+
+%\nomenclature{$d_X$}{Abstandsmaﬂ im metrischen Raum $X$}
+%\nomenclature{$\textbf{X}$}{TESTTESTTEST}
+
+\usepackage{blindtext}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\pagenumbering{Roman}
+\frontmatter
+\clearpage
+\pagestyle{empty}
+\renewcommand*{\chapterpagestyle}{empty}
+
+\include{frontmatter/titelblatt} % Deckblatt 
+                                   
+\include{frontmatter/kurzfassung}
+                                      % Kurzfassung der Arbeit
+%\include{frontmatter/abstract}
+                                        % Abstract der Arbeit
+%\include{frontmatter/danksagung}
+%\makenomenclature
+% ...
+% usw.
+
+
+%Inhaltsverzeichnis
+\cleardoubleemptypage                   % Das Inhaltsverzeichnis auf einer rechten Seite beginnen
+\begin{spacing}{1.0}                   % Verzeichnisse werden mit einzeiligem Abstand gesetzt
+ \tableofcontents                       % Inhaltsverzeichnis
+\end{spacing}
+
+\cleardoubleemptypage
+\clearpage
+\pagestyle{scrheadings}
+% \renewcommand*{\chapterpagestyle}{plain}
+
+
+%Hauptkapitel
+\mainmatter                             % den Hauptteil beginnen
+
+\include{mainmatter/Einleitung_1}
+                                        % Einleitung
+                                        
+\include{mainmatter/mainmatter}  
+                                     
+                                        
+\appendix
+\include{backmatter/anhang}                                         % Schluss
+%Literaturverzeichnis
+\include{backmatter/Symbole}
+\include{backmatter/abkuerzung}
+\begin{spacing}{1.0}                    % Verzeichnisse werden mit einzeiligem Abstand gesetzt
+\include{backmatter/literatur}          % Literaturverzeichnis
+
+\end{spacing}
+%Anh‰nge
+
+%\include{backmatter/index}
+
+
+%%\printnomenclature[2cm]
+%\cleardoubleemptypage
+%\listoftables                           % Tabellenverzeichnis
+%(optional)
+\listoffigures                          % Abbildungsverzeichnis
+%(optional)
+
+% Die Eidesstattliche Erklaerung auf einer rechten Seite beginnen
+\include{backmatter/eid}               % Eidesstattliche Erklaerung
+
+\end{document}

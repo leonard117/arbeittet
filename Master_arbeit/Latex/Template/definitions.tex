@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% M A K R O S   U N D   D E F I N I T I O N E N
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% Symbole %%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%% PSTricks %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Zurücksetzen aller veränderten Werte
+\newcommand{\psreset}{%
+\psset{unit      = 1mm,
+       xunit     = 1mm,
+       yunit     = 1mm,
+       linewidth = 1pt,
+       linestyle = solid,
+       linecolor = black,
+       fillstyle = solid,
+       fillcolor = white,
+       Beta      = 0,
+       Alpha     = 0}}
+
+% Textgröße
+\newcommand{\textscale}{1}
+% Liniendicken für Zeichnungen
+\newlength{\lwFine}   \pssetlength{\lwFine}{0.1mm} % = 0.14mm
+\newlength{\lwfine}   \pssetlength{\lwfine}{0.2mm} % = 0.14mm
+\newlength{\lwnormal} \pssetlength{\lwnormal}{0.3mm} % = 0.21mm
+\newlength{\lwthick}  \pssetlength{\lwthick}{0.5mm}
+\newlength{\lwThick}  \pssetlength{\lwThick}{0.75mm} % = 0.64mm%
+
+% verschiedene style Definitionen
+\newpsstyle{normal}{arrowsize=1pt 3,arrowlength=2,arrowinset=0, linewidth=\lwnormal}%
+\newpsstyle{koordpfeil}{arrowsize=2 0,arrowlength=2.5,arrowinset=0}%
+%\newpsstyle{kdpfeil}{arrowsize=1.5 0,arrowlength=1.875,arrowinset=0,linewidth=\lwfine}%
+\newpsstyle{masspfeil}{linewidth=\lwfine, arrowsize=2 0,arrowlength=2.5,arrowinset=0}%
+%\newpsstyle{dottedline}{linestyle=dotted,dotsep=2pt}
+
+\newpsstyle{PSGraphDash}{plotstyle=line,linewidth=0.8pt,linestyle=dashed,dash=4pt 4pt}
+\newpsstyle{PSGraphSolidDot}{plotstyle=line,linewidth=0.8pt,linestyle=solid,showpoints=true}
+\newpsstyle{PSGraphDot}{plotstyle=line,linewidth=1.2pt,linestyle=dotted,dotsep=2pt}
+\newpsstyle{PSGraphDashDot}{plotstyle=line,linewidth=0.8pt,linestyle=dashed,dash=4pt 2pt 0.6pt 2pt}
+\newpsstyle{PSGraphSolid}{plotstyle=line,linewidth=0.8pt,linestyle=solid}
+\newpsstyle{PSGraphDashDotDot}{plotstyle=line,linewidth=0.8pt,linestyle=dashed,dash=4pt 2pt 0.6pt 2pt 0.6pt 2pt}
+\newpsstyle{PSGraphPoint}{plotstyle=dots,dotstyle=*,dotsize=1.5}
+% Schraffuren
+\newpsstyle{hatchedu}{fillstyle=hlines,hatchwidth=\lwfine}
+\newpsstyle{hatchedd}{fillstyle=vlines,hatchwidth=\lwfine}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% FARBEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{LightBlue}{rgb}{0.68,0.85,0.9}
+\definecolor{pink}{rgb}{1.0,0.066,0.9294}
+\definecolor{darkgreen}{rgb}{0.251,0.678,0.188}
+\definecolor{oker}{rgb}{1.0,0.686,0.3098}
+\newgray{lgray}{0.65}
+\newgray{llgray}{0.88}
