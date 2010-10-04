@@ -4,7 +4,7 @@ Version=2
 
 [SessionInfo]
 ActiveTab=1
-FrameCount=13
+FrameCount=14
 ActiveFrame=0
 
 [Frame0]
@@ -24,17 +24,17 @@ Class=CLatexEdit
 Document=Diplomarbeit.tex
 
 [Frame0_Row0]
-cyCur=326
+cyCur=237
 cyMin=10
 
 [Frame0_Col0]
-cxCur=988
+cxCur=760
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=239
-Cursor.column=30
-TopSubLine=225
+Cursor.row=248
+Cursor.column=29
+TopSubLine=260
 
 [Frame1]
 Columns=1
@@ -92,7 +92,7 @@ cxMin=10
 [Frame2_View0,0]
 Cursor.row=46
 Cursor.column=41
-TopSubLine=29
+TopSubLine=33
 
 [Frame3]
 Columns=1
@@ -177,9 +177,9 @@ cxCur=913
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=20
-Cursor.column=4
-TopSubLine=4
+Cursor.row=17
+Cursor.column=11
+TopSubLine=10
 
 [Frame6]
 Columns=1
@@ -264,8 +264,8 @@ cxCur=913
 cxMin=10
 
 [Frame8_View0,0]
-Cursor.row=0
-Cursor.column=0
+Cursor.row=5
+Cursor.column=86
 TopSubLine=0
 
 [Frame9]
@@ -322,8 +322,8 @@ cxCur=913
 cxMin=10
 
 [Frame10_View0,0]
-Cursor.row=0
-Cursor.column=0
+Cursor.row=9
+Cursor.column=21
 TopSubLine=0
 
 [Frame11]
@@ -351,8 +351,8 @@ cxCur=914
 cxMin=10
 
 [Frame11_View0,0]
-Cursor.row=2
-Cursor.column=0
+Cursor.row=7
+Cursor.column=14
 TopSubLine=0
 
 [Frame12]
@@ -381,6 +381,35 @@ cxMin=10
 
 [Frame12_View0,0]
 Cursor.row=5
-Cursor.column=8
+Cursor.column=18
+TopSubLine=0
+
+[Frame13]
+Columns=1
+Rows=1
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-4
+MaxPos.y=-30
+NormalPos.left=22
+NormalPos.top=29
+NormalPos.right=965
+NormalPos.bottom=228
+Class=CLatexEdit
+Document=mainmatter\test.tex
+
+[Frame13_Row0]
+cyCur=144
+cyMin=10
+
+[Frame13_Col0]
+cxCur=914
+cxMin=10
+
+[Frame13_View0,0]
+Cursor.row=4
+Cursor.column=11
 TopSubLine=0
 
