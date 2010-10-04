@@ -10,3 +10,13 @@ A level-1 auxiliary file: backmatter/literatur.aux
 The style file: unsrtdin.bst
 A level-1 auxiliary file: backmatter/eid.aux
 Database file #1: backmatter/Bibliography.bib
+Warning--string name "ieee_j_assp" is undefined
+--line 4 of file backmatter/Bibliography.bib
+Warning--empty edition in ars_script
+Warning--empty address in ars_script
+Warning--empty edition in folie_script
+Warning--empty address in folie_script
+Warning--empty edition in int_slm_toolkit
+Warning--empty address in int_slm_toolkit
+Warning--empty year in int_slm_toolkit
+(There were 8 warnings)

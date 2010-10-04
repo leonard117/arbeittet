@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.7.28)  3 OCT 2010 13:37
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.7.28)  4 OCT 2010 12:48
 entering extended mode
 **F:/Data/leher/SVN/Master_arbeit/Latex/Template/Diplomarbeit.tex
 (F:/Data/leher/SVN/Master_arbeit/Latex/Template/Diplomarbeit.tex
@@ -760,23 +760,24 @@ Kapitel 3.
 
 
 ]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 48.
 
-LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
-               before end of `thebibliography' environment on input line 10.
-
-)) [13] [14
-
+("d:\xp\MiKTeX 2.8\tex\latex\ae\t1aett.fd"
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+))) [13] [14
 
 
-] (F:\Data\leher\SVN\Master_arbeit\Latex\Template\Diplomarbeit.lof)
+
+]
+(F:\Data\leher\SVN\Master_arbeit\Latex\Template\Diplomarbeit.lof)
 \tf@lof=\write5
-
-[15] (F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/eid.tex
-[16
-
+ [15]
+(F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/eid.tex [16
 
 
-]) [17] (F:\Data\leher\SVN\Master_arbeit\Latex\Template\Diplomarbeit.aux
+
+])
+[17] (F:\Data\leher\SVN\Master_arbeit\Latex\Template\Diplomarbeit.aux
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\frontmatter/titelblatt.aux)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\frontmatter/kurzfassung.aux)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\mainmatter/Einleitung_1.aux)
@@ -787,21 +788,23 @@ LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/literatur.aux)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/eid.aux)) ) 
 Here is how much of TeX's memory you used:
- 10135 strings out of 495285
- 143536 string characters out of 3181280
- 275107 words of memory out of 3000000
- 12979 multiletter control sequences out of 15000+200000
- 40347 words of font info for 66 fonts, out of 3000000 for 9000
+ 10188 strings out of 495285
+ 144253 string characters out of 3181280
+ 275366 words of memory out of 3000000
+ 13011 multiletter control sequences out of 15000+200000
+ 46351 words of font info for 76 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  41i,10n,44p,356b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
 {d:/xp/Mi
 KTeX 2.8/fonts/enc/dvips/fontname/8r.enc}<d:/xp/MiKTeX 2.8/fonts/type1/public/a
-msfonts/cm/cmr12.pfb><d:/xp/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmss12.pf
-b><d:/xp/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><d:/xp/MiKTeX 2
-.8/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on Diplomarbeit.pdf (23 pages, 162649 bytes).
+msfonts/cm/cmcsc10.pfb><d:/xp/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.p
+fb><d:/xp/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmss12.pfb><d:/xp/MiKTeX 2.
+8/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><d:/xp/MiKTeX 2.8/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb><d:/xp/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmt
+t12.pfb><d:/xp/MiKTeX 2.8/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on Diplomarbeit.pdf (23 pages, 205576 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
+ 218 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
