@@ -1,0 +1,7 @@
+\select@language {english}
+\contentsline {chapter}{Vorwort}{3}
+\contentsline {chapter}{Personal}{5}
+\contentsline {chapter}{Forschungsschwepunkte}{7}
+\contentsline {chapter}{Labor}{9}
+\contentsline {chapter}{Lehrveranstaltungen}{11}
+\contentsline {chapter}{Kooperationen}{13}
