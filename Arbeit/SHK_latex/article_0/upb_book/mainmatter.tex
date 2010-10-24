@@ -12,6 +12,7 @@
 %}
 
 \chapter{Personal}
+\echapter{STAFF}
 %STAFF
 \input{mainmatter/personal/emeritus}
 \input{mainmatter/personal/technische_mitarbeiter}
@@ -19,7 +20,7 @@
 
 
 \chapter{Forschungsschwepunkte}
-
+\echapter{RESEARCH}
 %\LR{
 		%\subsection{sub1 Parallel} 
 		%\blindtext \blindtext \blindtext \blindtext
@@ -27,11 +28,56 @@
 		%\esubsection{sub2 Parallel}
 		% \blindtext \blindtext \blindtext \blindtext
 %}
+\input{mainmatter/forschungsschwepunkte/regelung_von_PM}
 
 \chapter{Labor}
+\echapter{Labory}
 
 
 \chapter{Lehrveranstaltungen}
 
 
+
 \chapter{Kooperationen}
+
+%\clearpage
+%\bibliographystyle{get_deu_alphadin}							% default styles  get_alphadin} %     
+%\bibliographystyle{alpha}
+%\bibliographystyle{get_natdin}
+%\bibliographystyle{get_eng_natdin}						% f? englische Texte
+%\bibliographystyle{unsrtdin}
+%\bibliographystyle{bib/IEEEtran}
+%\bibliography{bib/Ref_xby}
+
+\begin{figure}
+  \figbicaption{fig:test}{Deutscher Titel}{English Title}
+\end{figure}
+
+
+
+\chapter{Title of first chapter}
+\begin{refsection}
+This is just filler text \parencite{massa}.
+This is just filler text \parencite{augustine}.
+This is just filler text \parencite{cotton}.
+This is just filler text \parencite{hammond}.
+\printbibliography[heading=subbibliography]
+\end{refsection}
+
+\chapter{Title of second chapter}
+\begin{refsection}
+This is just filler text \parencite{hammond}.
+This is just filler text \parencite{massa}.
+This is just filler text \parencite{cotton}.
+This is just filler text \parencite{murray}.
+\printbibliography[heading=subbibliography]
+\end{refsection}
+
+\chapter{Title of third chapter}
+\begin{refsection}
+This is just filler text \parencite{murray}.
+This is just filler text \parencite{augustine}.
+This is just filler text \parencite{cotton}.
+This is just filler text \parencite{bertram}.
+\printbibliography[heading=subbibliography]
+\end{refsection}
