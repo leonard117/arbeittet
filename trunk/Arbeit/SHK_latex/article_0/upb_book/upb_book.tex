@@ -28,7 +28,7 @@
 %       --  Open bibliography style (closed bibliography is the default):
 %                        openbib
 % For instance the command
-          \documentclass[a4paper,12pt,reqno]{book}
+          \documentclass[a4paper,10pt,reqno]{book}
 % ensures that the paper size is a4, fonts are typeset at the size 12p
 % and the equation numbers are on the right side.
 %
@@ -61,10 +61,75 @@
 \newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
 
 
-
+\usepackage{bookmark}   % DIN Literaturverzeichnis; nicht zusammen mit cite verwenden!
+\usepackage{varioref}                   % Verbesserte Referenzen
 
 \usepackage[ngerman,english]{babel}	
+
+
+
+\usepackage{multirow} % for multirow in table
+\usepackage{picins}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%24.10.2010 define page
+\usepackage{mainmatter/Befa}
+\usepackage{mainmatter/Befb}
+%\pagestyle{myheadings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%23.10.2010 define page
+\oddsidemargin-2.5mm \evensidemargin-2.5mm
+%\hoffset=-2.5cm
+\textwidth=17cm
+
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{slantsc}
+\usepackage{array}
+\usepackage{amsmath}
+%\setkomafont{subsection}{\usefont{T1}{fvm}{m}{n}}
+%\setkomafont{section}{\usefont{T1}{fvs}{b}{n}\Large}
+%\setcounter{secnumdepth}{0}
+%\pagestyle{empty}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{uarial}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+%
+%%\sffamily
+
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%17.10.2010 for multi-references
+\usepackage{csquotes}
+\usepackage[style=numeric]{biblatex}
+\bibliography{bib/Ref_xby,bib/biblatex-examples}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%18.10.2010  two language table and figure
+\usepackage{ccaption}
 \usepackage{caption} %% for \captionof{}{}
+
+\newcommand\figbicaption[3]{%
+  \bicaption[#1]{}{#2}{Figure}{#3}%   {\selectlanguage{english}\figurename}
+  }
+
+\newcommand\tabbicaption[3]{%
+  \bicaption[#1]{}{#2}{Table}{#3}%   {\selectlanguage{english}\tablename}
+  }
+
+%\begin{figure}
+%  \figbicaption{fig:test}{Deutscher Titel}{English Title}
+%\end{figure}
+
+%\begin{table}
+%  \tabbicaption{tab:test}{Deutscher Titel}{English Title}
+%\end{table}
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage{fancyhdr}
 %\pagestyle{fancy}
@@ -72,6 +137,7 @@
 
 % new koma package
 \usepackage{scrpage2}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % for koma headers
 \pagestyle{scrheadings}
@@ -96,15 +162,53 @@
 \usepackage{pdfcolparcolumns} % 2008/08/11
 \usepackage{blindtext}
 \newcommand\LR[0]{}
-\renewcommand\LR[2]{\begin{Parallel}[c]{0.475\textwidth}{0.475\textwidth}%
-    \selectlanguage{ngerman}\ParallelLText{#1}%    
-    \selectlanguage{english}\ParallelRText{#2}%    
-    \ParallelPar%
-    \end{Parallel}%
+%\renewcommand\LR[2]{\begin{Parallel}[c]{0.475\textwidth}{0.475\textwidth}%
+%    \selectlanguage{ngerman}\ParallelLText{#1}%    
+%    \selectlanguage{english}\ParallelRText{#2}%    
+%    \ParallelPar%
+%    \end{Parallel}%
+%    }
+
+\renewcommand\LR[2]{\begin{parcolumns}[colwidths={1=0.475\textwidth,2=0.475\textwidth}]{2}%
+    \selectlanguage{ngerman}\colchunk{#1}%
+    \selectlanguage{english}\colchunk{#2}%
+    \colplacechunks%
+    \end{parcolumns}%
     }
 
+%%%========================================================================================
+\makeatletter
+\newcommand\engcontentsname{Contents}
+\newcommand\tableofengcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\engcontentsname
+        \@mkboth{%
+           \MakeUppercase\engcontentsname}{\MakeUppercase\engcontentsname}}%
+    \@starttoc{toe}% !!!!Define a new contents!!!!
+    \if@restonecol\twocolumn\fi
+    }
+\newcommand\addengcontents[2]{%
+    \addcontentsline{toe}{#1}{\protect\numberline{\csname the#1\endcsname}#2}}
+\makeatother
+
+\newcommand\echapter[1]{\addengcontents{chapter}{#1}}
+\newcommand\esection[1]{\addengcontents{section}{#1}}
+\newcommand\esubsection[1]{\addengcontents{subsection}{#1}}
+
+%%define special font
+\usepackage{color}
+\newcommand\enfont[1]{\textcolor[rgb]{0.4,0.4,0.2}{#1} }
+
+%----------------------------------------------------------------
+
 %----------------------------------------------------------
+
 \begin{document}
+\normalfont\normalfont
 
 \frontmatter
 \title{The Title of the Book}
@@ -125,8 +229,56 @@
 \cfoot{\pagemark}
 \ofoot{}
 
-\include{mainmatter}
+%\tableofcontents
+%\tableofengcontents
+
+
+%\chapter{Vorwort}
+%Preface
+
+%\LR{
+		%\subsection{sub1 Parallel} 
+%		\blindtext 
+%		}{
+		%\esubsection{sub2 Parallel}
+%		 \blindtext
+%}
+
+%\chapter{Personal}
+%\echapter{STAFF}
+%%STAFF
+%\include{mainmatter/personal/emeritus}
+%\include{mainmatter/personal/technische_mitarbeiter}
+%\include{mainmatter/personal/wiss_mitarbeiter}
+
+\Kapitel{Forschungsschwepunkte}{RESEARCH}
+%\chapter{Forschungsschwepunkte}
+%\echapter{RESEARCH}
+%\LR{
+		%\subsection{sub1 Parallel} 
+		%\blindtext \blindtext \blindtext \blindtext
+%		}{
+		%\esubsection{sub2 Parallel}
+		% \blindtext \blindtext \blindtext \blindtext
+%}
+%\input{mainmatter/forschungsschwepunkte/regelung_von_PM}
+%
+%\chapter{Labor}
+%\echapter{Labory}
+
+
+%\chapter{Lehrveranstaltungen}
+%
+%
+%
+%\chapter{Kooperationen}
 
 %\include{sample}
 
 \end{document}
+
+
+Todo:
+* Raender anpassen
+* Die Fonts müssen auf Arial umgestellt werden
+* Mitarbeiter-Beschreibungen fertig machen (exemplarisch)

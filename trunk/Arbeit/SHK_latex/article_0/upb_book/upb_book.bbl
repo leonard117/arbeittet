@@ -1,0 +1,52 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 0.9e $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{xby1975}{article}{}
+  \name{author}{3}{%
+    {{Oetken}{O.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{Parks}{P.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{Schussler}{S.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{OGPTSH1}
+  \strng{fullhash}{OGPTSH1}
+  \field{sortinit}{O}
+  \field{number}{3}
+  \field{pages}{301\bibrangedash 309}
+  \field{title}{New results in the design of digital interpolators}
+  \field{volume}{23}
+  \verb{file}
+  \verb New results in the design of digital interpolators:home/leutnant/jabref
+  \verb /papers/speechproc/Oetken1975.pdf:PDF
+  \endverb
+  \field{year}{1975}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

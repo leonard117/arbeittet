@@ -1,7 +1,47 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}
+\defcounter {refsection}{0}
 \select@language {english}
-\contentsline {chapter}{Vorwort}{3}
-\contentsline {chapter}{Personal}{5}
-\contentsline {chapter}{Forschungsschwepunkte}{7}
-\contentsline {chapter}{Labor}{9}
-\contentsline {chapter}{Lehrveranstaltungen}{11}
-\contentsline {chapter}{Kooperationen}{13}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Vorwort}{7}{chapter*.4}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Personal}{9}{chapter*.5}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Forschungsschwepunkte}{13}{chapter*.13}
+\defcounter {refsection}{1}
+\select@language {ngerman}
+\defcounter {refsection}{1}
+\select@language {english}
+\defcounter {refsection}{1}
+\contentsline {section}{\numberline {0.1}sub1 Parallel}{13}{chapter*.13}
+\defcounter {refsection}{1}
+\select@language {ngerman}
+\defcounter {refsection}{1}
+\select@language {english}
+\defcounter {refsection}{2}
+\select@language {ngerman}
+\defcounter {refsection}{2}
+\select@language {english}
+\defcounter {refsection}{2}
+\select@language {ngerman}
+\defcounter {refsection}{2}
+\select@language {english}
+\defcounter {refsection}{3}
+\select@language {ngerman}
+\defcounter {refsection}{3}
+\select@language {english}
+\defcounter {refsection}{3}
+\select@language {ngerman}
+\defcounter {refsection}{3}
+\select@language {english}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Labor}{17}{chapter*.15}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Lehrveranstaltungen}{19}{chapter*.16}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Kooperationen}{21}{chapter*.17}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Title of first chapter}{23}{chapter*.19}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Title of second chapter}{25}{chapter*.20}
+\defcounter {refsection}{0}
+\contentsline {chapter}{Title of third chapter}{27}{chapter*.21}

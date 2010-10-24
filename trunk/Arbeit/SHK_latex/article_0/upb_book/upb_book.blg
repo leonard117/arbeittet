@@ -1,6 +1,10 @@
-This is BibTeX, Version 0.99cThe top-level auxiliary file: F:\SHK\SHK_latex\article_0\upb_book\upb_book.aux
+This is BibTeX, Version 0.99cThe top-level auxiliary file: F:\Data\leher\SVN\Arbeit\SHK_latex\article_0\upb_book\upb_book.aux
+The style file: biblatex.bst
 A level-1 auxiliary file: mainmatter.aux
-I found no \citation commands---while reading file F:\SHK\SHK_latex\article_0\upb_book\upb_book.aux
-I found no \bibdata command---while reading file F:\SHK\SHK_latex\article_0\upb_book\upb_book.aux
-I found no \bibstyle command---while reading file F:\SHK\SHK_latex\article_0\upb_book\upb_book.aux
-(There were 3 error messages)
+Database file #1: upb_book-blx.bib
+Database file #2: bib/Ref_xby.bib
+Warning--string name "ieee_j_assp" is undefined
+--line 4 of file bib/Ref_xby.bib
+Database file #3: bib/biblatex-examples.bib
+Biblatex version: 0.9e
+(There was 1 warning)
