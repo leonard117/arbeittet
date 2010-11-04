@@ -1,0 +1,1 @@
+A discretization of the material in elementary material cells m, defining the material grid M.
