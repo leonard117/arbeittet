@@ -6,7 +6,7 @@ Version=4
 MainFile=Diplomarbeit.tex
 UseBibTeX=0
 UseMakeIndex=0
-ActiveProfile=LaTeX => PDF
+ActiveProfile=LaTeX => PS => PDF
 ProjectLanguage=de
 ProjectDialect=DE
 
