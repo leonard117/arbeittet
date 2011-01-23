@@ -22,7 +22,30 @@
 %\end{align}
 The Finite Integration Theory(\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.
 
-The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material}.
+The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material} to discetize a object into a \textbf{Cartesian Grid}. In \cite{script_FeldSim} the primary elements are choosed for calculation:
+\begin{itemize}
+\item Points $P(i,j,k)$
+\item Elemental Edge:
+%$\delta u(i)=\overline{u(i)u(i+1)} with 1\leq{i}\leq{I-1},$
+    \begin{align}
+		\Delta u(i)&=\overline{u(i)u(i+1)} with 1\leq i \leq I-1, \nonumber\\
+		\Delta v(j)&=\overline{v(j)v(j+1)} with 1\leq j \leq J-1, \nonumber\\
+		\Delta w(k)&=\overline{w(k)w(k+1)} with 1\leq k \leq K-1
+		\end{align}
+
+\item Elemental Planes
+		\begin{align}
+			A_{u}(j,k)&=\Delta v(j)\Delta w(k) with 1\leq i \leq I-1,1\leq j \leq J-1\nonumber\\
+			A_{v}(i,k),A_{w}(i,j) analogous
+		\end{align}
+
+\item Elemental Cells
+		\begin{equation}
+		V(i,j,k)=\Delta u(i)\Delta v(j)\Delta w(k) with 1\leq i\leq I-1,1\leq j\leq J-1,1\leq k\leq K-1
+		\end{equation}
+
+\end{itemize}
+
 
 
 \begin{align}
@@ -53,7 +76,8 @@ The first thought is to separate the integrating operator into
 
 %fig: discretization of the material
 \begin{figure}
-\includegraphics[width=0.8\textwidth]{bilder/discretization_material}
+%\includegraphics[width=0.8\textwidth]{bilder/discretization_material}
+\includegraphics[width=0.8\textwidth]{bilder/grid_volum}
 \caption{A discretization of the material in elementary material cells m, defining the material grid M.}
 \label{fig:discretization_material}
 \end{figure}
