@@ -22,31 +22,85 @@
 %\end{align}
 The Finite Integration Theory(\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.
 
-The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material} to discetize a object into a \textbf{Cartesian Grid}. In \cite{script_FeldSim} the primary elements are choosed for calculation:
+The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material} to discetize a brickshape object into a \textbf{Cartesian Grid}. Of cause it is possible to construct grid volum in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization}\cite{FDTD_nonorthogonal_grids} for simplifying the calculation depending on the real dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).
+\begin{equation}
+G={(u(i),v(j),w(k))\in R^3|u(1)\leq u(i)\leq u(I),
+													 v(1)\leq v(j)\leq v(J),
+													 w(1)\leq w(k)\leq w(K)
+}
+\label{eq:grid}
+\end{equation}
+$u(i),v(j),w(k)$ can be three compontents of any 3D coordinate systems.
+%fig: discretization of the material
+\begin{figure}
+%\includegraphics[width=0.8\textwidth]{bilder/discretization_material}
+\includegraphics[width=0.8\textwidth]{bilder/grid_volum}
+%\caption{A discretization of the material in elementary material cells m, defining the material grid M.}
+\caption{A Cartesian descretized Grid Volum.}
+\label{fig:discretization_material}
+\end{figure}
+
+
+In \cite{script_FeldSim} the primary elements are choosed for calculation:
 \begin{itemize}
 \item Points $P(i,j,k)$
 \item Elemental Edge:
 %$\delta u(i)=\overline{u(i)u(i+1)} with 1\leq{i}\leq{I-1},$
     \begin{align}
-		\Delta u(i)&=\overline{u(i)u(i+1)} with 1\leq i \leq I-1, \nonumber\\
-		\Delta v(j)&=\overline{v(j)v(j+1)} with 1\leq j \leq J-1, \nonumber\\
-		\Delta w(k)&=\overline{w(k)w(k+1)} with 1\leq k \leq K-1
+		\Delta u(i)&=\overline{u(i)u(i+1)}  \quad with  \quad 1\leq i \leq I-1, \nonumber\\
+		\Delta v(j)&=\overline{v(j)v(j+1)}  \quad with  \quad 1\leq j \leq J-1, \nonumber\\
+		\Delta w(k)&=\overline{w(k)w(k+1)}  \quad with  \quad 1\leq k \leq K-1
+		\label{eq:discrete_edge}
 		\end{align}
-
 \item Elemental Planes
 		\begin{align}
-			A_{u}(j,k)&=\Delta v(j)\Delta w(k) with 1\leq i \leq I-1,1\leq j \leq J-1\nonumber\\
-			A_{v}(i,k),A_{w}(i,j) analogous
+		A_{u}(j,k)&=\Delta v(j)\Delta w(k) \quad with  \quad 1\leq i \leq I-1,1\leq j \leq J-1\nonumber\\
+		&A_{v}(i,k),A_{w}(i,j)  \quad analogous
+		\label{eq:discrete_plane}
 		\end{align}
-
 \item Elemental Cells
 		\begin{equation}
-		V(i,j,k)=\Delta u(i)\Delta v(j)\Delta w(k) with 1\leq i\leq I-1,1\leq j\leq J-1,1\leq k\leq K-1
+		V(i,j,k)=\Delta u(i)\Delta v(j)\Delta w(k)  \quad with  \quad 1\leq i\leq I-1,1\leq j\leq J-1,1\leq k\leq K-1
+		\label{eq:discrete_cell}
 		\end{equation}
-
 \end{itemize}
+For the convenience a new idex system is introduced:
 
+\begin{equation}
+n=1+(i-1)\cdot M_{u}+(j-1)\cdot M_{v}+(k-1)\cdot M{w}
+\label{eq:discrete_index}
+\end{equation}
+Here $M_{u}=1,M_{v}=I,M_{w}=I\cdot J$. With new index
+Reindex points $P(i,j,k)$ with $n$. Same work is done for element edges , planes and volums, new elments sequence are created:
+\begin{itemize}
+\item Points $P(n) \quad with \quad 1\leq n \leq N_{p}$
+\item Elemental Edge:
+%$\delta u(i)=\overline{u(i)u(i+1)} with 1\leq{i}\leq{I-1},$
+    \begin{align}
+		\Delta u(n)&=\overline{u(n)u(n+1)}  \quad with \quad 1\leq n \leq N_{p}, \nonumber\\
+		\Delta v(n)&=\overline{v(n)v(n+1)}  \quad with \quad 1\leq n \leq N_{p}, \nonumber\\
+		\Delta w(n)&=\overline{w(n)w(n+1)}  \quad with \quad 1\leq n \leq N_{p}
+		\label{eq:discrete_edge_n}
+		\end{align}
+\item Elemental Planes
+		\begin{align}
+		A_{u}(n)&=\Delta v(n)\Delta w(n) \quad with \quad 1\leq n\leq N_{p}\nonumber\\
+		&A_{v}(n),A_{w}(n)  \quad analogous
+		\label{eq:discrete_plane_n}
+		\end{align}
+\item Elemental Cells
+		\begin{equation}
+		V(n)=\Delta u(n)\Delta v(n)\Delta w(n)  \quad with \quad 1\leq n\leq N_{p}
+		\label{eq:discrete_cell_n}
+		\end{equation}
+\end{itemize}
+Here, $N_{p}$ is the total nummber of the grid points:
+\begin{equation}
+N_{p}=I\cdot J\cdot K
+\label{eq:np}
+\end{equation}
 
+The next step is to discretize Maxwell's equations in their integral form(\ref{eq:maxwell_1}-\ref{eq:maxwell_4}) and additional equations (\ref{eq:maxwell_5}-\ref{eq:maxwell_7}).
 
 \begin{align}
 \oint_{\partial A}\vec{E}\cdot\mathrm{d}\vec{s}&=
@@ -71,15 +125,8 @@ Additional equations:
 \label{eq:maxwell_7}
 \end{align}
 
-The first thought is to separate the integrating operator into 
 
 
-%fig: discretization of the material
-\begin{figure}
-%\includegraphics[width=0.8\textwidth]{bilder/discretization_material}
-\includegraphics[width=0.8\textwidth]{bilder/grid_volum}
-\caption{A discretization of the material in elementary material cells m, defining the material grid M.}
-\label{fig:discretization_material}
-\end{figure}
+
 
 
