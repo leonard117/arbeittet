@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.7.28)  4 OCT 2010 12:48
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.10.17)  2 NOV 2010 00:37
 entering extended mode
-**F:/Data/leher/SVN/Master_arbeit/Latex/Template/Diplomarbeit.tex
-(F:/Data/leher/SVN/Master_arbeit/Latex/Template/Diplomarbeit.tex
+**Diplomarbeit
+(F:\Data\leher\SVN\Master_arbeit\Latex\Template\Diplomarbeit.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
@@ -152,18 +152,17 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 ("d:\xp\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 91.
 
-("d:\xp\MiKTeX 2.8\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
-\Gread@gobject=\count89
+("d:\xp\MiKTeX 2.8\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
 ("d:\xp\MiKTeX 2.8\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count90
+\c@float@type=\count89
 \float@exts=\toks17
 \float@box=\box27
 \@float@everytoks=\toks18
@@ -185,7 +184,7 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@old@col=\dimen110
 \TX@target=\dimen111
 \TX@delta=\dimen112
-\TX@cols=\count91
+\TX@cols=\count90
 \TX@ftn=\toks20
 )
 ("d:\xp\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
@@ -208,13 +207,13 @@ Package: amsbsy 1999/11/29 v1.2d
 ("d:\xp\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count92
+\inf@bad=\count91
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count93
-\leftroot@=\count94
+\uproot@=\count92
+\leftroot@=\count93
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count95
-\DOTSCASE@=\count96
+\classnum@=\count94
+\DOTSCASE@=\count95
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
@@ -223,15 +222,15 @@ LaTeX Info: Redefining \cdots on input line 467.
 \big@size=\dimen115
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count97
-\c@MaxMatrixCols=\count98
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count99
-\dspbrk@lvl=\count100
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
 \tag@help=\toks22
-\row@=\count101
-\column@=\count102
-\maxfields@=\count103
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
 \andhelp@=\toks23
 \eqnshift@=\dimen116
 \alignsep@=\dimen117
@@ -269,7 +268,7 @@ Package scrhack Info: undefining \float@addtolists on input line 135.
 ("d:\xp\MiKTeX 2.8\tex\latex\wrapfig\wrapfig.sty"
 \wrapoverhang=\dimen122
 \WF@size=\dimen123
-\c@WF@wrappedlines=\count104
+\c@WF@wrappedlines=\count103
 \WF@box=\box31
 \WF@everypar=\toks26
 Package: wrapfig 2003/01/31  v 3.6
@@ -280,16 +279,16 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTright=\skip53
 \LTpre=\skip54
 \LTpost=\skip55
-\LTchunksize=\count105
+\LTchunksize=\count104
 \LTcapwidth=\dimen124
 \LT@head=\box32
 \LT@firsthead=\box33
 \LT@foot=\box34
 \LT@lastfoot=\box35
-\LT@cols=\count106
-\LT@rows=\count107
-\c@LT@tables=\count108
-\c@LT@chunks=\count109
+\LT@cols=\count105
+\LT@rows=\count106
+\c@LT@tables=\count107
+\c@LT@chunks=\count108
 \LT@p@ftn=\toks27
 )
 Class scrbook Info: longtable captions redefined on input line 63.
@@ -302,10 +301,10 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigbottomskip=\skip58
 \subfigcapmargin=\dimen126
 \subfiglabelskip=\skip59
-\c@subfigure=\count110
-\c@lofdepth=\count111
-\c@subtable=\count112
-\c@lotdepth=\count113
+\c@subfigure=\count109
+\c@lofdepth=\count110
+\c@subtable=\count111
+\c@lotdepth=\count112
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -327,12 +326,12 @@ Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
 \pst@dimh=\dimen132
 \pst@hbox=\box36
 \pst@boxg=\box37
-\pst@cnta=\count114
-\pst@cntb=\count115
-\pst@cntc=\count116
-\pst@cntd=\count117
-\pst@cntg=\count118
-\pst@cnth=\count119
+\pst@cnta=\count113
+\pst@cntb=\count114
+\pst@cntc=\count115
+\pst@cntd=\count116
+\pst@cntg=\count117
+\pst@cnth=\count118
 \pst@toks=\toks28
 ("d:\xp\MiKTeX 2.8\tex\generic\pstricks\pstricks.con")
 \psunit=\dimen133
@@ -355,9 +354,8 @@ Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 ("d:\xp\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: dvips.def on input line 225.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
@@ -368,17 +366,17 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ))
 ("d:\xp\MiKTeX 2.8\tex\latex\psfrag\psfrag.sty"
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
-\pfg@pcount=\count120
-\pfg@scount=\count121
+\pfg@pcount=\count119
+\pfg@scount=\count120
 \pfg@temp=\write3
 )
 ("d:\xp\MiKTeX 2.8\tex\latex\pstricks\pst-node.sty"
 Package: pst-node 2006/01/01 package wrapper for pst-node.tex
 
 ("d:\xp\MiKTeX 2.8\tex\generic\pstricks\pst-node.tex"  v1.01, 2008/11/26
-\psrow=\count122
-\pscol=\count123
-\psmatrixcnt=\count124
+\psrow=\count121
+\pscol=\count122
+\psmatrixcnt=\count123
 \psrowsep=\skip62
 \pscolsep=\skip63
 )
@@ -437,7 +435,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 ))
 ("d:\xp\MiKTeX 2.8\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
+Package ifpdf Info: pdfTeX in pdf mode not detected.
 )
 ("d:\xp\MiKTeX 2.8\tex\latex\ifxetex\ifxetex.sty"
 Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
@@ -457,8 +455,8 @@ O)
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
 \@linkdim=\dimen141
-\Hy@linkcounter=\count125
-\Hy@pagecounter=\count126
+\Hy@linkcounter=\count124
+\Hy@pagecounter=\count125
 
 ("d:\xp\MiKTeX 2.8\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2009/10/19 v6.79b Hyperref: PDFDocEncoding definition (HO)
@@ -503,7 +501,7 @@ Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 ("d:\xp\MiKTeX 2.8\tex\generic\oberdiek\bigintcalc.sty"
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
 ))
-\Fld@menulength=\count127
+\Fld@menulength=\count126
 \Field@Width=\dimen142
 \Fld@charsize=\dimen143
 \Field@toks=\toks32
@@ -518,14 +516,21 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 ("d:\xp\MiKTeX 2.8\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count128
-\c@Item=\count129
+\Hy@abspage=\count127
+\c@Item=\count128
 )
-*hyperref using default driver hpdftex*
-("d:\xp\MiKTeX 2.8\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2009/10/19 v6.79b Hyperref driver for pdfTeX
-\Fld@listcount=\count130
-)
+*hyperref using default driver hdvips*
+("d:\xp\MiKTeX 2.8\tex\latex\hyperref\hdvips.def"
+File: hdvips.def 2009/10/19 v6.79b Hyperref driver for dvips
+
+("d:\xp\MiKTeX 2.8\tex\latex\hyperref\pdfmark.def"
+File: pdfmark.def 2009/10/19 v6.79b Hyperref definitions for pdfmark specials
+\pdf@docset=\toks33
+\pdf@box=\box39
+\pdf@toks=\toks34
+\pdf@defaulttoks=\toks35
+\Fld@listcount=\count129
+))
 Package scrhack Info: loading hyperref hack on input line 79.
 
 ("d:\xp\MiKTeX 2.8\tex\latex\koma-script\hyperref.hak"
@@ -537,13 +542,13 @@ Package scrhack Info: redefining \@ssect on input line 150.
 ("d:\xp\MiKTeX 2.8\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2007/04/06 v1.1 Hooks for auxiliary files (HO)
 )
-("d:\xp\MiKTeX 2.8\tex\latex\oberdiek\bkm-pdftex.def"
-File: bkm-pdftex.def 2009/08/13 v1.5 bookmark driver for pdfTeX (HO)
-\BKM@id=\count131
+("d:\xp\MiKTeX 2.8\tex\latex\oberdiek\bkm-dvips.def"
+File: bkm-dvips.def 2009/08/13 v1.5 bookmark driver for dvips (HO)
+\BKM@id=\count130
 ))
 ("d:\xp\MiKTeX 2.8\tex\latex\tools\varioref.sty"
 Package: varioref 2009/09/13 v1.4w package for extended references (FMi)
-\c@vrcnt=\count132
+\c@vrcnt=\count131
 )
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 14
@@ -569,19 +574,19 @@ Package: blindtext 2009/12/29 V1.9c blindtext-Package
 ("d:\xp\MiKTeX 2.8\tex\latex\tools\xspace.sty"
 Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
 )
-\c@blindtext=\count133
-\c@Blindtext=\count134
-\blind@countxx=\count135
-\blindtext@numBlindtext=\count136
-\blind@countyy=\count137
-\c@blindlist=\count138
-\c@blindlistlevel=\count139
-\c@blindlist@level=\count140
-\blind@listitem=\count141
-\c@blind@listcount=\count142
-\c@blind@levelcount=\count143
-\blind@mathformula=\count144
-\blind@Mathformula=\count145
+\c@blindtext=\count132
+\c@Blindtext=\count133
+\blind@countxx=\count134
+\blindtext@numBlindtext=\count135
+\blind@countyy=\count136
+\c@blindlist=\count137
+\c@blindlistlevel=\count138
+\c@blindlist@level=\count139
+\blind@listitem=\count140
+\c@blind@listcount=\count141
+\c@blind@levelcount=\count142
+\blind@mathformula=\count143
+\blind@Mathformula=\count144
 )
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\Diplomarbeit.aux
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\frontmatter/titelblatt.aux)
@@ -593,51 +598,38 @@ Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/abkuerzung.aux)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/literatur.aux)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/eid.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
 
 
 bibgerm.sty: (n)german.sty 2.5b detected
 
-("d:\xp\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count146
-\scratchdimen=\dimen144
-\scratchbox=\box39
-\nofMPsegments=\count147
-\nofMParguments=\count148
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count149
-\MPscratchDim=\dimen145
-\MPnumerator=\count150
-\everyMPtoPDFconversion=\toks34
-)
-Package hyperref Info: Link coloring OFF on input line 203.
- ("d:\xp\MiKTeX 2.8\tex\latex\hyperref\nameref.sty"
+Package hyperref Info: Link coloring OFF on input line 205.
+("d:\xp\MiKTeX 2.8\tex\latex\hyperref\nameref.sty"
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 ("d:\xp\MiKTeX 2.8\tex\latex\oberdiek\refcount.sty"
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count151
+\c@section@level=\count145
 LaTeX Info: Redefining \Ref on input line 396.
 )
-LaTeX Info: Redefining \ref on input line 203.
-LaTeX Info: Redefining \pageref on input line 203.
+LaTeX Info: Redefining \ref on input line 205.
+LaTeX Info: Redefining \pageref on input line 205.
 \AtBeginShipoutBox=\box40
-LaTeX Info: Redefining \Ref on input line 203.
+LaTeX Info: Redefining \Ref on input line 205.
 
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\frontmatter/titelblatt.tex
 LaTeX Font Info:    Try loading font information for T1+phv on input line 5.
@@ -645,16 +637,13 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 5.
 ("d:\xp\MiKTeX 2.8\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<bilder/uni-logo.pdf, id=3, 554.60104pt x 145.7435pt>
-File: bilder/uni-logo.pdf Graphic file (type pdf)
-
-<use bilder/uni-logo.pdf>
+File: bilder/uni-logo.eps Graphic file (type eps)
+ <bilder/uni-logo.eps>
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 17.
- <Bilder/logo-tet.png, id=4, 48.18pt x 25.17406pt>
-File: Bilder/logo-tet.png Graphic file (type png)
+File: Bilder/logo-tet.eps Graphic file (type eps)
 
-<use Bilder/logo-tet.png>
+<Bilder/logo-tet.eps>
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 27.
 LaTeX Font Info:    Try loading font information for U+msa on input line 27.
@@ -671,20 +660,12 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 33.
  [1
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
 
 
 
 
 
-{C:/Dokumente und Einstellungen/All Users/Anwendungsdaten/MiKTeX/2.8/pdftex/con
-fig/pdftex.map} <F:/Data/leher/SVN/Master_arbeit/Latex/Template/bilder/uni-logo
-.pdf> <F:/Data/leher/SVN/Master_arbeit/Latex/Template/Bilder/logo-tet.png (PNG 
-copy)>])
+])
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\frontmatter/kurzfassung.tex
 [2
 
@@ -777,7 +758,9 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 
 
 ])
-[17] (F:\Data\leher\SVN\Master_arbeit\Latex\Template\Diplomarbeit.aux
+[17]
+\BKM@file=\write6
+ (F:\Data\leher\SVN\Master_arbeit\Latex\Template\Diplomarbeit.aux
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\frontmatter/titelblatt.aux)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\frontmatter/kurzfassung.aux)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\mainmatter/Einleitung_1.aux)
@@ -788,23 +771,12 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/literatur.aux)
 (F:\Data\leher\SVN\Master_arbeit\Latex\Template\backmatter/eid.aux)) ) 
 Here is how much of TeX's memory you used:
- 10188 strings out of 495285
- 144253 string characters out of 3181280
- 275366 words of memory out of 3000000
- 13011 multiletter control sequences out of 15000+200000
- 46351 words of font info for 76 fonts, out of 3000000 for 9000
+ 9799 strings out of 495286
+ 139342 string characters out of 3181302
+ 268995 words of memory out of 3000000
+ 12691 multiletter control sequences out of 15000+200000
+ 34963 words of font info for 50 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,10n,44p,356b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
-{d:/xp/Mi
-KTeX 2.8/fonts/enc/dvips/fontname/8r.enc}<d:/xp/MiKTeX 2.8/fonts/type1/public/a
-msfonts/cm/cmcsc10.pfb><d:/xp/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.p
-fb><d:/xp/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmss12.pfb><d:/xp/MiKTeX 2.
-8/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><d:/xp/MiKTeX 2.8/fonts/type1/pub
-lic/amsfonts/cm/cmti12.pfb><d:/xp/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmt
-t12.pfb><d:/xp/MiKTeX 2.8/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on Diplomarbeit.pdf (23 pages, 205576 bytes).
-PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41i,10n,44p,305b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+Output written on Diplomarbeit.dvi (23 pages, 31024 bytes).
