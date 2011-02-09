@@ -4,13 +4,13 @@
 %\begin{minipage}[t]{0.4\textwidth}
 %\centring
 %\includegraohics[width=0.35\textwidth]{bilder/FIT_max_integral1}
-%\caption{Integration on the edge of one single elemental plane.}
+%\caption{Integral on the edge of one single elemental plane.}
 %\label{fig:FIT_max_integral1}
 %\end{minipage}
 %\begin{minipage}[t]{0.4\textwidth}
 %\centring
 %\includegraohics[width=0.35\textwidth]{bilder/FIT_max_integral2}
-%\caption{Integration on the edge of one single elemental cell.}
+%\caption{Integral on the edge of one single elemental cell.}
 %\label{fig:FIT_max_integral2}
 %\end{minipage}
 %\end{figure}
@@ -18,14 +18,19 @@
 
 \begin{figure}
 \centering
-\subfigure[Integration on the edge of one single elemental plane $A_{u}(n)$]{
-\includegraphics[width=0.35\textwidth]{bilder/FIT_max_integral1}
+\subfigure[Integral on the edge of one single elemental plane $A_{u}(n)$]{
+\includegraphics[width=0.3\textwidth]{bilder/FIT_max_integral1}
 \label{fig:FIT_max_integral1}
 }
 \hfill
-\subfigure[Integration on the edge of one single elemental cell]{
-\includegraphics[width=0.35\textwidth]{bilder/FIT_max_integral2}
+\subfigure[Integral on the edge of one single elemental cell]{
+\includegraphics[width=0.3\textwidth]{bilder/FIT_max_integral2}
 \label{fig:FIT_max_integral2}
+}
+\hfill
+\subfigure[Integral on the edge of one single elemental cell]{
+\includegraphics[width=0.3\textwidth]{bilder/FIT_max_integral3}
+\label{fig:FIT_max_integral3}
 }
 \caption{discrete Maxwell's Equations}
 \end{figure}
@@ -34,27 +39,201 @@ Followling is a demonstration of the discretized form from the  inductive law(\r
 
 \begin{equation}
 \int_{C}\vec{E}\cdot d\vec{s}
-=\underbrace{\int_{\Delta v(n)}\vec{E}\cdot d\vec{s}}_{\widehat{e_{v}(n)}}
-+\underbrace{\int_{\Delta w(n+M_{v})}\vec{E}\cdot d\vec{s}}_{\widehat{e_{w}(n+M_{v})}}
--\underbrace{\int_{\Delta v(n+M_{w})}\vec{E}\cdot d\vec{s}}_{\widehat{e_{v}(n+M_{w})}}
--\underbrace{\int_{\Delta w(n)}\vec{E}\cdot d\vec{s}}_{\widehat{e_{w}(n)}}
+=\underbrace{\int_{\Delta v(n)}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{v}(n)}
++\underbrace{\int_{\Delta w(n+M_{v})}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{w}(n+M_{v})}
+-\underbrace{\int_{\Delta v(n+M_{w})}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{v}(n+M_{w})}
+-\underbrace{\int_{\Delta w(n)}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{w}(n)}
 \label{eq:inductive_left}
 \end{equation}
-where \widehat{e} is so called  electric grid voltage
+where $\widehat{e(n)}$ (Fig.\ref{fig:FIT_max_integral2}) is so called  electric grid voltage and has the followling relationship with electric field strength $e(n)$
+
+
+\begin{equation}
+e_{n}=\frac{\widehat{e}_{v}(n)}{\Delta v(n)}
+\label{eq:e_field}
+\end{equation}
 
 In the mean time the right side of (\ref{eq:maxwell_1}) is transformed as (\ref{eq:inductive_right})
 \begin{equation}
--\iint_A_{u}(n)\frac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{A} 
-=-\iint_A_{u}(n)\frac{\partial B^{*}_{u}}{\partial t}\cdot\mathrm{d}A
-\approx -\frac{\partial}{\partial t}b_{u}(n)A_{u}(h)
+-\iint_{A_{u}(n)}\frac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{A} 
+=-\iint_{A_{u}(n)}\frac{\partial B^{*}_{u}}{\partial t}\cdot\mathrm{d}A
+\approx -\frac{\partial}{\partial t}b_{u}(n)A_{u}(n)
 \label{eq:inductive_right}
 \end{equation}
 
-Here $A_{u}(n)=\Delta v(n)\Delta w(n)$ and $b_{u}(n)$ is magnetic fluxe density
-Define magnetic grid fluxe(\ref{eq:mag_fluxe})
+Here $A_{u}(n)=\Delta v(n)\Delta w(n)$ and $b_{u}(n)$ (Fig.\ref{fig:FIT_max_integral2}) is magnetic flux density
+Define magnetic grid flux (\ref{eq:mag_fluxe})
 \begin{equation}
-\widehat{\widehat{b_{u}(n)}}=\iint_A_{u}(n)\vec{B}\cdot\mathrm{d}\vec{A}
+\widehat{\widehat{b}}_{u}(n)=\iint_{A_{u}(n)}\vec{B}\cdot\mathrm{d}\vec{A}
 \label{eq:mag_fluxe}
 \end{equation}
 
-surface integral
+From equations (\ref{eq:inductive_left}-\ref{eq:mag_fluxe}) the difference form(\ref{eq:inductive_integral}) of the inductive equation is derived in this elemental plane:
+
+\begin{equation}
+\widehat{e}_{v}(n)+\widehat{e}_{w}(n+M_{v})-\widehat{e}_{v}(n+M_{w})-\widehat{e}_{w}(n)=-\frac{\partial}{\partial t}\widehat{\widehat{b}}_{u}(n)
+\label{eq:inductive_integral}
+\end{equation}
+i.e.,
+\begin{multline}
+\Delta v(n)e_{v}(n)+\Delta w(n+M_{v})e_{w}(n+M_{v})\\
+-\Delta v(n+M_{w})e_{v}(n+M_{w})-\Delta w(n)e_{w}(n)=-A_{u}(n)\frac{\partial}{\partial{t}}b_{u}(n) \hspace{5cm}
+\label{eq:inductive_sample}
+\end{multline}
+
+Base on the ordering in(\ref{eq:discrete_index}-\ref{eq:np}) the electric field-strength $e(n)$ and magnetic flux density $b(n)$ of all grids can be constructed in vector.
+\begin{equation}
+e_{u}:=
+\begin{pmatrix}
+e_{u}(1)&\\
+\vdots&\\
+e_{u}(N_{p})&
+\end{pmatrix},
+e_{v}:=
+\begin{pmatrix}
+e_{v}(1)&\\
+\vdots&\\
+e_{v}(N_{p})&
+\end{pmatrix},
+e_{w}:=
+\begin{pmatrix}
+e_{w}(1)&\\
+\vdots&\\
+e_{w}(N_{p})&
+\end{pmatrix},
+e_{u}:=
+\begin{pmatrix}
+e_{u}&\\
+e_{v}&\\
+e_{w}&
+\end{pmatrix}.
+\label{eq:vector_e_field}
+\end{equation}
+\begin{equation}
+b_{u}:=
+\begin{pmatrix}
+b_{u}(1)&\\
+\vdots&\\
+b_{u}(N_{p})&
+\end{pmatrix},
+b_{v}:=
+\begin{pmatrix}
+b_{v}(1)&\\
+\vdots&\\
+b_{v}(N_{p})&
+\end{pmatrix},
+b_{w}:=
+\begin{pmatrix}
+b_{w}(1)&\\
+\vdots&\\
+b_{w}(N_{p})&
+\end{pmatrix},
+b_{u}:=
+\begin{pmatrix}
+b_{u}&\\
+b_{v}&\\
+b_{w}&
+\end{pmatrix}.
+\label{eq:vector_m_flux}
+\end{equation}
+
+\begin{equation}
+D_{s}=
+	\begin{pmatrix}
+	\Delta u(1)&&&&&&&&\\
+	&\ddots &&&&&&&\\
+	&&\Delta u(N_{p})&&&&&&\\
+	&&&\Delta v(1)&&&&&\\
+	&&&&\ddots &&&&\\
+	&&&&&\Delta v(N_{p})&&&\\
+	&&&&&&\Delta w(1)&&\\
+	&&&&&&&\ddots &\\
+	&&&&&&&&\Delta w(N_{p})
+	\end{pmatrix}
+	\label{eq:Ds_matrix}
+\end{equation}
+The elemental edge matrix(\ref{eq:Ds_matrix}) and elemental plane matrix(\ref{eq:Da_matrix}) are demanded.
+
+\begin{equation}
+D_{A}=
+	\begin{pmatrix}
+	\Delta A_{u}(1)&&&&&&&&\\
+	&\ddots &&&&&&&\\
+	&&\Delta A_{u}(N_{p})&&&&&&\\
+	&&&\Delta A_{v}(1)&&&&&\\
+	&&&&\ddots &&&&\\
+	&&&&&\Delta A_{v}(N_{p})&&&\\
+	&&&&&&\Delta A_{w}(1)&&\\
+	&&&&&&&\ddots &\\
+	&&&&&&&&\Delta A_{w}(N_{p})
+	\end{pmatrix}
+	\label{eq:Da_matrix}
+\end{equation}
+Expand the relation(\ref{eq:inductive_sample}) to all grid cells\cite{FIT_discrete_method}\cite{FIT_discrete_electrommagnetism}\cite{FIT_triangular_discretization}\cite{script_FeldSim}:
+\begin{equation}
+CD_{s}e=-D_{A}\frac{\partial}{\partial{t}}b
+\label{eq:inductive_sample_all}
+\end{equation}
+Where $C$ is \textbf{curl} operator:
+\begin{align}
+C&=
+	\begin{pmatrix}
+	&&\quad\vline &\ddots &-1&\quad\vline  &\ddots &+1&\\	
+	&0&\quad\vline	& &+1 &\ddots\vline	 &&-1&\ddots\\
+	&&\quad\vline	&&&\ddots\vline			 &&&\ddots\\	
+	\hline
+	\ddots &+1&\quad\vline	&&&\quad\vline	 &\ddots &-1&\\
+	&-1 &\ddots\vline	&&0&\quad\vline	&&+1&\ddots\\
+	&&\ddots\vline	&&&\quad\vline	&&&\ddots\\
+	\hline
+	\ddots &-1&\quad\vline &\ddots &+1&\quad\vline	&&&\\
+	&+1 &\ddots\vline	&&-1&\ddots\vline	&&0&\\
+	&&\ddots\vline		&&&\ddots\vline	&&&
+	\end{pmatrix}\nonumber\\
+	&=
+	\begin{pmatrix}
+	0&-P_{w}&P_{v}\\
+	P_{w}&0&-P_{u}\\
+	-P_{v}&P_{u}&0
+	\end{pmatrix}
+\label{eq:C_matrix}
+\end{align}
+To simplify representation of the equation(\ref{eq:inductive_sample_all}) by using $\widehat{e}$and$\widehat{\widehat{b}}$:
+\begin{equation}
+C\widehat{e}=-\frac{\partial}{\partial{t}}\widehat{\widehat{b}}
+\label{eq:inductive_integral_all}
+\end{equation}
+
+%\begin{equation}
+%\widehat{e}_{u}:=
+%\begin{pmatrix}
+%\widehat{e}_{u}(1)&\\
+%\vdots&\\
+%\widehat{e}_{u}(N_{p})&
+%\end{pmatrix},
+%\widehat{e}_{v}:=
+%\begin{pmatrix}
+%\widehat{e}_{v}(1)&\\
+%\vdots&\\
+%\widehat{e}_{v}(N_{p})&
+%\end{pmatrix},
+%\widehat{e}_{w}:=
+%\begin{pmatrix}
+%\widehat{e}_{w}(1)&\\
+%\vdots&\\
+%\widehat{e}_{w}(N_{p})&
+%\end{pmatrix},
+%\widehat{e}_{u}:=
+%\begin{pmatrix}
+%\widehat{e}_{u}&\\
+%\widehat{e}_{v}&\\
+%\widehat{e}_{w}&
+%\end{pmatrix}.
+%\label{eq:vector_e_voltage}
+%\end{equation}
+
+
+
+
+surface integral 
+%\textbf{Maxwell-Grid_Equations(MGE)}
