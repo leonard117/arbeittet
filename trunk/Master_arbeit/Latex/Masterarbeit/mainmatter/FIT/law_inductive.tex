@@ -288,11 +288,12 @@ $S\in R^{N_{p}\times 3N_{p}}$ represent the discrete divergenc matrix, which dep
 %S
 \begin{equation}
 S=(P_{u}|P_{v}|P_{w})
+\label{eq:S_matrix}
 \end{equation}
 
 
 %Amp\'ere's law
-Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its magnetical field strengths pass through the elemental plane along the same path with the magnetic flux (Fig.\ref{fig:divergence_G}). Therefor, a new grid(\textbf{Dual Grid})Fig.\ref{fig:dual_grid} is required for this path integral. As in Primary Grid the duale elements are also properly defined in \cite{script_FeldSim}.
+Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its magnetical field strengths pass through the elemental plane along the same path with the magnetic flux (Fig.\ref{fig:divergence_G}). Therefor, a new grid(\textbf{Dual Grid})Fig.\ref{fig:dual_grid} is required for this path integral. The second cell $\tilde{G}$ is dual to the primary cell $G$. As in Primary Grid the duale elements are also properly defined in \cite{script_FeldSim}.
 
 \begin{figure}
 \centering
@@ -301,45 +302,118 @@ Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its mag
 \label{fig:dual_grid}
 \end{figure}
 
+Simular to the discretization of Inductive Law Figures\ref{fig:FIT_max_integral4}\ref{fig:FIT_max_integral5} describe the path integal and surface integral of the equation(\ref{eq:maxwell_2}) in a \textbf{Dual Grid} and lead to the difference forms(\ref{}\ref{}).
+
+\begin{figure}
+%\centering
+	\subfigure[path Integral of the magnetic flux in dual grid.]{
+	\includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral4}
+	\label{fig:FIT_max_integral4}
+	}
+\hfill
+	\subfigure[surface Integral of the electric flux in dual grid.]{
+	\includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral5}
+	\label{fig:FIT_max_integral5}
+	}
+\caption{discretization of Amp\'ere's law}
+\end{figure}
+
 \begin{align}
 h_{1}&=\frac{b_{v}(n)}{\mu (n-M_{v})}\\
-h_{1}&=\frac{b_{v}(n)}{\mu (n)}
+h_{2}&=\frac{b_{v}(n)}{\mu (n)}
 \label{eq:megnetic_field}
 \end{align}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{bilder/FIT_max_integral4}
-\caption{path Integral of the magnetic flux in dual grid. }
-\label{fig:FIT_max_integral4}
-\end{figure}
-The second cell $\tilde{G}$ is dual to the primary cell $G$
+%
+%\begin{equation}
+%\int_{\tilde{C}}\vec{H}\cdot d\vec{s}
+%=\widehat{h}_{v}(n)
+%+\widehat{h}_{w}(n+M_{v})
+%-\widehat{h}_{v}(n+M_{w})
+%-\widehat{h}_{w}(n)
+%\label{eq:ampere_left}
+%\end{equation}
 
 \begin{equation}
-\int_{\tilde{C}}\vec{H}\cdot d\vec{s}
-=\widehat{h}_{v}(n)
-+\widehat{h}_{w}(n+M_{v})
--\widehat{h}_{v}(n+M_{w})
--\widehat{h}_{w}(n)
-\label{eq:ampere_left}
-\end{equation}
-
-\begin{equation}
-\int_{\tilde{C}}\mu^{-1}\vec{B}\cdot d\vec{s}\approx
-=\widehat{h}_{v}(n)
+\int_{\tilde{C}}\vec{H}\cdot d\vec{s}=\int_{\tilde{C}}\mu^{-1}\vec{B}\cdot d\vec{s}\approx
+\widehat{h}_{v}(n)
 +\widehat{h}_{w}(n+M_{v})
 -\widehat{h}_{v}(n+M_{w})
 -\widehat{h}_{w}(n)
 \label{eq:ampere_left_sample}
 \end{equation}
 
-
+\begin{align}
+\int\int_{\tilde{A}_{u}}\vec{D}\cdot\mathrm{d}\vec{A}\approx &+e_{u}A_{1}\epsilon_{u}(n-M_{v}-M_{w}) \nonumber\\
+&+e_{u}A_{2}\epsilon_{u}(n-M_{w}) \nonumber\\
+&+e_{u}A_{3}\epsilon_{u}(n) \nonumber\\
+&+e_{u}A_{4}\epsilon_{u}(n-M_{v}) \nonumber\\
+&=\bar{\epsilon}_{u}(n)e_{u}\tilde{A}_{u}
+\label{eq:ampere_right}
+\end{align}
+with 
 \begin{align}
 A_{1}&=\frac{A_{u}(n-M_{v}-M_{w})}{4}\\
 A_{2}&=\frac{A_{u}(n-M_{w})}{4}\\
 A_{3}&=\frac{A_{u}(n)}{4}\\
 A_{4}&=\frac{A_{u}(n-M_{v})}{4}
 \end{align}
+\begin{align}
+\bar{\epsilon}_{x}(n)&:=\frac{\int\int\epsilon\mathrm{d}A}{\int\int\mathrm{d}A}\nonumber\\
+&=\frac{1}{4\tilde{A}_{x}(n)}(\epsilon_{x}(n-M_{y}-M_{z})A_{x}(n-M_{y}-M_{z})\nonumber\\
+&+\epsilon_{x}(n-M_{z})A_{x}(n-M_{z}) \nonumber\\
+&+\epsilon_{x}(n)A_{x}(n) \nonumber\\
+&+\epsilon_{x}(n-M_{y})A_{x}(n-M_{y})
+\end{align}
+$\bar{\epsilon}$ is \textbf{average dielectric constant}. 
+Define the average dielectric matrix:
+\begin{equation}
+D_{\epsilon}=Diag(\bar{\epsilon}_{u}(1),\ldots,\bar{\epsilon}_{u}(N_{p}),\bar{\epsilon}_{v}(1),\ldots,\bar{\epsilon}_{v}(N_{p}),\bar{\epsilon}_{w}(1),\ldots,\bar{\epsilon}_{w}(N_{p}))
+\label{eq:eps_matrix}
+\end{equation}
+By expanding equationos(\ref{eq:ampere_left_sample}-\ref{eq:eps_matrix}) the discretized form(\ref{eq:ampere}) is derived.
+\begin{equation}
+\tilde{C}\tilde{D}_{s}D_{\mu^{-1}}b=\tilde{D}_{A}(D_{\epsilon}\frac{\mathrm{d}}{\mathrm{dt}}e+D_{\kappa}e+j)
+\label{eq:ampere}
+\end{equation}
+or
+\begin{equation}
+\tilde{C}\widehat{h}=\frac{\mathrm{d}}{\mathrm{dt}}\widehat{\widehat{d}}+\widehat{\widehat{j}}_{L}+\widehat{\widehat{j}}_{S}
+\label{eq:ampere_sample}
+\end{equation}
+$\tilde{C}$ represents the $curl-operator$ in dual grid.
+\begin{equation}
+\tilde{C}=
+	\begin{pmatrix}
+	0&-\tilde{P}_{w}&\tilde{P}_{v}\\
+	\tilde{P}_{w}&0&-\tilde{P}_{u}\\
+	-\tilde{P}_{v}&\tilde{P}_{u}&0
+	\end{pmatrix}
+	\label{eq:dual_C_matrix}
+\end{equation}
+With the help of dual grid cells Gauss' law(\ref{eq:maxwell_3}) in integral form can be discretized\cite{script_FeldSim} as following:
+\begin{equation}
+\tilde{S}\widehat{\widehat{d}}=q
+\label{eq:gausslaw}
+\end{equation}
+or
+\begin{equation}
+\tilde{S}\tilde{D}_{A}D_{\epsiloon}e=\tilde{D}_{V}\rho_{D}
+\label{eq:gausslaw_sample}
+\end{equation}
+Here $\rho_{D}$ is the vector of the charge density in grid cells.
 
-surface integral 
+\begin{equation}
+\tilde{S}=(\tilde{P}_{u}|\tilde{P}_{v}|\tilde{P}_{w})=(-P_{u}^{T}|-P_{v}^{T}|\-P_{w}^{T})
+\label{eq:dual_S_matrix}
+\end{equation}
+
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.5\textwidth]{bilder/FIT_max_integral5}
+%\caption{surface Integral of the electric flux in dual grid. }
+%\label{fig:FIT_max_integral5}
+%\end{figure}
+
 %\textbf{Maxwell-Grid_Equations(MGE)}
