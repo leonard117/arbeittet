@@ -1,0 +1,20 @@
+
+
+
+时间	操作	说明	次数
+14:31:05	已允许	修改 开机启动项	1
+详细描述：
+注册表位置：HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\[DIM正在下载您的更新...1285781003180]
+注册表内容："d:\xp\Corel\CorelDRAW Graphics Suite X5\Draw\DIM.exe" "c:\dokumente und einstellungen\all users\anwendungsdaten\corel\downloads\540215253_005023\1285781003180\dim_params.xml" -Launch=3 -uibase="c:\dokumente und einstellungen\leo\anwendungsdaten\corel\messages\540215253_005023\cs\messagecache1\workflow"
+进程：D:\xp\Corel\CorelDRAW Graphics Suite X5\Draw\DIM.exe
+
+
+
+时间	操作	说明	次数
+15:03:10	已允许	修改 开机启动项	1
+详细描述：
+注册表位置：HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\[DIM正在下载您的更新...1285781003180]
+注册表内容："d:\xp\Corel\CorelDRAW Graphics Suite X5\Draw\DIM.exe" "c:\dokumente und einstellungen\all users\anwendungsdaten\corel\downloads\540215253_005023\1285781003180\dim_params.xml" -Launch=3 -uibase="c:\dokumente und einstellungen\leo\anwendungsdaten\corel\messages\540215253_005023\cs\messagecache2\workflow"
+进程：D:\xp\Corel\CorelDRAW Graphics Suite X5\Draw\DIM.exe
+
+
