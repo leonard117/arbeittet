@@ -134,7 +134,7 @@ b_{u}&\\
 b_{v}&\\
 b_{w}&
 \end{pmatrix}.
-\label{eq:vector_m_flux}
+\label{eq:vector_m_flux_density}
 \end{equation}
 
 \begin{equation}
@@ -198,42 +198,148 @@ C&=
 	\end{pmatrix}
 \label{eq:C_matrix}
 \end{align}
-To simplify representation of the equation(\ref{eq:inductive_sample_all}) by using $\widehat{e}$and$\widehat{\widehat{b}}$:
+Submatrixes $P_{u},P_{v},P_{w}$ are composed of $1,-1,0$ like Fig.\ref{fig:Matrix Px}. 
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{bilder/P_matrix}
+\caption{Matrix $P_{x},(x=u,v,w)$}
+\label{fig:Matrix Px}
+\end{figure}
+
+To simplify the representation of the equation(\ref{eq:inductive_sample_all}) by using $\widehat{e}$ and $\widehat{\widehat{b}}$:
 \begin{equation}
 C\widehat{e}=-\frac{\partial}{\partial{t}}\widehat{\widehat{b}}
 \label{eq:inductive_integral_all}
 \end{equation}
+%\widehat{e}
+\begin{equation}
+\widehat{e}_{u}:=
+\begin{pmatrix}
+\widehat{e}_{u}(1)&\\
+\vdots&\\
+\widehat{e}_{u}(N_{p})&
+\end{pmatrix},
+\widehat{e}_{v}:=
+\begin{pmatrix}
+\widehat{e}_{v}(1)&\\
+\vdots&\\
+\widehat{e}_{v}(N_{p})&
+\end{pmatrix},
+\widehat{e}_{w}:=
+\begin{pmatrix}
+\widehat{e}_{w}(1)&\\
+\vdots&\\
+\widehat{e}_{w}(N_{p})&
+\end{pmatrix},
+\widehat{e}_{u}:=
+\begin{pmatrix}
+\widehat{e}_{u}&\\
+\widehat{e}_{v}&\\
+\widehat{e}_{w}&
+\end{pmatrix}.
+\label{eq:vector_e_voltage}
+\end{equation}
+%\widehat{\widehat{b}}
+\begin{equation}
+\widehat{\widehat{b}}_{u}:=
+\begin{pmatrix}
+\widehat{\widehat{b}}_{u}(1)&\\
+\vdots&\\
+\widehat{\widehat{b}}_{u}(N_{p})&
+\end{pmatrix},
+\widehat{\widehat{b}}_{v}:=
+\begin{pmatrix}
+\widehat{\widehat{b}}_{v}(1)&\\
+\vdots&\\
+\widehat{\widehat{b}}_{v}(N_{p})&
+\end{pmatrix},
+\widehat{\widehat{b}}_{w}:=
+\begin{pmatrix}
+\widehat{\widehat{b}}_{w}(1)&\\
+\vdots&\\
+\widehat{\widehat{b}}_{w}(N_{p})&
+\end{pmatrix},
+\widehat{\widehat{b}}_{u}:=
+\begin{pmatrix}
+\widehat{\widehat{b}}_{u}&\\
+\widehat{\widehat{b}}_{v}&\\
+\widehat{\widehat{b}}_{w}&
+\end{pmatrix}.
+\label{eq:vector_m_flux}
+\end{equation}
+%divergence equation
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{bilder/divergence_in_grid}
+\caption{This figure discribe the allocation of six magnetic facet fluxes in $G$}
+\label{fig:divergence_G}
+\end{figure}
+Analogy the divergence equation(\ref{eq:maxwell_4}) can also be discretized in grid $G$(Fig.\ref{fig:divergence_G}) and can be described in its difference form: 
+\begin{equation}
+SD_{A}b=0
+\label{eq:divergence_sample}
+\end{equation}
+or
+\begin{equation}
+S\widehat{\widehat{b}}=0
+\label{eq:divergence_integral}
+\end{equation}
+$S\in R^{N_{p}\times 3N_{p}}$ represent the discrete divergenc matrix, which depends on the grid topology just as the discrete $curl-Matrix$ $C$.
+%S
+\begin{equation}
+S=(P_{u}|P_{v}|P_{w})
+\end{equation}
 
-%\begin{equation}
-%\widehat{e}_{u}:=
-%\begin{pmatrix}
-%\widehat{e}_{u}(1)&\\
-%\vdots&\\
-%\widehat{e}_{u}(N_{p})&
-%\end{pmatrix},
-%\widehat{e}_{v}:=
-%\begin{pmatrix}
-%\widehat{e}_{v}(1)&\\
-%\vdots&\\
-%\widehat{e}_{v}(N_{p})&
-%\end{pmatrix},
-%\widehat{e}_{w}:=
-%\begin{pmatrix}
-%\widehat{e}_{w}(1)&\\
-%\vdots&\\
-%\widehat{e}_{w}(N_{p})&
-%\end{pmatrix},
-%\widehat{e}_{u}:=
-%\begin{pmatrix}
-%\widehat{e}_{u}&\\
-%\widehat{e}_{v}&\\
-%\widehat{e}_{w}&
-%\end{pmatrix}.
-%\label{eq:vector_e_voltage}
-%\end{equation}
+
+%Amp\'ere's law
+Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its magnetical field strengths pass through the elemental plane along the same path with the magnetic flux (Fig.\ref{fig:divergence_G}). Therefor, a new grid(\textbf{Dual Grid})Fig.\ref{fig:dual_grid} is required for this path integral. As in Primary Grid the duale elements are also properly defined in \cite{script_FeldSim}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{bilder/dual_grid}
+\caption{The allocation of the Primary Grid $G$ and Dual Grid $\tilde{G}$.}
+\label{fig:dual_grid}
+\end{figure}
+
+\begin{align}
+h_{1}&=\frac{b_{v}(n)}{\mu (n-M_{v})}\\
+h_{1}&=\frac{b_{v}(n)}{\mu (n)}
+\label{eq:megnetic_field}
+\end{align}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{bilder/FIT_max_integral4}
+\caption{path Integral of the magnetic flux in dual grid. }
+\label{fig:FIT_max_integral4}
+\end{figure}
+The second cell $\tilde{G}$ is dual to the primary cell $G$
+
+\begin{equation}
+\int_{\tilde{C}}\vec{H}\cdot d\vec{s}
+=\widehat{h}_{v}(n)
++\widehat{h}_{w}(n+M_{v})
+-\widehat{h}_{v}(n+M_{w})
+-\widehat{h}_{w}(n)
+\label{eq:ampere_left}
+\end{equation}
+
+\begin{equation}
+\int_{\tilde{C}}\mu^{-1}\vec{B}\cdot d\vec{s}\approx
+=\widehat{h}_{v}(n)
++\widehat{h}_{w}(n+M_{v})
+-\widehat{h}_{v}(n+M_{w})
+-\widehat{h}_{w}(n)
+\label{eq:ampere_left_sample}
+\end{equation}
 
 
-
+\begin{align}
+A_{1}&=\frac{A_{u}(n-M_{v}-M_{w})}{4}\\
+A_{2}&=\frac{A_{u}(n-M_{w})}{4}\\
+A_{3}&=\frac{A_{u}(n)}{4}\\
+A_{4}&=\frac{A_{u}(n-M_{v})}{4}
+\end{align}
 
 surface integral 
 %\textbf{Maxwell-Grid_Equations(MGE)}
