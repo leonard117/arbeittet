@@ -5,7 +5,7 @@
 Firstly, it is demanded to determine the Tapered and Lensed Fiber(TLF) model. Because of the heave computing cost creating a full size fiber is not economical. Therefore only the end of the fiber, which provides approximately the equal technical properties, will be modeled in this article. In \cite{TLF_analysis} \cite{TLF_mode_transforming} two type of the TLF configuration are mentioned. 
 
 
-\begin{figure}
+\begin{figure}[!ht]
 \centering
 \subfigure[Tapered cladding TLF.]{
 \includegraphics[width=0.4\textwidth]{bilder/lense_fiber_01}
@@ -26,6 +26,7 @@ In this article two TLF models from each type are created and their performances
 
 \begin{table}
 \caption{The Configurations of the TLF Models}
+\centering
 \begin{tabular}{ccc}
 \hline
 							&Tapered Cladding&Tapered Core\\
@@ -43,12 +44,13 @@ D$_{tip}$ ($\mu$m) & --   &	$10$\\
 \end{table}
 %2.20
 The fowllowing are the E-Field demonstrations in the xz-plane of both type of TLFs.
-\begin{figure}
+\begin{figure}[!ht]
 	\subfigure[E-Field demonstration of Tapered cladding TLF]{
 		\includegraphics[width=0.4 \textwidth]{bilder/cst_lensed_fiber_equ_efield}
  		\label{fig:Tapered_cladding_efield}
 	}
-	\hfill
+\end{figure}
+\begin{figure}[!ht]
 	\subfigure[E-Field demonstration of Tapered core TLF]{
 		\includegraphics[width=0.4 \textwidth]{bilder/cst_lensed_fiber_efield}
  		\label{fig:Tapered_core_efield}	
@@ -74,7 +76,7 @@ As is in section lense theory introduced, the minimum spot located not exactly a
 \caption{calculating minimus spot size by lense theory.}
 \end{figure}
 Load the its beam propagation detail into \textbf{Matlab} workspace and check the 2D and 3D beam power distribution in different distance. Fig.(\ref{fig:2d_spot_sub1}-\ref{fig:2d_spot_sub8}) and Fig.(\ref{fig:3d_spot_sub1}-\ref{fig:3d_spot_sub8}) respectively.%2D and 3D
-\begin{figure}
+\begin{figure}[!ht]
 \setlength{\abovecaptionskip}{0pt}% 
 \flushleft
 	\subfigure[2D Beam Power at distance $1\mu m$]{
@@ -112,45 +114,57 @@ Load the its beam propagation detail into \textbf{Matlab} workspace and check th
  	\caption{2D Beam Spot }
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!ht]
 \setlength{\abovecaptionskip}{0pt}% 
 \flushleft
 	\subfigure[3D Beam Power at distance $1\mu m$]{
-	\includegraphics[width=0.26 \textwidth]{bilder/surf_spot_1um}
+	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_1um}
 	\label{fig:3d_spot_sub1}%
 	}
  	\subfigure[3D Beam Power at distance $2\mu m$]{
- 	\includegraphics[width=0.26 \textwidth]{bilder/surf_spot_2um}
+ 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_2um}
  	\label{fig:3d_spot_sub2}
  	}
+\end{figure}	
+\begin{figure}[!ht]
+\setlength{\abovecaptionskip}{0pt}% 
+\flushleft
  	 	\subfigure[3D Beam Power at distance $3\mu m$]{
- 	\includegraphics[width=0.26 \textwidth]{bilder/surf_spot_3um}
+ 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_3um}
  	\label{fig:3d_spot_sub3}
  	}
  	\subfigure[3D Beam Power at distance $4\mu m$]{
- 	\includegraphics[width=0.26 \textwidth]{bilder/surf_spot_4um}
+ 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_4um}
  	\label{fig:3d_spot_sub4}
  	}
+\end{figure}	
+\begin{figure}[!ht]
+\setlength{\abovecaptionskip}{0pt}% 
+\flushleft
  	 \subfigure[3D Beam Power at distance $5\mu m$]{
- 	\includegraphics[width=0.26 \textwidth]{bilder/surf_spot_5um}
+ 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_5um}
  	\label{fig:3d_spot_sub5}
  	}
  	 	\subfigure[3D Beam Power at distance $6\mu m$]{
- 	\includegraphics[width=0.26 \textwidth]{bilder/surf_spot_6um}
+ 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_6um}
  	\label{fig:3d_spot_sub6}
  	}
+\end{figure}	
+\begin{figure}[!ht]
+\setlength{\abovecaptionskip}{0pt}% 
+\flushleft
   \subfigure[3D Beam Power at distance $7\mu m$]{
- 	\includegraphics[width=0.26 \textwidth]{bilder/surf_spot_7um}
+ 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_7um}
  	\label{fig:3d_spot_sub7}
  	}
  	\subfigure[3D Beam Power at distance $8\mu m$]{
- 	\includegraphics[width=0.26 \textwidth]{bilder/surf_spot_8um}
+ 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_8um}
  	\label{fig:3d_spot_sub8}
  	}
  	\caption{3D Beam Power }
 \end{figure} 
 Draw Fig.\ref{fig:Tapered_cladding_spot_curve}-\ref{fig:Tapered_core_spot_curve} to illustrate the beam Spot size diameter along the longitude axis.
-\begin{figure}
+\begin{figure}[!ht]
 	\subfigure[Spot Size Curve of Tapered cladding TLF]{
 		\includegraphics[width=0.4 \textwidth]{bilder/flower_hiber_cladding}
  		\label{fig:Tapered_cladding_spot_curve}
