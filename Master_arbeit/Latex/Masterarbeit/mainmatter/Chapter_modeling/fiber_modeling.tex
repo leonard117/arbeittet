@@ -1,7 +1,7 @@
 %fiber_modeling
 
 %fiber_modeling.tex
-First agenda is to determine the Tapered and Lensed Fiber(TLF) model. Because of the heave computing cost creating a full size fiber is not economical. Therefore only the end of the fiber, which provides approximately the equal technical properties, will be modeled in this works.  In \cite{TLF_analysis} \cite{TLF_mode_transforming} two type of the TLF configuration are mentioned. 
+First agenda is to determine the Tapered and Lensed Fiber (TLF) model. Because of the heave computing cost creating a full size fiber is not economical. Therefore only the end of the fiber, which provides approximately the equal technical properties, will be modeled in this works.  In \cite{TLF_analysis,TLF_mode_transforming} two type of the TLF configuration are mentioned. 
 
 
 \begin{figure}[!ht]
@@ -42,43 +42,38 @@ D$_{tip}$ ($\mu$m) & --   &	$6$\\
 From Fig.\quad\ref{fig:lens_spot} the beam propagation is demonstrated base on lens theory. As is in previous chapter described, the minimum spot located not exactly at the focal length. From measures of the location of Paraxial focal plane(PP) and that of meridional plane (MP) the minimum spot(MS) can be estimated. In the above configuration the theoretical distance from lens end to PP is $8.82 \mu$ m and the distance from lens end to MP is about $2.74 \mu$m. Backword $3/4$ longitudinal spherical aberration(LAm) form PP, the MS is founded at the place about $4.26 \mu$m far from lens end. 
 \begin{figure}
 \centering
-	\subfigure[complete Beam Propogation from lense.]{
 	\includegraphics[width=0.7\textwidth]{bilder/cal_min_spot}
-	\label{fig:lense_cal_spot1}
-	}
 \label{fig:lens_spot}
-\caption{calculating minimus spot size by lense theory.}
+\caption{Beam Propogation from lense.}
 \end{figure}
 Implement this configuration for both types of TLF models in CST. Through simulations, E-Field demonstrations in the xz-plane of both types of TLFs can be drown as Fig.\quad\ref{fig:Tapered_cladding_efield} and  Fig.\quad\ref{fig:Tapered_core_efield}, wich have no great difference.
 \begin{figure}[!ht]
 	\centering
-	\subfigure[E-Field demonstration of Tapered cladding TLF]{
-		\includegraphics[width=0.6 \textwidth]{bilder/cst_lensed_fiber_equ_efield}
+		\includegraphics[width=0.8 \textwidth]{bilder/cst_lensed_fiber_equ_efield}
+		\caption{E-Field demonstration of Tapered cladding TLF}
  		\label{fig:Tapered_cladding_efield}
-	}
 \end{figure}
+
 \begin{figure}[!ht]
 	\centering
-	\subfigure[E-Field demonstration of Tapered core TLF]{
-		\includegraphics[width=0.6 \textwidth]{bilder/cst_lensed_fiber_efield}
+		\includegraphics[width=0.8 \textwidth]{bilder/cst_lensed_fiber_efield}
+		\caption{E-Field demonstration of Tapered core TLF}
  		\label{fig:Tapered_core_efield}	
-	}
-	\caption{E Field demonstration}
 \end{figure}
 Load the its beam propagation detail into Matlab workspace and draw
 Fig.\ref{fig:Tapered_cladding_spot_curve} and Fig.\ref{fig:Tapered_core_spot_curve},which shows the beam spot diameters through their absolute beam power flow densities or its z-compents(propagation direction) along the propagation distance. From these two figures, curves of the absolute value of their power flow density are more obvious to help people to find the minimum spot of lenses. In Fig.\ref{fig:Tapered_cladding_spot_curve} that the minimum spot size locate at about $4.1 \mu m$ from lense end and spot size equal about $1.5 \mu m$. While in Fig.\ref{fig:Tapered_core_spot_curve} that the minimum spot size is found at  $4.3 \mu m$ from lense end and spot size equal about $1.5 \mu m$. Thus it is concluded that two configuration has only a small difference. By rechecking the properties in Tab.\ref{tab:technical parameters_lensed_fiber} both TLF model are acceptable for the following development. In this works the tapered core TLF will be used for further simulations.
 Fig.\ref{fig:Tapered_cladding_spot_curve}-\ref{fig:Tapered_core_spot_curve} to illustrate the beam Spot size diameter along the longitude axis.
 \begin{figure}[!ht]
-	\subfigure[Spot Size Curve of Tapered cladding TLF]{
-		\includegraphics[width=0.4 \textwidth]{bilder/flower_hiber_cladding}
- 		\label{fig:Tapered_cladding_spot_curve}
-	}
-	\hfill
-	\subfigure[Spot Size Curve of Tapered core TLF]{
-		\includegraphics[width=0.4 \textwidth]{bilder/flower_hiber_core}
+		\centering
+		\includegraphics[width=0.7 \textwidth]{bilder/Tapered_cladding_spot_curve}
+		\caption{Spot Size Curve of Tapered cladding TLF}
+		\label{fig:Tapered_cladding_spot_curve}
+\end{figure} 
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.7 \textwidth]{bilder/Tapered_core_spot_curve}
+		\caption{Spot Size Curve of Tapered core TLF}
  		\label{fig:Tapered_core_spot_curve}	
-	}
-\caption{Curve of Spot size diameter}
 \end{figure}
 
 For a clear view of the beam propagation from the tapered core TLF, 3D Fig.\quad\ref{fig:3d_spot_sub1}-\ref{fig:3d_spot_sub8} of beam power densities at different distances are demonstrated. It is obvious that the power density of the beam center rise firstly along the distance and at $4\mu$m reach the hightest value. Then it falls slowly. This tendency agrees with its spot size curve inversely. 
@@ -118,7 +113,7 @@ For a clear view of the beam propagation from the tapered core TLF, 3D Fig.\quad
  	\label{fig:3d_spot_sub6}
  	}
 \end{figure}	
-\begin{figure}[!ht]
+\begin{figure}[!htp]
 \setlength{\abovecaptionskip}{0pt}% 
 \flushleft
   \subfigure[3D Beam Power at distance $7\mu m$]{
