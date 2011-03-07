@@ -1,5 +1,5 @@
 
-Form this section we aim to find out the geometric effect of lensed waveguide and the lens is made from the same material with the substrate. Here we are going to change the lens property height with a constant lens radium. In Tab. \ref{tab:coupling_lensed_waveguide_height} the coupling efficiency for these arrangements are collected. The results can also be presented as Fig. \ref{fig:coupling_lenses_curve_rxx}, from which the coupling behaviors between TLF and lensed waveguide    
+In this section we aim to find out the geometric effect of lensed waveguide, whose lens is made from the same material with the substrate. Here we are going to change the lens property height with a constant lens radium. In Tab. \ref{tab:coupling_lensed_waveguide_height} the coupling efficiency for these arrangements are collected. The results can also be presented as Fig. \ref{fig:coupling_lenses_curve_hxx}, from which the coupling behaviors between TLF and lensed waveguide    
 \begin{table}
 \caption{Cupling efficiency between TLF and lensed waveguide due to changing the lens height}
 \centering
@@ -26,28 +26,31 @@ $3.0$&--------&--------&$68.9\%$\\
 \end{tabular}
 \label{tab:coupling_lensed_waveguide_height}
 \end{table}
-Compare these values with that of the coupling between TLF and basic buried waveguide, a proper designed micro lens on the waveguide can greatly improve the coupling efficiency. And it can also be found from Fig. \ref{fig:coupling_lenses_curve_rxx} that for a fix radium the most efficient lens configuration exist at the highest lens height or a hemisphere lens. But an exact hemisphere structure (height$=2\mu$m,Radium$=2\mu$m) may be not so easy for fabrication. Therefore the second efficient configuration (height$=1.6\mu$m,Radium$=2\mu$m) can be an optimal option. 
+Compare these values with that of the coupling between TLF and basic buried waveguide, a proper designed micro lens on the waveguide can greatly improve the coupling efficiency. And it can also be found from Fig. \ref{fig:coupling_lenses_curve_hxx} that for a fix radium the most efficient lens configuration exist at the highest lens height or a hemisphere lens. But an exact hemisphere structure (height$=2\mu$m,Radium$=2\mu$m) may be not so easy for fabrication. Therefore the second efficient configuration (height$=1.6\mu$m,Radium$=2\mu$m) must be  an optimal option among simulations. 
 \begin{figure}[!ht]
-\includegraphics[width=0.8\textwidth]{bilder/s21_fix_lens_height_rxx}
-\caption{Coupling efficiency }
-\label{fig:coupling_lenses_curve_rxx}
+\centering
+\includegraphics[width=0.8\textwidth]{bilder/s21_fix_lens_radium_hxx}
+\caption{Coupling efficiency due to the variation of the lens height.}
+\label{fig:coupling_lenses_curve_hxx}
 \end{figure}
 
- 
-The reason of the efficiency change can be explained by Fig.  \ref{matlab_coupling_lenses_rxx}-\ref{matlab_coupling_lenses_rxx2}. From the former cure Fig. \ref{fig:Tapered_core_spot_curve} we can tell that beam spot size at the working distance is bigger than the dimensions of the waveguide interface and from Fig. \ref{matlab_coupling_lenses_rxx2} we understand the reason because rays near margin are penetrating mostly into substrate. In Fig. \ref{matlab_coupling_lenses_rxx} rays near margin are refracted and focused to axis, so that the beam spot size decreased and more rays concentrate into waveguide so that the coupling become more adaptable.   
+The reason of the efficiency change can be explained by Fig.  \ref{fig:matlab_coupling_lenses_rxx}-\ref{fig:matlab_coupling_lenses_rxx2}. From the former cure Fig. \ref{fig:matlab_coupling_lenses_rxx} we can tell that beam spot size at the working distance is bigger than the dimensions of the waveguide interface and from Fig. \ref{fig:matlab_coupling_lenses_rxx2} we understand the reason because rays near margin are penetrating mostly into substrate. In Fig. \ref{fig:matlab_coupling_lenses_rxx} rays near margin are refracted and focused to axis, so that the beam spot size is decreased and more rays are concentrated into waveguide to make the coupling become more adaptable.   
 \begin{figure}[!ht]
+\centering
 \includegraphics[width=0.8\textwidth]{bilder/beam_ray_without_refract}
 \caption{The marginal rays propagate without refraction.}
 \label{fig:matlab_coupling_lenses_rxx}
 \end{figure}
 \begin{figure}[!ht]
+\centering
 \includegraphics[width=0.8\textwidth]{bilder/beam_ray_refract}
 \caption{The marginal rays are concentrated by lens of the waveguide.}
 \label{fig:matlab_coupling_lenses_rxx2}
 \end{figure}
-For more information we can draw the Fig. \ref{fig:lensed_guide_spot_size_ curve}. And the spot sizes changing agree well with the corresponding coupling efficiency.
+For more information we can draw the Fig. \ref{fig:lensed_guide_spot_size_curve}. And the spot sizes changing agree well with the corresponding coupling efficiency.
 \begin{figure}[!ht]
+\centering
 \includegraphics[width=0.8\textwidth]{bilder/spot_fix_lens_radium_hxx}
 \caption{The spot size curve at lensed waveguide interface due to changing lens height}
-\label{fig:lensed_guide_spot_size_ curve }
+\label{fig:lensed_guide_spot_size_curve }
 \end{figure}
