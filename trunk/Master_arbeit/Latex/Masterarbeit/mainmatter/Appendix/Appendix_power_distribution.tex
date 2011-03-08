@@ -3,14 +3,14 @@
 This section aims for offering a set of numerical functions to calculating the power distribution along beam propagation in a photonic waveguide. The simplest idea is to compute the power in waveguide and base by integrating power flow density (or Poynting vector $\vec{S}$) at their cross-sections respectively. Meanwhile CST MWS has constructed a cuboid like Fig.\quad\ref{Afig:app_power_distribution01}, which contains all engaged objects such as waveguide and TLF, as a total calculation space which is discretized through Finite Integral method (FIT) and all variables(see \cite{script_FeldSim} or section Finite Integration Method) from FIT are also available from CST MWS. In following it will be introduced how to calculate the power distribution of a Fiber-to-Chip model (see chapter modelling). 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.5 \textwidth]{bilder/app_power_distribution01}
+\includegraphics[width=0.7 \textwidth]{bilder/app_power_distribution01}
 \caption{Calculation Cuboid in CST}
 \label{Afig:app_power_distribution01}
 \end{figure}
 The first step is to choose a working plane. Suppose a working plane through point z$_{0}$ at z axis in the total calculation space Fig.\quad\ref{Afig:app_power_distribution01} is given, the point index n$_{0}$ can be determined by its coordinate z$_{0}$. The plane Fig. \quad\ref{Afig:app_power_distribution02}  is divided into small elemental pieces in FIT. The base cross-section is given by four points coordinates (x$_{1}$, y$_{1}$),(x$_{2}$, y$_{2}$),(x$_{3}$, y$_{3}$) and (x$_{4}$, y$_{4}$). Their points indexes (n$_{1}$, n$_{2}$, n$_{3}$, n$_{4}$) can also be derived.    
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.5 \textwidth]{bilder/app_power_distribution02}
+\includegraphics[width=0.7 \textwidth]{bilder/app_power_distribution02}
 \caption{Cross-section at z$_{0}$}
 \label{Afig:app_power_distribution02}
 \end{figure}
