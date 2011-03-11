@@ -1,15 +1,13 @@
-%Project description
 % Problem description
-Coupling single-mode fibers to waveguides (Fiber-to-Chip coupling) by microlenses is a very common problem in integrated optics \cite{ integrated_optics}, in wich waveguides locate on a substrate. By means of this technology the simple and reliable optical system with a small size become possible because a lensed fiber has a minized focal length. In this works the application of the lensed fiber-to-chip will be introduced and it coupling efficiency will be discussed.\\
-Fig. \ref{fig:experiment_object} is a schematic demonstration of fiber-to-chip coupling. At the one side there is a lensed tapered fiber as laser source and at another side at the working distance of the fiber there is a buried rib waveguide\cite{integrated_optics} as signal receiver. The purpose of this works is to find a way to gain optimized coupling efficiency through the simulations in CST MWS, which is a electromagnetic simulator basically with the implementation of the Finite Integration Technique (FIT)\cite{cst_help_siulation_method}. 
-
-
+Coupling single-mode fibers to waveguides with the help of microlenses is a very common setup in integrated optics \cite{integrated_optics}. Because a lensed fiber has a minimum focal length, by means of this technique simple and reliable optical systems with a small size become possible. In this work the implement of the lensed fiber-to-chip will be discussed and it coupling efficiency will be discussed.\\
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=.7\textwidth]{bilder/experiment_object}
-\caption{Fiber-to-Chip Coupling}
+\caption{Fiber-to-Chip interface}
 \label{fig:experiment_object}
 \end{figure}
+
+Fig. \ref{fig:experiment_object} is a schematic demonstration of fiber-to-chip interface. At the one side there is a lensed tapered fiber as laser source and at another side there is a rib waveguide\cite{integrated_optics}, located at the working distance of the fiber, as the signal receiver. 
 
 \begin{figure}[!ht]
 \centering
@@ -23,11 +21,11 @@ Fig. \ref{fig:experiment_object} is a schematic demonstration of fiber-to-chip c
 \label{fig:tapered_lensed_fiber}
 }
 \label{fig:TLFs}
-\caption{NANOICS Tapered and Lensed Fibers}
+\caption{ Tapered and Lensed Fibers by NANOICS }
 \end{figure}
 
 
-In this works the the tapered lensed fiber from NANONICS\cite{nanoscal_tapered_fiber} will be used. Fig.\quad\ref{fig:single_mode_lensed_fiber} is the real image of the fiber and Fig.\quad\ref{fig:tapered_lensed_fiber} indicate its schema. In Tab.\quad\ref{tab:technical parameters_lensed_fiber} are listed part of technical parameters, which refer later to the modeling. Additionally the real woking frequence is $\lambda=1064$nm and working distance but $4\mu$m. 
+In the experimental setup for this works the tapered lensed fiber from NANONICS\cite{nanoscal_tapered_fiber} is used. Fig. \ref{fig:single_mode_lensed_fiber} shows the orignial image of the tapered fiber by NANONICS and Fig. \ref{fig:tapered_lensed_fiber} indicate its schema. In Tab. \ref{tab:technical parameters_lensed_fiber} parts of technical parameters are listed. Additional information about the experimental setup is that the working frequency is $\lambda=1064$nm and working distance $4\mu$m. 
 \begin{table}
 \caption{Technical parameters about tapered lensed fiber.\cite{nanoscal_tapered_fiber}}
 \begin{tabular}{c|c|c}
@@ -48,13 +46,12 @@ In this works the the tapered lensed fiber from NANONICS\cite{nanoscal_tapered_f
 &																	Maximum &$50\mu$ m($\lambda=1.5\mu$m)\\
 \hline
 \end {tabular}
-
 \label{tab:technical parameters_lensed_fiber}
 \end{table}
 
-\begin{figure}
+\begin{figure}[!ht]
 \centering
-\includegraphics[width=0.4\textwidth]{bilder/orignial_waveguide}
+\includegraphics[width=0.6\textwidth]{bilder/orignial_waveguide}
 %\subfigure[Schema of a real waveguide.]{
 %\includegraphics[width=0.4\textwidth]{bilder/orignial_waveguide}
 %\label{fig:orignial_waveguide}
@@ -67,9 +64,9 @@ In this works the the tapered lensed fiber from NANONICS\cite{nanoscal_tapered_f
 \caption{Schema of the photonic waveguide}
 \label{fig:photonic_waveguide}
 \end{figure}
-The practical waveguide Fig. \ref{fig:orignial_waveguide} is a trapezoid guide on a semiconductor. But the angles $\theta$ of this guide approximate to $90^{o}$ and is not easy to measure because of its micro-size. Thus a simplified guide model Fig.\ref{fig:approxmate_waveguide} will be used in this works. And the detailed technical properties of the photonic waveguide are given:
+Actually, the waveguide in experimental setup is a trapezoid guide on a semiconductor like Fig. \ref{fig:photonic_waveguide}. The angles $\theta$ of this guide approximate to $90^{o}$ and is not easy to measure because of the micro-size of the structure. Thus a simplified guide model with $\theta=90^{o}$ will be used in this work. The detailed technical properties of the photonic waveguide used in the experimental setup are given as following:
 \begin{itemize}
-\item Working frequency: $\lambda=1064\mu$m
+\item Working frequency: $\lambda=1064$nm
 \item Waveguide: LiNbO$_{3}$ with $n_{1}=2.516, w\approx 1\mu$m, $h\approx 0.5 \mu$m
 \item Substrate: SiO$_{2}$ with $n_{2}=1.544 $
 \end{itemize}
