@@ -1,5 +1,22 @@
-%optics
-Optical fibers are widely used as a medium for telecommuniction and networking because of varity of advantages.It is flexible,especially permits transmission over longer distances and at higher bandwidths (data rates) than other forms of communication. The Fig.\ref{fig:opticfiber} presents a simplest optical fiber and how lights progate in the fiber. 
+%Optical waveguides
+For the transmission of optical signal optical waveguides are applied. The general waveguides are semiconductor waveguide and optical fibers. 
+Fig. \ref{fig:semi_waveguides} shows two semiconductor waveguides commonly used in integrated optics. Rib waveguide is composed of a rib guide on a substrate ($n=n_{2}$). Buried waveguide is a high index guide ($n=n_{1}$) surrounded by low index cladding ($n=n_{2}$).\\
+\begin{figure}
+\centering
+\subfigure[Rib waveguide]{
+\includegraphics[width=0.4\textwidth]{bilder/approxmate_waveguide}
+\label{fig:semi_rib_waveguide}
+}
+\hfill
+\subfigure[Buried waveguide]{
+\includegraphics[width=0.4\textwidth]{bilder/buried_waveguide}
+\label{fig:semi_buried_waveguide}
+}
+\caption{Schema of semiconductor waveguides}
+\label{fig:semi_waveguides}
+\end{figure}
+Optical fibers are widely used for telecommunication and data networks. The Fig.\ref{fig:opticfiber} presents a simplest optical fiber and how lights propagate in the fiber . Optical fiber typically consists of a transparent core with index $n_{1}$ surrounded by a transparent cladding material with a lower index of refraction $n_{2}$. 
+
 
 \begin{figure}[httbp]
 \centering
@@ -7,51 +24,62 @@ Optical fibers are widely used as a medium for telecommuniction and networking b
 \caption{linght refraction in optic fibers}
 \label{fig:opticfiber}
 \end{figure}
-
-Optical fiber typically consists of a transparent core with index $n1$ surrounded by a transparent cladding material with a lower index of refraction $n2$. The Light is kept in the core by total internal reflection. This causes the fiber to act as a waveguide.
-The principle of the total reflection is explained in \cite{script_FT_TET} with Snell's law. In Fig.\ref{fig:totalreflection} linghts strike a boundary between two different isotropic media with respective refractive indices $n_{1}$ and $n_{2}$ ($n_{1}>n_{2}$), it behaves after Snell's law, which is presented in following mathematical fomular (\ref{eq:snell}).
-\begin{figure}[httbp]
+\textbf{ Total Reflection}\\
+\begin{figure}[!ht]
 \centering
-\includegraphics[width=0.6\textwidth]{bilder/totalreflection}
-\caption{total reflection}
+\subfigure[totalreflection]{
+\includegraphics[width=0.3\textwidth]{bilder/totalreflection01}
+\label{fig:totalreflection01}
+}
+\hfill
+\subfigure[Buried waveguide]{
+\includegraphics[width=0.3\textwidth]{bilder/totalreflection02}
+\label{fig:totalreflection02}
+}
+\hfill
+\subfigure[Buried waveguide]{
+\includegraphics[width=0.3\textwidth]{bilder/totalreflection03}
+\label{fig:totalreflection03}
+}
+\caption{Total reflection}
 \label{fig:totalreflection}
 \end{figure}
 
-\begin{equation}
-n_{1}sin\theta_{i}=n_{2}sin\theta_{t}
-\label{eq:snell}
-\end{equation}
-
-$\theta_{t}$ is transmission angle or refraction angle.
-At a small incidence angle $\theta_{i1}$ a light beam can pass through the boundary and bend to a new course at transmission angle $\theta_{t1}$ in the second meadium.
-When the incidence angle is larger than a particular critical angle (\ref{eq:critical_angle}) with respect to the normal to the surface, no light can pass through and all of the light is reflected like (O-C''). In this case the value of $sin\theta_{t}$ in (\ref{eq:sin_transmission_angle}) become larger than one and he mathematical formular of the new transmission angle can be presented by a complex symble $\underline{\theta_{t}}$(\ref{eq:complex_transmission_angle}). $\underline{\theta_{t}}$ is not a real physical angle.
+Whatever semiconductor waveguides or optical fibers, the principle of the light propagation in waveguides is total reflection. The principle of the total reflection is explained in \cite{optical_waveguides_fibers} with Snell's law. In Fig.\ref{fig:totalreflection01} the input light strikes the boundary between two different isotropic media with respective refractive index $n_{1}$ and $n_{2}$. Where $theta_{1}$ is incidence angle, $\theta_{2}$ refractive angle and $\theta_{r}$ reflective angle. Through SNELL's Law there are relations (\ref{eq:snell}-\ref{eq:reflection}).  For $n_{1}<n_{2}$ there is  always a relation $\theta_{1}>\theta_{2}$.  If the refractive indexes has the relation $n_{1}>n_{2}$, then the incidence angle $\theta_{1}$ is narrower than the refractive angle $\theta_{2}$ like Fig. \ref{fig:totalreflection02}. If the incidence angle is increased wider than a critical angle $\theta_{c}$ (\ref{eq:critical_angle}) there will be no light passing through the boundary and all of the lights are reflected like Fig. \ref{fig:totalreflection03}. This phenomenon is so called total reflection.
+\begin{align}
+n_{1}sin\theta_{1}&=n_{2}sin\theta_{2}
+\label{eq:snell}\\
+\theta_{1}=\theta{r}
+\label{eq:reflection}
+\end{align}
 
 \begin{equation}
 \theta_{c}=arcsin(\frac{n_{2}}{n_{1}})
 \label{eq:critical_angle}
 \end{equation}
 
-\begin{equation}
-sin\theta_{t}=\frac{n_{1}}{n_{2}}sin\theta_{i}
-\label{eq:sin_transmission_angle}
-\end{equation}
+%%dispersion
 
-\begin{equation}
-\underline{\theta_{t}}=\frac{\pi}{2}+j\gamma
-\label{eq:complex_transmission_angle}
-\end{equation}
-with
-\begin{equation}
-sin\underline{\theta_{t}}=cosh\gamma=\frac{n{1}}{n_{2}}sin\theta_{i},\hspace{2cm}\hfill cos\underline{\theta_{t}}=jsinh\gamma=j\sqrt{cosh^2\gamma-1}
-\label{eq:trangle_transmission_angle}
-\end{equation}
+\textbf{ Numerical Apertur }\\
 
-
-%Numerical Apertur
-Back to the Fig.\ref{fig:opticfiber} the incidence beam originate from the aire into the fiber. There is a maximus coupling angle,so that the beam can be guided under the total reflecting conditions. Its sinus value(\ref{eq:NA}) is called \textbf{Numerical Apertur(NA)}, which indicate the acceptable range of ray beams.
+%Numerical Aperture
+Another important character of optical waveguides is numerical aperture. Back to the Fig.\ref{fig:opticfiber} the incidence beam originate from the air into the fiber. There is a maximum coupling angle, so that the beam can be guided under the total reflecting conditions. Its sinus value (\ref{eq:NA}) is called \textbf{Numerical Apertur(NA)}, which indicate the acceptable range of ray beams.
 
 \begin{align}
 sin\theta_{i}&=\frac{n_{1}}{n_{0}}sin(90^{o}-\theta_{c})=n_{1}cos\theta_{c} \nonumber\\
 &=n_{1}\sqrt{1-sin^{2}\theta_{c}}=n_{1}\sqrt{1-\left(\frac{n_{2}}{n_{1}}\right)^2}=\sqrt{n^2_{1}-n^2_{2}}
 \label{eq:NA}
 \end{align}
+
+\textbf{Mode of the waveguide}\\
+
+"' An eigenmode $m$ of a waveguide structure is a propagation or evanescent wave which maintains its transverse shape during propagation "'\cite{integrated_optics}. The eigenmode of a waveguide can be presented as (\ref{eq:e_eigenmode}-\ref{eq:h_eigenmode}). 
+
+\begin{align}
+E^{m}(r_{t},z)&=E^{m}_{0}(r_{t})e^{jk_{m}z}
+\label{eq:e_eigenmode}\\
+H^{m}(r_{t},z)&=H^{m}_{0}(r_{t})e^{jk_{m}z}
+\label{eq:h_eigenmode}
+\end{align}
+
+Where $k_{m}$ is the propagation constant. When the request  $k_{0}n_{1}>k_{m}>k_{0}n_{2}$ is matched this mode is a guided mode for the waveguides \cite{script_FT_TET}. In this work the coupling bases on the fundamental mode.
