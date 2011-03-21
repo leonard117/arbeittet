@@ -2,7 +2,7 @@
 Normally an electrical network can be considered as a 'black box', which contains amounts of interconnected basic electrical circuit components such as resistors, capacitors, inductors and transistors etc. On this 'black box' may exist many ports, which present the entries or exits of the network. In order describe the characteristics of this network H-Parameters are used, which describe the relation between voltages and currents. In Fig. \ref{fig:2_port_network} is a 2-port network $V_{1}$ and $V_{2}$ are total voltages of both ports; $I_{1}$ and $I_{2}$ are total currents of both ports respectively. Relations between voltages and currents are like (\ref{eq:voltage_current}). 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.4\textwidth]{bilder/s_parameters}
+\includegraphics[width=0.6\textwidth]{bilder/s_parameters}
 \caption{2-Port-Network \cite{aglient_s_parameters}}
 \label{fig:2_port_network}
 \end{figure}
@@ -12,12 +12,10 @@ V_{1}&=h_{11}I_{1}+h_{12}V_{2}\\
 I_{2}&=h_{21}I_{1}+h_{22}V_{2}
 \label{eq:voltage_current}
 \end{align}
-Where $h_{11},h_{12},h_{21} and h_{22}$ are H-Parameters and defined in (\ref{eq:h_parameters}).
+Where $h_{11},h_{12},h_{21}$ and $h_{22}$ are H-Parameters and defined in (\ref{eq:h_parameters}).
 \begin{align}
-h_{11}&=\frac{V_{1}}{I_{1}}|_{V_{2}=0}\\
-h_{12}&=\frac{V_{1}}{V_{2}}|_{I_{1}=0}\\
-h_{21}&=\frac{I_{2}}{I_{1}}|_{V_{2}=0}\\
-h_{22}&=\frac{I_{2}}{V_{2}}|_{I_{1}=0}\\
+h_{11}&=\frac{V_{1}}{I_{1}}|_{V_{2}=0}\quad h_{12}=\frac{V_{1}}{V_{2}}|_{I_{1}=0}\\
+h_{21}&=\frac{I_{2}}{I_{1}}t|_{V_{2}=0}\quad h_{22}=\frac{I_{2}}{V_{2}}|_{I_{1}=0}\\
 \label{eq:h_parameters}
 \end{align}
 But H-Parameters cannot always be valid for the description of a circuit of microwave circuits. Agilent\cite{aglient_s_parameters} has listed some problems in high frequency:
@@ -28,8 +26,8 @@ But H-Parameters cannot always be valid for the description of a circuit of micr
 \end{itemize}
 Scattering parameters or S-parameters are perfect description of microwave circuit\cite{RF194_s_parameters}. In that case traveling waves are applied instead of total voltages and currents. $E_{i1}$ and $E_{i2}$ represent incidence waves over left and right ports of the network respectively. $E_{r1}$ and $E_{r2}$ are reflective waves. The relation between traveling waves, total voltages and curents has relations (\ref{eq:voltage_wave}).
 \begin{align}
-V_{1}&=E_{i1}+E_{r1}\quad V_{2}&=E_{i2}+E_{r2}\\
-I_{1}&=\frac{E_{i1}-E_{r1}}{Z_{0}}\quad I_{2}&=\frac{E_{i2}-E_{r2}}{Z_{0}}
+V_{1}&=E_{i1}+E_{r1}\quad V_{2}=E_{i2}+E_{r2}\\
+I_{1}&=\frac{E_{i1}-E_{r1}}{Z_{0}}\quad I_{2}=\frac{E_{i2}-E_{r2}}{Z_{0}}
 \label{eq:voltage_wave}
 \end{align}
 Traveling waves themselves can be expressed in terms of H-Parameters (\ref{eq:er1}\ref{eq:er2}). 
