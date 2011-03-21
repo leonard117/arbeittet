@@ -1,22 +1,4 @@
-%law_inductive
-%\begin{figure}
-%\centering
-%\begin{minipage}[t]{0.4\textwidth}
-%\centring
-%\includegraohics[width=0.35\textwidth]{bilder/FIT_max_integral1}
-%\caption{Integral on the edge of one single elemental plane.}
-%\label{fig:FIT_max_integral1}
-%\end{minipage}
-%\begin{minipage}[t]{0.4\textwidth}
-%\centring
-%\includegraohics[width=0.35\textwidth]{bilder/FIT_max_integral2}
-%\caption{Integral on the edge of one single elemental cell.}
-%\label{fig:FIT_max_integral2}
-%\end{minipage}
-%\end{figure}
-
-
-\begin{figure}
+\begin{figure}[!ht]
 \centering
 \subfigure[Integral on the edge of one single elemental plane $A_{u}(n)$]{
 \includegraphics[width=0.3\textwidth]{bilder/FIT_max_integral1}
@@ -35,7 +17,7 @@
 \caption{discrete Maxwell's Equations}
 \end{figure}
 
-Followling is a demonstration of the discretized form from the  inductive law(\ref{eq:maxwell_1}). Considering the path integral in a single element edge like Fig.\ref{fig:FIT_max_integral1},the left side of (\ref{eq:maxwell_1}) can be presented as (\ref{eq:inductive_left}). 
+Following is a demonstration of the discretized form from the  inductive law(\ref{eq:maxwell_1}). Considering the path integral in a single element edge like Fig.\ref{fig:FIT_max_integral1},the left side of (\ref{eq:maxwell_1}) can be presented as (\ref{eq:inductive_left}). 
 
 \begin{equation}
 \int_{C}\vec{E}\cdot d\vec{s}
@@ -45,7 +27,7 @@ Followling is a demonstration of the discretized form from the  inductive law(\r
 -\underbrace{\int_{\Delta w(n)}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{w}(n)}
 \label{eq:inductive_left}
 \end{equation}
-where $\widehat{e(n)}$ (Fig.\ref{fig:FIT_max_integral2}) is so called  electric grid voltage and has the followling relationship with electric field strength $e(n)$
+Where $\widehat{e(n)}$ (Fig.\ref{fig:FIT_max_integral2}) is so called  electric grid voltage and has the following relationship with electric field strength $e(n)$
 
 
 \begin{equation}
@@ -284,7 +266,7 @@ or
 S\widehat{\widehat{b}}=0
 \label{eq:divergence_integral}
 \end{equation}
-$S\in R^{N_{p}\times 3N_{p}}$ represent the discrete divergenc matrix, which depends on the grid topology just as the discrete $curl-Matrix$ $C$.
+$S\in R^{N_{p}\times 3N_{p}}$ represent the discrete divergence matrix, which depends on the grid topology just as the discrete $curl-Matrix$ $C$.
 %S
 \begin{equation}
 S=(P_{u}|P_{v}|P_{w})
@@ -293,7 +275,7 @@ S=(P_{u}|P_{v}|P_{w})
 
 
 %Amp\'ere's law
-Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its magnetical field strengths pass through the elemental plane along the same path with the magnetic flux (Fig.\ref{fig:divergence_G}). Therefor, a new grid(\textbf{Dual Grid})Fig.\ref{fig:dual_grid} is required for this path integral. The second cell $\tilde{G}$ is dual to the primary cell $G$. As in Primary Grid the duale elements are also properly defined in \cite{script_FeldSim}.
+Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its magnetic field strengths pass through the elemental plane along the same path with the magnetic flux (Fig.\ref{fig:divergence_G}). Therefore, a new grid(\textbf{Dual Grid})Fig.\ref{fig:dual_grid} is required for this path integral. The second cell $\tilde{G}$ is dual to the primary cell $G$. As in Primary Grid the dual elements are also properly defined in \cite{script_FeldSim}.
 
 \begin{figure}
 \centering
@@ -302,7 +284,7 @@ Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its mag
 \label{fig:dual_grid}
 \end{figure}
 
-Simular to the discretization of Inductive Law Figures\ref{fig:FIT_max_integral4}\ref{fig:FIT_max_integral5} describe the path integal and surface integral of the equation(\ref{eq:maxwell_2}) in a \textbf{Dual Grid} and lead to the difference forms(\ref{eq:ampere_left_sample}\ref{eq:ampere_right}).
+Similar to the discretization of Inductive Law Figures\ref{fig:FIT_max_integral4}\ref{fig:FIT_max_integral5} describe the path integral and surface integral of the equation(\ref{eq:maxwell_2}) in a \textbf{Dual Grid} and lead to the difference forms(\ref{eq:ampere_left_sample}\ref{eq:ampere_right}).
 
 \begin{figure}
 %\centering
@@ -407,13 +389,3 @@ Here $\rho_{D}$ is the vector of the charge density in grid cells.
 \tilde{S}=(\tilde{P}_{u}|\tilde{P}_{v}|\tilde{P}_{w})=(-P_{u}^{T}|-P_{v}^{T}|\-P_{w}^{T})
 \label{eq:dual_S_matrix}
 \end{equation}
-
-
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.5\textwidth]{bilder/FIT_max_integral5}
-%\caption{surface Integral of the electric flux in dual grid. }
-%\label{fig:FIT_max_integral5}
-%\end{figure}
-
-%\textbf{Maxwell-Grid_Equations(MGE)}
