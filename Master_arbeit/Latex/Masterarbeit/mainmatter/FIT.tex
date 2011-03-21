@@ -1,28 +1,6 @@
-%FIT
-
-%\begin{align}
-%%\[
-%\oint_{\partial A}\vec{E}\cdot\mathrm{d}\vec{s}=
-%-\frac{\mathrm{d}}{\mathrm{d}t}\int_{A}\vec{B}\cdot\mathrm{d}\vec{A}\\
-%%\]
-%%\\
-%%\[
-%\oint_{\partial A}\vec{H}\cdot\mathrm{d}\vec{s}=
-%\int_{A}(\frac{\partial\vec{D}}{\partial t}+\vec{J})\cdot\mathrm{d}\vec{A}\\
-%%\]
-%%\\
-%%\[
-%\oint_{\partial V}\vec{D}\cdot\mathrm{d}\vec{A}=
-%\int_{V}\rho\mathrm{d}V\\
-%%\]
-%%\\
-%%\[
-%\oint_{\partial V}\vec{B}\cdot\mathrm{d}\vec{A}=0
-%%\]
-%\end{align}
 The Finite Integration Theory(\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.
 
-The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material} to discetize a brickshape object into a \textbf{Cartesian Grid}(primary cell \textbf{G}). Of cause it is possible to construct grid volum in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization}\cite{FDTD_nonorthogonal_grids} for simplifying the calculation depending on the real dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).
+The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid}(primary cell \textbf{G}). Of cause it is possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on the real dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).
 \begin{equation}
 G={(u(i),v(j),w(k))\in R^3|u(1)\leq u(i)\leq u(I),
 													 v(1)\leq v(j)\leq v(J),
@@ -30,9 +8,10 @@ G={(u(i),v(j),w(k))\in R^3|u(1)\leq u(i)\leq u(I),
 }
 \label{eq:grid}
 \end{equation}
-$u(i),v(j),w(k)$ can be three compontents of any 3D coordinate systems. In following discussion all computations base on \textbf{Cartesian Coordinate system}.
+$u(i),v(j),w(k)$ can be three components of any 3D coordinate systems. In following discussion all computations base on \textbf{Cartesian Coordinate system}.
 %fig: discretization of the material
-\begin{figure}
+\begin{figure}[!ht]
+\centering
 %\includegraphics[width=0.8\textwidth]{bilder/discretization_material}
 \includegraphics[width=0.8\textwidth]{bilder/grid_volum}
 %\caption{A discretization of the material in elementary material cells m, defining the material grid M.}
@@ -41,7 +20,7 @@ $u(i),v(j),w(k)$ can be three compontents of any 3D coordinate systems. In follo
 \end{figure}
 
 
-In \cite{script_FeldSim} the primary elements are choosed for calculation:
+In \cite{script_FeldSim} the primary elements are chosen for calculation:
 \begin{itemize}
 \item Points $P(i,j,k)$
 \item Elemental Edge:
@@ -64,14 +43,14 @@ In \cite{script_FeldSim} the primary elements are choosed for calculation:
 		\label{eq:discrete_cell}
 		\end{equation}
 \end{itemize}
-For the convenience a new idex system is introduced:
+For the convenience a new index system is introduced:
 
 \begin{equation}
 n=1+(i-1)\cdot M_{u}+(j-1)\cdot M_{v}+(k-1)\cdot M{w}
 \label{eq:discrete_index}
 \end{equation}
 Here $M_{u}=1,M_{v}=I,M_{w}=I\cdot J$. With new index
-Reindex points $P(i,j,k)$ with $n$. Same work is done for element edges , planes and volums, new elments sequence are created:
+Reindex points $P(i,j,k)$ with $n$. Same work is done for element edges, planes and volumes, new elements sequence are created:
 \begin{itemize}
 \item Points $P(n) \quad with \quad 1\leq n \leq N_{p}$
 \item Elemental Edge:
@@ -94,7 +73,7 @@ Reindex points $P(i,j,k)$ with $n$. Same work is done for element edges , planes
 		\label{eq:discrete_cell_n}
 		\end{equation}
 \end{itemize}
-Here, $N_{p}$ is the total nummber of the grid points:
+Here, $N_{p}$ is the total number of the grid points:
 \begin{equation}
 N_{p}=I\cdot J\cdot K
 \label{eq:np}
