@@ -12,11 +12,12 @@ V_{1}&=h_{11}I_{1}+h_{12}V_{2}\\
 I_{2}&=h_{21}I_{1}+h_{22}V_{2}
 \label{eq:voltage_current}
 \end{align}
-Where $h_{11},h_{12},h_{21}$ and $h_{22}$ are H-Parameters and defined in (\ref{eq:h_parameters}).
+Where $h_{11},h_{12},h_{21}$ and $h_{22}$ are H-Parameters and defined in (\ref{eq:h_parameters1}-\ref{eq:h_parameters2}).
 \begin{align}
-h_{11}&=\frac{V_{1}}{I_{1}}|_{V_{2}=0}\quad h_{12}=\frac{V_{1}}{V_{2}}|_{I_{1}=0}\\
-h_{21}&=\frac{I_{2}}{I_{1}}t|_{V_{2}=0}\quad h_{22}=\frac{I_{2}}{V_{2}}|_{I_{1}=0}\\
-\label{eq:h_parameters}
+h_{11}&=\frac{V_{1}}{I_{1}}|_{V_{2}=0}\quad h_{12}=\frac{V_{1}}{V_{2}}|_{I_{1}=0}
+\label{eq:h_parameters1}\\
+h_{21}&=\frac{I_{2}}{I_{1}}|_{V_{2}=0}\quad h_{22}=\frac{I_{2}}{V_{2}}|_{I_{1}=0}
+\label{eq:h_parameters2}
 \end{align}
 But H-Parameters cannot always be valid for the description of a circuit of microwave circuits. Agilent\cite{aglient_s_parameters} has listed some problems in high frequency:
 \begin{itemize}
@@ -24,11 +25,12 @@ But H-Parameters cannot always be valid for the description of a circuit of micr
 \item Short and open circuits are not always available for a broad frequency band.
 \item For high frequency some circuit are not stable in short or open conditions.
 \end{itemize}
-Scattering parameters or S-parameters are perfect description of microwave circuit\cite{RF194_s_parameters}. In that case traveling waves are applied instead of total voltages and currents. $E_{i1}$ and $E_{i2}$ represent incidence waves over left and right ports of the network respectively. $E_{r1}$ and $E_{r2}$ are reflective waves. The relation between traveling waves, total voltages and curents has relations (\ref{eq:voltage_wave}).
+Scattering parameters or S-parameters are perfect description of microwave circuit\cite{RF194_s_parameters}. In that case traveling waves are applied instead of total voltages and currents. $E_{i1}$ and $E_{i2}$ represent incidence waves over left and right ports of the network respectively. $E_{r1}$ and $E_{r2}$ are reflective waves. The relation between traveling waves, total voltages and curents has relations (\ref{eq:voltage_wave1}-\ref{eq:voltage_wave2}).
 \begin{align}
-V_{1}&=E_{i1}+E_{r1}\quad V_{2}=E_{i2}+E_{r2}\\
+V_{1}&=E_{i1}+E_{r1}\quad V_{2}=E_{i2}+E_{r2}
+\label{eq:voltage_wave1}\\
 I_{1}&=\frac{E_{i1}-E_{r1}}{Z_{0}}\quad I_{2}=\frac{E_{i2}-E_{r2}}{Z_{0}}
-\label{eq:voltage_wave}
+\label{eq:voltage_wave2}
 \end{align}
 Traveling waves themselves can be expressed in terms of H-Parameters (\ref{eq:er1}\ref{eq:er2}). 
 \begin{align}
@@ -73,11 +75,11 @@ S_{21}&=\frac{b_{2}}{a_{1}}|_{a_{2}=0}\\
 S_{22}&=\frac{b_{2}}{a_{2}}|_{a_{1}=0}\\
 S_{12}&=\frac{b_{1}}{a_{2}}|_{a_{1}=0}
 \end{align}
-This S-Parameter Matrix is described:
+The phical meaning of the S-Parameters are described as following:
 \begin{itemize}
 \item $S_{11}$ is the input port reflection coefficient
 \item $S_{12}$ is the reverse gain
 \item $S_{21}$ is the forward gain
 \item $S_{22}$ is the output port reflection coefficient
 \end{itemize}
-In another hand, $S_{21}$ is often used to estimate the transmission ability of a network. Therefore the $S_{21}$ help us to observe the coupling efficiency in this article.
+In another hand, $S_{21}$ is often used to estimate the transmission ability of a network. Therefore $S_{21}$ equals the coupling efficiency in this work.

@@ -12,19 +12,15 @@ $u(i),v(j),w(k)$ can be three components of any 3D coordinate systems. In follow
 %fig: discretization of the material
 \begin{figure}[!ht]
 \centering
-%\includegraphics[width=0.8\textwidth]{bilder/discretization_material}
 \includegraphics[width=0.8\textwidth]{bilder/grid_volum}
-%\caption{A discretization of the material in elementary material cells m, defining the material grid M.}
-\caption{A Cartesian descretized Grid Volum.}
+\caption{A Cartesian descretized Grid Volum\cite{script_FeldSim}.}
 \label{fig:discretization_material}
 \end{figure}
-
 
 In \cite{script_FeldSim} the primary elements are chosen for calculation:
 \begin{itemize}
 \item Points $P(i,j,k)$
 \item Elemental Edge:
-%$\delta u(i)=\overline{u(i)u(i+1)} with 1\leq{i}\leq{I-1},$
     \begin{align}
 		\Delta u(i)&=\overline{u(i)u(i+1)}  \quad with  \quad 1\leq i \leq I-1, \nonumber\\
 		\Delta v(j)&=\overline{v(j)v(j+1)}  \quad with  \quad 1\leq j \leq J-1, \nonumber\\
@@ -80,7 +76,6 @@ N_{p}=I\cdot J\cdot K
 \end{equation}
 
 The next step is to discretize Maxwell's equations in their integral form(\ref{eq:maxwell_1}-\ref{eq:maxwell_4}) and additional equations (\ref{eq:maxwell_5}-\ref{eq:maxwell_7}).
-
 \begin{align}
 \oint_{\partial A}\vec{E}\cdot\mathrm{d}\vec{s}&=
 -\frac{\mathrm{d}}{\mathrm{d}t}\int_{A}\vec{B}\cdot\mathrm{d}\vec{A}
