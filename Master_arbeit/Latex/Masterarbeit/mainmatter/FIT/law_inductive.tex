@@ -1,7 +1,7 @@
 \begin{figure}[!ht]
 \centering
 \subfigure[Integral on the edge of one single elemental plane $A_{u}(n)$]{
-\includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral1}
+\includegraphics[width=0.45\textwidth]{bilder/FIT_max_integral1}
 \label{fig:FIT_max_integral1}
 }
 \hfill
@@ -31,13 +31,10 @@ Following is a demonstration of the discretized form from the  inductive law(\re
 \label{eq:inductive_left}
 \end{equation}
 Where $\widehat{e(n)}$ (Fig.\ref{fig:FIT_max_integral2}) is so called  electric grid voltage and has the following relationship with electric field strength $e(n)$
-
-
 \begin{equation}
 e_{n}=\frac{\widehat{e}_{v}(n)}{\Delta v(n)}
 \label{eq:e_field}
 \end{equation}
-
 In the mean time the right side of (\ref{eq:maxwell_1}) is transformed as (\ref{eq:inductive_right})
 \begin{equation}
 -\iint_{A_{u}(n)}\frac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{A} 
@@ -190,7 +187,6 @@ Submatrixes $P_{u},P_{v},P_{w}$ are composed of $1,-1,0$ like Fig.\ref{fig:Matri
 \caption{Matrix $P_{x},(x=u,v,w)$}
 \label{fig:Matrix Px}
 \end{figure}
-
 To simplify the representation of the equation(\ref{eq:inductive_sample_all}) by using $\widehat{e}$ and $\widehat{\widehat{b}}$:
 \begin{equation}
 C\widehat{e}=-\frac{\partial}{\partial{t}}\widehat{\widehat{b}}
@@ -275,32 +271,27 @@ $S\in R^{N_{p}\times 3N_{p}}$ represent the discrete divergence matrix, which de
 S=(P_{u}|P_{v}|P_{w})
 \label{eq:S_matrix}
 \end{equation}
-
-
 %Amp\'ere's law
 Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its magnetic field strengths pass through the elemental plane along the same path with the magnetic flux (Fig.\ref{fig:divergence_G}). Therefore, a new grid(\textbf{Dual Grid})Fig.\ref{fig:dual_grid} is required for this path integral. The second cell $\tilde{G}$ is dual to the primary cell $G$. As in Primary Grid the dual elements are also properly defined in \cite{script_FeldSim}.
-
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{bilder/dual_grid}
 \caption{The allocation of the Primary Grid $G$ and Dual Grid $\tilde{G}$.}
 \label{fig:dual_grid}
 \end{figure}
-
 Similar to the discretization of Inductive Law Figures\ref{fig:FIT_max_integral4}\ref{fig:FIT_max_integral5} describe the path integral and surface integral of the equation(\ref{eq:maxwell_2}) in a \textbf{Dual Grid} and lead to the difference forms(\ref{eq:ampere_left_sample}\ref{eq:ampere_right}).
-
 \begin{figure}
 %\centering
-	\subfigure[path Integral of the magnetic flux in dual grid.]{
-	\includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral4}
+	\subfigure[Path Integral of the magnetic flux in dual grid.]{
+	\includegraphics[width=0.5\textwidth]{bilder/FIT_max_integral4}
 	\label{fig:FIT_max_integral4}
 	}
 \hfill
-	\subfigure[surface Integral of the electric flux in dual grid.]{
+	\subfigure[Surface Integral of the electric flux in dual grid.]{
 	\includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral5}
 	\label{fig:FIT_max_integral5}
 	}
-\caption{discretization of Amp\'ere's law}
+\caption{Discretization of Amp\'ere's law}
 \end{figure}
 
 \begin{align}
@@ -308,17 +299,6 @@ h_{1}&=\frac{b_{v}(n)}{\mu (n-M_{v})}\\
 h_{2}&=\frac{b_{v}(n)}{\mu (n)}
 \label{eq:megnetic_field}
 \end{align}
-
-%
-%\begin{equation}
-%\int_{\tilde{C}}\vec{H}\cdot d\vec{s}
-%=\widehat{h}_{v}(n)
-%+\widehat{h}_{w}(n+M_{v})
-%-\widehat{h}_{v}(n+M_{w})
-%-\widehat{h}_{w}(n)
-%\label{eq:ampere_left}
-%\end{equation}
-
 \begin{equation}
 \int_{\tilde{C}}\vec{H}\cdot d\vec{s}=\int_{\tilde{C}}\mu^{-1}\vec{B}\cdot d\vec{s}\approx
 \widehat{h}_{v}(n)
@@ -327,7 +307,6 @@ h_{2}&=\frac{b_{v}(n)}{\mu (n)}
 -\widehat{h}_{w}(n)
 \label{eq:ampere_left_sample}
 \end{equation}
-
 \begin{align}
 \int\int_{\tilde{A}_{u}}\vec{D}\cdot\mathrm{d}\vec{A}\approx &+e_{u}A_{1}\epsilon_{u}(n-M_{v}-M_{w}) \nonumber\\
 &+e_{u}A_{2}\epsilon_{u}(n-M_{w}) \nonumber\\
@@ -350,7 +329,7 @@ A_{4}&=\frac{A_{u}(n-M_{v})}{4}
 &+\epsilon_{x}(n)A_{x}(n) \nonumber\\
 &+\epsilon_{x}(n-M_{y})A_{x}(n-M_{y})
 \end{align}
-$\bar{\epsilon}$ is \textbf{average dielectric constant}. 
+$\bar{\epsilon}$ is average dielectric constant. 
 Define the average dielectric matrix:
 \begin{equation}
 D_{\epsilon}=Diag(\bar{\epsilon}_{u}(1),\ldots,\bar{\epsilon}_{u}(N_{p}),\bar{\epsilon}_{v}(1),\ldots,\bar{\epsilon}_{v}(N_{p}),\bar{\epsilon}_{w}(1),\ldots,\bar{\epsilon}_{w}(N_{p}))
