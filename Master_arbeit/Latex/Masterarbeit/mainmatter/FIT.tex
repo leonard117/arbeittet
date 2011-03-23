@@ -1,14 +1,21 @@
 The Finite Integration Theory(\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.
 
 The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid}(primary cell \textbf{G}). Of cause it is possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on the real dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).
-\begin{equation}
-G={(u(i),v(j),w(k))\in R^3|u(1)\leq u(i)\leq u(I),
-													 v(1)\leq v(j)\leq v(J),
-													 w(1)\leq w(k)\leq w(K)
-}
+%\begin{align}
+%G=&{(u(i),v(j),w(k))\in R^3|u(1)\leq u(i)\leq u(I),}\nonumber\\
+%													  &\hspace{4cm}{v(1)\leq v(j)\leq v(J),}\nonumber\\ 
+%													  &\hspace{4cm}{w(1)\leq w(k)\leq w(K)
+%}
+%\label{eq:grid}
+%\end{align}
+\begin{align}
+G=
+(u(i),v(j),w(k))\in \mathbb{R}^3|&u(1)\leq u(i)\leq u(I),\nonumber\\
+													 &v(1)\leq v(j)\leq v(J),\nonumber\\ 
+													 &w(1)\leq w(k)\leq w(K)
 \label{eq:grid}
-\end{equation}
-$u(i),v(j),w(k)$ can be three components of any 3D coordinate systems. In following discussion all computations base on \textbf{Cartesian Coordinate system}.
+\end{align}
+$u(i)$,$v(j)$,$w(k)$ can be three components of any 3D coordinate systems. In following discussion all computations base on \textbf{Cartesian Coordinate system}.
 %fig: discretization of the material
 \begin{figure}[!ht]
 \centering
@@ -34,10 +41,12 @@ In \cite{script_FeldSim} the primary elements are chosen for calculation:
 		\label{eq:discrete_plane}
 		\end{align}
 \item Elemental Cells
-		\begin{equation}
-		V(i,j,k)=\Delta u(i)\Delta v(j)\Delta w(k)  \quad with  \quad 1\leq i\leq I-1,1\leq j\leq J-1,1\leq k\leq K-1
+		\begin{align}
+		V(i,j,k)=\Delta u(i)\Delta v(j)\Delta w(k)  \quad with  &\quad 1\leq i\leq I-1,\nonumber\\
+		&1\leq j\leq J-1,\nonumber\\
+		&1\leq k\leq K-1
 		\label{eq:discrete_cell}
-		\end{equation}
+		\end{align}
 \end{itemize}
 For the convenience a new index system is introduced:
 
