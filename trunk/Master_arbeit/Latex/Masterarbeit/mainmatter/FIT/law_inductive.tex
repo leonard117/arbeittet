@@ -1,26 +1,27 @@
+%%law inductive
+
+Following is a demonstration of the discretized form from the inductive law (\ref{eq:maxwell_1}). Considering the path integral in a single element edge like Fig.  \ref{fig:FIT_max_integral1},the left side of (\ref{eq:maxwell_1}) can be presented as  (\ref{eq:inductive_left}). 
+
 \begin{figure}[!ht]
 \centering
-\subfigure[Integral on the edge of one single elemental plane $A_{u}(n)$]{
 \includegraphics[width=0.45\textwidth]{bilder/FIT_max_integral1}
+\caption{ Path integral along edges of one single elemental plane $A_{u}(n)$\cite{ script_FeldSim}}
 \label{fig:FIT_max_integral1}
-}
-\hfill
-\subfigure[Integral on the edge of one single elemental cell]{
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\subfigure[Discrete electric field strength components distribute at edges of grids.]{
 \includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral2}
 \label{fig:FIT_max_integral2}
 }
 \hfill
-\end{figure}
-\begin{figure}[!ht]
-\centering
-\subfigure[Integral on the edge of one single elemental cell]{
+\subfigure[Discrete magnetic flux density components distribute at planes of grids]{
 \includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral3}
 \label{fig:FIT_max_integral3}
 }
-\caption{discrete Maxwell's Equations}
+\caption{Allocations of components at grids\cite{ script_FeldSim}.}
 \end{figure}
-
-Following is a demonstration of the discretized form from the  inductive law(\ref{eq:maxwell_1}). Considering the path integral in a single element edge like Fig.\ref{fig:FIT_max_integral1},the left side of (\ref{eq:maxwell_1}) can be presented as (\ref{eq:inductive_left}). 
 
 \begin{equation}
 \int_{C}\vec{E}\cdot d\vec{s}
@@ -30,12 +31,13 @@ Following is a demonstration of the discretized form from the  inductive law(\re
 -\underbrace{\int_{\Delta w(n)}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{w}(n)}
 \label{eq:inductive_left}
 \end{equation}
-Where $\widehat{e(n)}$ (Fig.\ref{fig:FIT_max_integral2}) is so called  electric grid voltage and has the following relationship with electric field strength $e(n)$
+
+Where $\widehat{e(n)}$ is so called  electric grid voltage and has the following relation with electric field strength $e(n)$
 \begin{equation}
-e_{n}=\frac{\widehat{e}_{v}(n)}{\Delta v(n)}
+ e_{v}(n)=\frac{\widehat{e}_{v}(n)}{\Delta v(n)}
 \label{eq:e_field}
 \end{equation}
-In the mean time the right side of (\ref{eq:maxwell_1}) is transformed as (\ref{eq:inductive_right})
+Meanwhile the right side of (\ref{eq:maxwell_1}) approximates to (\ref{eq:inductive_right})
 \begin{equation}
 -\iint_{A_{u}(n)}\frac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{A} 
 =-\iint_{A_{u}(n)}\frac{\partial B^{*}_{u}}{\partial t}\cdot\mathrm{d}A
@@ -43,15 +45,19 @@ In the mean time the right side of (\ref{eq:maxwell_1}) is transformed as (\ref{
 \label{eq:inductive_right}
 \end{equation}
 
-Here $A_{u}(n)=\Delta v(n)\Delta w(n)$ and $b_{u}(n)$ (Fig.\ref{fig:FIT_max_integral2}) is magnetic flux density
-Define magnetic grid flux (\ref{eq:mag_fluxe})
+Where $A_{u}(n)=\Delta v(n)\Delta w(n)$ and $b_{u}(n)$ (Fig.\ref{fig:FIT_max_integral2}) is magnetic flux density
+\begin{equation}
+ b_{u}(n)=\frac{\widehat{\widehat{b}}_{u}(n)}{\Delta A_{u}(n)}
+\label{eq:b_flux_density}
+\end{equation}
+
+ and magnetic grid flux $\widehat{\widehat{b}}_{u}(n)$ (\ref{eq:mag_fluxe})
 \begin{equation}
 \widehat{\widehat{b}}_{u}(n)=\iint_{A_{u}(n)}\vec{B}\cdot\mathrm{d}\vec{A}
 \label{eq:mag_fluxe}
 \end{equation}
 
-From equations (\ref{eq:inductive_left}-\ref{eq:mag_fluxe}) the difference form(\ref{eq:inductive_integral}) of the inductive equation is derived in this elemental plane:
-
+From equations (\ref{eq:inductive_left}-\ref{eq:mag_fluxe}) we obtain the difference form (\ref{eq:inductive_integral}) of the inductive equation at one single elemental plane:
 \begin{equation}
 \widehat{e}_{v}(n)+\widehat{e}_{w}(n+M_{v})-\widehat{e}_{v}(n+M_{w})-\widehat{e}_{w}(n)=-\frac{\partial}{\partial t}\widehat{\widehat{b}}_{u}(n)
 \label{eq:inductive_integral}
@@ -62,8 +68,7 @@ i.e.,
 -\Delta v(n+M_{w})e_{v}(n+M_{w})-\Delta w(n)e_{w}(n)=-A_{u}(n)\frac{\partial}{\partial{t}}b_{u}(n) \hspace{5cm}
 \label{eq:inductive_sample}
 \end{multline}
-
-Base on the ordering in(\ref{eq:discrete_index}-\ref{eq:np}) the electric field-strength $e(n)$ and magnetic flux density $b(n)$ of all grids can be constructed in vector.
+By merging electric field-strength $e(n)$ and magnetic flux density $b(n)$ of all grids into vectors we obtain:
 \begin{equation}
 e_{u}:=
 \begin{pmatrix}
@@ -118,7 +123,12 @@ b_{w}&
 \end{pmatrix}.
 \label{eq:vector_m_flux_density}
 \end{equation}
-
+Expanding the relation (\ref{eq:inductive_sample}) to all grid cells \cite{FIT_discrete_method}\cite{FIT_discrete_electrommagnetism}\cite{FIT_triangular_discretization}\cite{script_FeldSim} we arrive at the discrete form of inductive equation:
+\begin{equation}
+CD_{s}e=-D_{A}\frac{\partial}{\partial{t}}b
+\label{eq:inductive_sample_all}
+\end{equation}
+Where $D_{s}$ (\ref{eq:Ds_matrix}) is elemental edge matrix,
 \begin{equation}
 D_{s}=
 	\begin{pmatrix}
@@ -134,8 +144,7 @@ D_{s}=
 	\end{pmatrix}
 	\label{eq:Ds_matrix}
 \end{equation}
-The elemental edge matrix(\ref{eq:Ds_matrix}) and elemental plane matrix(\ref{eq:Da_matrix}) are demanded.
-
+$D_{A}$ (\ref{eq:Da_matrix}) is elemental plane matrix,
 \begin{equation}
 D_{A}=
 	\begin{pmatrix}
@@ -151,12 +160,7 @@ D_{A}=
 	\end{pmatrix}
 	\label{eq:Da_matrix}
 \end{equation}
-Expand the relation(\ref{eq:inductive_sample}) to all grid cells\cite{FIT_discrete_method}\cite{FIT_discrete_electrommagnetism}\cite{FIT_triangular_discretization}\cite{script_FeldSim}:
-\begin{equation}
-CD_{s}e=-D_{A}\frac{\partial}{\partial{t}}b
-\label{eq:inductive_sample_all}
-\end{equation}
-Where $C$ is \textbf{curl} operator:
+$C$ (\ref{eq:C_matrix}) is \textbf{curl} operator.
 \begin{align}
 C&=
 	\begin{pmatrix}
@@ -180,19 +184,20 @@ C&=
 	\end{pmatrix}
 \label{eq:C_matrix}
 \end{align}
-Submatrixes $P_{u},P_{v},P_{w}$ are composed of $1,-1,0$ like Fig.\ref{fig:Matrix Px}. 
-\begin{figure}
+Submatrixes $P_{u},P_{v},P_{w}$ are composed of $1,-1,0$ like Fig.\ref{fig:Matrix Px}.\\ 
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=0.5\textwidth]{bilder/P_matrix}
 \caption{Matrix $P_{x},(x=u,v,w)$}
 \label{fig:Matrix Px}
 \end{figure}
-To simplify the representation of the equation(\ref{eq:inductive_sample_all}) by using $\widehat{e}$ and $\widehat{\widehat{b}}$:
+Alternative form of the equation(\ref{eq:inductive_sample_all})is given:
 \begin{equation}
 C\widehat{e}=-\frac{\partial}{\partial{t}}\widehat{\widehat{b}}
 \label{eq:inductive_integral_all}
 \end{equation}
 %\widehat{e}
+Where electric voltage $\widehat{e}$ and magnetic flux $\widehat{ \widehat{b}}$ are defined as following:
 \begin{equation}
 \widehat{e}_{u}:=
 \begin{pmatrix}
@@ -265,21 +270,21 @@ or
 S\widehat{\widehat{b}}=0
 \label{eq:divergence_integral}
 \end{equation}
-$S\in R^{N_{p}\times 3N_{p}}$ represent the discrete divergence matrix, which depends on the grid topology just as the discrete $curl-Matrix$ $C$.
+$S\in \mathbb{R}^{N_{p}\times 3N_{p}}$ represent the discrete divergence matrix, which depends on the grid topology just as the discrete $curl-Matrix$ $C$.
 %S
 \begin{equation}
 S=(P_{u}|P_{v}|P_{w})
 \label{eq:S_matrix}
 \end{equation}
 %Amp\'ere's law
-Now considering the discretization of Amp\'ere's law(\ref{eq:maxwell_2}) its magnetic field strengths pass through the elemental plane along the same path with the magnetic flux (Fig.\ref{fig:divergence_G}). Therefore, a new grid(\textbf{Dual Grid})Fig.\ref{fig:dual_grid} is required for this path integral. The second cell $\tilde{G}$ is dual to the primary cell $G$. As in Primary Grid the dual elements are also properly defined in \cite{script_FeldSim}.
-\begin{figure}
+Now considering the discretization of Amp\'ere's law (\ref{eq:maxwell_2}) its magnetic field strengths pass through the elemental plane along the same path with the magnetic flux density (Fig. \ref{fig:divergence_G}). Therefore, a new grid (\textbf{Dual Grid}) like Fig. \ref{fig:dual_grid} is required for this path integral. The second cell $\tilde{G}$ is dual to the primary cell $G$. As primary elements in primary Grid the dual elements are also properly defined in \cite{script_FeldSim}.
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=0.5\textwidth]{bilder/dual_grid}
-\caption{The allocation of the Primary Grid $G$ and Dual Grid $\tilde{G}$.}
+\caption{The allocation of the Primary Grid $G$ and Dual Grid $\tilde{G}$\cite{FIT_discrete_electrommagnetism}.}
 \label{fig:dual_grid}
 \end{figure}
-Similar to the discretization of Inductive Law Figures\ref{fig:FIT_max_integral4}\ref{fig:FIT_max_integral5} describe the path integral and surface integral of the equation(\ref{eq:maxwell_2}) in a \textbf{Dual Grid} and lead to the difference forms(\ref{eq:ampere_left_sample}\ref{eq:ampere_right}).
+Like the discretization of Inductive Law Figure. \ref{fig:FIT_max_integral4} and Figure.  \ref{fig:FIT_max_integral5} describe the path integral and surface integral of the equation(\ref{eq:maxwell_2}) in a \textbf{Dual Grid} and lead to the difference equations (\ref{eq:ampere_left_sample}-\ref{eq:ampere_right}).
 \begin{figure}
 %\centering
 	\subfigure[Path Integral of the magnetic flux in dual grid.]{
@@ -294,11 +299,6 @@ Similar to the discretization of Inductive Law Figures\ref{fig:FIT_max_integral4
 \caption{Discretization of Amp\'ere's law}
 \end{figure}
 
-\begin{align}
-h_{1}&=\frac{b_{v}(n)}{\mu (n-M_{v})}\\
-h_{2}&=\frac{b_{v}(n)}{\mu (n)}
-\label{eq:megnetic_field}
-\end{align}
 \begin{equation}
 \int_{\tilde{C}}\vec{H}\cdot d\vec{s}=\int_{\tilde{C}}\mu^{-1}\vec{B}\cdot d\vec{s}\approx
 \widehat{h}_{v}(n)
@@ -317,6 +317,13 @@ h_{2}&=\frac{b_{v}(n)}{\mu (n)}
 \end{align}
 with 
 \begin{align}
+\widehat{h}_{v}(n)&=h_{1}\cdot\frac{\Delta v(n-M_{v})}{2}+ h_{2}\cdot\frac{\Delta v(n)}{2}\\
+h_{1}&=\frac{b_{v}(n)}{\mu (n-M_{v})}\\
+h_{2}&=\frac{b_{v}(n)}{\mu (n)}
+\label{eq:megnetic_field}
+\end{align}
+
+\begin{align}
 A_{1}&=\frac{A_{u}(n-M_{v}-M_{w})}{4}\\
 A_{2}&=\frac{A_{u}(n-M_{w})}{4}\\
 A_{3}&=\frac{A_{u}(n)}{4}\\
@@ -330,12 +337,12 @@ A_{4}&=\frac{A_{u}(n-M_{v})}{4}
 &+\epsilon_{x}(n-M_{y})A_{x}(n-M_{y})
 \end{align}
 $\bar{\epsilon}$ is average dielectric constant. 
-Define the average dielectric matrix:
+The average dielectric matrix is defined:
 \begin{equation}
 D_{\epsilon}=Diag(\bar{\epsilon}_{u}(1),\ldots,\bar{\epsilon}_{u}(N_{p}),\bar{\epsilon}_{v}(1),\ldots,\bar{\epsilon}_{v}(N_{p}),\bar{\epsilon}_{w}(1),\ldots,\bar{\epsilon}_{w}(N_{p}))
 \label{eq:eps_matrix}
 \end{equation}
-By expanding equationos(\ref{eq:ampere_left_sample}-\ref{eq:eps_matrix}) the discretized form(\ref{eq:ampere}) is derived.
+By expanding equations (\ref{eq:ampere_left_sample}-\ref{eq:eps_matrix}) we obtain discretized form(\ref{eq:ampere}) .
 \begin{equation}
 \tilde{C}\tilde{D}_{s}D_{\mu^{-1}}b=\tilde{D}_{A}(D_{\epsilon}\frac{\mathrm{d}}{\mathrm{dt}}e+D_{\kappa}e+j)
 \label{eq:ampere}
@@ -355,7 +362,7 @@ $\tilde{C}$ represents the $curl-operator$ in dual grid.
 	\end{pmatrix}
 	\label{eq:dual_C_matrix}
 \end{equation}
-With the help of dual grid cells Gauss' law(\ref{eq:maxwell_3}) in integral form can be discretized\cite{script_FeldSim} as following:
+With the help of dual grid cells Gauss' law (\ref{eq:maxwell_3}) in integral form can be discretized\cite{script_FeldSim} as following:
 \begin{equation}
 \tilde{S}\widehat{\widehat{d}}=q
 \label{eq:gausslaw}
