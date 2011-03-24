@@ -44,30 +44,27 @@ Meanwhile the right side of (\ref{eq:maxwell_1}) approximates to (\ref{eq:induct
 \approx -\frac{\partial}{\partial t}b_{u}(n)A_{u}(n)
 \label{eq:inductive_right}
 \end{equation}
-
 Where $A_{u}(n)=\Delta v(n)\Delta w(n)$ and $b_{u}(n)$ (Fig.\ref{fig:FIT_max_integral2}) is magnetic flux density
 \begin{equation}
  b_{u}(n)=\frac{\widehat{\widehat{b}}_{u}(n)}{\Delta A_{u}(n)}
 \label{eq:b_flux_density}
 \end{equation}
-
  and magnetic grid flux $\widehat{\widehat{b}}_{u}(n)$ (\ref{eq:mag_fluxe})
 \begin{equation}
 \widehat{\widehat{b}}_{u}(n)=\iint_{A_{u}(n)}\vec{B}\cdot\mathrm{d}\vec{A}
 \label{eq:mag_fluxe}
 \end{equation}
-
 From equations (\ref{eq:inductive_left}-\ref{eq:mag_fluxe}) we obtain the difference form (\ref{eq:inductive_integral}) of the inductive equation at one single elemental plane:
 \begin{equation}
 \widehat{e}_{v}(n)+\widehat{e}_{w}(n+M_{v})-\widehat{e}_{v}(n+M_{w})-\widehat{e}_{w}(n)=-\frac{\partial}{\partial t}\widehat{\widehat{b}}_{u}(n)
 \label{eq:inductive_integral}
 \end{equation}
 i.e.,
-\begin{multline}
-\Delta v(n)e_{v}(n)+\Delta w(n+M_{v})e_{w}(n+M_{v})\\
--\Delta v(n+M_{w})e_{v}(n+M_{w})-\Delta w(n)e_{w}(n)=-A_{u}(n)\frac{\partial}{\partial{t}}b_{u}(n) \hspace{5cm}
+\begin{align}
+\Delta v(n)e_{v}(n)&+\Delta w(n+M_{v})e_{w}(n+M_{v})\nonumber\\
+-\Delta v(n+M_{w})e_{v}(n+M_{w})&-\Delta w(n)e_{w}(n)=-A_{u}(n)\frac{\partial}{\partial{t}}b_{u}(n) 
 \label{eq:inductive_sample}
-\end{multline}
+\end{align}
 By merging electric field-strength $e(n)$ and magnetic flux density $b(n)$ of all grids into vectors we obtain:
 \begin{equation}
 e_{u}:=
@@ -162,36 +159,31 @@ D_{A}=
 \end{equation}
 $C$ (\ref{eq:C_matrix}) is \textbf{curl} operator.
 \begin{align}
-C&=
-	\begin{pmatrix}
-	&&\quad\vline &\ddots &-1&\quad\vline  &\ddots &+1&\\	
-	&0&\quad\vline	& &+1 &\ddots\vline	 &&-1&\ddots\\
-	&&\quad\vline	&&&\ddots\vline			 &&&\ddots\\	
+C&=\left(
+	\begin{array}{ccc|ccc|ccc}
+	&&&\ddots &-1& &\ddots &+1&\\	
+	&0&&&+1&\ddots&&-1&\ddots\\
+	&&&&&\ddots&&&\ddots\\	
 	\hline
-	\ddots &+1&\quad\vline	&&&\quad\vline	 &\ddots &-1&\\
-	&-1 &\ddots\vline	&&0&\quad\vline	&&+1&\ddots\\
-	&&\ddots\vline	&&&\quad\vline	&&&\ddots\\
+	\ddots &+1&&&&&\ddots &-1&\\
+	&-1 &\ddots&&0&\quad&&+1&\ddots\\
+	&&\ddots&&&&&&\ddots\\
 	\hline
-	\ddots &-1&\quad\vline &\ddots &+1&\quad\vline	&&&\\
-	&+1 &\ddots\vline	&&-1&\ddots\vline	&&0&\\
-	&&\ddots\vline		&&&\ddots\vline	&&&
-	\end{pmatrix}\nonumber\\
-	&=
-	\begin{pmatrix}
-	0&-P_{w}&P_{v}\\
-	P_{w}&0&-P_{u}\\
-	-P_{v}&P_{u}&0
-	\end{pmatrix}
+	\ddots &-1&&\ddots &+1&&&&\\
+	&+1 &\ddots&&-1&\ddots&&0&\\
+	&&\ddots&&&\ddots&&&
+	\end{array}\right)
 \label{eq:C_matrix}
 \end{align}
-Submatrixes $P_{u},P_{v},P_{w}$ are composed of $1,-1,0$ like Fig.\ref{fig:Matrix Px}.\\ 
+Submatrixes $P_{u},P_{v},P_{w}$ are composed of $1,-1,0$ like Fig. \ref{fig:Matrix Px}.\\
+ 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=0.5\textwidth]{bilder/P_matrix}
 \caption{Matrix $P_{x},(x=u,v,w)$}
 \label{fig:Matrix Px}
 \end{figure}
-Alternative form of the equation(\ref{eq:inductive_sample_all})is given:
+Alternative form of the equation(\ref{eq:inductive_sample_all})is given in (\ref{eq:inductive_integral_all})
 \begin{equation}
 C\widehat{e}=-\frac{\partial}{\partial{t}}\widehat{\widehat{b}}
 \label{eq:inductive_integral_all}
@@ -260,7 +252,7 @@ Where electric voltage $\widehat{e}$ and magnetic flux $\widehat{ \widehat{b}}$ 
 \caption{This figure discribe the allocation of six magnetic facet fluxes in $G$}
 \label{fig:divergence_G}
 \end{figure}
-Analogy the divergence equation(\ref{eq:maxwell_4}) can also be discretized in grid $G$(Fig.\ref{fig:divergence_G}) and can be described in its difference form: 
+Analogy the divergence equation(\ref{eq:maxwell_4}) can also be discretized in grid $G$ and through Fig.\ref{fig:divergence_G} we obtain difference form: 
 \begin{equation}
 SD_{A}b=0
 \label{eq:divergence_sample}
@@ -298,7 +290,6 @@ Like the discretization of Inductive Law Figure. \ref{fig:FIT_max_integral4} and
 	}
 \caption{Discretization of Amp\'ere's law}
 \end{figure}
-
 \begin{equation}
 \int_{\tilde{C}}\vec{H}\cdot d\vec{s}=\int_{\tilde{C}}\mu^{-1}\vec{B}\cdot d\vec{s}\approx
 \widehat{h}_{v}(n)
@@ -322,7 +313,7 @@ h_{1}&=\frac{b_{v}(n)}{\mu (n-M_{v})}\\
 h_{2}&=\frac{b_{v}(n)}{\mu (n)}
 \label{eq:megnetic_field}
 \end{align}
-
+and
 \begin{align}
 A_{1}&=\frac{A_{u}(n-M_{v}-M_{w})}{4}\\
 A_{2}&=\frac{A_{u}(n-M_{w})}{4}\\
