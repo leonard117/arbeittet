@@ -1,13 +1,18 @@
-In the world there is no natural source of paraxial ray. Each beam of lights can be considered originating from a simple origin: point light source, which emits anisotropic light in all directions. Thus a normal light source cannot provide perfect focused beams for optical applications. 
-TEM$_{00}$ mode of a laser source is a perfect plane wave with Gaussian transverse irradiance profile\cite{CVI_Melles_Griot_Technical_Guide}. Therefore the laser light is considered as a beam propagating in a well-defined direction with limited spreading in transversal dimensions.\\ 
-In \cite{ script_FT_TET} the characteristics of Gaussian beams are described. The transversal components of the field is presented as (\ref{eq:gaussian_01}). 
+In the world there is no natural source of paraxial rays. Each beam of light can be considered originating from a simple origin: point light source, which emits anisotropic light in all directions. Thus a normal light source cannot provide perfect focused beams for optical applications. TEM$_{00}$ mode of a laser source is a perfect plane wave with Gaussian transverse irradiance profile\cite{CVI_Melles_Griot_Technical_Guide}. Therefore the laser light is considered as a beam propagating in a well-defined direction with limited spreading in transversal dimensions.\\ 
+
+In \cite{ script_FT_TET} the transversal e-field components of Gaussian beam is assumed as (\ref{eq:gaussian_01}).
 \begin{equation}
 E_{x}=\psi(x,y,z)e^{-jk_{0}nz}
 \label{eq:gaussian_01}
 \end{equation}.
-Partial differential form is given by (\ref{eq:gaussian_02}). Because the paraxial beams spread slowly in transversal direction due to the z-axis, the term $\frac{\partial ^{2}\psi}{\partial z^2}$ is very smaller than other terms. Thus equation (\ref{eq:gaussian_02}) become an approximation (\ref{eq:gaussian_03}).
+We insert (\ref{eq:gaussian_01}) into wave equation (\ref{eq:wave_equation})
 \begin{equation}
-\Delta E_{x}=\frac{\partial ^{2}\psi}{\partial x^2}+\frac{\partial ^{2}\psi}{\partial y^2}+\frac{ \partial ^{2}\psi}{\partial z^2}-2jk_{0}n\frac{\partial\psi}{\partial z}=0
+\Delta E_{x}+k^{2}_{0}n^{2}E_{x}=0
+\label{eq:wave_equation}
+\end{equation}.
+ and obtain partial differential form (\ref{eq:gaussian_02}). Because the paraxial beams spread slowly in transversal direction due to the z-axis, the term $\frac{\partial ^{2}\psi}{\partial z^2}$ is very smaller than other terms. Thus equation (\ref{eq:gaussian_02}) become an approximation (\ref{eq:gaussian_03}).
+\begin{equation}
+\frac{\partial ^{2}\psi}{\partial x^2}+\frac{\partial ^{2}\psi}{\partial y^2}+\frac{ \partial ^{2}\psi}{\partial z^2}-2jk_{0}n\frac{\partial\psi}{\partial z}=0
 \label{eq:gaussian_02}
 \end{equation}
 
@@ -40,7 +45,8 @@ R(z)=z\left[1+(\frac{\lambda z}{n\pi w^{2}_{0}})^{2}\right]
 \label{eq:gaussian_08}
 \end{equation}
 
-If (\ref{eq:gaussian_06}) is inserted in (\ref{eq:gaussian_05}) then we can get a Gauss form result like (\ref{eq:gaussian_09}). That means the field of a Gaussian beam is in transversal dimensions a Gaussian distribution like Fig. \ref{fig:gaussian_verteilung}.
+If (\ref{eq:gaussian_06}) is inserted in (\ref{eq:gaussian_05}) then we can obtain a Gauss form result like (\ref{eq:gaussian_09}). That means the field of a Gaussian beam is in transversal dimensions a Gaussian distribution like Fig. \ref{fig:gaussian_verteilung}.\\
+
 \begin{equation}
 \psi(r,z)=w_{0}exp\left(-\frac{r^2}{w^2_{0}}\right)
 \label{eq:gaussian_09}
@@ -51,7 +57,6 @@ If (\ref{eq:gaussian_06}) is inserted in (\ref{eq:gaussian_05}) then we can get 
 \caption{ransversal profile of the Gaussian beam is the curve of Gaussian functions. At the beam center the field has the maximum value. At the distance of $w(z)$ form the center the field decline to $1/e$ of the peak value.}
 \label{fig:gaussian_verteilung}
 \end{figure}
-
 According to definitions of $w(z)$ and $R(z)$ in (\ref{eq:gaussian_07}-\ref{eq:gaussian_08}) the longitudinal profile of Gaussian beams can be drawn as Fig. \ref{fig:gussian_profile}.
 \begin{figure}[!ht]
 \centering

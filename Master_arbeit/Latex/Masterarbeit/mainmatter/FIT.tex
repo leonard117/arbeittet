@@ -2,7 +2,6 @@
 The Finite Integration Theory(\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.\\
 
 The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid} (primary cell \textbf{G}). Of cause it is possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on the real dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).\\
-
 \begin{align}
 G=
 (u(i),v(j),w(k))\in \mathbb{R}^3|&u(1)\leq u(i)\leq u(I),\nonumber\\
@@ -19,7 +18,6 @@ $u(i)$,$v(j)$,$w(k)$ can be three components of any 3D coordinate systems. In fo
 \caption{A Cartesian descretized Grid Volum\cite{script_FeldSim}.}
 \label{fig:discretization_material}
 \end{figure}
-
 For calculations following primary elements are defined in \cite{script_FeldSim}:
 \begin{itemize}
 \item Points $P(i,j,k)$
