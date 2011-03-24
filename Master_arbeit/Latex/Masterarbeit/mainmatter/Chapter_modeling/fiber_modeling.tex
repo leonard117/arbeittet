@@ -2,7 +2,7 @@
 
 %fiber_modeling.tex
 %fiber_modeling.tex
-The first agenda is to determine the Tapered and Lensed Fiber (TLF) model. Because of the heave computing cost creating a full size fiber is not economical. Therefore only the end of the fiber, which provides approximately the equal technical properties, will be modeled in this work. In \cite{TLF_analysis,TLF_mode_transforming} two types of TLF configurations are discribed.\\ 
+The first agenda is to determine the Tapered and Lensed Fiber (TLF) model. Because of the heave computing cost creating a full size fiber is not economical. Therefore only the end of the fiber, which provides approximately the equal technical properties, will be modeled in this work. In \cite{TLF_analysis,TLF_mode_transforming} two types of TLF configurations are described.\\ 
 
 \begin{figure}[!ht]
 \centering
@@ -18,9 +18,9 @@ The first agenda is to determine the Tapered and Lensed Fiber (TLF) model. Becau
 \label{fig:two_TLF}
 \caption{Two types of Tapered and Lensed Fibers}
 \end{figure}
-The tapered cladding TLF Fig. \ref{fig:lense_fiber_01} shows that its cladding diameter decreases along the propagation direction (O-O'Axis) and the core diameter stays a constant. For the tapered core TLF Fig. \ref{fig:lense_fiber_02} its cladding diameter and core diameter both decrease along the propagation direction. In \cite{TLF_mode_transforming} the Author tried to develop methods to estimate the performance of both type of TLF. Results in \cite{TLF_mode_transforming} show that the performance of the Tapered cladding TLF agrees well with the estimation and that of the Tapered core TLF is unpredictable. In this section two simulation models of each type are created to compare the efficiency of spot size and working distance.\\  
+The tapered cladding TLF Fig. \ref{fig:lense_fiber_01} shows that its cladding diameter decreases along the propagation direction (O-O' Axis) and the core diameter stays a constant. For the tapered core TLF Fig. \ref{fig:lense_fiber_02} its cladding diameter and core diameter both decrease along the propagation direction. In \cite{TLF_mode_transforming} the Author tried to develop methods to estimate the performance of both type of TLF. Results in \cite{TLF_mode_transforming} show that the performance of the Tapered cladding TLF agrees well with the estimation and that of the Tapered core TLF is unpredictable. In this section two simulation models of each type are created to compare the efficiency of spot size and working distance.\\  
 
-First of all, determination the lens of both types is the primary work. In order to simplifying the lens structure, a hemispherical lens is assumed at the end of the fiber. Refer to the working distance for the experimental TLF, the lens configuration can be estimated through lens theory. Combining calculations in matlab and simulations in CST MWS one configuration of the parameters of the lens can be carefully selected. Tab. \ref{tab:model_fiber_configuration} summarizes the closest parameters for the TLF designs in this work.\\   
+First of all, determination the lens of both types is the primary work. In order to simplifying the lens structure, a hemispherical lens is assumed at the end of the fiber. Refer to the working distance for the experimental TLF, the lens configuration can be estimated through lens theory. Combining calculations in Matlab and simulations in CST MWS one configuration of the parameters of the lens can be carefully selected. Tab. \ref{tab:model_fiber_configuration} summarizes the closest parameters for the TLF designs in this work.\\   
 
 \begin{table}[!ht]
 \caption{Configurations of the TLF Models}
@@ -60,7 +60,7 @@ With the parameters in Tab. \ref{tab:model_fiber_configuration} the minimum spot
 		\caption{E-Field demonstration in logarithm value of Tapered core TLF}
  		\label{fig:Tapered_core_efield}	
 \end{figure}
-Above we only estimated the theoretical working distance of the lens. To determine the actual working distance and actual spot size we have to analyze the simulation results from CST MVS. Fig. \ref{fig:Tapered_cladding_efield} and  Fig. \ref{fig:Tapered_core_efield} show  E-Field demonstrations  in logarithm value in the xz-plane of both types of TLFs. We load the power flow data into matlab workspace and draw Fig.\ref{fig:Tapered_cladding_spot_curve} and Fig.\ref{fig:Tapered_core_spot_curve}, which show the beam spot diameters through their absolute beam power flow density or its z-compents (propagation direction) of the beam power flow density along the propagation distance. From these two figures, curves of the absolute value of their power flow density show the location of the minimum spot matching the previous theoretical location of the minimum spot of lenses. This guess will also be verified in section \ref{sect:optim_shift}. In Fig.\ref{fig:Tapered_cladding_spot_curve} that the minimum spot size locate at about $4.1 \mu$m from lense end and spot size equal about $1.5 \mu$m. While in Fig.\ref{fig:Tapered_core_spot_curve} that the minimum spot size is found at  $4.3 \mu m$ from lense end and spot size equal about $1.5 \mu$m. Thus it is concluded that two configuration has only a small difference. Comparing with the properties given by experimental setup: minimum spot diameter $0.6<d<1.7 \mu$m and working distance $4\mu$m, both TLF model can be acceptable for the following development. In this works the tapered core TLF will be used for further simulations.\\
+Above we only estimated the theoretical working distance of the lens. To determine the actual working distance and actual spot size we have to analyze the simulation results from CST MVS. Fig. \ref{fig:Tapered_cladding_efield} and Fig. \ref{fig:Tapered_core_efield} show  E-Field demonstrations  in logarithm value in the xz-plane of both types of TLFs. We load the power flow data into matlab workspace and draw Fig. \ref{fig:Tapered_cladding_spot_curve} and Fig. \ref{fig:Tapered_core_spot_curve}, which show the beam spot diameters through their absolute beam power flow density or its z-compents (propagation direction) of the beam power flow density along the propagation distance. From these two figures, curves of the absolute value of their power flow density show the location of the minimum spot matching the previous theoretical location of the minimum spot of lenses. This guess will also be verified in section \ref{sect:optim_shift}. In Fig. \ref{fig:Tapered_cladding_spot_curve} that the minimum spot size locate at about $4.1 \mu$m from lense end and spot size equal about $1.5 \mu$m. While in Fig. \ref{fig:Tapered_core_spot_curve} that the minimum spot size is found at  $4.3 \mu m$ from lense end and spot size equal about $1.5 \mu$m. Thus it is concluded that two configuration has only a small difference. Comparing with the properties given by experimental setup: minimum spot diameter $0.6<d<1.7 \mu$m and working distance $4\mu$m, both TLF model can be acceptable for the following development. In this works the tapered core TLF will be used for further simulations.\\
 
 \begin{figure}[!ht]
 		\centering
@@ -74,7 +74,7 @@ Above we only estimated the theoretical working distance of the lens. To determi
 		\caption{Spot Size Curve of Tapered core TLF}
  		\label{fig:Tapered_core_spot_curve}	
 \end{figure}
-For a more impression of the relation between beam power density and beam propagation distance of the tapered core TLF, 3D Fig. \ref{fig:3d_spot_sub1}-\ref{fig:3d_spot_sub6} are drawn as demonstrations. It is obvious that the power density of the beam center rise firstly along the distance and at $4\mu$m reach the highest value. Then it falls slowly. This tendency agrees with the spot size curve inversely. \\
+For a more impression of the relation between beam power density and beam propagation distance of the tapered core TLF, 3D Fig. \ref{fig:3d_spot_sub1}-\ref{fig:3d_spot_sub6} are drawn as demonstrations. It is obvious that the power density of the beam center rises firstly along the distance and at $4\mu$m reaches the highest value. Then it falls slowly. This tendency agrees with the spot size curve inversely. \\
 
 \begin{figure}[!ht]
 \setlength{\abovecaptionskip}{0pt}% 
@@ -111,17 +111,5 @@ For a more impression of the relation between beam power density and beam propag
  	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_6um}
  	\label{fig:3d_spot_sub6}
  	}
-%\end{figure}	
-%\begin{figure}[!htp]
-%\setlength{\abovecaptionskip}{0pt}% 
-%\flushleft
-%  \subfigure[3D Beam Power at distance $7\mu m$]{
-% 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_7um}
-% 	\label{fig:3d_spot_sub7}
-% 	}
-% 	\subfigure[3D Beam Power at distance $8\mu m$]{
-% 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_8um}
-% 	\label{fig:3d_spot_sub8}
-% 	}
  	\caption{3D Beam Power }
 \end{figure}
