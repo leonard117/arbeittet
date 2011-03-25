@@ -1,7 +1,7 @@
 %FIT
-The Finite Integration Theory(\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.\\
+The Finite Integration Theory (\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.\\
 
-The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig.\ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid} (primary cell \textbf{G}). Of cause it is possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on the real dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).\\
+The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig. \ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid} (primary cell \textbf{G}). Of cause it is possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on the real dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).\\
 \begin{align}
 G=
 (u(i),v(j),w(k))\in \mathbb{R}^3|&u(1)\leq u(i)\leq u(I),\nonumber\\
@@ -77,7 +77,7 @@ N_{p}=I\cdot J\cdot K
 \label{eq:np}
 \end{equation}
 
-The next step is to discretize Maxwell's equations in their integral form(\ref{eq:maxwell_1}-\ref{eq:maxwell_4}) 
+The next step is to discretize Maxwell's equations in their integral form (\ref{eq:maxwell_1}-\ref{eq:maxwell_4}) 
 \begin{align}
 \oint_{\partial A}\vec{E}\cdot\mathrm{d}\vec{s}&=
 -\frac{\mathrm{d}}{\mathrm{d}t}\int_{A}\vec{B}\cdot\mathrm{d}\vec{A}

@@ -1,21 +1,20 @@
-In the world there is no natural source of paraxial rays. Each beam of light can be considered originating from a simple origin: point light source, which emits anisotropic light in all directions. Thus a normal light source cannot provide perfect focused beams for optical applications. TEM$_{00}$ mode of a laser source is a perfect plane wave with Gaussian transverse irradiance profile\cite{CVI_Melles_Griot_Technical_Guide}. Therefore the laser light is considered as a beam propagating in a well-defined direction with limited spreading in transversal dimensions.\\ 
+In the world there is no natural source of parallel rays. Each beam of light can be considered originating from a simple origin: point light source, which emits anisotropic light in all directions. Thus a normal light source cannot provide perfect focused beams for optical applications. TEM$_{00}$ mode of a laser source is a perfect plane wave with Gaussian transverse irradiance profile\cite{CVI_Melles_Griot_Technical_Guide}. Therefore the laser light is considered as a beam propagating in a well-defined direction with limited spreading in transversal dimensions.\\ 
 
 In \cite{ script_FT_TET} the transversal e-field components of Gaussian beam is assumed as (\ref{eq:gaussian_01}).
 \begin{equation}
 E_{x}=\psi(x,y,z)e^{-jk_{0}nz}
 \label{eq:gaussian_01}
-\end{equation}.
+\end{equation}
 We insert (\ref{eq:gaussian_01}) into wave equation (\ref{eq:wave_equation})
 \begin{equation}
 \Delta E_{x}+k^{2}_{0}n^{2}E_{x}=0
 \label{eq:wave_equation}
-\end{equation}.
+\end{equation}
  and obtain partial differential form (\ref{eq:gaussian_02}). Because the paraxial beams spread slowly in transversal direction due to the z-axis, the term $\frac{\partial ^{2}\psi}{\partial z^2}$ is very smaller than other terms. Thus equation (\ref{eq:gaussian_02}) become an approximation (\ref{eq:gaussian_03}).
 \begin{equation}
 \frac{\partial ^{2}\psi}{\partial x^2}+\frac{\partial ^{2}\psi}{\partial y^2}+\frac{ \partial ^{2}\psi}{\partial z^2}-2jk_{0}n\frac{\partial\psi}{\partial z}=0
 \label{eq:gaussian_02}
 \end{equation}
-
 \begin{equation}
 \frac{ \partial ^{2}\psi}{\partial x^2}+\frac{\partial ^{2}\psi}{\partial y^2}-2jk_{0}n\frac{\partial\psi}{\partial z}=0
 \label{eq:gaussian_03}
@@ -54,7 +53,7 @@ If (\ref{eq:gaussian_06}) is inserted in (\ref{eq:gaussian_05}) then we can obta
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=0.6\textwidth]{bilder/gussian_verteilung}
-\caption{ransversal profile of the Gaussian beam is the curve of Gaussian functions. At the beam center the field has the maximum value. At the distance of $w(z)$ form the center the field decline to $1/e$ of the peak value.}
+\caption{Transversal profile of the Gaussian beam is the curve of Gaussian functions. At the beam center the field has the maximum value. At the distance of $w(z)$ form the center the field decline to $1/e$ of the peak value.}
 \label{fig:gaussian_verteilung}
 \end{figure}
 According to definitions of $w(z)$ and $R(z)$ in (\ref{eq:gaussian_07}-\ref{eq:gaussian_08}) the longitudinal profile of Gaussian beams can be drawn as Fig. \ref{fig:gussian_profile}.
@@ -68,4 +67,4 @@ From the beam axis to the distance of beam radius $w(z)$ the intensity drops to 
 
 %Spot Size
 \textbf{Spot Size}\\
-Another important characteristic of Gaussian beams is \textbf{Spot Size}. In a cross-section of a Gaussian beam the beam intensity is approximately distributed as Gaussian function. The spot size is the diameter of the domain at whose edge the value of the electrical field intensity decays to $1/e$ of the peak value, otherwise the energy density decays to $1/e^2$ of the peak value.
+Another important characteristic of Gaussian beams is Spot Size. In a cross-section of a Gaussian beam the beam intensity is approximately distributed as Gaussian function. The spot size is the diameter of the domain at whose edge the value of the electrical field intensity decays to $1/e$ of the peak value, otherwise the energy density decays to $1/e^2$ of the peak value.
