@@ -5,7 +5,7 @@ Following is a demonstration of the discretized form from the inductive law (\re
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=0.45\textwidth]{bilder/FIT_max_integral1}
-\caption{ Path integral along edges of one single elemental plane $A_{u}(n)$\cite{ script_FeldSim}}
+\caption{ Path integral along edges of one single elemental plane $A_{u}(n)$\cite{ script_FeldSim}.}
 \label{fig:FIT_max_integral1}
 \end{figure}
 
@@ -16,8 +16,8 @@ Following is a demonstration of the discretized form from the inductive law (\re
 \label{fig:FIT_max_integral2}
 }
 \hfill
-\subfigure[Discrete magnetic flux density components distribute at planes of grids]{
-\includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral3}
+\subfigure[Discrete magnetic flux density components distribute at planes of grids.]{
+\includegraphics[width=0.5\textwidth]{bilder/FIT_max_integral3}
 \label{fig:FIT_max_integral3}
 }
 \caption{Allocations of components at grids\cite{ script_FeldSim}.}
@@ -126,37 +126,45 @@ CD_{s}e=-D_{A}\frac{\partial}{\partial{t}}b
 \label{eq:inductive_sample_all}
 \end{equation}
 Where $D_{s}$ (\ref{eq:Ds_matrix}) is elemental edge matrix,
-\begin{equation}
+\begin{align}
 D_{s}=
-	\begin{pmatrix}
-	\Delta u(1)&&&&&&&&\\
-	&\ddots &&&&&&&\\
-	&&\Delta u(N_{p})&&&&&&\\
-	&&&\Delta v(1)&&&&&\\
-	&&&&\ddots &&&&\\
-	&&&&&\Delta v(N_{p})&&&\\
-	&&&&&&\Delta w(1)&&\\
-	&&&&&&&\ddots &\\
-	&&&&&&&&\Delta w(N_{p})
-	\end{pmatrix}
+%	\begin{pmatrix}
+%	\Delta u(1)&&&&&&&&\\
+%	&\ddots &&&&&&&\\
+%	&&\Delta u(N_{p})&&&&&&\\
+%	&&&\Delta v(1)&&&&&\\
+%	&&&&\ddots &&&&\\
+%	&&&&&\Delta v(N_{p})&&&\\
+%	&&&&&&\Delta w(1)&&\\
+%	&&&&&&&\ddots &\\
+%	&&&&&&&&\Delta w(N_{p})
+%	\end{pmatrix}
+Diag\{&\Delta u(1),\cdots,\Delta u(N_{p}),\nonumber\\
+			&\Delta v(1),\cdots,\Delta v(N_{p}),\nonumber\\
+			&\Delta w(1),\cdots,\Delta w(N_{p})
+\}
 	\label{eq:Ds_matrix}
-\end{equation}
+\end{align}
 $D_{A}$ (\ref{eq:Da_matrix}) is elemental plane matrix,
-\begin{equation}
+\begin{align}
 D_{A}=
-	\begin{pmatrix}
-	\Delta A_{u}(1)&&&&&&&&\\
-	&\ddots &&&&&&&\\
-	&&\Delta A_{u}(N_{p})&&&&&&\\
-	&&&\Delta A_{v}(1)&&&&&\\
-	&&&&\ddots &&&&\\
-	&&&&&\Delta A_{v}(N_{p})&&&\\
-	&&&&&&\Delta A_{w}(1)&&\\
-	&&&&&&&\ddots &\\
-	&&&&&&&&\Delta A_{w}(N_{p})
-	\end{pmatrix}
+%	\begin{pmatrix}
+%	\Delta A_{u}(1)&&&&&&&&\\
+%	&\ddots &&&&&&&\\
+%	&&\Delta A_{u}(N_{p})&&&&&&\\
+%	&&&\Delta A_{v}(1)&&&&&\\
+%	&&&&\ddots &&&&\\
+%	&&&&&\Delta A_{v}(N_{p})&&&\\
+%	&&&&&&\Delta A_{w}(1)&&\\
+%	&&&&&&&\ddots &\\
+%	&&&&&&&&\Delta A_{w}(N_{p})
+%	\end{pmatrix}
+Diag\{&\Delta A_{u}(1),\cdots,\Delta A_{u}(N_{p}),\nonumber\\
+			&\Delta A_{v}(1),\cdots,\Delta A_{v}(N_{p}),\nonumber\\
+			&\Delta A_{w}(1),\cdots,\Delta A_{w}(N_{p})
+\}
 	\label{eq:Da_matrix}
-\end{equation}
+\end{align}
 $C$ (\ref{eq:C_matrix}) is \textbf{curl} operator.
 \begin{align}
 C&=\left(
@@ -172,18 +180,24 @@ C&=\left(
 	\ddots &-1&&\ddots &+1&&&&\\
 	&+1 &\ddots&&-1&\ddots&&0&\\
 	&&\ddots&&&\ddots&&&
-	\end{array}\right)
+	\end{array}\right)\\
+	&=
+	\begin{pmatrix}
+	0&-P_{w}&P_{v}\\
+	P_{w}&0&-P_{u}\\
+	-P_{v}&P_{u}&0
+	\end{pmatrix}
 \label{eq:C_matrix}
 \end{align}
 Submatrixes $P_{u},P_{v},P_{w}$ are composed of $1,-1,0$ like Fig. \ref{fig:Matrix Px}.\\
  
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.5\textwidth]{bilder/P_matrix}
-\caption{Matrix $P_{x},(x=u,v,w)$}
+\includegraphics[width=0.4\textwidth]{bilder/P_matrix}
+\caption{Structure of matrix $P_{x},(x=u,v,w)$.}
 \label{fig:Matrix Px}
 \end{figure}
-Alternative form of the equation(\ref{eq:inductive_sample_all})is given in (\ref{eq:inductive_integral_all})
+Alternative form of the equation (\ref{eq:inductive_sample_all}) is given in (\ref{eq:inductive_integral_all})
 \begin{equation}
 C\widehat{e}=-\frac{\partial}{\partial{t}}\widehat{\widehat{b}}
 \label{eq:inductive_integral_all}
@@ -246,13 +260,13 @@ Where electric voltage $\widehat{e}$ and magnetic flux $\widehat{ \widehat{b}}$ 
 \label{eq:vector_m_flux}
 \end{equation}
 %divergence equation
-\begin{figure}
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=0.5\textwidth]{bilder/divergence_in_grid}
-\caption{This figure discribe the allocation of six magnetic facet fluxes in $G$}
+\caption{This figure discribe the allocation of six magnetic facet fluxes in $G$.}
 \label{fig:divergence_G}
 \end{figure}
-Analogy the divergence equation(\ref{eq:maxwell_4}) can also be discretized in grid $G$ and through Fig.\ref{fig:divergence_G} we obtain difference form: 
+Analogy the divergence equation (\ref{eq:maxwell_4}) can also be discretized in grid $G$ and through Fig.\ref{fig:divergence_G} we obtain difference form: 
 \begin{equation}
 SD_{A}b=0
 \label{eq:divergence_sample}
@@ -279,16 +293,14 @@ Now considering the discretization of Amp\'ere's law (\ref{eq:maxwell_2}) its ma
 Like the discretization of Inductive Law Figure. \ref{fig:FIT_max_integral4} and Figure.  \ref{fig:FIT_max_integral5} describe the path integral and surface integral of the equation(\ref{eq:maxwell_2}) in a \textbf{Dual Grid} and lead to the difference equations (\ref{eq:ampere_left_sample}-\ref{eq:ampere_right}).
 \begin{figure}
 %\centering
-	\subfigure[Path Integral of the magnetic flux in dual grid.]{
-	\includegraphics[width=0.5\textwidth]{bilder/FIT_max_integral4}
+	\subfigure[Path Integral of the magnetic flux in dual grid.]{	\includegraphics[width=0.5\textwidth]{bilder/FIT_max_integral4}
 	\label{fig:FIT_max_integral4}
 	}
 \hfill
-	\subfigure[Surface Integral of the electric flux in dual grid.]{
-	\includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral5}
+	\subfigure[Surface Integral of the electric flux in dual grid.]{	\includegraphics[width=0.4\textwidth]{bilder/FIT_max_integral5}
 	\label{fig:FIT_max_integral5}
 	}
-\caption{Discretization of Amp\'ere's law}
+\caption{Discretization of Amp\'ere's law.}
 \end{figure}
 \begin{equation}
 \int_{\tilde{C}}\vec{H}\cdot d\vec{s}=\int_{\tilde{C}}\mu^{-1}\vec{B}\cdot d\vec{s}\approx
@@ -307,19 +319,30 @@ Like the discretization of Inductive Law Figure. \ref{fig:FIT_max_integral4} and
 \label{eq:ampere_right}
 \end{align}
 with 
-\begin{align}
-\widehat{h}_{v}(n)&=h_{1}\cdot\frac{\Delta v(n-M_{v})}{2}+ h_{2}\cdot\frac{\Delta v(n)}{2}\\
-h_{1}&=\frac{b_{v}(n)}{\mu (n-M_{v})}\\
-h_{2}&=\frac{b_{v}(n)}{\mu (n)}
-\label{eq:megnetic_field}
-\end{align}
-and
-\begin{align}
-A_{1}&=\frac{A_{u}(n-M_{v}-M_{w})}{4}\\
-A_{2}&=\frac{A_{u}(n-M_{w})}{4}\\
-A_{3}&=\frac{A_{u}(n)}{4}\\
-A_{4}&=\frac{A_{u}(n-M_{v})}{4}
-\end{align}
+\begin{equation}
+\widehat{h}_{v}(n)=h_{1}\cdot\frac{\Delta v(n-M_{v})}{2}+ h_{2}\cdot\frac{\Delta v(n)}{2}
+\label{eq:megnetic_field1}
+\end{equation}
+\begin{equation}
+h_{1}=\frac{b_{v}(n)}{\mu (n-M_{v})}
+\label{eq:megnetic_field2}
+\end{equation}
+\begin{equation}
+h_{2}=\frac{b_{v}(n)}{\mu (n)}
+\label{eq:megnetic_field3}
+\end{equation}
+\begin{equation}
+A_{1}=\frac{A_{u}(n-M_{v}-M_{w})}{4}
+\end{equation}
+\begin{equation}
+A_{2}=\frac{A_{u}(n-M_{w})}{4}
+\end{equation}
+\begin{equation}
+A_{3}=\frac{A_{u}(n)}{4}
+\end{equation}
+\begin{equation}
+A_{4}=\frac{A_{u}(n-M_{v})}{4}
+\end{equation}
 \begin{align}
 \bar{\epsilon}_{x}(n)&:=\frac{\int\int\epsilon\mathrm{d}A}{\int\int\mathrm{d}A}\nonumber\\
 &=\frac{1}{4\tilde{A}_{x}(n)}(\epsilon_{x}(n-M_{y}-M_{z})A_{x}(n-M_{y}-M_{z})\nonumber\\
@@ -329,11 +352,15 @@ A_{4}&=\frac{A_{u}(n-M_{v})}{4}
 \end{align}
 $\bar{\epsilon}$ is average dielectric constant. 
 The average dielectric matrix is defined:
-\begin{equation}
-D_{\epsilon}=Diag(\bar{\epsilon}_{u}(1),\ldots,\bar{\epsilon}_{u}(N_{p}),\bar{\epsilon}_{v}(1),\ldots,\bar{\epsilon}_{v}(N_{p}),\bar{\epsilon}_{w}(1),\ldots,\bar{\epsilon}_{w}(N_{p}))
+\begin{align}
+D_{\epsilon}=
+Diag\{&\bar{\epsilon}_{u}(1),\ldots,\bar{\epsilon}_{u}(N_{p}),\nonumber\\
+&\bar{\epsilon}_{v}(1),\ldots,\bar{\epsilon}_{v}(N_{p}),\nonumber\\
+&\bar{\epsilon}_{w}(1),\ldots,\bar{\epsilon}_{w}(N_{p})
+\}
 \label{eq:eps_matrix}
-\end{equation}
-By expanding equations (\ref{eq:ampere_left_sample}-\ref{eq:eps_matrix}) we obtain discretized form(\ref{eq:ampere}) .
+\end{align}
+By expanding equations (\ref{eq:ampere_left_sample}-\ref{eq:eps_matrix}) we obtain discretized form (\ref{eq:ampere}) .
 \begin{equation}
 \tilde{C}\tilde{D}_{s}D_{\mu^{-1}}b=\tilde{D}_{A}(D_{\epsilon}\frac{\mathrm{d}}{\mathrm{dt}}e+D_{\kappa}e+j)
 \label{eq:ampere}
@@ -363,7 +390,7 @@ or
 \tilde{S}\tilde{D}_{A}D_{\epsilon}e=\tilde{D}_{V}\rho_{D}
 \label{eq:gausslaw_sample}
 \end{equation}
-Here $\rho_{D}$ is the vector of the charge density in grid cells.
+Where $\rho_{D}$ is the vector of the charge density in grid cells.
 
 \begin{equation}
 \tilde{S}=(\tilde{P}_{u}|\tilde{P}_{v}|\tilde{P}_{w})=(-P_{u}^{T}|-P_{v}^{T}|\-P_{w}^{T})
