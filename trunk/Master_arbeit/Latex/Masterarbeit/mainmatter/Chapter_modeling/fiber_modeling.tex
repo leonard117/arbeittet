@@ -1,6 +1,3 @@
-%fiber_modeling
-
-%fiber_modeling.tex
 %fiber_modeling.tex
 The first agenda is to determine the Tapered and Lensed Fiber (TLF) model. Because of the heave computing cost creating a full size fiber is not economical. Therefore only the end of the fiber, which provides approximately the equal technical properties, will be modeled in this work. In \cite{TLF_analysis,TLF_mode_transforming} two types of TLF configurations are described.\\ 
 
@@ -50,18 +47,17 @@ With the parameters in Tab. \ref{tab:model_fiber_configuration} the minimum spot
 \begin{figure}[!ht]
 	\centering
 		\includegraphics[width=0.8 \textwidth]{bilder/cst_lensed_fiber_equ_efield}
-		\caption{E-Field demonstration in logarithm value of Tapered cladding TLF.}
+		\caption{E-Field demonstration in logarithmic scale of Tapered cladding TLF.}
  		\label{fig:Tapered_cladding_efield}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
 		\includegraphics[width=0.8 \textwidth]{bilder/cst_lensed_fiber_efield}
-		\caption{E-Field demonstration in logarithm value of Tapered core TLF.}
+		\caption{E-Field demonstration in logarithmic scale of Tapered core TLF.}
  		\label{fig:Tapered_core_efield}	
 \end{figure}
-Above we only estimated the theoretical working distance of the lens. To determine the actual working distance and actual spot size we have to analyze the simulation results from CST MVS. Fig. \ref{fig:Tapered_cladding_efield} and Fig. \ref{fig:Tapered_core_efield} show  E-Field demonstrations  in logarithm value in the xz-plane of both types of TLFs. We load the power flow data into matlab workspace and draw Fig. \ref{fig:Tapered_cladding_spot_curve} and Fig. \ref{fig:Tapered_core_spot_curve}, which show the beam spot diameters through their absolute beam power flow density or its z-compents (propagation direction) of the beam power flow density along the propagation distance. From these two figures, curves of the absolute value of their power flow density show the location of the minimum spot matching the previous theoretical location of the minimum spot of lenses. This guess will also be verified in section \ref{sect:optim_shift}. In Fig. \ref{fig:Tapered_cladding_spot_curve} that the minimum spot size locate at about $4.1 \mu$m from lense end and spot size equal about $1.5 \mu$m. While in Fig. \ref{fig:Tapered_core_spot_curve} that the minimum spot size is found at  $4.3 \mu m$ from lense end and spot size equal about $1.5 \mu$m. Thus it is concluded that two configuration has only a small difference. Comparing with the properties given by experimental setup: minimum spot diameter $0.6<d<1.7 \mu$m and working distance $4\mu$m, both TLF model can be acceptable for the following development. In this works the tapered core TLF will be used for further simulations.\\
-
+Above we only estimated the theoretical working distance of the lens. To determine the actual working distance and actual spot size we have to analyze the simulation results from CST MVS. Fig. \ref{fig:Tapered_cladding_efield} and Fig. \ref{fig:Tapered_core_efield} show  E-Field demonstrations  in logarithm value in the xz-plane of both types of TLFs. We load the power flow data into matlab workspace and draw Fig. \ref{fig:Tapered_cladding_spot_curve} and Fig. \ref{fig:Tapered_core_spot_curve}, which show the beam spot diameters through their absolute beam power flow density or its z-compents (propagation direction) of the beam power flow density along the propagation distance. From these two figures, curves of the absolute value of their power flow density show the location of the minimum spot matching the previous theoretical location of the minimum spot of lenses. This guess will also be verified in section \ref{sect:optim_shift}. In Fig. \ref{fig:Tapered_cladding_spot_curve} that the minimum spot size locate at about $4.1 \mu$m from lense end and spot size equal about $1.5 \mu$m. While in Fig. \ref{fig:Tapered_core_spot_curve} that the minimum spot size is found at  $4.3 \mu m$ from lense end and spot size equal about $1.5 \mu$m. Thus it is concluded that two configuration has only a small difference. Comparing with the properties given by experimental setup: minimum spot diameter $0.6<d<1.7 \mu$m and working distance $4\mu$m, both TLF model can be acceptable for the following development. In this works the tapered core TLF will be used for further simulations.
 \begin{figure}[!ht]
 		\centering
 		\includegraphics[width=0.7 \textwidth]{bilder/Tapered_cladding_spot_curve}
@@ -80,11 +76,11 @@ For a more impression of the relation between beam power density and beam propag
 \setlength{\abovecaptionskip}{0pt}% 
 \flushleft
 	\subfigure[3D Beam Power at distance $1\mu m$]{
-	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_1um}
+	\includegraphics[width=0.38 \textwidth]{bilder/surf_spot_1um}
 	\label{fig:3d_spot_sub1}%
 	}
  	\subfigure[3D Beam Power at distance $2\mu m$]{
- 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_2um}
+ 	\includegraphics[width=0.38 \textwidth]{bilder/surf_spot_2um}
  	\label{fig:3d_spot_sub2}
  	}
 %\end{figure}	
@@ -92,11 +88,11 @@ For a more impression of the relation between beam power density and beam propag
 %\setlength{\abovecaptionskip}{0pt}% 
 %\flushleft
  	 	\subfigure[3D Beam Power at distance $3\mu m$]{
- 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_3um}
+ 	\includegraphics[width=0.38 \textwidth]{bilder/surf_spot_3um}
  	\label{fig:3d_spot_sub3}
  	}
  	\subfigure[3D Beam Power at distance $4\mu m$]{
- 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_4um}
+ 	\includegraphics[width=0.38 \textwidth]{bilder/surf_spot_4um}
  	\label{fig:3d_spot_sub4}
  	}
 %\end{figure}	
@@ -104,11 +100,11 @@ For a more impression of the relation between beam power density and beam propag
 %\setlength{\abovecaptionskip}{0pt}% 
 %\flushleft
  	 \subfigure[3D Beam Power at distance $5\mu m$]{
- 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_5um}
+ 	\includegraphics[width=0.38 \textwidth]{bilder/surf_spot_5um}
  	\label{fig:3d_spot_sub5}
  	}
  	 	\subfigure[3D Beam Power at distance $6\mu m$]{
- 	\includegraphics[width=0.4 \textwidth]{bilder/surf_spot_6um}
+ 	\includegraphics[width=0.38 \textwidth]{bilder/surf_spot_6um}
  	\label{fig:3d_spot_sub6}
  	}
  	\caption{Demonstrations of 3D Beam Power.}

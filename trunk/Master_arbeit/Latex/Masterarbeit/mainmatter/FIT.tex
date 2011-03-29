@@ -1,7 +1,7 @@
 %FIT
 The Finite Integration Technique (\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.\\
 
-The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig. \ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid} (primary cell \textbf{G}). Of cause it is possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on the real dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).\\
+The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig. \ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid} (primary grid \textbf{G}). It is also possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).\\
 \begin{align}
 G=
 (u(i),v(j),w(k))\in \mathbb{R}^3|&u(1)\leq u(i)\leq u(I),\nonumber\\
@@ -22,25 +22,25 @@ For calculations following primary elements are defined in \cite{script_FeldSim}
 \begin{itemize}
 \item Points $P(i,j,k)$
 \item Elemental Edge:
-    \begin{align}
-		\Delta u(i)&=\overline{u(i)u(i+1)}  \quad with  \quad 1\leq i \leq I-1, \nonumber\\
-		\Delta v(j)&=\overline{v(j)v(j+1)}  \quad with  \quad 1\leq j \leq J-1, \nonumber\\
-		\Delta w(k)&=\overline{w(k)w(k+1)}  \quad with  \quad 1\leq k \leq K-1
-		\label{eq:discrete_edge}
-		\end{align}
+    \begin{align*}
+		\Delta u(i)&=\overline{u(i)u(i+1)}  \quad \mathrm{with}  \quad 1\leq i \leq I-1, \nonumber\\
+		\Delta v(j)&=\overline{v(j)v(j+1)}  \quad \mathrm{with}  \quad 1\leq j \leq J-1, \nonumber\\
+		\Delta w(k)&=\overline{w(k)w(k+1)}  \quad \mathrm{with}  \quad 1\leq k \leq K-1
+		%\label{eq:discrete_edge}
+		\end{align*}
 \item Elemental Planes
-		\begin{align}
-		A_{u}(j,k)&=\Delta v(j)\Delta w(k) \quad with  \quad 1\leq i \leq I-1,1\leq j \leq J-1\nonumber\\
-		&A_{v}(i,k),A_{w}(i,j)  \quad analogous
-		\label{eq:discrete_plane}
-		\end{align}
+		\begin{align*}
+		A_{u}(j,k)&=\Delta v(j)\Delta w(k) \quad \mathrm{with}  \quad 1\leq i \leq I-1,1\leq j \leq J-1\nonumber\\
+		&A_{v}(i,k),A_{w}(i,j)  \quad \mathrm{analogous}
+		%\label{eq:discrete_plane}
+		\end{align*}
 \item Elemental Cells
-		\begin{align}
+		\begin{align*}
 		V(i,j,k)=\Delta u(i)\Delta v(j)\Delta w(k)  \quad with  &\quad 1\leq i\leq I-1,\nonumber\\
 		&1\leq j\leq J-1,\nonumber\\
 		&1\leq k\leq K-1
-		\label{eq:discrete_cell}
-		\end{align}
+		%\label{eq:discrete_cell}
+		\end{align*}
 \end{itemize}
 A new index system has been introduced for numerical convenience:
 
@@ -50,32 +50,32 @@ n=1+(i-1)\cdot M_{u}+(j-1)\cdot M_{v}+(k-1)\cdot M{w}
 \end{equation}
 Where $M_{u}=1,M_{v}=I,M_{w}=I\cdot J$. We can reindex primary elements with new index rules $n$ as following:
 \begin{itemize}
-\item Points $P(n) \quad with \quad 1\leq n \leq N_{p}$
+\item Points $P(n) \quad \mathrm{with} \quad 1\leq n \leq N_{p}$
 \item Elemental Edge:
 %$\delta u(i)=\overline{u(i)u(i+1)} with 1\leq{i}\leq{I-1},$
-    \begin{align}
-		\Delta u(n)&=\overline{u(n)u(n+1)}  \quad with \quad 1\leq n \leq N_{p}, \nonumber\\
-		\Delta v(n)&=\overline{v(n)v(n+1)}  \quad with \quad 1\leq n \leq N_{p}, \nonumber\\
-		\Delta w(n)&=\overline{w(n)w(n+1)}  \quad with \quad 1\leq n \leq N_{p}
-		\label{eq:discrete_edge_n}
-		\end{align}
+    \begin{align*}
+		\Delta u(n)&=\overline{u(n)u(n+1)}  \quad \mathrm{with} \quad 1\leq n \leq N_{p}, \nonumber\\
+		\Delta v(n)&=\overline{v(n)v(n+1)}  \quad \mathrm{with} \quad 1\leq n \leq N_{p}, \nonumber\\
+		\Delta w(n)&=\overline{w(n)w(n+1)}  \quad \mathrm{with} \quad 1\leq n \leq N_{p}
+		%\label{eq:discrete_edge_n}
+		\end{align*}
 \item Elemental Planes
-		\begin{align}
-		A_{u}(n)&=\Delta v(n)\Delta w(n) \quad with \quad 1\leq n\leq N_{p}\nonumber\\
-		&A_{v}(n),A_{w}(n)  \quad analogous
-		\label{eq:discrete_plane_n}
-		\end{align}
+		\begin{align*}
+		A_{u}(n)&=\Delta v(n)\Delta w(n) \quad \mathrm{with} \quad 1\leq n\leq N_{p}\nonumber\\
+		&A_{v}(n),A_{w}(n)  \quad \mathrm{analogous}
+		%\label{eq:discrete_plane_n}
+		\end{align*}
 \item Elemental Cells
-		\begin{equation}
-		V(n)=\Delta u(n)\Delta v(n)\Delta w(n)  \quad with \quad 1\leq n\leq N_{p}
-		\label{eq:discrete_cell_n}
-		\end{equation}
+		\begin{equation*}
+		V(n)=\Delta u(n)\Delta v(n)\Delta w(n)  \quad \mathrm{with} \quad 1\leq n\leq N_{p}
+		%\label{eq:discrete_cell_n}
+		\end{equation*}
 \end{itemize}
 Where $N_{p}$ is the total number of the grid points:
-\begin{equation}
+\begin{equation*}
 N_{p}=I\cdot J\cdot K
-\label{eq:np}
-\end{equation}
+%\label{eq:np}
+\end{equation*}
 
 The next step is to discretize Maxwell's equations in their integral form (\ref{eq:maxwell_1}-\ref{eq:maxwell_4}) 
 \begin{align}
