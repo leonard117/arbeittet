@@ -4,13 +4,14 @@ The Finite Integration Technique (\textbf{FIT}), which was introduced at 1976 by
 The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig. \ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid} (primary grid \textbf{G}). It is also possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on dimensions of the object. In general  the computational grid is indicated as \\
 \begin{align}
 G=
-(u(i),v(j),w(k))\in \mathbb{R}^3|&u(1)\leq u(i)\leq u(I),\nonumber\\
+(u(i), v(j), w(k))\in \mathbb{R}^3|&u(1)\leq u(i)\leq u(I),\nonumber\\
 													 &v(1)\leq v(j)\leq v(J),\nonumber\\ 
 													 &w(1)\leq w(k)\leq w(K)\quad \text{.}
 \label{eq:grid}
 \end{align}
 
-$u(i)$,$v(j)$,$w(k)$ can be three components of any 3D coordinate systems. In following discussion all computations base on \textbf{Cartesian Coordinate system}.\\
+$u(i)$, $v(j)$, $w(k)$ can be three components of any 3D coordinate systems. In following discussion all computations base on \textbf{Cartesian Coordinate system}.\\
+
 %fig: discretization of the material
 \begin{figure}[!ht]
 \centering

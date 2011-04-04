@@ -17,12 +17,13 @@ I_{2}=h_{21}I_{1}+h_{22}V_{2} \text{.}
 \label{eq:voltage_current2}
 \end{equation}
 Where $h_{11},h_{12},h_{21}$ and $h_{22}$ are H-Parameters and defined as %(\ref{eq:h_parameters1}-\ref{eq:h_parameters2}).
-\begin{align}
+\begin{align*}
 h_{11}&=\frac{V_{1}}{I_{1}}|_{V_{2}=0}\quad\text{,} h_{12}=\frac{V_{1}}{V_{2}}|_{I_{1}=0}\text{,}
-\label{eq:h_parameters1}\\
+%\label{eq:h_parameters1}
+\\
 h_{21}&=\frac{I_{2}}{I_{1}}|_{V_{2}=0}\quad\text{,} h_{22}=\frac{I_{2}}{V_{2}}|_{I_{1}=0}\text{.}
-\label{eq:h_parameters2}
-\end{align}
+%\label{eq:h_parameters2}
+\end{align*}
 But H-Parameters cannot always be calculated for microwave circuits. Agilent\cite{aglient_s_parameters} has listed some problems of H-Parameters in high frequency:
 \begin{itemize}
 \item It is not easy to measure the total voltage and total current at the ports of the network.
@@ -73,12 +74,12 @@ or in matrics form:
 \end{equation}
 
 The S-Parameters are defined as following:
-\begin{align}
+\begin{align*}
 S_{11}&=\frac{b_{1}}{a_{1}}|_{a_{2}=0}\\
 S_{21}&=\frac{b_{2}}{a_{1}}|_{a_{2}=0}\\
 S_{22}&=\frac{b_{2}}{a_{2}}|_{a_{1}=0}\\
 S_{12}&=\frac{b_{1}}{a_{2}}|_{a_{1}=0}
-\end{align}
+\end{align*}
 The phical meaning of the S-Parameters are described as following:
 \begin{itemize}
 \item $S_{11}$ is the input port reflection coefficient
@@ -86,4 +87,4 @@ The phical meaning of the S-Parameters are described as following:
 \item $S_{21}$ is the forward transmission coefficient
 \item $S_{22}$ is the output port reflection coefficient
 \end{itemize}
-Here $S_{21}$ is often used to estimate the transmission ability of a network. Therefore $S_{21}$ equals the coupling efficiency in this work.
+Here $|S_{21}|$ is often used to estimate the transmission ability of a network. Therefore $|S_{21}|$ equals the coupling efficiency in this work.
