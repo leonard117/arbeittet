@@ -1,5 +1,5 @@
 %S_parameter
-Normally an electrical network can be considered as a 'black box', which contains amounts of interconnected basic electrical circuit components such as resistors, capacitors, inductors and transistors etc. On this 'black box' may exist many ports, which connect with other circuits. In order describe the characteristics of this network H-Parameters are used, which describe the relation between voltages and currents of each two ports. In Fig. \ref{fig:2_port_network} is a 2-port network $V_{1}$ and $V_{2}$ are total voltages of both ports; $I_{1}$ and $I_{2}$ are total currents of both ports respectively.\\
+Normally an electrical network can be considered as a 'black box', which contains amounts of interconnected basic electrical circuit components such as resistors, capacitors, inductors and transistors etc. On this 'black box' may exist many ports, which connect with other circuits. In order to describe the characteristics of this network H-Parameters are used, which describe the relation between voltages and currents of each two ports. In Fig. \ref{fig:2_port_network} is a 2-port network $V_{1}$ and $V_{2}$ are total voltages of both ports; $I_{1}$ and $I_{2}$ are total currents of both ports respectively.\\
  
 \begin{figure}[!ht]
 \centering
@@ -31,12 +31,12 @@ But H-Parameters cannot always be calculated for microwave circuits. Agilent\cit
 \end{itemize}
 Scattering parameters or S-parameters are perfect description of microwave circuit\cite{RF194_s_parameters}. In that case traveling waves are applied instead of total voltages and currents. $E_{i1}$ and $E_{i2}$ represent incidence waves over left and right ports of the network respectively. $E_{r1}$ and $E_{r2}$ are reflective waves. The relation between traveling waves, total voltages and currents has relations %(\ref{eq:voltage_wave1}-\ref{eq:voltage_wave2}).
 \begin{align}
-V_{1}&=E_{i1}+E_{r1}\quad\text{,} V_{2}=E_{i2}+E_{r2}\text{,}
+V_{1}&=E_{i1}+E_{r1}\text{,}\quad V_{2}=E_{i2}+E_{r2}\text{,}
 \label{eq:voltage_wave1}\\
-I_{1}&=\frac{E_{i1}-E_{r1}}{Z_{0}}\quad\text{,} I_{2}=\frac{E_{i2}-E_{r2}}{Z_{0}}\text{.}
+I_{1}&=\frac{E_{i1}-E_{r1}}{Z_{0}}\text{,}\quad I_{2}=\frac{E_{i2}-E_{r2}}{Z_{0}}\text{.}
 \label{eq:voltage_wave2}
 \end{align}
-Traveling waves themselves can be expressed in terms of H-Parameters (\ref{eq:er1}\ref{eq:er2}). 
+Traveling waves themselves can be expressed in terms of H-Parameters (\ref{eq:er1}-\ref{eq:er2}). 
 \begin{align}
 E_{r1}&=f_{11}(h)E_{i1}+f_{12}(h)E_{i2}
 \label{eq:er1}
@@ -44,12 +44,12 @@ E_{r1}&=f_{11}(h)E_{i1}+f_{12}(h)E_{i2}
 E_{r2}&=f_{21}(h)E_{i1}+f_{22}(h)E_{i2}
 \label{eq:er2}
 \end{align}
-Here $f11, f12, f21, f22$ are the network parameters, which indicate the relation between traveling voltages waves and total voltages or currents. Divide both sides of the functions (\ref{eq:er1}-\ref{eq:er2}) by $\sqrt{Z_{0}}$ ($Z_{0}$ system impedance). A new set of variables are defined:
+Here $f11, f12, f21, f22$ are the network parameters, which indicate the relation between traveling voltages waves and total voltages or currents. If both sides of the functions (\ref{eq:er1}-\ref{eq:er2}) are divided by $\sqrt{Z_{0}}$ ($Z_{0}$ system impedance) a new set of variables can be obtained
 \begin{align} 
-a_{1}&=\frac{Ei1}{\sqrt{Z_{0}}}=\frac{V_{1}+I_{1}Z_{0}}{2\sqrt{Z_{0}}} \quad a_{2}=\frac{Ei2}{\sqrt{Z_{0}}}=\frac{V_{2}+I_{2}Z_{0}}{2\sqrt{Z_{0}}} \\
-b_{1}&=\frac{Er1}{\sqrt{Z_{0}}}=\frac{V_{1}-I_{1}Z_{0}}{2\sqrt{Z_{0}}}  \quad b_{2}=\frac{Er2}{\sqrt{Z_{0}}}=\frac{V_{2}-I_{2}Z_{0}}{2\sqrt{Z_{0}}}
+a_{1}&=\frac{Ei1}{\sqrt{Z_{0}}}=\frac{V_{1}+I_{1}Z_{0}}{2\sqrt{Z_{0}}} \text{,}\quad a_{2}=\frac{Ei2}{\sqrt{Z_{0}}}=\frac{V_{2}+I_{2}Z_{0}}{2\sqrt{Z_{0}}} \\
+b_{1}&=\frac{Er1}{\sqrt{Z_{0}}}=\frac{V_{1}-I_{1}Z_{0}}{2\sqrt{Z_{0}}}  \text{,}\quad b_{2}=\frac{Er2}{\sqrt{Z_{0}}}=\frac{V_{2}-I_{2}Z_{0}}{2\sqrt{Z_{0}}}
 \end{align}
-So relations of the new variables are give by:
+So relations of the new variables are given by:
 \begin{align}
 b_{1}&=S_{11}a_{1}+S_{12}a_{2}\\
 b_{2}&=S_{21}a_{1}+S_{22}a_{2}
@@ -86,4 +86,4 @@ The phical meaning of the S-Parameters are described as following:
 \item $S_{21}$ is the forward transmission coefficient
 \item $S_{22}$ is the output port reflection coefficient
 \end{itemize}
-In another hand, $S_{21}$ is often used to estimate the transmission ability of a network. Therefore $S_{21}$ equals the coupling efficiency in this work.
+Here $S_{21}$ is often used to estimate the transmission ability of a network. Therefore $S_{21}$ equals the coupling efficiency in this work.

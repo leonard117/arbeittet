@@ -1,12 +1,12 @@
 %FIT
 The Finite Integration Technique (\textbf{FIT}), which was introduced at 1976 by Thomas Weiland\cite{FIT_discrete_method} to solving the electromagnetical problems, is a numerical simulation method to discretize the integral form of fundamental Maxwell's functions.\\
 
-The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig. \ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid} (primary grid \textbf{G}). It is also possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on dimensions of the object. In general \cite{script_FeldSim} indicate the computational grid as (\ref{eq:grid}).\\
+The first thought of the \textbf{FIT} is to discretize the calculating volume. There is lot of methods to accomplish this mission. One common way is as Fig. \ref{fig:discretization_material} to discetize a brick-shape object into a \textbf{Cartesian Grid} (primary grid \textbf{G}). It is also possible to construct grid volume in cylinder coordinate or any other types of  coordinates\cite{FIT_triangular_discretization,FDTD_nonorthogonal_grids} for simplifying the calculation depending on dimensions of the object. In general  the computational grid is indicated as \\
 \begin{align}
 G=
 (u(i),v(j),w(k))\in \mathbb{R}^3|&u(1)\leq u(i)\leq u(I),\nonumber\\
 													 &v(1)\leq v(j)\leq v(J),\nonumber\\ 
-													 &w(1)\leq w(k)\leq w(K)
+													 &w(1)\leq w(k)\leq w(K)\quad \text{.}
 \label{eq:grid}
 \end{align}
 
@@ -21,7 +21,7 @@ $u(i)$,$v(j)$,$w(k)$ can be three components of any 3D coordinate systems. In fo
 For calculations following primary elements are defined in \cite{script_FeldSim}:
 \begin{itemize}
 \item Points $P(i,j,k)$
-\item Elemental Edge:
+\item Elemental Edge
     \begin{align*}
 		\Delta u(i)&=\overline{u(i)u(i+1)}  \quad \mathrm{with}  \quad 1\leq i \leq I-1, \nonumber\\
 		\Delta v(j)&=\overline{v(j)v(j+1)}  \quad \mathrm{with}  \quad 1\leq j \leq J-1, \nonumber\\
@@ -51,7 +51,7 @@ n=1+(i-1)\cdot M_{u}+(j-1)\cdot M_{v}+(k-1)\cdot M{w}
 Where $M_{u}=1,M_{v}=I,M_{w}=I\cdot J$. We can reindex primary elements with new index rules $n$ as following:
 \begin{itemize}
 \item Points $P(n) \quad \mathrm{with} \quad 1\leq n \leq N_{p}$
-\item Elemental Edge:
+\item Elemental Edge
 %$\delta u(i)=\overline{u(i)u(i+1)} with 1\leq{i}\leq{I-1},$
     \begin{align*}
 		\Delta u(n)&=\overline{u(n)u(n+1)}  \quad \mathrm{with} \quad 1\leq n \leq N_{p}, \nonumber\\
