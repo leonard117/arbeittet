@@ -25,16 +25,16 @@ Following is a demonstration of the discretized form from the inductive law (\re
 
 \begin{equation}
 \int_{C}\vec{E}\cdot d\vec{s}
-=\underbrace{\int_{\Delta v(n)}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{v}(n)}
-+\underbrace{\int_{\Delta w(n+M_{v})}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{w}(n+M_{v})}
--\underbrace{\int_{\Delta v(n+M_{w})}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{v}(n+M_{w})}
--\underbrace{\int_{\Delta w(n)}\vec{E}\cdot d\vec{s}}_{\widehat{e}_{w}(n)}
+=\underbrace{\int_{\Delta v(n)}\vec{E}\cdot d\vec{s}}_{\se_{v}(n)}
++\underbrace{\int_{\Delta w(n+M_{v})}\vec{E}\cdot d\vec{s}}_{\se_{w}(n+M_{v})}
+-\underbrace{\int_{\Delta v(n+M_{w})}\vec{E}\cdot d\vec{s}}_{\se_{v}(n+M_{w})}
+-\underbrace{\int_{\Delta w(n)}\vec{E}\cdot d\vec{s}}_{\se_{w}(n)}
 \label{eq:inductive_left}
 \end{equation}
 
 Where $\widehat{e}(n)$ is so called  electric grid voltage and has the following relation with electric field strength $e(n)$ (seeing Fig. \ref{fig:FIT_max_integral2})
 \begin{equation}
- e_{v}(n)=\frac{\widehat{e}_{v}(n)}{\Delta v(n)}
+ e_{v}(n)=\frac{\se_{v}(n)}{\Delta v(n)}
 \label{eq:e_field}
 \end{equation}
 Meanwhile the right hand side of (\ref{eq:maxwell_1}) approximates to (\ref{eq:inductive_right})
