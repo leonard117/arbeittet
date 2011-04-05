@@ -7,7 +7,7 @@ This section aims for offering a set of numerical functions to calculating the p
 \caption{Calculation Cuboid in CST.}
 \label{Afig:app_power_distribution01}
 \end{figure}
-The first step is to choose a working plane. Suppose a working plane through point z$_{0}$ at z axis in the total calculation space Fig. \ref{Afig:app_power_distribution01} is given, the point index n$_{0}$ can be determined by its coordinate z$_{0}$. The plane in Fig. \ref{Afig:app_power_distribution02} is divided into small elemental pieces in FIT. The base cross-section is given by four points coordinates (x$_{1}$, y$_{1}$),(x$_{2}$, y$_{2}$),(x$_{3}$, y$_{3}$) and (x$_{4}$, y$_{4}$). Their points indexes (n$_{1}$, n$_{2}$, n$_{3}$, n$_{4}$) can also be derived.    
+The first step is to choose a working plane. Suppose a working plane through point z$_{0}$ at z axis in the total calculation space Fig. \ref{Afig:app_power_distribution01} is given, the point index n$_{0}$ can be determined by its coordinate z$_{0}$. The plane in Fig. \ref{Afig:app_power_distribution02} is divided into small elemental pieces in FIT. The base cross-section is given by four points coordinates (x$_{1}$, y$_{1}$), (x$_{2}$, y$_{2}$), (x$_{3}$, y$_{3}$) and (x$_{4}$, y$_{4}$). Their points indices (n$_{1}$, n$_{2}$, n$_{3}$, n$_{4}$) can also be derived.    
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.7 \textwidth]{bilder/app_power_distribution02}
@@ -26,7 +26,7 @@ In the working cross-section only z-components of elemental plane matrix D$_{A}$
 D_{Az}=D_{A}(2*Np+1:3*Np, 2*Np+1:3*Np)
 \label{Aeq:daz_matrix}
 \end{equation}
-Construct a auxiliary matrix $A_{base}$, which composed of only $1$ and $0$ like Fig \ref{Afig:app_Auxiliary_matrix}, to indicate all points indexes which are included in base cross-section. 
+Construct a auxiliary matrix $A_{base}$, which composed of only $1$ and $0$ like Fig \ref{Afig:app_Auxiliary_matrix}, to indicate all points indices which are included in base cross-section. 
 
 \begin{equation}
 A_{base}=Diag\left\{0,\cdots 0,P_{1},0,\cdots 0, P_{2}, 0,\cdots, P_{m}, 0\cdots\right\}
